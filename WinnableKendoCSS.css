@@ -1,0 +1,174 @@
+.__job-wrapper {
+    padding: 15px 0 15px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .content-gradient{
+    background-color:#ffffff !important;
+  }
+
+  .__job-wrapper .__job-heading {
+    font-family: "AvenirLT-Medium", sans-serif;
+    font-size: 20px;
+    color: #0078d4;
+    margin-bottom: 5px;
+  }
+  .row:before {
+  display: table;
+  content: " ";
+}
+  .__job-wrapper .__job-heading a {
+    display: inline-block;
+    padding-right: 25px;
+  }
+
+  .__job-wrapper .__job-heading .__posted-time {
+    font-family: "AvenirLT-BookOblique", sans-serif;
+    font-size: 16px;
+    color: #000;
+    display: inline-block;
+  }
+
+  .__job-wrapper .__job-type {
+    font-family: "AvenirLT-Book", sans-serif;
+    font-size: 14px;
+    color: #4A4A4A;
+    display: inline-block;
+    margin-bottom: 5px;
+
+  }
+
+  .__job-wrapper .__job-type .__salaryRange {
+    border-left: 1px solid #4A4A4A;
+    padding-left: 10px;
+    margin-left: 8px;
+  }
+
+  .__job-desc {
+    overflow: hidden;
+     text-overflow: ellipsis;
+     display: -webkit-box;
+     -webkit-line-clamp: 2; /* number of lines to show */
+     -webkit-box-orient: vertical;
+   
+  }
+  #jobdescdetail{
+    text-align: justify;
+  }
+.ms-webpart-zone, div.ms-webpart-cell-vertical-inline-table, .ms-webpart-chrome-vertical, .ms-table {
+  display: block!important;
+}
+.__jobDescBody {
+  padding-top: 22px;
+font-size: 16px;
+  line-height: 24px;
+}
+.__jobDescBody h4 {
+  font-family: "AvenirLT-Heavy", sans-serif;
+  font-size: 18px;
+  color: #0078d4;
+  margin-bottom: 21px;
+  margin-top: 21px;
+}
+p {
+  color: #4A4A4A;
+  font-size: 16px;
+  font-family: 'AvenirLT-Book', sans-serif;
+  line-height: 30px;
+  padding: 0 0 15px 0;
+
+}
+.__jobDescBody p {
+  padding-bottom: 10px;
+}
+.__jobDescBody ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 20px;
+}
+.__jobDescBody ul li {
+  list-style: disc;
+  padding: 0 0 2px 2px;
+  margin: 0;
+  /* background: url(dot.png) 0 9px no-repeat; */
+}
+.k-window-titlebar .k-window-actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.k-pager-numbers .k-state-selected {
+  color: #fff!important;
+  background-color: #0078d4;
+}
+.k-grid tbody .k-button {
+  min-width: 64px;
+  background: #0078d4;
+  color: #ffffff;
+  /* border: 1px solid #672168; */
+}
+.k-grid-header th.k-header {
+  vertical-align: bottom;
+  cursor: default;
+  /* background: #672168; */
+  color: #0078d4;
+  font-weight: bold;
+}
+.k-window { width: 98%!important; height: 95vh!important;     border: 1px solid #8c758c;
+  box-shadow: 0px 0px 20px #333;}
+.k-window-titlebar {
+  border-color: inherit;
+  color: #fff;
+  background-color: #0078d4;
+  background-clip: padding-box;
+}
+.ms-rtestate-field h1, h1.ms-rteElement-H1, .ms-rtestate-field h2, h2.ms-rteElement-H2 {
+  line-height: 1.4;
+  color: #0078d4;
+}
+  .ms-WPBorder { border:none;}
+
+  #btnApplyNow {
+background: #1578ce;
+color: #fff;
+border-color: #1777ce;
+padding: 7px 10px;
+border: 1px solid #a6a6a6;
+}
+
+.k-pager-numbers-wrap .k-dropdown { display: none;}
+.k-pager-numbers-wrap .k-pager-numbers { padding-left:0px;}
+.k-pager-numbers .k-link, .k-pager-numbers .k-link:hover {
+    color: #0078d4;
+} 
+
+
+
+.k-window { font-family: "AvenirLT-Medium", sans-serif;}
+
+.mg_as_9f38462c.bn_as_9f38462c { font-weight: 300; color: #0078d4; border-bottom: 2px solid;
+    background: #0176d11f;
+    padding: 10px;}
+.a_a_50a7110f:not(.b_a_50a7110f) { margin-top: 0px;}
+.gq_v_9f38462c { padding-bottom: 0px; padding-top:10px!important; min-height: auto!important;}
+
+#sp-appBar, #SuiteNavWrapper, #spSiteHeader, #spCommandBar, #O365_NavHeader, .u_c_ada2ac09 { display: none!important;}
+.compositeLink_a0b619f0, .h_c_6b55bba6, .k_c_6b55bba6 { color: #fff;
+    background: #0077d2; }
+    .compositeLink_a0b619f0 a {
+    color: #fff;
+}
+.compositeLink_a0b619f0.compositeLinkIsSelected_a0b619f0 a, .compositeLink_a0b619f0.compositeLinkIsSelected_a0b619f0 .chevronButton_a0b619f0 {
+    background: #f3f2f1;
+    color: #0077d2;
+}
+#divIconGrid { text-align: right; display: flex; justify-content: end;}
+#divIconGrid i { padding: 10px; background: #0077d2; color:#fff; margin: 5px; border-radius:4px; box-shadow: 0px 0px 2px #333; text-align: right;}
+#divIconGrid i:last-child { margin-right:0px!important;}
+.SelectSPFX label { margin-right: 10px;
+    font-weight: 500;}
+    .SelectSPFX select { height: 35px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-right: 25px;}
