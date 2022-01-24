@@ -6,7 +6,7 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Template Maker"/>
   <Description DefaultValue="A template to get started."/>
-  <IconUrl DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/assets/icon-32.png">
+  <IconUrl DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://www.contoso.com/help"/>
   <AppDomains>
