@@ -4,7 +4,7 @@
   <Version>4.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="word-add-in-commands"/>
+  <DisplayName DefaultValue="Template Maker"/>
   <Description DefaultValue="A template to get started."/>
   <IconUrl DefaultValue="https://officedev.github.io/Office-Add-in-samples/Samples/office-add-in-commands/word/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://officedev.github.io/Office-Add-in-samples/Samples/office-add-in-commands/word/assets/icon-64.png"/>
