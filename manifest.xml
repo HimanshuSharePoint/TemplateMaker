@@ -136,7 +136,7 @@
 			  <bt:String id="Contoso.Item2.Label" DefaultValue="Write value" />
 			  <bt:String id="Contoso.Menu.Label" DefaultValue="Dropdown menu" />
 			  <bt:String id="Contoso.Group1Label" DefaultValue="Commands group" />
-			  <bt:String id="Contoso.GetStarted.Title" DefaultValue="Get started with your sample add-in!" />
+			  <bt:String id="Contoso.GetStarted.Title" DefaultValue="Get started with yoursample add-in!" />
 		  </bt:ShortStrings>
 		  <!-- LongStrings max characters==250. -->
 		  <bt:LongStrings>
