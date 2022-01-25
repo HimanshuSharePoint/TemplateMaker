@@ -124,7 +124,7 @@
 			  <bt:Image id="Contoso.tpicon_80x80" DefaultValue="https://officedev.github.io/Office-Add-in-samples/Samples/office-add-in-commands/word/assets/icon-80.png" />
 		  </bt:Images>
 		  <bt:Urls>
-			  <bt:Url id="Commands.Url" DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/src/commands.html" />
+			  <bt:Url id="Commands.Url" DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/src/commands/commands.html" />
 			  <bt:Url id="Contoso.Taskpane.Url" DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/src/taskpane/taskpane.html" />
 			  <bt:Url id="Contoso.GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812" />
 		  </bt:Urls>
