@@ -13,6 +13,26 @@ Office.onReady(() => {
  * Shows a notification when the add-in command is executed.
  * @param event {Office.AddinCommands.Event}
  */
+
+ async function writeValue(event) {
+  Word.run(async (context) => {
+    // insert a paragraph at the end of the document.
+    const paragraph = context.document.body.insertParagraph(
+      "ExecuteFunction works. Button ID=" + event.source.id,
+      Word.InsertLocation.end
+    );
+
+    // change the paragraph color to blue.
+    paragraph.font.color = "blue";
+
+    await context.sync();
+  });
+
+  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+  event.completed();
+}
+
+
 function action(event) {
   const message = {
     type: Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,
@@ -41,4 +61,5 @@ function getGlobal() {
 const g = getGlobal();
 
 // The add-in command functions need to be available in global scope
-g.action = action;
+//g.action = action;
+g.writeValue = writeValue;
