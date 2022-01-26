@@ -12,12 +12,17 @@
 
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.1.119/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.1.119/js/kendo.all.min.js"></script>
 
     <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+    
 
     <!-- Template styles -->
     <link href="taskpane.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.default-main.min.css" />
 </head>
 
 <body class="ms-font-m ms-welcome ms-Fabric">
@@ -30,26 +35,19 @@
     <main id="app-body" class="ms-welcome__main" style="display: none;">
         
         <label class="ms-label" id="label">Place Holder Title</label>
-        <input class="ms-label" id="txtInput"><br/>
+        <input id="txtInput"><br/>
         <label class="ms-label" id="labelDataTypes">Place Holder DataType</label>
-        <select class="ns-select" id="TemplateDataTypeSelect">
-            <option>
-                Single Line text
-            </option>
-            <option>
-                Multi Line text
-            </option>
-            <option>
-                Date
-            </option>
-        </select> <br/>
-        <button class="ms-Button" id="insert-paragraph">Insert Placeholder</button><br/><br/>
+        <input id ="TemplateDataTypeSelect"/>
+        <br/>
+    <div class="demo-section k-content">
+        <button id="insert-paragraph" class="k-button k-button-solid k-button-solid-primary">Insert Placeholder</button>
+        <button class="k-button k-button-solid k-button-solid-secondary" id="clear-Placeholder">Clear</button>
+    </div>
 
     </main>
 </body>
-    
- <script>
-     /*
+|<script>
+    /*
  * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
  * See LICENSE in the project root for license information.
  */
@@ -68,6 +66,16 @@ Office.onReady((info) => {
     document.getElementById("insert-paragraph").onclick = insertParagraph;
     document.getElementById("sideload-msg").style.display = "none";
     document.getElementById("app-body").style.display = "flex";
+
+    // Adding Kendo Framework
+    var products = $("#TemplateDataTypeSelect").kendoDropDownList({
+                    optionLabel: "Select DataType...",
+                    dataSource: [ "Single Line of Text", "Multi Line of text", "Date" ]
+                }).data("kendoDropDownList");
+                $("#insert-paragraph").kendoButton();
+                $("#txtInput").kendoTextBox({
+                        placeholder: "Place Holder Value..."
+                });
        
 
   }
@@ -97,6 +105,5 @@ function insertParagraph() {
 
 
 
-    </script>   
-
+</script>
 </html>
