@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>3a45bcaf-1a15-41d0-a731-9f6bb22bf38b</Id>
-  <Version>5.0.0.0</Version>
+  <Version>7.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Template Maker"/>
@@ -74,7 +74,7 @@
 									  <SourceLocation resid="Contoso.Taskpane.Url" />
 								  </Action>
 							  </Item>
-							  <Item id="itemExecuteFunction">
+							  <Item id="itemShowTaskPane2">
 								  <Label resid="Contoso.Item2.Label"/>
 								  <Supertip>
 									  <Title resid="Contoso.Item2.Label" />
@@ -85,9 +85,11 @@
 									  <bt:Image size="32" resid="Contoso.tpicon_32x32" />
 									  <bt:Image size="80" resid="Contoso.tpicon_80x80" />
 								  </Icon>
-								  <Action xsi:type="ExecuteFunction">
-									  <FunctionName>writeValue</FunctionName>
+								<Action xsi:type="ShowTaskpane">
+									  <TaskpaneId>ButtonId2</TaskpaneId>
+									  <SourceLocation resid="Contoso.Taskpane2.Url" />
 								  </Action>
+								  
 							  </Item>
 						  </Items>
 					  </Control>
@@ -106,6 +108,7 @@
 		  <bt:Urls>
 			  <bt:Url id="Commands.Url" DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/src/commands/commands.html" />
 			  <bt:Url id="Contoso.Taskpane.Url" DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/src/taskpane/taskpane.html" />
+			  <bt:Url id="Contoso.Taskpane2.Url" DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/src/taskpane/createRFPresponsetaskpane.html" />
 			  <bt:Url id="Contoso.GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812" />
 		  </bt:Urls>
 		  <!-- ShortStrings max characters==125. -->
