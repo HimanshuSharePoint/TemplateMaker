@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>3a45bcaf-1a15-41d0-a731-9f6bb22bf38b</Id>
-  <Version>7.0.0.0</Version>
+  <Version>8.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Template Maker"/>
@@ -119,7 +119,7 @@
 			  <bt:String id="Contoso.Item2.Label" DefaultValue="Create RFP Response" />
 			  <bt:String id="Contoso.Menu.Label" DefaultValue="Template Maker" />
 			  <bt:String id="Contoso.Group1Label" DefaultValue="Template Maker" />
-			  <bt:String id="Contoso.GetStarted.Title" DefaultValue="Get started with creating template and generating responses!" />
+			  <bt:String id="Contoso.GetStarted.Title" DefaultValue="Hi there, I am Winnable Ginee!" />
 		  </bt:ShortStrings>
 		  <!-- LongStrings max characters==250. -->
 		  <bt:LongStrings>
@@ -129,7 +129,7 @@
 			  <bt:String id="Contoso.Menu.Tooltip" DefaultValue="Show the dropdown menu" />
 
 			  <bt:String id="Contoso.WriteValueButton.Tooltip" DefaultValue="Choose to write value to document" />
-			  <bt:String id="Contoso.GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and choose the 'Show task pane' button to get started." />
+			  <bt:String id="Contoso.GetStarted.Description" DefaultValue="Your best buddy for creating RFP responses faster & more intelligently. Find me here and see what I can do!" />
 		  </bt:LongStrings>
 	  </Resources>
   </VersionOverrides>
