@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>3a45bcaf-1a15-41d0-a731-9f6bb22bf38b</Id>
-  <Version>4.0.0.0</Version>
+  <Version>5.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Template Maker"/>
-  <Description DefaultValue="A template to get started."/>
-  <IconUrl DefaultValue="https://officedev.github.io/Office-Add-in-samples/Samples/office-add-in-commands/word/assets/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://officedev.github.io/Office-Add-in-samples/Samples/office-add-in-commands/word/assets/icon-64.png"/>
+  <Description DefaultValue="Template Maker"/>
+  <IconUrl DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://docs.microsoft.com/office/dev/add-ins/develop/create-addin-commands"/>
   <AppDomains>
-    <AppDomain>https://officedev.github.io</AppDomain>
+    <AppDomain>https://himanshusharepoint.github.io</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Document"/>
@@ -99,9 +99,9 @@
     </Hosts>
     <Resources>
 		  <bt:Images>
-			  <bt:Image id="Contoso.tpicon_16x16" DefaultValue="https://officedev.github.io/Office-Add-in-samples/Samples/office-add-in-commands/word/assets/icon-16.png" />
-			  <bt:Image id="Contoso.tpicon_32x32" DefaultValue="https://officedev.github.io/Office-Add-in-samples/Samples/office-add-in-commands/word/assets/icon-32.png" />
-			  <bt:Image id="Contoso.tpicon_80x80" DefaultValue="https://officedev.github.io/Office-Add-in-samples/Samples/office-add-in-commands/word/assets/icon-80.png" />
+			  <bt:Image id="Contoso.tpicon_16x16" DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/assets/icon-16.png" />
+			  <bt:Image id="Contoso.tpicon_32x32" DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/assets/icon-32.png" />
+			  <bt:Image id="Contoso.tpicon_80x80" DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/assets/icon-80.png" />
 		  </bt:Images>
 		  <bt:Urls>
 			  <bt:Url id="Commands.Url" DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/src/commands/commands.html" />
@@ -110,13 +110,13 @@
 		  </bt:Urls>
 		  <!-- ShortStrings max characters==125. -->
 		  <bt:ShortStrings>
-			  <bt:String id="Contoso.TaskpaneButton.Label" DefaultValue="Show task pane" />
-			  <bt:String id="Contoso.WriteValueButton.Label" DefaultValue="Show task pane" />
-			  <bt:String id="Contoso.Item1.Label" DefaultValue="Show task pane" />
-			  <bt:String id="Contoso.Item2.Label" DefaultValue="Write value" />
-			  <bt:String id="Contoso.Menu.Label" DefaultValue="Dropdown menu" />
-			  <bt:String id="Contoso.Group1Label" DefaultValue="Commands group" />
-			  <bt:String id="Contoso.GetStarted.Title" DefaultValue="Get started with yoursample add-in!" />
+			  <bt:String id="Contoso.TaskpaneButton.Label" DefaultValue="Create Template" />
+			  <bt:String id="Contoso.WriteValueButton.Label" DefaultValue="Create Template" />
+			  <bt:String id="Contoso.Item1.Label" DefaultValue="Create Template" />
+			  <bt:String id="Contoso.Item2.Label" DefaultValue="Create RFP Response" />
+			  <bt:String id="Contoso.Menu.Label" DefaultValue="Template Maker" />
+			  <bt:String id="Contoso.Group1Label" DefaultValue="Template Maker" />
+			  <bt:String id="Contoso.GetStarted.Title" DefaultValue="Get started with creating template and generating responses!" />
 		  </bt:ShortStrings>
 		  <!-- LongStrings max characters==250. -->
 		  <bt:LongStrings>
