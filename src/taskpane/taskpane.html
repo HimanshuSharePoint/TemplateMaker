@@ -93,6 +93,7 @@ Office.onReady((info) => {
 
 
     document.getElementById("insert-paragraph").onclick = insertParagraph;
+      document.getElementById("clear-Placeholder").onclick = clearPlaceholder;
     document.getElementById("sideload-msg").style.display = "none";
     document.getElementById("app-body").style.display = "flex";
 
@@ -112,12 +113,26 @@ Office.onReady((info) => {
 
 
 });
-
+function clearPlaceholder(){
+    Word.run(function (context) {
+    
+    document.getElementById("txtInput").value= '';
+    
+    return context.sync();
+  })
+  .catch(function (error) {
+      console.log("Error: " + error);
+      if (error instanceof OfficeExtension.Error) {
+          console.log("Debug info: " + JSON.stringify(error.debugInfo));
+      }
+    });  
+}
 
 function insertParagraph() {
   Word.run(function (context) {
     var docBody = context.document.body;
     var Valueoftext = document.getElementById("txtInput").value;
+     document.getElementById("txtInput").value= '';
     var ValueofDatatType = document.getElementById("TemplateDataTypeSelect").value;
     docBody.insertText(" <<" + Valueoftext +" /" + ValueofDatatType + ">> ",Word.InsertLocation.end);
 
