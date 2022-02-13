@@ -129,7 +129,7 @@
 			  <bt:String id="Contoso.Menu.Tooltip" DefaultValue="Show the dropdown menu" />
 
 			  <bt:String id="Contoso.WriteValueButton.Tooltip" DefaultValue="Choose to write value to document" />
-			  <bt:String id="Contoso.GetStarted.Description" DefaultValue="Your best buddy for creating RFP responses faster & more intelligently. Find me here and see what I can do!" />
+			  <bt:String id="Contoso.GetStarted.Description" DefaultValue="Your best buddy for creating RFP responses faster and more intelligently. Find me here and see what I can do!" />
 		  </bt:LongStrings>
 	  </Resources>
   </VersionOverrides>
