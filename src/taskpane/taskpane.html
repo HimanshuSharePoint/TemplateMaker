@@ -118,6 +118,8 @@ function clearPlaceholder(){
     
     document.getElementById("txtInput").value= '';
     
+    document.getElementById("TemplateDataTypeSelect").selectedIndex = 0;
+    
     return context.sync();
   })
   .catch(function (error) {
@@ -133,6 +135,7 @@ function insertParagraph() {
     var docBody = context.document.body;
     var Valueoftext = document.getElementById("txtInput").value;
      document.getElementById("txtInput").value= '';
+      document.getElementById("TemplateDataTypeSelect").selectedIndex = 0;
     var ValueofDatatType = document.getElementById("TemplateDataTypeSelect").value;
     docBody.insertText(" <<" + Valueoftext +" /" + ValueofDatatType + ">> ",Word.InsertLocation.end);
 
