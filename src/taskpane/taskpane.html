@@ -92,14 +92,14 @@ Privacy
             </div>
         </li>
         <li>
-           <b class="k-link">Template Meta Data</b>
+           <b class="k-link">Template Metadata</b>
            <div class="panelform" style="padding: 10px;">
                 <label class="ms-label" id="label">Document Name</label>
-        <input id="txtInput"><br/>
+        <input id="txtInputdocumentname"><br/>
         <label class="ms-label" id="labelDataTypes">Industry</label>
-        <input id ="TemplateDataTypeSelect"/>
-               <label class="ms-label" id="labelDataTypes">Scope</label>
-        <input id ="TemplateDataTypeSelect"/>
+        <input id ="TemplateDataTypeSelectIndustry"/>
+               <label class="ms-label" id="labelDataTypesScope">Scope</label>
+        <input id ="TemplateDataTypeSelectScope"/>
                
         <br/>
     <div class="demo-section ">
@@ -145,8 +145,19 @@ Office.onReady((info) => {
                 }).data("kendoDropDownList");
                 $("#insert-paragraph").kendoButton();
                 $("#txtInput").kendoTextBox({
-                        placeholder: "Place Holder Value..."
+                        placeholder: "Placeholder Value..."
                 });
+                $("#txtInputdocumentname").kendoTextBox({
+                        placeholder: "Please enter document name..."
+                });
+      var Industry = $("#TemplateDataTypeSelectIndustry").kendoDropDownList({
+                    optionLabel: "Select DataType...",
+                    dataSource: [ "Telecommunication", "Service", "FMCG" ]
+                }).data("kendoDropDownList");
+      var Scope = $("#TemplateDataTypeSelectScope").kendoDropDownList({
+                    optionLabel: "Select DataType...",
+                    dataSource: [ "Cloud Praposal", "Web Praposal", "Analytics Praposal", "Platform Engineering Praposal" ]
+                }).data("kendoDropDownList");
        
  $("#panelbar").kendoPanelBar({
                 expandMode: "single"
