@@ -17,8 +17,7 @@
  }
  
  .ms-welcome__header {
-    padding: 20px;
-    padding-bottom: 30px;
+    padding: 10px; 
     /*padding-top: 100px;*/
     display: -webkit-flex;
     display: flex;
@@ -26,6 +25,7 @@
     flex-direction: column;
     align-items: center;
  }
+.ms-welcome__header h1 { margin:0px;}
 
  .ms-welcome__main {
     display: -webkit-flex;
