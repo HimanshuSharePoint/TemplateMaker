@@ -118,7 +118,7 @@ function clearPlaceholder(){
     
     document.getElementById("txtInput").value= '';
     
-    document.getElementById("TemplateDataTypeSelect").selectedIndex = 0;
+     $("clear-Placeholder").val("-1");
     
     return context.sync();
   })
@@ -135,7 +135,7 @@ function insertParagraph() {
     var docBody = context.document.body;
     var Valueoftext = document.getElementById("txtInput").value;
      document.getElementById("txtInput").value= '';
-      document.getElementById("TemplateDataTypeSelect").selectedIndex = 0;
+       $("clear-Placeholder").val("-1");
     var ValueofDatatType = document.getElementById("TemplateDataTypeSelect").value;
     docBody.insertText(" <<" + Valueoftext +" /" + ValueofDatatType + ">> ",Word.InsertLocation.end);
 
