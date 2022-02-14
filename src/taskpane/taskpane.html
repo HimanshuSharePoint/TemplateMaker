@@ -83,6 +83,7 @@ Privacy
 
 /* global document, Office, Word */
 let TextboxforTemplate;
+let products;
 
 Office.onReady((info) => {
   if (info.host === Office.HostType.Word) {
@@ -98,7 +99,7 @@ Office.onReady((info) => {
     document.getElementById("app-body").style.display = "flex";
 
     // Adding Kendo Framework
-    var products = $("#TemplateDataTypeSelect").kendoDropDownList({
+    products = $("#TemplateDataTypeSelect").kendoDropDownList({
                     optionLabel: "Select DataType...",
                     dataSource: [ "Single Line of Text", "Multi Line of text", "Date" ]
                 }).data("kendoDropDownList");
@@ -118,7 +119,7 @@ function clearPlaceholder(){
     
     document.getElementById("txtInput").value= '';
     
-     $("clear-Placeholder").val("-1");
+     products.data("kendoDropDownList").val(-1);
     
     return context.sync();
   })
@@ -134,9 +135,9 @@ function insertParagraph() {
   Word.run(function (context) {
     var docBody = context.document.body;
     var Valueoftext = document.getElementById("txtInput").value;
-     document.getElementById("txtInput").value= '';
-       $("clear-Placeholder").val("-1");
     var ValueofDatatType = document.getElementById("TemplateDataTypeSelect").value;
+    document.getElementById("txtInput").value= '';
+    products.data("kendoDropDownList").val(-1); 
     docBody.insertText(" <<" + Valueoftext +" /" + ValueofDatatType + ">> ",Word.InsertLocation.end);
 
       return context.sync();
