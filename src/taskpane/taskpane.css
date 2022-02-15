@@ -38,7 +38,7 @@
     align-items: start;
     -webkit-flex: 1 0 0;
     flex: 1 0 0;
-    padding: 10px 20px;
+    padding: 0;
  }
  
  .ms-welcome__main > h2 {
