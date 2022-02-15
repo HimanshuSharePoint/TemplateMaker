@@ -57,6 +57,7 @@
     color: #377dcf;
     background-color: #fff;
 }
+        .dnone { display:none!important}
  .panelform label { margin-bottom:6px; display:block;}
  .panelform .k-input, .panelform .k-dropdown { margin-bottom:15px; } 
 © 2022 GitHub, Inc.
@@ -88,9 +89,9 @@ Privacy
         <li>
             <b class="k-link">Add placeholders in document</b>
             <div class="panelform" style="padding: 10px;">
-                <label class="ms-label" id="label">Placeholder Name</label>
+                <label class="ms-label dnone" id="label">Placeholder Name</label>
         <input id="txtInput"><br/>
-        <label class="ms-label" id="labelDataTypes">Placeholder Datatype</label>
+        <label class="ms-label dnone" id="labelDataTypes">Placeholder Datatype</label>
         <input id ="TemplateDataTypeSelect"/>
         <br/>
     <div class="demo-section ">
@@ -103,11 +104,11 @@ Privacy
         <li>
            <b class="k-link">Save template to library</b>
            <div class="panelform" style="padding: 10px;">
-                <label class="ms-label" id="label">Template document name</label>
+                <label class="ms-label dnone" id="label">Template document name</label>
         <input id="txtInputdocumentname"><br/>
-        <label class="ms-label" id="labelDataTypes">Industry</label>
+        <label class="ms-label dnone" id="labelDataTypes">Industry</label>
         <input id ="TemplateDataTypeSelectIndustry"/>
-               <label class="ms-label" id="labelDataTypesScope">Scope</label>
+               <label class="ms-label dnone" id="labelDataTypesScope">Scope</label>
         <input id ="TemplateDataTypeSelectScope"/>
                
         <br/>
@@ -148,22 +149,22 @@ Office.onReady((info) => {
 
     // Adding Kendo Framework
    var products = $("#TemplateDataTypeSelect").kendoDropDownList({
-                    optionLabel: "Select DataType...",
+                    optionLabel: "Select DataType",
                     dataSource: [ "Single Line of Text", "Multi Line of text", "Date" ]
                 }).data("kendoDropDownList");
                 $("#insert-paragraph").kendoButton();
                 $("#txtInput").kendoTextBox({
-                        placeholder: "Placeholder Value..."
+                        placeholder: "Placeholder Name"
                 });
                 $("#txtInputdocumentname").kendoTextBox({
-                        placeholder: "Please enter document name..."
+                        placeholder: "Please enter document name"
                 });
       var Industry = $("#TemplateDataTypeSelectIndustry").kendoDropDownList({
-                    optionLabel: "Select DataType...",
+                    optionLabel: "Select Industry",
                     dataSource: [ "Telecommunication", "Service", "FMCG" ]
                 }).data("kendoDropDownList");
       var Scope = $("#TemplateDataTypeSelectScope").kendoDropDownList({
-                    optionLabel: "Select DataType...",
+                    optionLabel: "Select Scope",
                     dataSource: [ "Cloud Praposal", "Web Praposal", "Analytics Praposal", "Platform Engineering Praposal" ]
                 }).data("kendoDropDownList");
        
