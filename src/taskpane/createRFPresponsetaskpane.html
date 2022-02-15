@@ -73,29 +73,33 @@
          </li>    
         <li>
             <b class="k-link">Replace placeholder with values</b>
-            <div class="panelform" style="padding: 10px;">
-                <label class="ms-label" id="label">Placeholder Title</label>
-        <input id="txtInput"><br/>
-        <label class="ms-label" id="labelDataTypes">Placeholder DataType</label>
-        <input id ="TemplateDataTypeSelect"/>
-        <br/>
-    
-               
-            </div>
+         <div class="panelform" style="padding: 10px;">
+           <label class="ms-label" id="label">Client Name</label>
+        <input id="txtClientName"><br/>
+          <label class="ms-label" id="labelDataTypes">Start Date</label>
+        <input id ="txtStartDate"/>
+         <label class="ms-label" id="labelDataTypes">End Date</label>
+        <input id ="txtEndDate"/>
+         <label class="ms-label" id="labelDataTypes">Sector</label>
+        <input id ="txtsector"/>
+        <label class="ms-label" id="labelDataTypes">Price</label>
+        <input id ="txtprice"/>
+        <br/>  
+           <div class="demo-section ">
+        <button id="btnAddtoDocument" class="k-button k-button-solid k-button-solid-primary">Save to document</button>
+        </div>
+         </div>
         </li>
         <li>
            <b class="k-link">Save Response Document to Library</b>
            <div class="panelform" style="padding: 10px;">
-                <label class="ms-label" id="label">Template document name</label>
+                <label class="ms-label" id="label">Response document name</label>
         <input id="txtInputdocumentname"><br/>
         <label class="ms-label" id="labelDataTypes">Industry</label>
         <input id ="TemplateDataTypeSelectIndustry"/>
-               <label class="ms-label" id="labelDataTypesScope">Client</label>
-        <input id ="TemplateDataTypeSelectScope"/>
-               
         <br/>
     <div class="demo-section ">
-        <button id="btnsavetoTemplateLibrary" class="k-button k-button-solid k-button-solid-primary">Save to template library</button>
+        <button id="btnsavetoTemplateLibrary" class="k-button k-button-solid k-button-solid-primary">Save to Response Library</button>
     </div>
                
     </div>
@@ -132,6 +136,18 @@ Office.onReady((info) => {
                 }).data("kendoDropDownList");
                 $("#insert-paragraph").kendoButton();
                 $("#txtInput").kendoTextBox({
+                        placeholder: "Placeholder Value..."
+                });
+                $("#txtClientName").kendoTextBox({
+                        placeholder: "Placeholder Value..."
+                });
+                $("#txtsector").kendoTextBox({
+                        placeholder: "Placeholder Value..."
+                });
+                $("#txtprice").kendoTextBox({
+                        placeholder: "Placeholder Value..."
+                });
+                 $("#txtInputdocumentname").kendoTextBox({
                         placeholder: "Placeholder Value..."
                 });
                 $("#txtplaceholderpattern").kendoTextBox({
