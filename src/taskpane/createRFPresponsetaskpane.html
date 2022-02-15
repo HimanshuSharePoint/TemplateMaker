@@ -150,9 +150,17 @@ Office.onReady((info) => {
                  $("#txtInputdocumentname").kendoTextBox({
                         placeholder: "Placeholder Value..."
                 });
+                $("#txtStartDate").kendoDatePicker();
+                $("#txtEndDate").kendoDatePicker();
+      
                 $("#txtplaceholderpattern").kendoTextBox({
                         placeholder: "Placeholder Value..."
-                });    
+                });
+      
+var Industry = $("#TemplateDataTypeSelectIndustry").kendoDropDownList({
+                    optionLabel: "Select DataType...",
+                    dataSource: [ "Telecommunication", "Service", "FMCG" ]
+                }).data("kendoDropDownList")
        $("#panelbar").kendoPanelBar({
                 expandMode: "single"
             });
