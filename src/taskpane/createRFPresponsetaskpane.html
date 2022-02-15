@@ -65,12 +65,29 @@
             <b class="k-link k-state-selected">Placeholder Search Engine</b>
             <div class="panelform" style="padding:10px">
                 <label class="ms-label" id="lblplaceholderpattern">Please enter placeholder pattern </label>
-                <input id="txtplaceholderpattern" /><br/>
+                <input id="txtplaceholderpattern" />                
+                    <button id="btnconvertplaceholder" class="k-button k-button-solid k-button-solid-primary">Search</button> <br/>
                 <div class="demo-section ">
-                    <button id="btnconvertplaceholder" class="k-button k-button-solid k-button-solid-primary">Next</button>
+                    <table>
+                        <th>
+                            Placeholders dected: 
+                        </th>
+                        <tr>
+                            <td>###CLIENT NAME/Text### </td>
+                        </tr>
+                        <tr>
+                            <td>###STARTDATE/Date### </td>
+                        </tr>
+                        <tr>
+                            <td>###ENDDATE/Date### </td>
+                        </tr>
+                    </table>
+                    <div class="demo-section ">
+                    <button id="btngenerateformfromPlaceholders" class="k-button k-button-solid k-button-solid-primary">Generate Praposal form from Placeholders</button> <br/>
+                    </div>
                 </div>
             </div> 
-         </li>    
+         </li>
         <li>
             <b class="k-link">Replace placeholder with values</b>
          <div class="panelform" style="padding: 10px;">
