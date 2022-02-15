@@ -76,25 +76,34 @@ Privacy
     <main id="app-body" class="ms-welcome__main" style="display: none;">
         
          <ul id="panelbar">
-        <li class="k-state-active">
-            <b class="k-link k-state-selected">Create placeholders in document</b>
+             <li>
+                <b class="k-link k-state-selected">Placeholder Pattern</b>
+            
+             <div class="panelform" style="padding: 10px;">
+                <label class="ms-label" id="label">Prefix: ###</label>
+                <label class="ms-label" id="label">Suffix: ###</label> <br/>
+                <label class="ms-label" id="label">### PLACEHOLDER NAME/DATATYPE ###</label>
+            </div>
+        </li>
+        <li>
+            <b class="k-link k-state-selected">Add placeholders in document</b>
             <div class="panelform" style="padding: 10px;">
-                <label class="ms-label" id="label">Placeholder Title</label>
+                <label class="ms-label" id="label">Placeholder Name</label>
         <input id="txtInput"><br/>
-        <label class="ms-label" id="labelDataTypes">Placeholder DataType</label>
+        <label class="ms-label" id="labelDataTypes">Placeholder Datatype</label>
         <input id ="TemplateDataTypeSelect"/>
         <br/>
     <div class="demo-section ">
-        <button id="insert-paragraph" class="k-button k-button-solid k-button-solid-primary">Insert Placeholder</button>
+        <button id="insert-paragraph" class="k-button k-button-solid k-button-solid-primary">Add to document</button>
         <button class="k-button k-button-solid k-button-solid-secondary k-rounded-md" id="clear-Placeholder">Clear</button>
     </div>
                
             </div>
         </li>
         <li>
-           <b class="k-link">Template Metadata</b>
+           <b class="k-link">Save template to library</b>
            <div class="panelform" style="padding: 10px;">
-                <label class="ms-label" id="label">Document Name</label>
+                <label class="ms-label" id="label">Template document name</label>
         <input id="txtInputdocumentname"><br/>
         <label class="ms-label" id="labelDataTypes">Industry</label>
         <input id ="TemplateDataTypeSelectIndustry"/>
@@ -103,8 +112,7 @@ Privacy
                
         <br/>
     <div class="demo-section ">
-        <button id="insert-paragraph" class="k-button k-button-solid k-button-solid-primary">Save</button>
-        <button class="k-button k-button-solid k-button-solid-secondary k-rounded-md" id="clear-Placeholder">Cancel</button>
+        <button id="btnsavetoTemplateLibrary" class="k-button k-button-solid k-button-solid-primary">Save to template library</button>
     </div>
                
             </div>
