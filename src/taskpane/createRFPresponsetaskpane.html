@@ -45,12 +45,16 @@
     background-color: #fff;
 }
 table, th, td {
-  border: 1px solid black;
-}        
+  border: 1px solid #333;
+    border-collapse:collapse;
+    
+}      
+        th { background:#6ba8ef;}
+        
  .panelform label { margin-bottom:6px; display:block;}
  .panelform .k-input, .panelform .k-dropdown { margin-bottom:15px; } 
         .searchform span.k-input { width:87%;}
-        .searchform button { margin-right: 0px;
+        .searchform button.btnsrc { margin-right: 0px;
     position: relative;
     top: -8px;}
         .k-button-solid-primary, .k-button-solid-primary:hover { margin-right:0px;}
@@ -74,7 +78,7 @@ table, th, td {
             <div class="panelform searchform" style="padding:10px">
                 <label class="ms-label" id="lblplaceholderpattern">Please enter placeholder pattern </label>
                 <input id="txtplaceholderpattern" />                
-                    <button id="btnconvertplaceholder" class="k-button k-button-solid k-button-solid-primary"></button> <br/>
+                    <button id="btnconvertplaceholder" class="k-button k-button-solid btnsrc k-button-solid-primary"></button> <br/>
                 <div class="demo-section ">
                     <table>
                         <th>
@@ -89,9 +93,9 @@ table, th, td {
                         <tr>
                             <td>###ENDDATE/Date### </td>
                         </tr>
-                    </table>
+                    </table><br/>
                     <div class="demo-section ">
-                    <button id="btngenerateformfromPlaceholders" class="k-button k-button-solid k-button-solid-primary">Generate Praposal form from Placeholders</button> <br/>
+                    <button id="btngenerateformfromPlaceholders" class="k-button k-button-solid k-button-solid-primary">Generate Praposal form  </button> <br/>
                     </div>
                 </div>
             </div> 
