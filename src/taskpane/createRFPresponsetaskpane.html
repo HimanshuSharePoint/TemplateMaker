@@ -31,6 +31,7 @@
     background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.02));
     margin-right: 15px;
 }
+        .dnone { display:none!important;}
         .k-panelbar { width:100%;}
         .k-panelbar>.k-item>.k-link.k-state-selected, .k-panelbar>.k-panelbar-header>.k-link.k-state-selected {
     color: #fff;
@@ -78,7 +79,7 @@ table, th, td {
         <li class="k-state-active">
             <b class="k-link k-state-selected">Placeholder Search Engine</b>
             <div class="panelform searchform" style="padding:10px">
-                <label class="ms-label" id="lblplaceholderpattern">Please enter placeholder pattern </label>
+                <label class="ms-label dnone" id="lblplaceholderpattern">Please enter placeholder pattern </label>
                 <input id="txtplaceholderpattern" />                
                     <button id="btnconvertplaceholder" class="k-button k-button-solid btnsrc k-button-solid-primary"></button> <br/>
                 <div class="demo-section ">
@@ -105,15 +106,15 @@ table, th, td {
         <li>
             <b class="k-link">Replace placeholder with values</b>
          <div class="panelform" style="padding: 10px;">
-           <label class="ms-label" id="label">Client Name</label>
+           <label class="ms-label dnone" id="label">Client Name</label>
         <input id="txtClientName"><br/>
-          <label class="ms-label" id="labelDataTypes">Start Date</label>
+          <label class="ms-label dnone" id="labelDataTypes">Start Date</label>
         <input id ="txtStartDate"/>
-         <label class="ms-label" id="labelDataTypes">End Date</label>
+         <label class="ms-label dnone" id="labelDataTypes">End Date</label>
         <input id ="txtEndDate"/>
-         <label class="ms-label" id="labelDataTypes">Sector</label>
+         <label class="ms-label dnone" id="labelDataTypes">Sector</label>
         <input id ="txtsector"/>
-        <label class="ms-label" id="labelDataTypes">Price</label>
+        <label class="ms-label dnone" id="labelDataTypes">Price</label>
         <input id ="txtprice"/>
         <br/>  
            <div class="demo-section ">
@@ -124,9 +125,9 @@ table, th, td {
         <li>
            <b class="k-link">Save Response Document to Library</b>
            <div class="panelform" style="padding: 10px;">
-                <label class="ms-label" id="label">Response document name</label>
+                <label class="ms-label dnone" id="label">Response document name</label>
         <input id="txtInputdocumentname"><br/>
-        <label class="ms-label" id="labelDataTypes">Industry</label>
+        <label class="ms-label dnone" id="labelDataTypes">Industry</label>
         <input id ="TemplateDataTypeSelectIndustry"/>
         <br/>
     <div class="demo-section ">
@@ -162,37 +163,37 @@ Office.onReady((info) => {
     
     // Adding Kendo Framework
     var products = $("#TemplateDataTypeSelect").kendoDropDownList({
-                    optionLabel: "Select DataType...",
+                    optionLabel: "Select DataType",
                     dataSource: [ "Single Line of Text", "Multi Line of text", "Date" ]
                 }).data("kendoDropDownList");
                 $("#insert-paragraph").kendoButton();
                 $("#txtInput").kendoTextBox({
-                        placeholder: "Placeholder Pattern..."
+                        placeholder: "Enter Placeholder Pattern"
                 });
                 $("#txtClientName").kendoTextBox({
-                        placeholder: "Client Name..."
+                        placeholder: "Enter Client Name"
                 });
                 $("#txtsector").kendoTextBox({
-                        placeholder: "Sector Name..."
+                        placeholder: "Enter Sector Name"
                 });
                 $("#txtprice").kendoTextBox({
-                        placeholder: "Price..."
+                        placeholder: "Enter Price"
                 });
                  $("#txtInputdocumentname").kendoTextBox({
-                        placeholder: "Document Name..."
+                        placeholder: "Enter Document Name"
                 });
                 $("#txtStartDate").kendoDatePicker();
                 $("#txtEndDate").kendoDatePicker();
       
                 $("#txtplaceholderpattern").kendoTextBox({
-                        placeholder: "Placeholder Pattern..."
+                        placeholder: "Enter Placeholder Pattern"
                 });
        $("#btnconvertplaceholder").kendoButton({
                         icon: "search"
                     });
       
 var Industry = $("#TemplateDataTypeSelectIndustry").kendoDropDownList({
-                    optionLabel: "Select DataType...",
+                    optionLabel: "Select Industry",
                     dataSource: [ "Telecommunication", "Service", "FMCG" ]
                 }).data("kendoDropDownList")
        $("#panelbar").kendoPanelBar({
