@@ -49,6 +49,10 @@ table, th, td {
 }        
  .panelform label { margin-bottom:6px; display:block;}
  .panelform .k-input, .panelform .k-dropdown { margin-bottom:15px; } 
+        .searchform span.k-input { width:87%;}
+        .searchform button { margin-right: 0px;
+    position: relative;
+    top: -8px;}
     </style>
 </head>
 
@@ -66,7 +70,7 @@ table, th, td {
         <ul id="panelbar">
         <li class="k-state-active">
             <b class="k-link k-state-selected">Placeholder Search Engine</b>
-            <div class="panelform" style="padding:10px">
+            <div class="panelform searchform" style="padding:10px">
                 <label class="ms-label" id="lblplaceholderpattern">Please enter placeholder pattern </label>
                 <input id="txtplaceholderpattern" />                
                     <button id="btnconvertplaceholder" class="k-button k-button-solid k-button-solid-primary"></button> <br/>
