@@ -4,8 +4,8 @@
   <Version>8.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Template Maker"/>
-  <Description DefaultValue="Template Maker"/>
+  <DisplayName DefaultValue="Winnable"/>
+  <Description DefaultValue="Winnable"/>
   <IconUrl DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://himanshusharepoint.github.io/TemplateMaker/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://docs.microsoft.com/office/dev/add-ins/develop/create-addin-commands"/>
@@ -117,8 +117,8 @@
 			  <bt:String id="Contoso.WriteValueButton.Label" DefaultValue="Create Template" />
 			  <bt:String id="Contoso.Item1.Label" DefaultValue="Create Template" />
 			  <bt:String id="Contoso.Item2.Label" DefaultValue="Create RFP Response" />
-			  <bt:String id="Contoso.Menu.Label" DefaultValue="Template Maker" />
-			  <bt:String id="Contoso.Group1Label" DefaultValue="Template Maker" />
+			  <bt:String id="Contoso.Menu.Label" DefaultValue="Winnable" />
+			  <bt:String id="Contoso.Group1Label" DefaultValue="Winnable" />
 			  <bt:String id="Contoso.GetStarted.Title" DefaultValue="Hi there, I am Winnable Ginee!" />
 		  </bt:ShortStrings>
 		  <!-- LongStrings max characters==250. -->
