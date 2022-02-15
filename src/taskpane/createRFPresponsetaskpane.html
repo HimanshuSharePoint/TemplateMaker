@@ -65,7 +65,10 @@
             <b class="k-link k-state-selected">Verify placeholder pattern</b>
             <div class="panelform" style="padding:10px">
                 <label class="ms-label" id="lblplaceholderpattern">Please enter placeholder pattern </label>
-                <input id="txtplaceholderpattern" />
+                <input id="txtplaceholderpattern" /><br/>
+                <div class="demo-section ">
+                    <button id="btnconvertplaceholder" class="k-button k-button-solid k-button-solid-primary">Next</button>
+                </div>
             </div> 
          </li>    
         <li>
@@ -76,10 +79,7 @@
         <label class="ms-label" id="labelDataTypes">Placeholder DataType</label>
         <input id ="TemplateDataTypeSelect"/>
         <br/>
-    <div class="demo-section ">
-        <button id="insert-paragraph" class="k-button k-button-solid k-button-solid-primary">Insert Placeholder</button>
-        <button class="k-button k-button-solid k-button-solid-secondary k-rounded-md" id="clear-Placeholder">Clear</button>
-    </div>
+    
                
             </div>
         </li>
@@ -114,6 +114,7 @@ Office.onReady((info) => {
 
 
     document.getElementById("insert-paragraph").onclick = insertParagraph;
+    document.getElementById("btnconvertplaceholder").onclick = GetPlaceholderValue;
     document.getElementById("sideload-msg").style.display = "none";
     document.getElementById("app-body").style.display = "flex";
     
@@ -132,7 +133,6 @@ Office.onReady((info) => {
        $("#panelbar").kendoPanelBar({
                 expandMode: "single"
             });
-        GetPlaceholderValue;
   }
 
 
