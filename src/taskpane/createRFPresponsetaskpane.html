@@ -55,6 +55,13 @@
         
         <ul id="panelbar">
         <li class="k-state-active">
+            <b class="k-link">Verify placeholder pattern</b>
+            <div class="panelform" style="padding:30px">
+                <label class="ms-label" id="lblplaceholderpattern">Please enter placeholder pattern </label>
+                <input id="txtplaceholderpattern"><br/>
+            </div> 
+         </li>    
+        <li>
             <b class="k-link k-state-selected">Replace placeholder with values</b>
             <div class="panelform" style="padding: 10px;">
                 <label class="ms-label" id="label">Placeholder Title</label>
@@ -110,8 +117,11 @@ Office.onReady((info) => {
                 }).data("kendoDropDownList");
                 $("#insert-paragraph").kendoButton();
                 $("#txtInput").kendoTextBox({
-                        placeholder: "Place Holder Value..."
+                        placeholder: "Placeholder Value..."
                 });
+                $("#txtplaceholderpattern").kendoTextBox({
+                        placeholder: "Placeholder Value..."
+                });    
        $("#panelbar").kendoPanelBar({
                 expandMode: "single"
             });
