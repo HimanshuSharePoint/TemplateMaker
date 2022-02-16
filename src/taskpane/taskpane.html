@@ -200,7 +200,7 @@ function insertParagraph() {
     document.getElementById("txtInput").value= '';
     var Templatedropdownlist = $("#TemplateDataTypeSelect").data("kendoDropDownList");
     Templatedropdownlist.select(0);
-    docBody.insertText(" <<" + Valueoftext +" /" + ValueofDatatType + ">> ",Word.InsertLocation.end);
+    docBody.insertText("###" + Valueoftext +" /" + ValueofDatatType + "###",Word.InsertLocation.end);
 
       return context.sync();
   })
