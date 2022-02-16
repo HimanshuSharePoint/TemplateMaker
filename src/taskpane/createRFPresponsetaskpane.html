@@ -83,7 +83,7 @@ table, th, td {
                 <input id="txtplaceholderpattern" />                
                     <button id="btnconvertplaceholder" class="k-button k-button-solid btnsrc k-button-solid-primary"></button> <br/>
                 <div class="demo-section ">
-                    <table>
+                    <table id="tablePlaceholder">
                         <th>
                             Placeholders dected: 
                         </th>
@@ -225,6 +225,7 @@ function GetPlaceholderValue(){
             searchResults.items[i].font.color = 'purple';
             searchResults.items[i].font.highlightColor = 'pink';
             searchResults.items[i].font.bold = true;
+            $("#tablePlaceholder").append("<tr><td>Work</td></tr>");
         }
 
         // Synchronize the document state by executing the queued commands,
