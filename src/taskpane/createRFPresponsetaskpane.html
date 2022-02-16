@@ -217,7 +217,7 @@ function GetPlaceholderValue(){
             searchResults.items[i].font.highlightColor = 'pink';
             searchResults.items[i].font.bold = true;
             debugger;
-            $("#tablePlaceholder").append("<tr><td>Work</td></tr>");
+            $("#tablePlaceholder").append("<tr><td>"+searchResults.items[i].text+"</td></tr>");
         }
 
         // Synchronize the document state by executing the queued commands,
