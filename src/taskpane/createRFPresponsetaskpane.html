@@ -202,11 +202,12 @@ Word.run(function(context){
                 var randomNumber = Math.floor((Math.random() * 99999999) + 1);
                 var singleLineofText = searchResults.items[i].text.split("/");
                 var ValueofSingleLineofText = singleLineofText[0].substring(3)
-                $("#DynamicControl").append("<div><input id="+randomNumber+"/></div><br/>");
-                var SingleLineofText = $('#DynamicControl').find('input');
-                $(SingleLineofText).kendoTextBox({
-                    placeholder: ValueofSingleLineofText
-                });
+                $("#DynamicControl").append("<div><input type=text/></div><br/>");
+                var a = $('#DynamicControl').find('input').attr("id","textBox"+randomNumber);
+                var ab = $('#DynamicControl').find('input').attr('id');
+                 $('#'+ab).kendoTextBox({
+                      placeholder: ValueofSingleLineofText
+                   });
             }
             else if (searchResults.items[i].text.includes("Multi Line of text")){
                 var randomNumberMulti = Math.floor((Math.random() * 99999999) + 1);
