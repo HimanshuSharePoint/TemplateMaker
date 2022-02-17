@@ -203,7 +203,7 @@ Word.run(function(context){
                 var singleLineofText = searchResults.items[i].text.split("/");
                 var ValueofSingleLineofText = singleLineofText[0].substring(3)
                 $("#DynamicControl").append("<div><input id="+randomNumber+"/></div><br/>");
-                $('"#'+randomNumber+'"').kendoTextBox({
+                $("#"+randomNumber).kendoTextBox({
                         placeholder: "Please Enter" + ValueofSingleLineofText
                 });
             }
@@ -213,7 +213,7 @@ Word.run(function(context){
                 var KendoEditorValue = KendoMultiLineofText[0].substring(3);
                 $("#DynamicControl").append("<div><label id=lbl"+randomNumberMulti+">"+KendoEditorValue+"</label></div><br/>");
                 $("#DynamicControl").append("<div> <input id ="+randomNumberMulti+"/></div><br/>");
-                $('"#'+randomNumberMulti+'"').kendoEditor({
+                $("#"+randomNumberMulti).kendoEditor({
                     
                 });
             }
@@ -224,7 +224,7 @@ Word.run(function(context){
                 $("#DynamicControl").append("<div><label id=lbl"+randomNumberDate+">"+KendoDateValue+"</label></div><br/>");
                 $("#DynamicControl").append("<div> <input id ="+randomNumberDate+"/></div><br/>");
                 var todayDate = new Date();
-                $('"#'+randomNumberDate+'"').kendoDatePicker({
+                $("#"+randomNumberDate).kendoDatePicker({
                     value:todayDate
                 });
             }
