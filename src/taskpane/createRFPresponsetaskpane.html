@@ -200,7 +200,7 @@ Word.run(function(context){
             if(searchResults.items[i].text.includes("Single Line of Text")){
                 var singleLineofText = searchResults.items[i].text.split("/");
                 var ValueofSingleLineofText = singleLineofText[0].substring(3)
-                var IDofcontrol = ValueofSingleLineofText.items[i].text.split(" ");;
+                var IDofcontrol = ValueofSingleLineofText.items[i].text.split(" ");
                 $("#DynamicControl").append("<div><input id="+IDofcontrol[0]+"/></div><br/>");
                 $("#"+IDofcontrol[0]).kendoTextBox({
                         placeholder: "Please Enter" + ValueofSingleLineofText
