@@ -212,7 +212,12 @@ Word.run(function(context){
                 var KendoEditorValue = KendoMultiLineofText[0].substring(3);
                 $("#DynamicControl").append("<div><label id=lbl"+randomNumberMulti+">"+KendoEditorValue+"</label></div><br/>");
                 $("#DynamicControl").append("<input type=text id=MultLine"+randomNumberMulti+"><br/>");
-                $('#DynamicControl').children('#MultLine'+randomNumberMulti).kendoEditor();
+                $('#DynamicControl').children('#MultLine'+randomNumberMulti).kendoEditor({
+                    resizable: {
+                    content: true,
+                    toolbar: true
+                }
+                });
             }
             else if (searchResults.items[i].text.includes("Date")){
                 var randomNumberDate = Math.floor((Math.random() * 99999999) + 1);
