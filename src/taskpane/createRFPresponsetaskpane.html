@@ -210,6 +210,7 @@ function GetPlaceholderValue(){
         // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
          return context.sync().then(function () {
+             if(searchResults!=null){
         console.log('Found count: ' + searchResults.items.length);
 
         // Queue a set of commands to change the font for each found item.
@@ -219,12 +220,13 @@ function GetPlaceholderValue(){
             searchResults.items[i].font.bold = true;
             console.log(searchResults.items[i].text);
             debugger;
-            $("#tablePlaceholder").append("<tr><td>Work</td></tr>");
+            $("#tablePlaceholder").append("<tr><td"+searchResults.items[i].text+"</td></tr>");
         }
 
         // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync();
+             }
     });  
 })
 .catch(function (error) {
