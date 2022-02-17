@@ -203,9 +203,7 @@ Word.run(function(context){
                 var singleLineofText = searchResults.items[i].text.split("/");
                 var ValueofSingleLineofText = singleLineofText[0].substring(3)
                 $("#DynamicControl").append("<div><input id="+randomNumber+"/></div><br/>");
-                $("#"+randomNumber).kendoTextBox({
-                        placeholder: "Please Enter" + ValueofSingleLineofText
-                });
+                $("#"+randomNumber).kendoTextBox();
             }
             else if (searchResults.items[i].text.includes("Multi Line of text")){
                 var randomNumberMulti = Math.floor((Math.random() * 99999999) + 1);
