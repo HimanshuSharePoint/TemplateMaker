@@ -191,6 +191,7 @@ var Industry = $("#TemplateDataTypeSelectIndustry").kendoDropDownList({
     
 function GenerateFormfromPlaceholders(){
 Word.run(function(context){
+    debugger;
     var searchResults = context.document.body.search('###*/*###', {matchWildcards: true});
     context.load(searchResults, 'font');
     context.load(searchResults, 'text');
