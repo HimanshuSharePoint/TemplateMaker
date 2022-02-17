@@ -205,6 +205,7 @@ function GetPlaceholderValue(){
         
         // Queue a command to load the search results and get the font property values.
         context.load(searchResults, 'font');
+        context.load(searchResults, 'text');
        
         // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
@@ -216,6 +217,7 @@ function GetPlaceholderValue(){
             searchResults.items[i].font.color = 'purple';
             searchResults.items[i].font.highlightColor = 'pink';
             searchResults.items[i].font.bold = true;
+            console.log(searchResults.items[i].text);
             debugger;
             $("#tablePlaceholder").append("<tr><td>Work</td></tr>");
         }
