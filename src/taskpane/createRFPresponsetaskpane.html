@@ -214,7 +214,7 @@ Word.run(function(context){
                 var KendoMultiLineofText = searchResults.items[i].text.split("/");
                 var KendoEditorValue = KendoMultiLineofText[0].substring(3);
                 $("#DynamicControl").append("<div><label id=lbl"+randomNumberMulti+">"+KendoEditorValue+"</label></div><br/>");
-                $("#DynamicControl").append("<textarea id=MultLine"+randomNumberMulti+"rows=10 cols=30 style=height:440px></textarea><br/>");
+                $("#DynamicControl").append("<textarea id=MultLine"+randomNumberMulti+"rows=10 cols=50 style=height:220px></textarea><br/>");
                 $('#DynamicControl').children('#MultLine'+randomNumberMulti).kendoEditor({
                     resizable: {
                     content: true,
