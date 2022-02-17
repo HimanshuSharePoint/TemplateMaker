@@ -214,17 +214,21 @@ Word.run(function(context){
                 var KendoMultiLineofText = searchResults.items[i].text.split("/");
                 var KendoEditorValue = KendoMultiLineofText[0].substring(3);
                 $("#DynamicControl").append("<div><label id=lbl"+randomNumberMulti+">"+KendoEditorValue+"</label></div><br/>");
-                $("#DynamicControl").append("<div> <input id ="+randomNumberMulti+"/></div><br/>");
-                $('"#'+randomNumberMulti+'"').kendoEditor();
+                $("#DynamicControl").append("<div><input type=text/></div><br/>");
+                var KendoMultiLine = $('#DynamicControl').find('input').attr("id","textBox"+randomNumberMulti);
+                var KendoMultiLineID = $('#DynamicControl').find('input').attr('id');
+                $('#'+KendoMultiLineID).kendoEditor();
             }
             else if (searchResults.items[i].text.includes("Date")){
                 var randomNumberDate = Math.floor((Math.random() * 99999999) + 1);
                 var KendoDate = searchResults.items[i].text.split("/");
                 var KendoDateValue = KendoDate[0].substring(3);
                 $("#DynamicControl").append("<div><label id=lbl"+randomNumberDate+">"+KendoDateValue+"</label></div><br/>");
-                $("#DynamicControl").append("<div> <input id ="+randomNumberDate+"/></div><br/>");
+                $("#DynamicControl").append("<div><input type=text/></div><br/>");
+                var KendoDateValue = $('#DynamicControl').find('input').attr("id","textBox"+randomNumberDate);
+                var KendoDateValueID = $('#DynamicControl').find('input').attr('id');
                 var todayDate = new Date();
-                $('"#'+randomNumberDate+ '"').kendoDatePicker({
+                $('#'+KendoDateValueID).kendoDatePicker({
                     value:todayDate
                 });
             }
