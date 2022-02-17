@@ -97,19 +97,11 @@ table, th, td {
         <li>
             <b class="k-link">Replace placeholder with values</b>
          <div class="panelform" style="padding: 10px;">
-           <label class="ms-label dnone" id="label">Client Name</label>
-        <input id="txtClientName"><br/>
-          <label class="ms-label dnone" id="labelDataTypes">Start Date</label>
-        <input id ="txtStartDate"/>
-         <label class="ms-label dnone" id="labelDataTypes">End Date</label>
-        <input id ="txtEndDate"/>
-         <label class="ms-label dnone" id="labelDataTypes">Sector</label>
-        <input id ="txtsector"/>
-        <label class="ms-label dnone" id="labelDataTypes">Price</label>
-        <input id ="txtprice"/>
+           <div id="DynamicControl">
+             </div>
         <br/>  
-           <div class="demo-section ">
-        <button id="btnAddtoDocument" class="k-button k-button-solid k-button-solid-primary">Save to document</button>
+         <div class="demo-section ">
+            <button id="btnAddtoDocument" class="k-button k-button-solid k-button-solid-primary">Save to document</button>
         </div>
          </div>
         </li>
@@ -149,6 +141,7 @@ Office.onReady((info) => {
 
     
     document.getElementById("btnconvertplaceholder").onclick = GetPlaceholderValue;
+      document.getElementById("btngenerateformfromPlaceholders").onclick=GenerateFormfromPlaceholders;
     document.getElementById("sideload-msg").style.display = "none";
     document.getElementById("app-body").style.display = "flex";
     
@@ -195,6 +188,54 @@ var Industry = $("#TemplateDataTypeSelectIndustry").kendoDropDownList({
 
 
 });
+    
+function GenerateFormfromPlaceholders(){
+Word.run(function(context){
+    var searchResults = context.document.body.search('###*/*###', {matchWildcards: true});
+    context.load(searchResults, 'font');
+    context.load(searchResults, 'text');
+    return context.sync().then(function () {
+        console.log('Found count: ' + searchResults.items.length);
+        for (var i = 0; i < searchResults.items.length; i++) {
+            if(searchResults.items[i].text.includes("Single Line of Text")){
+                var singleLineofText = searchResults.items[i].text.split("/");
+                var ValueofSingleLineofText = singleLineofText[0].substring(3);
+                $("#DynamicControl").append("<div><input id="+ValueofSingleLineofText+"/></div><br/>");
+                $("#"+ValueofSingleLineofText).kendoTextBox({
+                        placeholder: "Please Enter" + ValueofSingleLineofText
+                });
+            }
+            else if (searchResults.items[i].text.includes("Multi Line of text")){
+                var KendoMultiLineofText = searchResults.items[i].text.split("/");
+                var KendoEditorValue = KendoMultiLineofText[0].substring(3);
+                $("#DynamicControl").append("<div><label id=lbl"+KendoEditorValue+">"+KendoEditorValue+"</label></div><br/>");
+                $("#DynamicControl").append("<div> <input id ="+KendoEditorValue+"/></div><br/>");
+                $("#"+KendoEditorValue).kendoEditor({
+                    
+                });
+            }
+            else if (searchResults.items[i].text.includes("Date")){
+                var KendoDate = searchResults.items[i].text.split("/");
+                var KendoDateValue = KendoDate[0].substring(3);
+                $("#DynamicControl").append("<div><label id=lbl"+KendoDateValue+">"+KendoDateValue+"</label></div><br/>");
+                $("#DynamicControl").append("<div> <input id ="+KendoDateValue+"/></div><br/>");
+                var todayDate = new Date();
+                $("#"+KendoDateValue).kendoDatePicker({
+                    value:todayDate
+                });
+            }
+        }
+        return context.sync();
+    });
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+
+    });
+}    
 
 function GetPlaceholderValue(){
     debugger;
