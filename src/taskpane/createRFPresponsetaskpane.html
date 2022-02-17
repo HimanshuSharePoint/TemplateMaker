@@ -201,6 +201,7 @@ function GetPlaceholderValue(){
     Word.run(function(context){
         // Queue a command to search the document with a wildcard
         // #.
+     var count=0;
      var searchResults = context.document.body.search('###*/*###', {matchWildcards: true});
         
         // Queue a command to load the search results and get the font property values.
@@ -215,12 +216,15 @@ function GetPlaceholderValue(){
 
         // Queue a set of commands to change the font for each found item.
         for (var i = 0; i < searchResults.items.length; i++) {
+            if(count>0){
             searchResults.items[i].font.color = 'purple';
             searchResults.items[i].font.highlightColor = 'pink';
             searchResults.items[i].font.bold = true;
             console.log(searchResults.items[i].text);
             debugger;
             $("#tablePlaceholder").append("<tr><td>"+searchResults.items[i].text+"</td></tr>");
+            count = count + 1;
+            }
         }
 
         // Synchronize the document state by executing the queued commands,
