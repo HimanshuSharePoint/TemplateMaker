@@ -214,13 +214,8 @@ Word.run(function(context){
                 var KendoMultiLineofText = searchResults.items[i].text.split("/");
                 var KendoEditorValue = KendoMultiLineofText[0].substring(3);
                 $("#DynamicControl").append("<div><label id=lbl"+randomNumberMulti+">"+KendoEditorValue+"</label></div><br/>");
-                $("#DynamicControl").append("<textarea id=MultLine"+randomNumberMulti+"rows=10 cols=35 style=height:220px></textarea><br/>");
-                $('#DynamicControl').children('#MultLine'+randomNumberMulti).kendoEditor({
-                    resizable: {
-                    content: true,
-                    toolbar: true
-                }
-                });
+                $("#DynamicControl").append("<textarea id=MultLine"+randomNumberMulti+"rows=10 cols=40 style=height:150px></textarea><br/>");
+                $('#DynamicControl').children('#MultLine'+randomNumberMulti).kendoEditor();
             }
             else if (searchResults.items[i].text.includes("Date")){
                 var randomNumberDate = Math.floor((Math.random() * 99999999) + 1);
