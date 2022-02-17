@@ -200,30 +200,27 @@ Word.run(function(context){
             if(searchResults.items[i].text.includes("Single Line of Text")){
                 var singleLineofText = searchResults.items[i].text.split("/");
                 var ValueofSingleLineofText = singleLineofText[0].substring(3)
-                var IDofcontrol = ValueofSingleLineofText.items[i].text.split(" ");
-                $("#DynamicControl").append("<div><input id="+IDofcontrol[0]+"/></div><br/>");
-                $("#"+IDofcontrol[0]).kendoTextBox({
+                $("#DynamicControl").append("<div><input id="+ValueofSingleLineofText+"/></div><br/>");
+                $("#"+ValueofSingleLineofText).kendoTextBox({
                         placeholder: "Please Enter" + ValueofSingleLineofText
                 });
             }
             else if (searchResults.items[i].text.includes("Multi Line of text")){
                 var KendoMultiLineofText = searchResults.items[i].text.split("/");
                 var KendoEditorValue = KendoMultiLineofText[0].substring(3);
-                var IDofcontrol = KendoEditorValue.items[i].text.split(" ");
-                $("#DynamicControl").append("<div><label id=lbl"+IDofcontrol[0]+">"+KendoEditorValue+"</label></div><br/>");
-                $("#DynamicControl").append("<div> <input id ="+IDofcontrol[0]+"/></div><br/>");
-                $("#"+IDofcontrol[0]).kendoEditor({
+                $("#DynamicControl").append("<div><label id=lbl"+KendoEditorValue+">"+KendoEditorValue+"</label></div><br/>");
+                $("#DynamicControl").append("<div> <input id ="+KendoEditorValue+"/></div><br/>");
+                $("#"+KendoEditorValue).kendoEditor({
                     
                 });
             }
             else if (searchResults.items[i].text.includes("Date")){
                 var KendoDate = searchResults.items[i].text.split("/");
                 var KendoDateValue = KendoDate[0].substring(3);
-                var IDofcontrol = KendoDateValue.items[i].text.split(" ");
-                $("#DynamicControl").append("<div><label id=lbl"+IDofcontrol[0]+">"+KendoDateValue+"</label></div><br/>");
-                $("#DynamicControl").append("<div> <input id ="+IDofcontrol[0]+"/></div><br/>");
+                $("#DynamicControl").append("<div><label id=lbl"+KendoDateValue+">"+KendoDateValue+"</label></div><br/>");
+                $("#DynamicControl").append("<div> <input id ="+KendoDateValue+"/></div><br/>");
                 var todayDate = new Date();
-                $("#"+IDofcontrol[0]).kendoDatePicker({
+                $("#"+KendoDateValue).kendoDatePicker({
                     value:todayDate
                 });
             }
@@ -238,8 +235,7 @@ Word.run(function(context){
     }
 
     });
-}    
-
+}
 function GetPlaceholderValue(){
     debugger;
     Word.run(function(context){
