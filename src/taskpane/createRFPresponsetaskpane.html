@@ -234,7 +234,7 @@ Word.run(function(context){
                 var randomNumberCurrency = Math.floor((Math.random()*99999999999)+ 1);
                 var kendoCurrency = searchResults.items[i].text.split("/");
                 var kendoCurrencyValue = kendoCurrency[0].substring(3);
-                $("#DynamicControl").append("<div><input type=number id=currency"+randomNumberCurrency+"><input id=currencydropdown"+randomNumberCurrency+"></div>");
+                $("#DynamicControl").append("<input type=number id=currency"+randomNumberCurrency+"><input id=currencydropdown"+randomNumberCurrency+">");
 
                     $('#DynamicControl').children('#currency'+randomNumberCurrency).kendoTextBox({
                       placeholder: kendoCurrencyValue
