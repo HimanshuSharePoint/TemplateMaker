@@ -205,8 +205,8 @@ Word.run(function(context){
                 var singleLineofText = searchResults.items[i].text.split("/");
                 var ValueofSingleLineofText = singleLineofText[0].substring(3)
                 var trimPlaceholder = ValueofSingleLineofText.split(' ').join('');
-                $("#DynamicControl").append("<input type=text id="+trimPlaceholder+randomNumber+"><br/>");
-                 $('#DynamicControl').children('#textBox'+trimPlaceholder+randomNumber).kendoTextBox({
+                $("#DynamicControl").append("<input type=text id=#textBox"+trimPlaceholder+"-"+randomNumber+"><br/>");
+                 $('#DynamicControl').children('#textBox'+trimPlaceholder+"-"+randomNumber).kendoTextBox({
                       placeholder: ValueofSingleLineofText
                    });
             }
