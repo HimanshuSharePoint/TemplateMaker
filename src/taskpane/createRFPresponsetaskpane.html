@@ -223,12 +223,11 @@ Word.run(function(context){
                 var randomNumberDate = Math.floor((Math.random() * 99999999999) + 1);
                 var KendoDate = searchResults.items[i].text.split("/");
                 var KendoDateValue = KendoDate[0].substring(3);
+                var trimPlaceholderDate = ValueofSingleLineofText.split(' ').join('');
                 $("#DynamicControl").append("<div><label id=lbl"+randomNumberDate+">"+KendoDateValue+"</label></div><br/>");
-                $("#DynamicControl").append("<input type=text id=Date"+randomNumberDate+"><br/>");
-                
-                var KendoDate = $('#DynamicControl').find('#Date'+randomNumberDate);
+                $("#DynamicControl").append("<input type=text id=Date"+trimPlaceholderDate+"-"+randomNumberDate+"><br/>");
                 var todayDate = new Date();
-                $('#DynamicControl').children('#Date'+randomNumberDate).kendoDatePicker({
+                $('#DynamicControl').children('#Date'+trimPlaceholderDate+"-"+randomNumberDate).kendoDatePicker({
                     value:todayDate
                 });
             }
