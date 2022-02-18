@@ -204,8 +204,9 @@ Word.run(function(context){
                 var randomNumber = Math.floor((Math.random() * 99999999999) + 1);
                 var singleLineofText = searchResults.items[i].text.split("/");
                 var ValueofSingleLineofText = singleLineofText[0].substring(3)
-                $("#DynamicControl").append("<input type=text id=textBox"+randomNumber+"><br/>");
-                 $('#DynamicControl').children('#textBox'+randomNumber).kendoTextBox({
+                var trimPlaceholder = ValueofSingleLineofText.split(' ').join('');
+                $("#DynamicControl").append("<input type=text id="+trimPlaceholder+randomNumber+"><br/>");
+                 $('#DynamicControl').children('#textBox'+trimPlaceholder+randomNumber).kendoTextBox({
                       placeholder: ValueofSingleLineofText
                    });
             }
