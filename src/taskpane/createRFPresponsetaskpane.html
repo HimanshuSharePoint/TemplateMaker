@@ -201,7 +201,7 @@ Word.run(function(context){
         console.log('Found count: ' + searchResults.items.length);
         for (var i = 0; i < searchResults.items.length; i++) {
             if(searchResults.items[i].text.includes("Single Line of Text")){
-                var randomNumber = Math.floor((Math.random() * 99999999) + 1);
+                var randomNumber = Math.floor((Math.random() * 99999999999) + 1);
                 var singleLineofText = searchResults.items[i].text.split("/");
                 var ValueofSingleLineofText = singleLineofText[0].substring(3)
                 $("#DynamicControl").append("<input type=text id=textBox"+randomNumber+"><br/>");
@@ -210,7 +210,7 @@ Word.run(function(context){
                    });
             }
             else if (searchResults.items[i].text.includes("Multi Line of text")){
-                var randomNumberMulti = Math.floor((Math.random() * 99999999) + 1);
+                var randomNumberMulti = Math.floor((Math.random() * 99999999999) + 1);
                 var KendoMultiLineofText = searchResults.items[i].text.split("/");
                 var KendoEditorValue = KendoMultiLineofText[0].substring(3);
                 $("#DynamicControl").append("<div><label id=lbl"+randomNumberMulti+">"+KendoEditorValue+"</label></div><br/>");
@@ -218,7 +218,7 @@ Word.run(function(context){
                 $('#DynamicControl').children('#MultLine'+randomNumberMulti).kendoEditor();
             }
             else if (searchResults.items[i].text.includes("Date")){
-                var randomNumberDate = Math.floor((Math.random() * 99999999) + 1);
+                var randomNumberDate = Math.floor((Math.random() * 99999999999) + 1);
                 var KendoDate = searchResults.items[i].text.split("/");
                 var KendoDateValue = KendoDate[0].substring(3);
                 $("#DynamicControl").append("<div><label id=lbl"+randomNumberDate+">"+KendoDateValue+"</label></div><br/>");
@@ -229,6 +229,21 @@ Word.run(function(context){
                 $('#DynamicControl').children('#Date'+randomNumberDate).kendoDatePicker({
                     value:todayDate
                 });
+            }
+            else if(searchResults.items[i].text.includes("Currency")){
+                var randomNumberCurrency = Math.floor((Math.random()*99999999999)+ 1);
+                var kendoCurrency = searchResults.items[i].text.split("/");
+                var kendoCurrencyValue = kendoCurrency[0].substring(3);
+                $("#DynamicControl").append("<div><input type=number id=currency"+randomNumberCurrency+"><input id=currencydropdown"+randomNumberCurrency+">");
+
+                    $('#DynamicControl').children('#currency'+randomNumberCurrency).kendoTextBox({
+                      placeholder: kendoCurrencyValue
+                   });
+                   $("#DynamicControl").children('#currencydropdown'+randomNumberCurrency).kendoDropDownList({
+                    optionLabel: "Select DataType...",
+                    dataSource: [ "INR", "USD", "CNY", "EUR","GBP" ]
+                }).data("kendoDropDownList");      
+
             }
         }
         return context.sync();
