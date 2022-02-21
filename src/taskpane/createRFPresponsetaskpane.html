@@ -222,6 +222,16 @@ function addPlaceHolderintoword(){
                     var DateTextboxID= $(controlDate).attr('id');
                     searchResultsPlaceHolder.items[i].insertHtml($('#'+DateTextboxID).val(), "replace");
                 }
+                else if(searchResultsPlaceHolder.items[i].text.includes("Multi Line of text")){
+                    var MutliLineText = searchResultsPlaceHolder.items[i].text.split("/");
+                    var ValueofMutliLineTextFirst = MutliLineText[0].substring(3);
+                    var ValueofMutliLineTextSecond = MutliLineText[1].slice(0,-3);
+                    var trimPlaceholderMultiEditor = ValueofMutliLineTextFirst.split(' ').join('');
+                    var controlMultiEditor = $('#DynamicControl').find("textarea[id*="+trimPlaceholderMultiEditor+"]");
+                    console.log("First Date Placeholder"+ $(controlMultiEditor).attr('id'));
+                    var MultiEditorID= $(controlMultiEditor).attr('id');
+                    searchResultsPlaceHolder.items[i].insertHtml($('#'+MultiEditorID).val(), "replace");
+                } 
              }
         return context.sync();
         });
