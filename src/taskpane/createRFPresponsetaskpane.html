@@ -210,7 +210,7 @@ function addPlaceHolderintoword(){
                     var control = $('#DynamicControl').find("input[id*="+trimPlaceholder+"]");
                     console.log("First Client Placeholder"+ $(control).attr('id'));
                     var textboxID= $(control).attr('id');
-                    searchResultsPlaceHolder.items[i].insertHtml($('#'+textboxID).val(), "replace");
+                    searchResultsPlaceHolder.items[i].insertText($('#'+textboxID).val(), "replace");
                 }
                  else if(searchResultsPlaceHolder.items[i].text.includes("Date")){
                     var DateText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -220,7 +220,7 @@ function addPlaceHolderintoword(){
                     var controlDate = $('#DynamicControl').find("input[id*="+trimPlaceholderDate+"]");
                     console.log("First Date Placeholder"+ $(controlDate).attr('id'));
                     var DateTextboxID= $(controlDate).attr('id');
-                    searchResultsPlaceHolder.items[i].insertHtml($('#'+DateTextboxID).val(), "replace");
+                    searchResultsPlaceHolder.items[i].insertText($('#'+DateTextboxID).val(), "replace");
                 }
              }
         return context.sync();
