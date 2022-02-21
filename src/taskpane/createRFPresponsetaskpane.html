@@ -203,7 +203,7 @@ function addPlaceHolderintoword(){
              console.log($(this).attr('id'));
              for(var i=0;i<searchResultsPlaceHolder.items.length;i++){
                 if(searchResultsPlaceHolder.items[i].text.includes("Single Line of Text")){
-                    var singleLineofText = searchResults.items[i].text.split("/");
+                    var singleLineofText = searchResultsPlaceHolder.items[i].text.split("/");
                     var ValueofSingleLineofTextFirst = singleLineofText[0].substring(3);
                     var ValueofSingleLineofTextSecond = singleLineofText[1].substring(3);
                     var trimPlaceholder = ValueofSingleLineofTextFirst.split(' ').join('');
