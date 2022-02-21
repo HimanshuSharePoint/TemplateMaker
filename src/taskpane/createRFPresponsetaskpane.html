@@ -201,6 +201,7 @@ function addPlaceHolderintoword(){
         return context.sync().then(function () {
         $('#DynamicControl').find('input, select, textarea').each(function() {
              console.log($(this).attr('id'));
+            debugger;
              for(var i=0;i<searchResultsPlaceHolder.items.length;i++){
                 if(searchResultsPlaceHolder.items[i].text.includes("Single Line of Text")){
                     var singleLineofText = searchResultsPlaceHolder.items[i].text.split("/");
