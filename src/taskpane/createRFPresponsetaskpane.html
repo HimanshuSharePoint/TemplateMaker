@@ -200,8 +200,6 @@ function addPlaceHolderintoword(){
         context.load(searchResultsPlaceHolder, 'text');
         context.load(searchResultsPlaceHolder);
         return context.sync().then(function () {
-        $('#DynamicControl').find('input, select, textarea').each(function() {
-             console.log($(this).attr('id'));
             debugger;
              for(var i=0;i<searchResultsPlaceHolder.items.length;i++){
                 if(searchResultsPlaceHolder.items[i].text.includes("Single Line of Text")){
@@ -213,11 +211,8 @@ function addPlaceHolderintoword(){
                     console.log("First Client Placeholder"+ $(control).attr('id'));
                     var textboxID= $(control).attr('id');
                     searchResultsPlaceHolder.items[i].insertHtml($('#'+textboxID).val(), "replace");
-                
                 }
              }
-
-         });
         return context.sync();
         });
     })
