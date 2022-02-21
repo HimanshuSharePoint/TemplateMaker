@@ -209,10 +209,10 @@ function addPlaceHolderintoword(){
                     var ValueofSingleLineofTextFirst = singleLineofText[0].substring(3);
                     var ValueofSingleLineofTextSecond = singleLineofText[1].slice(0,-3);
                     var trimPlaceholder = ValueofSingleLineofTextFirst.split(' ').join('');
-                    $('#DynamicControl').find("input[id*="+trimPlaceholder+"]").each(function (p, el) {
-                        console.log("First Client Placeholder"+ $(this).attr('id'));
-                        searchResultsPlaceHolder.items[p].insertHtml($(this).attr('id').val(), "replace");  
-                    });                
+                    var control = $('#DynamicControl').find("input[id*="+trimPlaceholder+"]");
+                    console.log("First Client Placeholder"+ $(control).attr('id'));
+                    searchResultsPlaceHolder.items[i].insertHtml($(control).attr('id').val(), "replace"); 
+                
                 }
              }
 
