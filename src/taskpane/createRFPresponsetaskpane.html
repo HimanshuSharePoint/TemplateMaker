@@ -195,8 +195,23 @@ var Industry = $("#TemplateDataTypeSelectIndustry").kendoDropDownList({
     
 function addPlaceHolderintoword(){
     Word.run(function(context){
+        var searchResultsPlaceHolder = context.document.body.search('###*/*###', {matchWildcards: true});
+        context.load(searchResultsPlaceHolder, 'font');
+        context.load(searchResultsPlaceHolder, 'text');
         $('#DynamicControl').find('input, select, textarea').each(function() {
              console.log($(this).attr('id'));
+             for(var i=0;i<searchResultsPlaceHolder.items.length;i++){
+                if(searchResults.items[i].text.includes("Single Line of Text")){
+                    var singleLineofText = searchResults.items[i].text.split("/");
+                    var ValueofSingleLineofTextFirst = singleLineofText[0].substring(3);
+                    var ValueofSingleLineofTextSecond = singleLineofText[1].substring(3);
+                    var trimPlaceholder = ValueofSingleLineofTextFirst.split(' ').join('');
+                    $(('#DynamicControl').find("input[id*="+trimPlaceholder+"]")).each(function (i, el) {
+                        console.log("First Client Placeholder"+ $(this).attr('id'));
+                    });               
+                }
+             }
+
          });
         return context.sync();
     })
