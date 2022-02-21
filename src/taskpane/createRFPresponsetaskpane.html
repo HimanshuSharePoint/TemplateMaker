@@ -231,6 +231,16 @@ function addPlaceHolderintoword(){
                     console.log("First Date Placeholder"+ $(controlMultiEditor).attr('id'));
                     var MultiEditorID= $(controlMultiEditor).attr('id');
                     searchResultsPlaceHolder.items[i].insertHtml($('#'+MultiEditorID).val(), "replace");
+                }
+                  else if(searchResultsPlaceHolder.items[i].text.includes("Currency")){
+                    var CurrrencyText = searchResultsPlaceHolder.items[i].text.split("/");
+                    var ValueofCurrencyTextFirst = CurrrencyText[0].substring(3);
+                    var ValueofCurrencyTextSecond = CurrrencyText[1].slice(0,-3);
+                    var trimPlaceholderCurrencyEditor = ValueofCurrencyTextFirst.split(' ').join('');
+                    var controlCurrencyTextbox = $('#DynamicControl').find("input[type='number', id*="+ValueofCurrencyTextFirst+"]");
+                    console.log("First Date Placeholder"+ $(trimPlaceholderCurrencyEditor).attr('id'));
+                    var CurrencyTextboxID= $(controlCurrencyTextbox).attr('id');
+                    searchResultsPlaceHolder.items[i].insertHtml($('#'+CurrencyTextboxID).val(), "replace");
                 } 
              }
         return context.sync();
