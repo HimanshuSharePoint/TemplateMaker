@@ -212,7 +212,7 @@ function addPlaceHolderintoword(){
                     var control = $('#DynamicControl').find("input[id*="+trimPlaceholder+"]");
                     console.log("First Client Placeholder"+ $(control).attr('id'));
                     var textboxID= $(control).attr('id');
-                    searchResultsPlaceHolder.items[i].insertHtml($('#'+textboxID).data('kendoMaskedTextBox').value(), "replace");
+                    searchResultsPlaceHolder.items[i].insertHtml($('#'+textboxID).val(), "replace");
                 
                 }
              }
