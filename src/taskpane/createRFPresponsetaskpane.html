@@ -209,9 +209,9 @@ function addPlaceHolderintoword(){
                     var ValueofSingleLineofTextFirst = singleLineofText[0].substring(3);
                     var ValueofSingleLineofTextSecond = singleLineofText[1].slice(0,-3);
                     var trimPlaceholder = ValueofSingleLineofTextFirst.split(' ').join('');
-                    $('#DynamicControl').find("input[id*="+trimPlaceholder+"]").each(function (i, el) {
+                    $('#DynamicControl').find("input[id*="+trimPlaceholder+"]").each(function (p, el) {
                         console.log("First Client Placeholder"+ $(this).attr('id'));
-                        searchResultsPlaceHolder.items[i].insertHtml("Marky The Receiver", "replace"); 
+                        searchResultsPlaceHolder.items[p].insertHtml($(this).attr('id').val(), "replace");  
                     });                
                 }
              }
