@@ -198,10 +198,11 @@ function addPlaceHolderintoword(){
         var searchResultsPlaceHolder = context.document.body.search('###*/*###', {matchWildcards: true});
         context.load(searchResultsPlaceHolder, 'font');
         context.load(searchResultsPlaceHolder, 'text');
+        return context.sync().then(function () {
         $('#DynamicControl').find('input, select, textarea').each(function() {
              console.log($(this).attr('id'));
              for(var i=0;i<searchResultsPlaceHolder.items.length;i++){
-                if(searchResults.items[i].text.includes("Single Line of Text")){
+                if(searchResultsPlaceHolder.items[i].text.includes("Single Line of Text")){
                     var singleLineofText = searchResults.items[i].text.split("/");
                     var ValueofSingleLineofTextFirst = singleLineofText[0].substring(3);
                     var ValueofSingleLineofTextSecond = singleLineofText[1].substring(3);
@@ -214,6 +215,7 @@ function addPlaceHolderintoword(){
 
          });
         return context.sync();
+        });
     })
     .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
