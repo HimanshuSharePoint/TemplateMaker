@@ -198,6 +198,7 @@ function addPlaceHolderintoword(){
         var searchResultsPlaceHolder = context.document.body.search('###*/*###', {matchWildcards: true});
         context.load(searchResultsPlaceHolder, 'font');
         context.load(searchResultsPlaceHolder, 'text');
+        context.load(searchResultsPlaceHolder);
         return context.sync().then(function () {
         $('#DynamicControl').find('input, select, textarea').each(function() {
              console.log($(this).attr('id'));
@@ -210,6 +211,7 @@ function addPlaceHolderintoword(){
                     var trimPlaceholder = ValueofSingleLineofTextFirst.split(' ').join('');
                     $('#DynamicControl').find("input[id*="+trimPlaceholder+"]").each(function (i, el) {
                         console.log("First Client Placeholder"+ $(this).attr('id'));
+                        searchResultsPlaceHolder.items[i].insertHtml("Marky The Receiver", "replace"); 
                     });                
                 }
              }
