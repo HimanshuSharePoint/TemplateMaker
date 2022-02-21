@@ -198,6 +198,7 @@ function addPlaceHolderintoword(){
         $('#DynamicControl').find('input, select, textarea').each(function() {
              console.log($(this).attr('id'));
          });
+        return context.sync();
     })
     .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
