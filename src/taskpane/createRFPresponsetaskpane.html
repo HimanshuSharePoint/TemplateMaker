@@ -205,8 +205,8 @@ Word.run(function(context){
                 var singleLineofText = searchResults.items[i].text.split("/");
                 var ValueofSingleLineofText = singleLineofText[0].substring(3)
                 var trimPlaceholder = ValueofSingleLineofText.split(' ').join('');
-                $("#DynamicControl").append("<input type=text id=textBox"+trimPlaceholder+"-"+randomNumber+"><br/>");
-                 $('#DynamicControl').children('#textBox'+trimPlaceholder+"-"+randomNumber).kendoTextBox({
+                $("#DynamicControl").append("<input type=text id=textBox_"+trimPlaceholder+"_"+randomNumber+"><br/>");
+                 $('#DynamicControl').children('#textBox_'+trimPlaceholder+"_"+randomNumber).kendoTextBox({
                       placeholder: ValueofSingleLineofText
                    });
             }
@@ -216,8 +216,8 @@ Word.run(function(context){
                 var KendoEditorValue = KendoMultiLineofText[0].substring(3);
                 var trimPlaceholderMultiLine = KendoEditorValue.split(' ').join('');
                 $("#DynamicControl").append("<div><label id=lbl"+randomNumberMulti+">"+KendoEditorValue+"</label></div><br/>");
-                $("#DynamicControl").append("<textarea id=MultLine"+trimPlaceholderMultiLine+"-"+randomNumberMulti+" rows=10 cols=40 style=height:150px></textarea><br/>");
-                $('#DynamicControl').children('#MultLine'+trimPlaceholderMultiLine+"-"+randomNumberMulti).kendoEditor();
+                $("#DynamicControl").append("<textarea id=MultLine_"+trimPlaceholderMultiLine+"_"+randomNumberMulti+" rows=10 cols=40 style=height:150px></textarea><br/>");
+                $('#DynamicControl').children('#MultLine_'+trimPlaceholderMultiLine+"_"+randomNumberMulti).kendoEditor();
             }
             else if (searchResults.items[i].text.includes("Date")){
                 var randomNumberDate = Math.floor((Math.random() * 99999999999) + 1);
@@ -225,9 +225,9 @@ Word.run(function(context){
                 var KendoDateValue = KendoDate[0].substring(3);
                 var trimPlaceholderDate = KendoDateValue.split(' ').join('');
                 $("#DynamicControl").append("<div><label id=lbl"+randomNumberDate+">"+KendoDateValue+"</label></div><br/>");
-                $("#DynamicControl").append("<input type=text id=Date"+trimPlaceholderDate+"-"+randomNumberDate+"><br/>");
+                $("#DynamicControl").append("<input type=text id=Date_"+trimPlaceholderDate+"_"+randomNumberDate+"><br/>");
                 var todayDate = new Date();
-                $('#DynamicControl').children('#Date'+trimPlaceholderDate+"-"+randomNumberDate).kendoDatePicker({
+                $('#DynamicControl').children('#Date_'+trimPlaceholderDate+"_"+randomNumberDate).kendoDatePicker({
                     value:todayDate
                 });
             }
@@ -236,11 +236,11 @@ Word.run(function(context){
                 var kendoCurrency = searchResults.items[i].text.split("/");
                 var kendoCurrencyValue = kendoCurrency[0].substring(3);
                 var trimPlaceholderCurrency = kendoCurrencyValue.split(' ').join('');
-                $("#DynamicControl").append("<input type=number id=currency"+trimPlaceholderCurrency+"-"+randomNumberCurrency+"><input id=currencydropdown"+trimPlaceholderCurrency+"-"+randomNumberCurrency+">");
-                    $('#DynamicControl').children('#currency'+trimPlaceholderCurrency+"-"+randomNumberCurrency).kendoTextBox({
+                $("#DynamicControl").append("<input type=number id=currency_"+trimPlaceholderCurrency+"_"+randomNumberCurrency+"><input id=currencydropdown_"+trimPlaceholderCurrency+"_"+randomNumberCurrency+">");
+                    $('#DynamicControl').children('#currency_'+trimPlaceholderCurrency+"-"+randomNumberCurrency).kendoTextBox({
                       placeholder: kendoCurrencyValue
                    });
-                   $("#DynamicControl").children('#currencydropdown'+trimPlaceholderCurrency+"-"+randomNumberCurrency).kendoDropDownList({
+                   $("#DynamicControl").children('#currencydropdown_'+trimPlaceholderCurrency+"_"+randomNumberCurrency).kendoDropDownList({
                     optionLabel: "Select DataType...",
                     dataSource: [ "INR", "USD", "CNY", "EUR","GBP" ]
                 }).data("kendoDropDownList");      
