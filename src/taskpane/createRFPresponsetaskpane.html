@@ -145,6 +145,7 @@ Office.onReady((info) => {
     
     document.getElementById("btnconvertplaceholder").onclick = GetPlaceholderValue;
       document.getElementById("btngenerateformfromPlaceholders").onclick=GenerateFormfromPlaceholders;
+      document.getElementById('btnAddtoDocument').onclick = addPlaceHolderintoword;
     document.getElementById("sideload-msg").style.display = "none";
     document.getElementById("app-body").style.display = "flex";
     
@@ -191,6 +192,41 @@ var Industry = $("#TemplateDataTypeSelectIndustry").kendoDropDownList({
 
 
 });
+    
+function addPlaceHolderintoword(){
+    Word.run(function(context){
+        // Todo - How many controls within Main Div - Array
+        $('#DynamicControl').find('input, select, textarea').each(function() {
+             console.log($(this).attr('name'));
+         });
+
+        // Todo - How many single Line text Control.
+        // How Many Placeholder in Words 
+
+            // SingleLineofText-ClientName-31073452688 Compare with ###Client Name /Single Line of Text###
+
+            // Add class Name as Textbox
+
+            //textBox-SignatureParty1-8534431822
+
+        // Todo - How many multiline text Control.
+                //Date-StartDate-24742383589 with ###Start Date /Date###
+
+
+        // Todo - How many Date Control.
+        // Todo - How many Currency Control.
+
+
+
+    })
+    .catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+
+    });
+}    
     
 function GenerateFormfromPlaceholders(){
 Word.run(function(context){
