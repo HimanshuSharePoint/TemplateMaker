@@ -219,7 +219,7 @@ function addPlaceHolderintoword(){
                     var trimPlaceholderDate = ValueofDateTextFirst.split(' ').join('');
                     var controlDate = $('#DynamicControl').find("input[id*="+trimPlaceholderDate+"]");
                     console.log("First Date Placeholder"+ $(controlDate).attr('id'));
-                    var DateTextboxID= $(control).attr('id');
+                    var DateTextboxID= $(controlDate).attr('id');
                     searchResultsPlaceHolder.items[i].insertHtml($('#'+DateTextboxID).val(), "replace");
                 }
              }
