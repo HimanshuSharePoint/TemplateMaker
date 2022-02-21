@@ -237,7 +237,7 @@ Word.run(function(context){
                 var kendoCurrencyValue = kendoCurrency[0].substring(3);
                 var trimPlaceholderCurrency = kendoCurrencyValue.split(' ').join('');
                 $("#DynamicControl").append("<input type=number id=currency_"+trimPlaceholderCurrency+"_"+randomNumberCurrency+"><input id=currencydropdown_"+trimPlaceholderCurrency+"_"+randomNumberCurrency+">");
-                    $('#DynamicControl').children('#currency_'+trimPlaceholderCurrency+"-"+randomNumberCurrency).kendoTextBox({
+                    $('#DynamicControl').children('#currency_'+trimPlaceholderCurrency+"_"+randomNumberCurrency).kendoTextBox({
                       placeholder: kendoCurrencyValue
                    });
                    $("#DynamicControl").children('#currencydropdown_'+trimPlaceholderCurrency+"_"+randomNumberCurrency).kendoDropDownList({
