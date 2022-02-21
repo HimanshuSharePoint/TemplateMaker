@@ -212,6 +212,16 @@ function addPlaceHolderintoword(){
                     var textboxID= $(control).attr('id');
                     searchResultsPlaceHolder.items[i].insertHtml($('#'+textboxID).val(), "replace");
                 }
+                 else if(searchResultsPlaceHolder.items[i].text.includes("Date")){
+                    var DateText = searchResultsPlaceHolder.items[i].text.split("/");
+                    var ValueofDateTextFirst = DateText[0].substring(3);
+                    var ValueofDateTextSecond = DateText[1].slice(0,-3);
+                    var trimPlaceholderDate = ValueofDateTextFirst.split(' ').join('');
+                    var controlDate = $('#DynamicControl').find("input[id*="+trimPlaceholderDate+"]");
+                    console.log("First Date Placeholder"+ $(controlDate).attr('id'));
+                    var DateTextboxID= $(control).attr('id');
+                    searchResultsPlaceHolder.items[i].insertHtml($('#'+DateTextboxID).val(), "replace");
+                }
              }
         return context.sync();
         });
