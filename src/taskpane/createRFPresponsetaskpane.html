@@ -238,11 +238,12 @@ function addPlaceHolderintoword(){
                     var ValueofCurrencyTextSecond = CurrrencyText[1].slice(0,-3);
                     var trimPlaceholderCurrencyEditor = ValueofCurrencyTextFirst.split(' ').join('');
                     var controlCurrencyTextbox = $('#DynamicControl').find("input[id*="+ValueofCurrencyTextFirst+"]");
-                    var controlCurrencydropdown = $('#DynamicControl').find("input[id*=currencydropdown"+ValueofCurrencyTextFirst+"]");
-                    console.log("First Date Placeholder"+ $(controlCurrencyTextbox).attr('id'));
-                    console.log("First Date Placeholder"+ $(controlCurrencydropdown).attr('id'));
-                    var CurrencyTextboxID= $(controlCurrencyTextbox).attr('id');
-                    var CurrencyDropdownID = $(controlCurrencydropdown).attr('id');
+                    
+                    console.log("First Date Placeholder"+ $(controlCurrencyTextbox[0]).attr('id'));
+                     console.log("First Date Placeholder"+ $(controlCurrencyTextbox[1]).attr('id'));
+                    
+                    var CurrencyTextboxID= $(controlCurrencyTextbox[0]).attr('id');
+                    var CurrencyDropdownID =$(controlCurrencyTextbox[1]).attr('id');
                     var dropdownValue= $('#'+CurrencyDropdownID.val());
                     var currencyTextboxValue= $('#'+CurrencyTextboxID).val();
                     var finalValue = dropdownValue + currencyTextboxValue;
