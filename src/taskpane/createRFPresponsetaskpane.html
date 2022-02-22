@@ -238,9 +238,15 @@ function addPlaceHolderintoword(){
                     var ValueofCurrencyTextSecond = CurrrencyText[1].slice(0,-3);
                     var trimPlaceholderCurrencyEditor = ValueofCurrencyTextFirst.split(' ').join('');
                     var controlCurrencyTextbox = $('#DynamicControl').find("input[id*="+ValueofCurrencyTextFirst+"]");
-                    console.log("First Date Placeholder"+ $(trimPlaceholderCurrencyEditor).attr('id'));
+                    var controlCurrencydropdown = $('#DynamicControl').find("select[id*="+ValueofCurrencyTextFirst+"]");
+                    console.log("First Date Placeholder"+ $(controlCurrencyTextbox).attr('id'));
+                    console.log("First Date Placeholder"+ $(controlCurrencydropdown).attr('id'));
                     var CurrencyTextboxID= $(controlCurrencyTextbox).attr('id');
-                    searchResultsPlaceHolder.items[i].insertText($('#'+CurrencyTextboxID).val(), Word.InsertLocation.replace);
+                    var CurrencyDropdownID = $(controlCurrencydropdown).attr('id');
+                    var dropdownValue= $('#'+CurrencyDropdownID.val());
+                    var currencyTextboxValue= $('#'+CurrencyTextboxID).val();
+                    var finalValue = dropdownValue + currencyTextboxValue;
+                    searchResultsPlaceHolder.items[i].insertText(finalValue, Word.InsertLocation.replace);
                 } 
                  
              }
