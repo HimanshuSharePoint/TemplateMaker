@@ -237,7 +237,7 @@ function addPlaceHolderintoword(){
                     var ValueofCurrencyTextFirst = CurrrencyText[0].substring(3);
                     var ValueofCurrencyTextSecond = CurrrencyText[1].slice(0,-3);
                     var trimPlaceholderCurrencyEditor = ValueofCurrencyTextFirst.split(' ').join('');
-                    var controlCurrencyTextbox = $('#DynamicControl').find("input[id*="+ValueofCurrencyTextFirst+"]");
+                    var controlCurrencyTextbox = $('#DynamicControl').find("input[id*="+trimPlaceholderCurrencyEditor+"]");
                     
                     console.log("First Date Placeholder"+ $(controlCurrencyTextbox[0]).attr('id'));
                      console.log("First Date Placeholder"+ $(controlCurrencyTextbox[1]).attr('id'));
