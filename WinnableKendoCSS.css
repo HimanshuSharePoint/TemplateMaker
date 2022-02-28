@@ -353,10 +353,11 @@ border: 1px solid #a6a6a6;
 #CommentsWrapper { display:none!important;}
 .k-grid .k-grid-search { float:left!important;}
 .webPartContainer { display:none;}
-.alert-info {
-    color: #31708f;
-    background-color: #d9edf7;
-    border-color: #bce8f1;
+.alert-info { 
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    margin-top:2rem;
 }
 .alert {
     padding: 15px;
@@ -372,6 +373,7 @@ border: 1px solid #a6a6a6;
 .table-condensed>thead>tr>th {
     padding: 5px;
     border-bottom: 2px solid #ddd;
+    text-align:left;
 }
 .table-condensed>tbody>tr>td { padding: 5px; line-height: 1.42857143;
     vertical-align: top;
