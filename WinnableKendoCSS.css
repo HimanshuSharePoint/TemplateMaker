@@ -388,7 +388,7 @@ border: 1px solid #a6a6a6;
     display: inline-block;
     cursor: pointer;
     height: 2.5rem;
-    top:-0.5rem;
+    top:-0.4rem;
 }
 .file input {
     min-width: 14rem;
@@ -439,8 +439,9 @@ border: 1px solid #a6a6a6;
     color: #fff;
     background-color: #337ab7;
     border-color: #2e6da4;
-    borderadius:4px;
+    border-radius:4px;
     padding:0.5rem 1rem;
+    border:none;
 }
 
 
