@@ -388,6 +388,7 @@ border: 1px solid #a6a6a6;
     display: inline-block;
     cursor: pointer;
     height: 2.5rem;
+    top:-0.5rem;
 }
 .file input {
     min-width: 14rem;
@@ -401,9 +402,9 @@ border: 1px solid #a6a6a6;
     right: 0;
     left: 0;
     z-index: 5;
-    height: 2.5rem;
+    height: 1rem;
     padding: 0.5rem 1rem;
-    line-height: 1.5;
+    line-height: 1;
     color: #555;
     background-color: #fff;
     border: 0.075rem solid #ddd;
@@ -422,9 +423,9 @@ border: 1px solid #a6a6a6;
     z-index: 6;
     display: block;
     content: "Browse";
-    height: 2.5rem;
+    height: 1rem;
     padding: 0.5rem 1rem;
-    line-height: 1.5;
+    line-height: 1;
     color: #555;
     background-color: #eee;
     border: 0.075rem solid #ddd;
@@ -438,6 +439,8 @@ border: 1px solid #a6a6a6;
     color: #fff;
     background-color: #337ab7;
     border-color: #2e6da4;
+    borderadius:4px;
+    padding:0.5rem 1rem;
 }
 
 
