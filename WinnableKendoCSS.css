@@ -372,12 +372,12 @@ border: 1px solid #a6a6a6;
     max-width: 100%;
     margin-bottom: 20px;
 }
-.table-condensed>thead>tr>th {
+.fileNameTitle {
     padding: 5px;
     border-bottom: 2px solid #ddd;
     text-align:left;
 }
-.table-condensed>tr>td { padding: 5px; line-height: 1.42857143;
+.Items { padding: 5px; line-height: 1.42857143;
     vertical-align: top;
     border-top: 1px solid #ddd;}
 
