@@ -461,7 +461,7 @@ border: 1px solid #a6a6a6;
     margin: -28px auto 0;
 }
 
-.loaderspfx::after, .loader09::before {
+.loaderspfx::after, .loaderspfx::before {
     content: '';
     position: absolute;
     width: 10px;
