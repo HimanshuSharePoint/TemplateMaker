@@ -449,6 +449,8 @@ border: 1px solid #a6a6a6;
     background: #f6f9ff;
     border-radius: 3px;
     position: fixed;
+    left:0px;
+    top:0px;
 }
 .loaderspfx {
     width: 10px;
