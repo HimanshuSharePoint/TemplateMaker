@@ -443,7 +443,7 @@ border: 1px solid #a6a6a6;
     padding:0.5rem 1rem;
     border:none;
 }
-.overlayspfx {
+.quick-panel-overlay {
     width: 100%;
     height: 100%;
     background: #f6f9ff;
