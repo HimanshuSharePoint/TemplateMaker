@@ -179,14 +179,11 @@ Office.onReady((info) => {
 });
     
   function saveTemplateLibrary(){
-    Word.run(function(context){
+    
       Office.context.document.getFilePropertiesAsync(function(asyncResult){
         var fileUrl = asyncResult.value.URL;
         console.log(fileUrl);
-      });
-    
-
-    })
+      })
     .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
     if (error instanceof OfficeExtension.Error) {
