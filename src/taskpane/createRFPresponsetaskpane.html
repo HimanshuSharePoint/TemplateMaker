@@ -146,6 +146,7 @@ Office.onReady((info) => {
     document.getElementById("btnconvertplaceholder").onclick = GetPlaceholderValue;
       document.getElementById("btngenerateformfromPlaceholders").onclick=GenerateFormfromPlaceholders;
       document.getElementById('btnAddtoDocument').onclick = addPlaceHolderintoword;
+      document.getElementById('btnsavetoTemplateLibrary').onclick = SaveTemplateLibrary;
     document.getElementById("sideload-msg").style.display = "none";
     document.getElementById("app-body").style.display = "flex";
     
@@ -192,6 +193,25 @@ var Industry = $("#TemplateDataTypeSelectIndustry").kendoDropDownList({
 
 
 });
+ function saveTemplateLibrary(){
+    Word.run(function(context){
+      Office.context.document.getFilePropertiesAsync(function(asyncResult){
+        var fileUrl = asyncResult.value.URL;
+        console.log(fileUrl);
+      });
+    
+
+    })
+    .catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+
+    });
+}
+   
+ 
     
 function addPlaceHolderintoword(){
     Word.run(function(context){
