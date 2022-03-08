@@ -182,7 +182,7 @@ Office.onReady((info) => {
     
     Office.context.document.getFilePropertiesAsync(function(asyncResult){
         debugger;
-      var fileUrl = asyncResult.value.URL;
+      var fileUrl = asyncResult.value.url;
       console.log(fileUrl);
     });
 }
