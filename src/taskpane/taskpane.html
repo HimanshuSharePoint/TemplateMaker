@@ -181,6 +181,7 @@ Office.onReady((info) => {
   function saveTemplateLibrary(){
     
     Office.context.document.getFilePropertiesAsync(function(asyncResult){
+        debugger;
       var fileUrl = asyncResult.value.URL;
       console.log(fileUrl);
     });
