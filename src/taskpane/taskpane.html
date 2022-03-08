@@ -178,15 +178,43 @@ Office.onReady((info) => {
 
 });
     
-  function saveTemplateLibrary(){
+function saveTemplateLibrary(){
     
     Office.context.document.getFilePropertiesAsync(function(asyncResult){
-        debugger;
       var fileUrl = asyncResult.value.url;
-        var fileCollection = fileUrl.split("/");
+      var siteURL = "https://collaberainc.sharepoint.com/sites/SPINTestSpace";
+      console.log(fileUrl);
+      var fileCollection = fileUrl.split("/");
       var fileName= fileCollection[6];
-        console.log(fileName);
+      var GetURL = siteURL + "/_api/web/lists/GetByTitle('TemplateModule')/items?$filter=FileLeafRef eq '"+fileName+"'&$select=Id";
+      var TemplateID = GetItemsDocument(GetURL);
+        console.log(TemplateID);
+
     });
+}
+function GetItemsDocument(url) {
+    var array = [];
+    jQuery.ajax({
+        url: url,
+        type: "GET",
+        dataType: "json",
+        headers: { "accept": "application/json; odata=verbose" },
+        async: false,
+        success: function (data) {
+            if (data.d != undefined) {
+                console.log(data.d);
+                results = data.d;
+            } else {
+                results = null;
+            }
+
+        },
+        error: function (error) {
+            console.log(JSON.stringify(error));
+            results = null;
+        }
+    });
+    return results;
 }
     
 function clearPlaceholder(){
