@@ -499,7 +499,8 @@ border: 1px solid #a6a6a6;
     border-width: 0 0 2px;
     border-style: solid;
     width: 100%;
-    font-size: 14px;
+    font-size: 2rem;
+    color: #377dcf;
     text-transform: uppercase;}
 
 
