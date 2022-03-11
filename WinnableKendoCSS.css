@@ -488,7 +488,7 @@ border: 1px solid #a6a6a6;
 
 .uploadInfo { font-size: 13px;margin-bottom: 20px;padding: 5px;border: 1px solid #cadae7;border-radius: 4px;background: #e0ebf3;text-align: center;color: #337ab7;}
 
-.k-form-meta { width:70%; margin:0 auto;}
+.k-form.k-form-meta { width:25%; margin:0 auto;}
 .k-form-meta span { width:20rem;} 
 .k-form-meta button.k-button { border-color: #ff6358;
     color: #fff;
@@ -499,7 +499,7 @@ border: 1px solid #a6a6a6;
     border-width: 0 0 2px;
     border-style: solid;
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.3rem;
     color: #377dcf;
     text-transform: uppercase;}
 
