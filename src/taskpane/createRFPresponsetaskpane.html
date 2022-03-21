@@ -221,7 +221,7 @@ function addPlaceHolderintoword(){
                     var controlMultiEditor = $('#DynamicControl').find("textarea[id*="+trimPlaceholderMultiEditor+"]");
                     console.log("First Date Placeholder"+ $(controlMultiEditor).attr('id'));
                     var MultiEditorID= $(controlMultiEditor).attr('id');
-                    searchResultsPlaceHolder.items[i].insertText($('#'+MultiEditorID).val(), Word.InsertLocation.replace);
+                    searchResultsPlaceHolder.items[i].insertHtml($('#'+MultiEditorID).val(), Word.InsertLocation.replace);
                 }
                  else if(searchResultsPlaceHolder.items[i].text.includes("Currency")){
                     var CurrrencyText = searchResultsPlaceHolder.items[i].text.split("/");
