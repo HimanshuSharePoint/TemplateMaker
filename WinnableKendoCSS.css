@@ -252,6 +252,7 @@ border: 1px solid #a6a6a6;
 
 .dropdown:hover .dropdown-content, .dropdownfilter:hover .dropdown-content {
   display: block;
+    z-index:9;
 }
 
 #divIconGrid { text-align: right; display: flex; justify-content: end; float: right; margin-bottom: 15px;}
