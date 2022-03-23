@@ -249,7 +249,7 @@ border: 1px solid #a6a6a6;
   background-color: #ddd;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content, .dropdownfilter:hover .dropdown-content {
   display: block;
 }
 
