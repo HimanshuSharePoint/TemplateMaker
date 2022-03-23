@@ -18,7 +18,7 @@
   content: " ";
 }
 #spLeftNav{
-  background: #0077d2 !important;
+  background: #176075 !important;
 }
 #Header{
   display: none !important; 
@@ -160,13 +160,13 @@ border: 1px solid #a6a6a6;
 
 #sp-appBar, #SuiteNavWrapper, #spSiteHeader, #spCommandBar, #O365_NavHeader, .u_c_ada2ac09 { display: none!important;}
 .compositeLink_a0b619f0, .h_c_6b55bba6, .k_c_6b55bba6 { color: #fff;
-    background: #0077d2; }
+    background: #176075; }
     .compositeLink_a0b619f0 a {
     color: #fff;
 }
 .compositeLink_a0b619f0.compositeLinkIsSelected_a0b619f0 a, .compositeLink_a0b619f0.compositeLinkIsSelected_a0b619f0 .chevronButton_a0b619f0 {
-    background: #f3f2f1;
-    color: #0077d2;
+    background: #fff;
+    color: #000;
 }
 .navbar {
   overflow: hidden;
@@ -559,6 +559,13 @@ width:95%;}
 .k-tabstrip>.k-content { border:none; margin-top:10px;}
 .imgttl { text-align:center; width:100%; padding:5px 0px; z-index:1; color:#fff; position:absolute; bottom:0rem; font-size:12px; background:#33333361;}
 .k-tabstrip-items { margin:1rem 0;}
-  
+  .buttonLink_a0b619f0 { 
+    color: #166175;
+      display:none;
+}
+html[dir='ltr'] .compositeLink_a0b619f0.compositeLinkIsSelected_a0b619f0 a:after, html[dir='ltr'] .compositeLink_a0b619f0.compositeLinkIsSelected_a0b619f0 .chevronButton_a0b619f0:after {
+    border-left: 2px solid #ffffff;
+}
+.compositeLink_a0b619f0:hover a { background: #faf9f8; color: #000; }
 
 
