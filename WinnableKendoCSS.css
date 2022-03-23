@@ -189,6 +189,15 @@ border: 1px solid #a6a6a6;
   margin-top: 10px;
   
 }
+.dropdownfilter {
+  float: left;
+  overflow: hidden;
+  background: #fff; 
+  margin-top: 10px;
+    color:#fff;
+    box-shadow:0px 0px 2px #33333361;
+  
+}
 
 .dropdown .dropbtn {
   font-size: 14px;  
@@ -201,8 +210,19 @@ border: 1px solid #a6a6a6;
   font-family: inherit;
   margin: 0;
 }
+.dropdownfilter .dropbtn {
+  font-size: 14px;  
+  border: 1px solid #33333361;
+  outline: none;
+  color: #000;
+  padding: 5px 8px;
+  border-radius: 2px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover, .dropdown:hover .dropbtn, dropdownfilter:hover .dropbtn {
   background-color: #165f75;
   border-color: #165f75;
 }
