@@ -555,5 +555,7 @@ width:95%;}
 .k-tabstrip-items .k-item { margin:0px 10px;}
 .k-tabstrip-items .k-item.k-state-hover, .k-tabstrip-items .k-item:hover { color:#000;}
 .k-tabstrip { margin-top:15px;}
+.k-tabstrip>.k-content { border:none;}
+.k-tabstrip-content { margin-top:10px;}
 
 
