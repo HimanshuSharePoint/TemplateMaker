@@ -512,6 +512,7 @@ background-color:#fff;
     outline:none;
     color:#000;
     padding:6px 9px;
+    font-weight:bold;
     border-radius:0px;
     margin-left:15px;
     box-shadow:0px 0px 3px #33333361;
@@ -519,6 +520,7 @@ background-color:#fff;
 .btnbase:hover { background-color:#165f75;
     border-color:#165f75;
     font-color:14px;
+    font-weight:bold;
     border: 1px solid #165f75;
 color:#fff;}
 
