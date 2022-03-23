@@ -196,6 +196,7 @@ border: 1px solid #a6a6a6;
   margin-top: 10px;
     color:#fff;
     box-shadow:0px 0px 2px #33333361;
+    margin-right:10px;
   
 }
 
@@ -549,5 +550,9 @@ width:95%;}
 
 .thumb { width:100%; max-width:170px; height:200px; display:inline-block; margin:5px 10px; box-shadow:0px 0px 3px #33333361; position:relative;}
 .thumb img { position:absolute; width:150px; height:auto; left:50%; top:50%; transform:translate(-50%,-50%); }
+.k-link { color:#000;}
+.k-tabstrip-items .k-item.k-state-active, .k-tabstrip-items .k-item.k-state-selected { background:#ccc;}
+.k-tabstrip-items .k-item { margin:0px 10px;}
+.k-tabstrip-items .k-item.k-state-hover, .k-tabstrip-items .k-item:hover { color:#000;}
 
 
