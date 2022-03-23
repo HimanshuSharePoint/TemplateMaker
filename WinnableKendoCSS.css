@@ -547,5 +547,5 @@ color:#fff;}
 .docliblock { background:#ececec; padding:2%;
 width:95%;}
 
-.thumb { width:100px; max-width:250px; display:inline-block; margin:2px 5px; box-shadow:0px 0px 3px #33333361;}
+.thumb { width:100%; max-width:250px; display:inline-block; margin:2px 5px; box-shadow:0px 0px 3px #33333361;}
 
