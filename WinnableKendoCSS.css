@@ -508,7 +508,7 @@ border: 1px solid #a6a6a6;
 
 .uploadInfo { font-size: 13px;margin-bottom: 20px;padding: 5px;border: 1px solid #cadae7;border-radius: 4px;background: #e0ebf3;text-align: center;color: #337ab7;}
 .demo-section .tabstrip-container {
-        /*width: 500px;*/
+        width: 500px;
     margin-top:1.5rem;
     }
 .k-form.k-form-meta { width:80%; margin:0 auto;}
