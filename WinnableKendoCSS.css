@@ -557,7 +557,7 @@ width:95%;}
 .k-tabstrip-items .k-item.k-state-hover, .k-tabstrip-items .k-item:hover { color:#000;}
 .k-tabstrip { margin-top:15px;}
 .k-tabstrip>.k-content { border:none; margin-top:10px;}
-.imgttl { text-align:left; padding:5px; z-index:1; position:absolute; bottom:-4rem; font-size:12px;}
+.imgttl { text-align:left; padding:5px; z-index:1; position:absolute; bottom:0rem; font-size:12px; background:#33333361;}
   
 
 
