@@ -504,5 +504,16 @@ border: 1px solid #a6a6a6;
     font-size: 1.3rem;
     color: #377dcf;
     text-transform: uppercase;}
+.btnbase {
+background-color:#1f5797;
+    border-color:#1f5797;
+    font-color:14px;
+    border: 1px solid #377dcf;
+    outline:none;
+    color:#fff;
+    padding:5px 8px;
+    border-radius:0px;
+    margin-left:15px;
+}
 
 
