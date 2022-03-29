@@ -552,7 +552,7 @@ width:95%;}
 .thumb { width:100%; max-width:185px; height:250px; display:inline-block; margin:5px 10px; vertical-align:top;   position:relative;}
 .thumb:hover { cursor:pointer;}
 .thumb .imgcard { box-shadow:0px 0px 3px #33333361;  margin-bottom:0.5rem; position:relative; height:180px; top:0px;}
-.thumb img { position:absolute; width:auto; height:170px; left:50%; top:50%; transform:translate(-50%,-50%); }
+.thumb img { position:absolute; width:80%; height:80%; left:50%; top:50%; transform:translate(-50%,-50%); }
 .k-tabstrip-items-wrapper .k-item { color:#000;}
 .k-tabstrip-items .k-item.k-state-active, .k-tabstrip-items .k-item.k-state-selected { background:#ccc; color:#000;}
 .k-tabstrip-items .k-item { margin:0px 10px;}
