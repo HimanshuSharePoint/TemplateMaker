@@ -553,14 +553,14 @@ width:95%;}
 
 .thumb .imgcard { box-shadow:0px 0px 3px #33333361;  margin-bottom:0.5rem; position:relative; height:180px; top:0px;}
 .thumb  .imgcard:hover { cursor:pointer;}
-.thumb img { position:absolute; width:80%; height:80%; left:50%; top:50%; transform:translate(-50%,-50%); }
+.thumb  .imgcard img { position:absolute; width:80%; height:80%; left:50%; top:50%; transform:translate(-50%,-50%); }
 .k-tabstrip-items-wrapper .k-item { color:#000;}
 .k-tabstrip-items .k-item.k-state-active, .k-tabstrip-items .k-item.k-state-selected { background:#ccc; color:#000;}
 .k-tabstrip-items .k-item { margin:0px 10px;}
 .k-tabstrip-items .k-item.k-state-hover, .k-tabstrip-items .k-item:hover { color:#000;}
 .k-tabstrip { margin-top:15px;}
 .k-tabstrip>.k-content { border:none; margin-top:10px;}
-.imgttl { text-align:left; width:95%; padding:5px; z-index:1; word-break:break-all; color:#000; position:absolute; bottom:0rem; font-size:12px; }
+.imgttl { text-align:left; width:95%; padding:5px; z-index:1; word-break:break-all; color:#000; position:relative; bottom:0rem; font-size:12px; }
 .k-tabstrip-items { margin:1rem 0;}
   .buttonLink_a0b619f0 { 
     color: #166175;
