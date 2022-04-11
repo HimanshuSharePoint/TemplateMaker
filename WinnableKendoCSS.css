@@ -540,7 +540,7 @@ background-color:#fff;
     margin-left:15px;
     box-shadow:0px 0px 3px #33333361;
 }
-.btnbase:hover { background-color:#165f75;
+.btnbase:hover, .btnbase.active { background-color:#165f75;
     border-color:#165f75;
     font-color:14px;
     font-weight:bold;
@@ -575,5 +575,6 @@ html[dir='ltr'] .compositeLink_a0b619f0.compositeLinkIsSelected_a0b619f0 a:after
 .divSearchResponse input { width:95%; height:25px; padding-left:30px;}
 .drpResponse { width:50%; display:inline-block; margin-top:15px;}
 .drpResponse select { padding:5px; box-shadow:0px 0px 3px #333; border:none; border-radius:2px; outline:none; }
+ 
 
 
