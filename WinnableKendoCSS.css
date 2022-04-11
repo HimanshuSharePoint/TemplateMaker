@@ -185,8 +185,9 @@ border: 1px solid #a6a6a6;
 .dropdown {
   float: left;
   overflow: hidden;
-  background: #165f75; 
+  background: #fff; 
   margin-top: 10px;
+  box-shadow: 0px 0px 3px #33333361;
   
 }
 .dropdownfilter {
@@ -202,9 +203,9 @@ border: 1px solid #a6a6a6;
 
 .dropdown .dropbtn {
   font-size: 14px;  
-  border: 1px solid #165f75;
+  border: 1px solid #d1d1d1;
   outline: none;
-  color: white;
+  color: #000;
   padding: 5px 8px;
   border-radius: 2px;
   background-color: inherit;
@@ -226,6 +227,7 @@ border: 1px solid #a6a6a6;
 .navbar a:hover, .dropdown:hover .dropbtn, dropdownfilter:hover .dropbtn {
   background-color: #165f75;
   border-color: #165f75;
+  color:#fff;
 }
 
 .dropdown-content {
