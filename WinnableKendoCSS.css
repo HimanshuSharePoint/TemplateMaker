@@ -557,8 +557,8 @@ width:95%;}
 .thumb  .imgcard:hover { cursor:pointer;}
 .thumb .imgcard .actionbtn { position:absolute; width:100%; height:100%; top:0; left:0; background:#33333361; display:none; optacity:0; z-index:9; }
 .thumb .imgcard:hover .actionbtn { display:block; opacity:1;}
-.thumb .imgcard .actionbtn button { positioin:absolute; transform:translate(-50%,-50%); left:60%; top:40%; background:#faf9f8; color:#fff;}
-.thumb .imgcard .actionbtn button+button { positioin:absolute; transform:translate(-50%,-50%); left:50%; top:60%;}
+.thumb .imgcard .actionbtn button { position:absolute; transform:translate(-50%,-50%); left:60%; top:40%; background:#faf9f8; color:#fff;}
+.thumb .imgcard .actionbtn button+button { position:absolute; transform:translate(-50%,-50%); left:50%; top:60%;}
 .thumb  .imgcard img { position:absolute; width:80%; height:80%; left:50%; top:50%; transform:translate(-50%,-50%); z-index:1; }
 .k-tabstrip-items-wrapper .k-item { color:#000;}
 .k-tabstrip-items .k-item.k-state-active, .k-tabstrip-items .k-item.k-state-selected { background:#ccc; color:#000;}
