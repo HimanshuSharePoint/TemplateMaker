@@ -258,7 +258,7 @@ border: 1px solid #a6a6a6;
 }
 
 #divIconGrid { text-align: right; display: flex; justify-content: end; float: right; margin-bottom: 15px;}
-#divIconGrid i { padding: 10px; background: #fff; color:#165f75; margin: 5px; border-radius:4px; box-shadow: 0px 0px 2px #333; text-align: right;}
+#divIconGrid i { padding: 10px; background:#fff; color:#165f75; margin: 5px; border-radius:4px; box-shadow: 0px 0px 2px #333; text-align: right;}
 #divIconGrid i:last-child { margin-right:0px!important;}
 #divIconGrid i.active { background:#165f75; color:#fff;}
 .SelectSPFX label { margin-right: 10px;
