@@ -20,6 +20,9 @@
 #spLeftNav{
   background: #176075 !important;
 }
+#spLeftNav{
+display:none !important;
+}
 #Header{
   display: none !important; 
 }
