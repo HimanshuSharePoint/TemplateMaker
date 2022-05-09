@@ -457,7 +457,7 @@ border: 1px solid #a6a6a6;
     }
 .k-form.k-form-meta { width:80%; margin:0 auto;}
 .k-form-meta span { width:20rem;} 
-.k-form-meta button.k-button { border-color: #165f75;
+.k-form-meta button.k-button, .selectSPFX button { border-color: #165f75;
     color: #fff;
     background-color: #165f75;
     background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.02));}
