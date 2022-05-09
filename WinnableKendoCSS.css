@@ -517,7 +517,7 @@ html[dir='ltr'] .compositeLink_a0b619f0.compositeLinkIsSelected_a0b619f0 a:after
     border-left: 2px solid #ffffff;
 }
 .compositeLink_a0b619f0:hover a { background: #faf9f8; color: #000; }
-.divSearchResponse { display:inline-block; width:85%; position:relative; vertical-align:top; margin-top:10px;}
+.divSearchResponse { display:inline-block; width:92%; position:relative; vertical-align:top; margin-top:10px; margin-bottom:10px;}
 .k-i-search { position:absolute; top:7px;}
 .divSearchResponse input { width:95%; height:25px; padding-left:30px;}
 .drpResponse { width:50%; display:inline-block; margin-top:15px;}
