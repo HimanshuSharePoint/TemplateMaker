@@ -495,7 +495,7 @@ background-color:#fff;
     border: 1px solid #165f75;
 color:#fff;}
 .docliblock { background:#ececec; padding:2%;
-width:95%;}
+ }
 
 .thumb { width:100%; max-width:185px; height:250px; display:inline-block; margin:5px 10px; vertical-align:top;   position:relative;}
 
