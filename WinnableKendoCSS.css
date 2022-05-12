@@ -533,7 +533,43 @@ html[dir='ltr'] .compositeLink_a0b619f0.compositeLinkIsSelected_a0b619f0 a:after
 .thumb .imgcard .actionbtn button.btndownload { transform:translate(-50%,-50%); left:50%; top:50%;}
 .CanvasZone { background:rgb(236,236,236);}
 
+.tempcardview-overlayspfx {
+    width: 100%;
+    height: 100%;
+    background: #f6f9ff;
+    border-radius: 3px;
+    position: fixed;
+    left:0px;
+    top:0px;
+    z-index:9999;
+}
+.tempcardview-loaderspfx {
+    width: 10px;
+    height: 48px;
+    background: #0052ec;
+    position: relative;
+    animation: loader09-u3e967ec0 1s ease-in-out infinite;
+    animation-delay: 0.4s;
+    top: 50%;
+    margin: -28px auto 0;
+}
 
+.tempcardview-loaderspfx::after, .tempcardview-loaderspfx::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 48px;
+    background: #0052ec;
+    animation: loader09-u3e967ec0 1s ease-in-out infinite;
+}
+.tempcardview-loaderspfx::before {
+    right: 18px;
+    animation-delay: 0.2s;
+}
+.tempcardview-loaderspfx::after {
+    left: 18px;
+    animation-delay: 0.6s;
+}
  
 
 
