@@ -574,7 +574,7 @@ h1.doclibttl { font-size:1.5rem; display:inline; font-weight:normal;}
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
-.qauick-panel
+.quick-panel
     { width:350px!important;}
 }
 
