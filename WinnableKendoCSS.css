@@ -571,6 +571,24 @@ html[dir='ltr'] .compositeLink_a0b619f0.compositeLinkIsSelected_a0b619f0 a:after
     animation-delay: 0.6s;
 }
 h1.doclibttl { font-size:1.5rem; display:inline; font-weight:normal;}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+.qauick-panel
+    { width:350px!important;}
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
  
 
 
