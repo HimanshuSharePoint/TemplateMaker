@@ -213,28 +213,23 @@
             <div id="divContainer_CreateResponse">
                 <ul class="panelbar">
                     <li class="k-state-active">
-                        <b class="k-link k-state-selected">Placeholder Search Engine</b>
+                        <b class="k-link k-state-selected">Placeholder list in the document</b>
                         <div class="panelform searchform" style="padding:10px">
-                            <label class="ms-label dnone" id="lblplaceholderpattern">Please enter placeholder pattern </label>
-                            <input id="txtplaceholderpattern" />
-                            <button id="btnconvertplaceholder" class="k-button k-button-solid btnsrc k-button-solid-primary"></button> <br />
+                            
                             <div class="demo-section ">
                                 <table id="tablePlaceholder">
                                     <th>
                                         Placeholders dected:
                                     </th>
-                                </table><br />
-                                <div class="demo-section ">
-                                    <button id="btngenerateformfromPlaceholders" class="k-button k-button-solid k-button-solid-primary">Generate Praposal form  </button> <br />
-                                </div>
+                                </table>
+                                
                             </div>
                         </div>
                     </li>
                     <li>
                         <b class="k-link">Replace placeholder with values</b>
                         <div class="panelform" style="padding: 10px;">
-                            <div id="DynamicControl">
-                            </div>
+                            <div id="DynamicControl"></div>
                             <br />
                             <div class="demo-section ">
                                 <button id="btnAddtoDocument" class="k-button k-button-solid k-button-solid-primary">Save to document</button>
@@ -262,8 +257,6 @@
 
             document.getElementById("insert-paragraph").onclick = insertParagraph;
             document.getElementById("clear-Placeholder").onclick = clearPlaceholder;
-            /*document.getElementById("btnconvertplaceholder").onclick = GetPlaceholderValue;
-            document.getElementById("btngenerateformfromPlaceholders").onclick = GenerateFormfromPlaceholders;*/
             document.getElementById('btnAddtoDocument').onclick = addPlaceHolderintoword;
 
             document.getElementById("sideload-msg").style.display = "none";
@@ -308,15 +301,8 @@
                 placeholder: "Enter Document Name"
             });
             $("#txtStartDate").kendoDatePicker();
-            $("#txtEndDate").kendoDatePicker();
-
-            $("#txtplaceholderpattern").kendoTextBox({
-                placeholder: "Enter Placeholder Pattern"
-            });
-            $("#btnconvertplaceholder").kendoButton({
-                icon: "search"
-            });
-
+            $("#txtEndDate").kendoDatePicker();           
+            
             var Industry = $("#TemplateDataTypeSelectIndustry").kendoDropDownList({
                 optionLabel: "Select Industry",
                 dataSource: ["Telecommunication", "Service", "FMCG"]
@@ -333,7 +319,7 @@
                         }
             });
             function loadPlaceholdersAndGenerateForm(e){
-                kendoConsole.log("Selected: " + $(e.item).find("> .k-link").text());
+                
                 GetPlaceholderValue();
                 GenerateFormfromPlaceholders();
             }
