@@ -138,7 +138,7 @@
 
         th {
             background: #c5daf3;
-            padding: 10px;
+            padding: 5px;
         }
 
         td {
@@ -463,7 +463,7 @@
                         var KendoMultiLineofText = searchResults.items[i].text.split("/");
                         var KendoEditorValue = KendoMultiLineofText[0].substring(3);
                         var trimPlaceholderMultiLine = KendoEditorValue.split(' ').join('');
-                        $("#DynamicControl").append("<div><label id=lbl" + randomNumberMulti + ">" + KendoEditorValue + "</label></div><br/>");
+                        $("#DynamicControl").append("<div><label id=lbl" + randomNumberMulti + ">" + KendoEditorValue + "</label></div>");
                         $("#DynamicControl").append("<textarea id=MultLine_" + trimPlaceholderMultiLine + "_" + randomNumberMulti + " rows=10 cols=40 style=height:150px></textarea><br/>");
                         $('#DynamicControl').children('#MultLine_' + trimPlaceholderMultiLine + "_" + randomNumberMulti).kendoEditor();
                     }
@@ -472,8 +472,8 @@
                         var KendoDate = searchResults.items[i].text.split("/");
                         var KendoDateValue = KendoDate[0].substring(3);
                         var trimPlaceholderDate = KendoDateValue.split(' ').join('');
-                        $("#DynamicControl").append("<div><label id=lbl" + randomNumberDate + ">" + KendoDateValue + "</label></div><br/>");
-                        $("#DynamicControl").append("<input type=text id=Date_" + trimPlaceholderDate + "_" + randomNumberDate + "><br/>");
+                        $("#DynamicControl").append("<div><label id=lbl" + randomNumberDate + ">" + KendoDateValue + "</label></div>");
+                        $("#DynamicControl").append("<input type=text id=Date_" + trimPlaceholderDate + "_" + randomNumberDate + ">");
                         var todayDate = new Date();
                         $('#DynamicControl').children('#Date_' + trimPlaceholderDate + "_" + randomNumberDate).kendoDatePicker({
                             value: todayDate
