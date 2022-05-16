@@ -332,6 +332,11 @@
                             }
                         }
             });
+            function loadPlaceholdersAndGenerateForm(e){
+                kendoConsole.log("Selected: " + $(e.item).find("> .k-link").text());
+                GetPlaceholderValue();
+                GenerateFormfromPlaceholders();
+            }
         }
     });
 
@@ -585,9 +590,6 @@
 
             });
     }
-    function loadPlaceholdersAndGenerateForm(){
-        GetPlaceholderValue();
-        GenerateFormfromPlaceholders();
-    }
+    
 </script>
 
