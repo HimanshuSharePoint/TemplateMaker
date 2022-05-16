@@ -262,8 +262,8 @@
 
             document.getElementById("insert-paragraph").onclick = insertParagraph;
             document.getElementById("clear-Placeholder").onclick = clearPlaceholder;
-            document.getElementById("btnconvertplaceholder").onclick = GetPlaceholderValue;
-            document.getElementById("btngenerateformfromPlaceholders").onclick = GenerateFormfromPlaceholders;
+            /*document.getElementById("btnconvertplaceholder").onclick = GetPlaceholderValue;
+            document.getElementById("btngenerateformfromPlaceholders").onclick = GenerateFormfromPlaceholders;*/
             document.getElementById('btnAddtoDocument').onclick = addPlaceHolderintoword;
 
             document.getElementById("sideload-msg").style.display = "none";
@@ -325,6 +325,7 @@
                 expandMode: "single"
             });
             $("#tabstrip").kendoTabStrip({
+                       select: loadPlaceholdersAndGenerateForm,
                         animation:  {
                             open: {
                                 effects: "fadeIn"
@@ -583,6 +584,10 @@
                 }
 
             });
+    }
+    function loadPlaceholdersAndGenerateForm(){
+        GetPlaceholderValue();
+        GenerateFormfromPlaceholders();
     }
 </script>
 
