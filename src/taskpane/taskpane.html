@@ -13,220 +13,569 @@
     <script src="https://kendo.cdn.telerik.com/2022.1.119/js/kendo.all.min.js"></script>
 
     <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
-    
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css" />
+
 
     <!-- Template styles -->
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.common.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.default-main.min.css" />
     <link href="taskpane.css" rel="stylesheet" type="text/css" />
-    
-    <style>
-        
- b { font-weight: bold; }
-.ms-label { font-size: 14px; margin-bottom: 5px; font-weight: 600;}
-.k-input-inner { font-size: 14px;}
 
-.k-button-solid-secondary, .k-button-solid-secondary:hover {
-    border-color: #c2d9f5;
-    color: #000;
-    background-color: #c2d9f5;
-    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.02));
-}
-.k-button-solid-primary, .k-button-solid-primary:hover  {
-    border-color: #5874ff;
-    color: #fff;
-    background-color: #5874ff;
-    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.02));
-    margin-right: 15px;
-}
-.k-list-item.k-selected, .k-selected.k-list-optionlabel {
-    color: #fff;
-    background-color: #5874ff;
-}
-        .k-panelbar { width:100%;}
-        .k-panelbar>.k-item>.k-link.k-state-selected, .k-panelbar>.k-panelbar-header>.k-link.k-state-selected {
-    color: #fff;
-    background-color: #377dcf;
-}
-        .k-panelbar>.k-item>.k-link, .k-panelbar>.k-panelbar-header>.k-link { padding:6px 16px;}
-        .k-panelbar>.k-item>.k-link.k-state-selected.k-state-hover, .k-panelbar>.k-item>.k-link.k-state-selected:hover, .k-panelbar>.k-panelbar-header>.k-link.k-state-selected.k-state-hover, .k-panelbar>.k-panelbar-header>.k-link.k-state-selected:hover {
-    background-color: #377dcf;
-}
-        .k-panelbar>.k-item>.k-link, .k-panelbar>.k-panelbar-header>.k-link {
-    color: #377dcf;
-    background-color: #fff;
-}
-        .dnone { display:none!important}
- .panelform label { margin-bottom:6px; display:block;}
- .panelform .k-input, .panelform .k-dropdown { margin-bottom:15px; } 
-© 2022 GitHub, Inc.
-Terms
-Privacy
+    <style>
+
+        b {
+            font-weight: bold;
+        }
+
+        .ms-label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .k-input-inner {
+            font-size: 14px;
+        }
+
+        .k-button-solid-secondary, .k-button-solid-secondary:hover {
+            border-color: #c2d9f5;
+            color: #000;
+            background-color: #c2d9f5;
+            background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.02));
+        }
+
+        .k-button-solid-primary, .k-button-solid-primary:hover {
+            border-color: #5874ff;
+            color: #fff;
+            background-color: #5874ff;
+            background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.02));
+            margin-right: 15px;
+        }
+
+        .k-list-item.k-selected, .k-selected.k-list-optionlabel {
+            color: #fff;
+            background-color: #5874ff;
+        }
+
+        .k-panelbar {
+            width: 100%;
+        }
+
+            .k-panelbar > .k-item > .k-link.k-state-selected, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected {
+                color: #fff;
+                background-color: #377dcf;
+            }
+
+            .k-panelbar > .k-item > .k-link, .k-panelbar > .k-panelbar-header > .k-link {
+                padding: 6px 16px;
+            }
+
+                .k-panelbar > .k-item > .k-link.k-state-selected.k-state-hover, .k-panelbar > .k-item > .k-link.k-state-selected:hover, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected.k-state-hover, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected:hover {
+                    background-color: #377dcf;
+                }
+
+            .k-panelbar > .k-item > .k-link, .k-panelbar > .k-panelbar-header > .k-link {
+                color: #377dcf;
+                background-color: #fff;
+            }
+
+        .dnone {
+            display: none !important
+        }
+
+        .panelform label {
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .panelform .k-input, .panelform .k-dropdown {
+            margin-bottom: 15px;
+        }
+        /* Create Reposnse CSS -START*/
+        .k-button-solid-primary, .k-button-solid-primary:hover {
+            border-color: #5874ff;
+            color: #fff;
+            background-color: #5874ff;
+            background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.02));
+            margin-right: 15px;
+        }
+
+        .dnone {
+            display: none !important;
+        }
+
+        .k-panelbar {
+            width: 100%;
+        }
+
+            .k-panelbar > .k-item > .k-link.k-state-selected, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected {
+                color: #fff;
+                background-color: #377dcf;
+            }
+
+            .k-panelbar > .k-item > .k-link, .k-panelbar > .k-panelbar-header > .k-link {
+                padding: 6px 16px;
+            }
+
+                .k-panelbar > .k-item > .k-link.k-state-selected.k-state-hover, .k-panelbar > .k-item > .k-link.k-state-selected:hover, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected.k-state-hover, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected:hover {
+                    background-color: #377dcf;
+                }
+
+            .k-panelbar > .k-item > .k-link, .k-panelbar > .k-panelbar-header > .k-link {
+                color: #377dcf;
+                background-color: #fff;
+            }
+
+        .k-editor .k-content {
+            height: 200px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            background: #c5daf3;
+            padding: 10px;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        .panelform label {
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .panelform .k-input, .panelform .k-dropdown {
+            margin-bottom: 15px;
+        }
+
+        .searchform span.k-input {
+            width: 87%;
+        }
+
+        .searchform button.btnsrc {
+            margin-right: 0px;
+            position: relative;
+            top: -8px;
+        }
+
+        .k-button-solid-primary, .k-button-solid-primary:hover {
+            margin-right: 0px;
+        }
+        /* Create Reposnse CSS -END*/
     </style>
 </head>
 
 <body class="ms-font-m ms-welcome ms-Fabric">
     <header class="ms-welcome__header ms-bgColor-neutralLighter">
-       <!-- <img width="90" height="90" src="../../assets/logo-filled.png" alt="Contoso" title="Contoso" /> -->
-       <h1>Create Template</h1>
+        <!-- <img width="90" height="90" src="../../assets/logo-filled.png" alt="Contoso" title="Contoso" /> -->
+        <h1>Winnable Add-In</h1>
     </header>
     <section id="sideload-msg" class="ms-welcome__main">
         <h2 class="ms-font-xl">Please wait...</h2>
     </section>
-    <main id="app-body" class="ms-welcome__main" style="display: none;">
-        
-         <ul id="panelbar">
-             
-        <li class="k-state-active">
-            <b class="k-link k-state-selected">Add placeholders in document</b>
-            <h6>Placeholder Pattern</h6>
-             <div class="panelform" style="padding: 10px;">
-                <label class="ms-label" id="label">### PLACEHOLDER NAME/DATATYPE ###</label>
-            </div>
-            <div class="panelform" style="padding: 10px;">
-                <label class="ms-label dnone" id="label">Placeholder Name</label>
-        <input id="txtInput"><br/>
-        <label class="ms-label dnone" id="labelDataTypes">Placeholder Datatype</label>
-        <input id ="TemplateDataTypeSelect"/>
-        <br/>
-    <div class="demo-section ">
-        <button id="insert-paragraph" class="k-button  k-rounded-md k-button-solid k-button-solid-primary">Add to document</button>
-        <button class="k-button k-button-solid k-button-solid-secondary k-rounded-md" id="clear-Placeholder">Clear</button>
-    </div>
-               
-            </div>
-        </li>
-      
-        
-    </ul> 
 
+    <main id="app-body" class="ms-welcome__main" style="display: none;">
+        <div id="tabstrip">
+            <ul>
+                <li class="k-state-active">Create Template</li>
+                <li>Create Response</li>
+            </ul>
+            <div id="divContainer_CreateTemplate">
+                <ul class="panelbar">
+                    <li class="k-state-active">
+                        <b class="k-link k-state-selected">Add placeholders in document</b>
+                        <h6>Placeholder Pattern</h6>
+                        <div class="panelform" style="padding: 10px;">
+                            <label class="ms-label" id="label">### PLACEHOLDER NAME/DATATYPE ###</label>
+                        </div>
+
+                        <div class="panelform" style="padding: 10px;">
+                            <label class="ms-label dnone" id="label">Placeholder Name</label>
+                            <input id="txtInput"><br />
+                            <label class="ms-label dnone" id="labelDataTypes">Placeholder Datatype</label>
+                            <input id="TemplateDataTypeSelect" />
+                            <br />
+                            <div class="demo-section ">
+                                <button id="insert-paragraph" class="k-button  k-rounded-md k-button-solid k-button-solid-primary">Add to document</button>
+                                <button class="k-button k-button-solid k-button-solid-secondary k-rounded-md" id="clear-Placeholder">Clear</button>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="divContainer_CreateResponse">
+                <ul class="panelbar">
+                    <li class="k-state-active">
+                        <b class="k-link k-state-selected">Placeholder Search Engine</b>
+                        <div class="panelform searchform" style="padding:10px">
+                            <label class="ms-label dnone" id="lblplaceholderpattern">Please enter placeholder pattern </label>
+                            <input id="txtplaceholderpattern" />
+                            <button id="btnconvertplaceholder" class="k-button k-button-solid btnsrc k-button-solid-primary"></button> <br />
+                            <div class="demo-section ">
+                                <table id="tablePlaceholder">
+                                    <th>
+                                        Placeholders dected:
+                                    </th>
+                                </table><br />
+                                <div class="demo-section ">
+                                    <button id="btngenerateformfromPlaceholders" class="k-button k-button-solid k-button-solid-primary">Generate Praposal form  </button> <br />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <b class="k-link">Replace placeholder with values</b>
+                        <div class="panelform" style="padding: 10px;">
+                            <div id="DynamicControl">
+                            </div>
+                            <br />
+                            <div class="demo-section ">
+                                <button id="btnAddtoDocument" class="k-button k-button-solid k-button-solid-primary">Save to document</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </main>
 </body>
-|<script>
-    /*
- * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
- * See LICENSE in the project root for license information.
- */
+|
+</html>
 
-/* global document, Office, Word */
-let TextboxforTemplate;
+<script type="text/javascript">
+    let TextboxforTemplate;
 
-
-Office.onReady((info) => {
-  if (info.host === Office.HostType.Word) {
-    // Determine if the user's version of office supports all the Office.js APIs that are used in the tutorial
-    if(!Office.context.requirements.isSetSupported('wordApi','1.3')){
-      console.log("Sorry,The tutorial add-in uses Word.js APIs that are not available in your version of Office.");
-    }
-
-
-    document.getElementById("insert-paragraph").onclick = insertParagraph;
-      document.getElementById("clear-Placeholder").onclick = clearPlaceholder;
-      
-    document.getElementById("sideload-msg").style.display = "none";
-    document.getElementById("app-body").style.display = "flex";
-
-    // Adding Kendo Framework
-   var products = $("#TemplateDataTypeSelect").kendoDropDownList({
-                    optionLabel: "Select DataType",
-                    dataSource: [ "Single Line of Text", "Multi Line of text", "Date","Currency"]
-                }).data("kendoDropDownList");
-                $("#insert-paragraph").kendoButton();
-                $("#txtInput").kendoTextBox({
-                        placeholder: "Placeholder Name"
-                });
-                $("#txtInputdocumentname").kendoTextBox({
-                        placeholder: "Please enter document name"
-                });
-     
-       
- $("#panelbar").kendoPanelBar({
-                expandMode: "single"
-            });
-  }
-
-
-
-});
-    
-function saveTemplateLibrary(){
-    
-    Office.context.document.getFilePropertiesAsync(function(asyncResult){
-      var fileUrl = asyncResult.value.url;
-      var siteURL = "https://collaberainc.sharepoint.com/sites/SPINTestSpace";
-      console.log(fileUrl);
-      var fileCollection = fileUrl.split("/");
-      var fileName= fileCollection[6];
-      var GetURL = siteURL + "/_api/web/lists/GetByTitle('TemplateModule')/items?$filter=FileLeafRef eq '"+fileName+"'&$select=Id";
-      var TemplateID = GetItemsDocument(GetURL);
-        console.log(TemplateID);
-
-    });
-}
-function GetItemsDocument(url) {
-    var array = [];
-    jQuery.ajax({
-        url: url,
-        type: "GET",
-        dataType: "json",
-        headers: { "accept": "application/json; odata=verbose" },
-        async: false,
-        success: function (data) {
-            if (data.d != undefined) {
-                console.log(data.d);
-                results = data.d;
-            } else {
-                results = null;
+    Office.onReady((info) => {
+        if (info.host === Office.HostType.Word) {
+            // Determine if the user's version of office supports all the Office.js APIs that are used in the tutorial
+            if (!Office.context.requirements.isSetSupported('wordApi', '1.3')) {
+                console.log("Sorry,The tutorial add-in uses Word.js APIs that are not available in your version of Office.");
             }
 
-        },
-        error: function (error) {
-            console.log(JSON.stringify(error));
-            results = null;
+
+            document.getElementById("insert-paragraph").onclick = insertParagraph;
+            document.getElementById("clear-Placeholder").onclick = clearPlaceholder;
+            document.getElementById("btnconvertplaceholder").onclick = GetPlaceholderValue;
+            document.getElementById("btngenerateformfromPlaceholders").onclick = GenerateFormfromPlaceholders;
+            document.getElementById('btnAddtoDocument').onclick = addPlaceHolderintoword;
+
+            document.getElementById("sideload-msg").style.display = "none";
+            document.getElementById("app-body").style.display = "flex";
+
+            // Adding Kendo Framework
+            var products = $("#TemplateDataTypeSelect").kendoDropDownList({
+                optionLabel: "Select DataType",
+                dataSource: ["Single Line of Text", "Multi Line of text", "Date", "Currency"]
+            }).data("kendoDropDownList");
+            $("#insert-paragraph").kendoButton();
+            $("#txtInput").kendoTextBox({
+                placeholder: "Placeholder Name"
+            });
+            $("#txtInputdocumentname").kendoTextBox({
+                placeholder: "Please enter document name"
+            });
+
+
+            $(".panelbar").kendoPanelBar({
+                expandMode: "single"
+            });
+
+            var products = $("#TemplateDataTypeSelect").kendoDropDownList({
+                optionLabel: "Select DataType",
+                dataSource: ["Single Line of Text", "Multi Line of text", "Date"]
+            }).data("kendoDropDownList");
+            $("#insert-paragraph").kendoButton();
+            $("#txtInput").kendoTextBox({
+                placeholder: "Enter Placeholder Pattern"
+            });
+            $("#txtClientName").kendoTextBox({
+                placeholder: "Enter Client Name"
+            });
+            $("#txtsector").kendoTextBox({
+                placeholder: "Enter Sector Name"
+            });
+            $("#txtprice").kendoTextBox({
+                placeholder: "Enter Price"
+            });
+            $("#txtInputdocumentname").kendoTextBox({
+                placeholder: "Enter Document Name"
+            });
+            $("#txtStartDate").kendoDatePicker();
+            $("#txtEndDate").kendoDatePicker();
+
+            $("#txtplaceholderpattern").kendoTextBox({
+                placeholder: "Enter Placeholder Pattern"
+            });
+            $("#btnconvertplaceholder").kendoButton({
+                icon: "search"
+            });
+
+            var Industry = $("#TemplateDataTypeSelectIndustry").kendoDropDownList({
+                optionLabel: "Select Industry",
+                dataSource: ["Telecommunication", "Service", "FMCG"]
+            }).data("kendoDropDownList")
+            $("#panelbar").kendoPanelBar({
+                expandMode: "single"
+            });
         }
     });
-    return results;
-}
-    
-function clearPlaceholder(){
-    Word.run(function (context) {
-    
-    document.getElementById("txtInput").value= '';
-    var Templatedropdownlist = $("#TemplateDataTypeSelect").data("kendoDropDownList");
-    Templatedropdownlist.select(0);
-    return context.sync();
-  })
-  .catch(function (error) {
-      console.log("Error: " + error);
-      if (error instanceof OfficeExtension.Error) {
-          console.log("Debug info: " + JSON.stringify(error.debugInfo));
-      }
-    });  
-}
 
-function insertParagraph() {
-  Word.run(function (context) {
-    var docBody = context.document.body;
-    var Valueoftext = document.getElementById("txtInput").value;
-    var ValueofDatatType = document.getElementById("TemplateDataTypeSelect").value;
-    document.getElementById("txtInput").value= '';
-    var Templatedropdownlist = $("#TemplateDataTypeSelect").data("kendoDropDownList");
-    Templatedropdownlist.select(0);
-    docBody.insertText("###" + Valueoftext +" /" + ValueofDatatType + "###",Word.InsertLocation.end);
+    function saveTemplateLibrary() {
 
-      return context.sync();
-  })
-  .catch(function (error) {
-      console.log("Error: " + error);
-      if (error instanceof OfficeExtension.Error) {
-          console.log("Debug info: " + JSON.stringify(error.debugInfo));
-      }
-  });
-}
+        Office.context.document.getFilePropertiesAsync(function (asyncResult) {
+            var fileUrl = asyncResult.value.url;
+            var siteURL = "https://collaberainc.sharepoint.com/sites/SPINTestSpace";
+            console.log(fileUrl);
+            var fileCollection = fileUrl.split("/");
+            var fileName = fileCollection[6];
+            var GetURL = siteURL + "/_api/web/lists/GetByTitle('TemplateModule')/items?$filter=FileLeafRef eq '" + fileName + "'&$select=Id";
+            var TemplateID = GetItemsDocument(GetURL);
+            console.log(TemplateID);
 
+        });
+    }
+    function GetItemsDocument(url) {
+        var array = [];
+        jQuery.ajax({
+            url: url,
+            type: "GET",
+            dataType: "json",
+            headers: { "accept": "application/json; odata=verbose" },
+            async: false,
+            success: function (data) {
+                if (data.d != undefined) {
+                    console.log(data.d);
+                    results = data.d;
+                } else {
+                    results = null;
+                }
 
+            },
+            error: function (error) {
+                console.log(JSON.stringify(error));
+                results = null;
+            }
+        });
+        return results;
+    }
+    function clearPlaceholder() {
+        Word.run(function (context) {
 
+            document.getElementById("txtInput").value = '';
+            var Templatedropdownlist = $("#TemplateDataTypeSelect").data("kendoDropDownList");
+            Templatedropdownlist.select(0);
+            return context.sync();
+        })
+            .catch(function (error) {
+                console.log("Error: " + error);
+                if (error instanceof OfficeExtension.Error) {
+                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
+                }
+            });
+    }
+    function insertParagraph() {
+        Word.run(function (context) {
+            var docBody = context.document.body;
+            var Valueoftext = document.getElementById("txtInput").value;
+            var ValueofDatatType = document.getElementById("TemplateDataTypeSelect").value;
+            document.getElementById("txtInput").value = '';
+            var Templatedropdownlist = $("#TemplateDataTypeSelect").data("kendoDropDownList");
+            Templatedropdownlist.select(0);
+            docBody.insertText("###" + Valueoftext + " /" + ValueofDatatType + "###", Word.InsertLocation.end);
 
+            return context.sync();
+        })
+            .catch(function (error) {
+                console.log("Error: " + error);
+                if (error instanceof OfficeExtension.Error) {
+                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
+                }
+            });
+    }
+    function addPlaceHolderintoword() {
+        Word.run(function (context) {
+            var searchResultsPlaceHolder = context.document.body.search('###*/*###', { matchWildcards: true });
+            context.load(searchResultsPlaceHolder, 'font');
+            context.load(searchResultsPlaceHolder, 'text');
+            context.load(searchResultsPlaceHolder);
+            return context.sync().then(function () {
+                debugger;
+                for (var i = 0; i < searchResultsPlaceHolder.items.length; i++) {
+                    if (searchResultsPlaceHolder.items[i].text.includes("Single Line of Text")) {
+                        var singleLineofText = searchResultsPlaceHolder.items[i].text.split("/");
+                        var ValueofSingleLineofTextFirst = singleLineofText[0].substring(3);
+                        var ValueofSingleLineofTextSecond = singleLineofText[1].slice(0, -3);
+                        var trimPlaceholder = ValueofSingleLineofTextFirst.split(' ').join('');
+                        var control = $('#DynamicControl').find("input[id*=" + trimPlaceholder + "]");
+                        console.log("First Client Placeholder" + $(control).attr('id'));
+                        var textboxID = $(control).attr('id');
+                        searchResultsPlaceHolder.items[i].insertText($('#' + textboxID).val(), Word.InsertLocation.replace);
+                    }
+                    else if (searchResultsPlaceHolder.items[i].text.includes("Date")) {
+                        var DateText = searchResultsPlaceHolder.items[i].text.split("/");
+                        var ValueofDateTextFirst = DateText[0].substring(3);
+                        var ValueofDateTextSecond = DateText[1].slice(0, -3);
+                        var trimPlaceholderDate = ValueofDateTextFirst.split(' ').join('');
+                        var controlDate = $('#DynamicControl').find("input[id*=" + trimPlaceholderDate + "]");
+                        console.log("First Date Placeholder" + $(controlDate).attr('id'));
+                        var DateTextboxID = $(controlDate).attr('id');
+                        searchResultsPlaceHolder.items[i].insertText($('#' + DateTextboxID).val(), Word.InsertLocation.replace);
+                    }
+                    else if (searchResultsPlaceHolder.items[i].text.includes("Multi Line of text")) {
+                        var MutliLineText = searchResultsPlaceHolder.items[i].text.split("/");
+                        var ValueofMutliLineTextFirst = MutliLineText[0].substring(3);
+                        var ValueofMutliLineTextSecond = MutliLineText[1].slice(0, -3);
+                        var trimPlaceholderMultiEditor = ValueofMutliLineTextFirst.split(' ').join('');
+                        var controlMultiEditor = $('#DynamicControl').find("textarea[id*=" + trimPlaceholderMultiEditor + "]");
+                        console.log("First Date Placeholder" + $(controlMultiEditor).attr('id'));
+                        var MultiEditorID = $(controlMultiEditor).attr('id');
+                        searchResultsPlaceHolder.items[i].insertHtml($('#' + MultiEditorID).val(), Word.InsertLocation.replace);
+                    }
+                    else if (searchResultsPlaceHolder.items[i].text.includes("Currency")) {
+                        var CurrrencyText = searchResultsPlaceHolder.items[i].text.split("/");
+                        var ValueofCurrencyTextFirst = CurrrencyText[0].substring(3);
+                        var ValueofCurrencyTextSecond = CurrrencyText[1].slice(0, -3);
+                        var trimPlaceholderCurrencyEditor = ValueofCurrencyTextFirst.split(' ').join('');
+                        var controlCurrencyTextbox = $('#DynamicControl').find("input[id*=" + trimPlaceholderCurrencyEditor + "]");
+
+                        console.log("First Date Placeholder" + $(controlCurrencyTextbox[0]).attr('id'));
+                        console.log("First Date Placeholder" + $(controlCurrencyTextbox[1]).attr('id'));
+
+                        var CurrencyTextboxID = $(controlCurrencyTextbox[0]).attr('id');
+                        var CurrencyDropdownID = $(controlCurrencyTextbox[1]).attr('id');
+                        var dropdownValue = $('#' + CurrencyDropdownID).val();
+                        var currencyTextboxValue = $('#' + CurrencyTextboxID).val();
+                        var finalValue = dropdownValue + currencyTextboxValue;
+                        searchResultsPlaceHolder.items[i].insertText(finalValue, Word.InsertLocation.replace);
+                    }
+
+                }
+                return context.sync();
+            });
+        })
+            .catch(function (error) {
+                console.log('Error: ' + JSON.stringify(error));
+                if (error instanceof OfficeExtension.Error) {
+                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+                }
+
+            });
+    }
+    function GenerateFormfromPlaceholders() {
+        Word.run(function (context) {
+            var searchResults = context.document.body.search('###*/*###', { matchWildcards: true });
+            context.load(searchResults, 'font');
+            context.load(searchResults, 'text');
+            return context.sync().then(function () {
+                console.log('Found count: ' + searchResults.items.length);
+                for (var i = 0; i < searchResults.items.length; i++) {
+                    if (searchResults.items[i].text.includes("Single Line of Text")) {
+                        var randomNumber = Math.floor((Math.random() * 99999999999) + 1);
+                        var singleLineofText = searchResults.items[i].text.split("/");
+                        var ValueofSingleLineofText = singleLineofText[0].substring(3)
+                        var trimPlaceholder = ValueofSingleLineofText.split(' ').join('');
+                        $("#DynamicControl").append("<input type=text id=textBox_" + trimPlaceholder + "_" + randomNumber + "><br/>");
+                        $('#DynamicControl').children('#textBox_' + trimPlaceholder + "_" + randomNumber).kendoTextBox({
+                            placeholder: ValueofSingleLineofText
+                        });
+                    }
+                    else if (searchResults.items[i].text.includes("Multi Line of text")) {
+                        var randomNumberMulti = Math.floor((Math.random() * 99999999999) + 1);
+                        var KendoMultiLineofText = searchResults.items[i].text.split("/");
+                        var KendoEditorValue = KendoMultiLineofText[0].substring(3);
+                        var trimPlaceholderMultiLine = KendoEditorValue.split(' ').join('');
+                        $("#DynamicControl").append("<div><label id=lbl" + randomNumberMulti + ">" + KendoEditorValue + "</label></div><br/>");
+                        $("#DynamicControl").append("<textarea id=MultLine_" + trimPlaceholderMultiLine + "_" + randomNumberMulti + " rows=10 cols=40 style=height:150px></textarea><br/>");
+                        $('#DynamicControl').children('#MultLine_' + trimPlaceholderMultiLine + "_" + randomNumberMulti).kendoEditor();
+                    }
+                    else if (searchResults.items[i].text.includes("Date")) {
+                        var randomNumberDate = Math.floor((Math.random() * 99999999999) + 1);
+                        var KendoDate = searchResults.items[i].text.split("/");
+                        var KendoDateValue = KendoDate[0].substring(3);
+                        var trimPlaceholderDate = KendoDateValue.split(' ').join('');
+                        $("#DynamicControl").append("<div><label id=lbl" + randomNumberDate + ">" + KendoDateValue + "</label></div><br/>");
+                        $("#DynamicControl").append("<input type=text id=Date_" + trimPlaceholderDate + "_" + randomNumberDate + "><br/>");
+                        var todayDate = new Date();
+                        $('#DynamicControl').children('#Date_' + trimPlaceholderDate + "_" + randomNumberDate).kendoDatePicker({
+                            value: todayDate
+                        });
+                    }
+                    else if (searchResults.items[i].text.includes("Currency")) {
+                        var randomNumberCurrency = Math.floor((Math.random() * 99999999999) + 1);
+                        var kendoCurrency = searchResults.items[i].text.split("/");
+                        var kendoCurrencyValue = kendoCurrency[0].substring(3);
+                        var trimPlaceholderCurrency = kendoCurrencyValue.split(' ').join('');
+                        $("#DynamicControl").append("<input type=number id=currency_" + trimPlaceholderCurrency + "_" + randomNumberCurrency + "><input id=currencydropdown_" + trimPlaceholderCurrency + "_" + randomNumberCurrency + ">");
+                        $('#DynamicControl').children('#currency_' + trimPlaceholderCurrency + "_" + randomNumberCurrency).kendoTextBox({
+                            placeholder: kendoCurrencyValue
+                        });
+                        $("#DynamicControl").children('#currencydropdown_' + trimPlaceholderCurrency + "_" + randomNumberCurrency).kendoDropDownList({
+                            optionLabel: "Select DataType...",
+                            dataSource: ["INR", "USD", "CNY", "EUR", "GBP"]
+                        }).data("kendoDropDownList");
+                    }
+                }
+                return context.sync();
+            });
+        })
+            .catch(function (error) {
+                console.log('Error: ' + JSON.stringify(error));
+                if (error instanceof OfficeExtension.Error) {
+                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+                }
+
+            });
+    }
+    function GetPlaceholderValue() {
+        debugger;
+        Word.run(function (context) {
+            // Queue a command to search the document with a wildcard
+            // #.
+
+            var searchResults = context.document.body.search('###*/*###', { matchWildcards: true });
+
+            // Queue a command to load the search results and get the font property values.
+            context.load(searchResults, 'font');
+            context.load(searchResults, 'text');
+
+            // Synchronize the document state by executing the queued commands,
+            // and return a promise to indicate task completion.
+            return context.sync().then(function () {
+
+                console.log('Found count: ' + searchResults.items.length);
+
+                // Queue a set of commands to change the font for each found item.
+                for (var i = 0; i < searchResults.items.length; i++) {
+
+                    searchResults.items[i].font.color = 'purple';
+                    searchResults.items[i].font.highlightColor = 'pink';
+                    searchResults.items[i].font.bold = true;
+                    console.log(searchResults.items[i].text);
+                    debugger;
+                    $("#tablePlaceholder").append("<tr><td>" + searchResults.items[i].text + "</td></tr>");
+
+                }
+
+                // Synchronize the document state by executing the queued commands,
+                // and return a promise to indicate task completion.
+                return context.sync();
+
+            });
+        })
+            .catch(function (error) {
+                console.log('Error: ' + JSON.stringify(error));
+                if (error instanceof OfficeExtension.Error) {
+                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+                }
+
+            });
+    }
 </script>
-</html>
+
