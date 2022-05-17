@@ -491,7 +491,7 @@ background-color:#fff;
 }
 .btnbase:hover, .btnbase.active { background-color:#165f75;
     border-color:#165f75;
-    font-color:14px;
+    font-size:14px;
     font-weight:bold;
     border: 1px solid #165f75;
 color:#fff;}
