@@ -310,7 +310,7 @@ border: 1px solid #a6a6a6;
     align-items: flex-end;
     -ms-flex-pack: start;
     justify-content: flex-start;}
-.SelectSPFX span {     max-width: calc(75% - 10px);
+.SelectSPFX span {     max-width: calc(100% - 10px);
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;}
 
