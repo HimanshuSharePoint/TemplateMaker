@@ -504,7 +504,7 @@ color:#fff;}
 .thumb  .imgcard:hover {  }
 .thumb .imgcard .actionbtn { position:absolute; width:100%; height:100%; top:0; left:0; background:#66666661; display:none; optacity:0; z-index:9; }
 .thumb .imgcard:hover .actionbtn { display:block; opacity:1;}
-.thumb .imgcard .actionbtn button { position:absolute; border-radius:2px; transform:translate(-50%,-50%); left:50%; top:40%; background:#165f75; color:#fff; border:none; width:60%; padding:5px 10px; font-size:12px;}
+.thumb .imgcard .actionbtn button { position:absolute; border-radius:2px; transform:translate(-50%,-50%); left:50%; top:40%; background:#165f75; color:#fff; border:none; width:65%; padding:5px 10px; font-size:12px;}
 .thumb .imgcard .actionbtn button:hover { background:#2989a6;  cursor:pointer;}
 .thumb .imgcard .actionbtn button+button { position:absolute; transform:translate(-50%,-50%); left:50%; top:60%;}
 .thumb  .imgcard img { position:absolute; width:80%; height:80%; left:50%; top:50%; transform:translate(-50%,-50%); z-index:1; }
