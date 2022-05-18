@@ -529,8 +529,8 @@ html[dir='ltr'] .compositeLink_a0b619f0.compositeLinkIsSelected_a0b619f0 a:after
 .divSearchResponse { display:inline-block; width:92%; position:relative; vertical-align:top; margin-top:10px; margin-bottom:10px;}
 .k-i-search { position:absolute; top:7px;}
 .divSearchResponse input { width:95%; height:25px; padding-left:30px;}
-.drpResponse { width:55%; display:inline-block; margin-top:5px; text-align:right;}
-.drpResponse select { padding:8px; box-shadow:0px 0px 3px #333; border:none; border-radius:2px; outline:none; }
+.drpResponse { width:auto; display:inline-block; margin-top:5px; text-align:right; float:right; margin-right:10px;}
+.drpResponse select { padding:8px; box-shadow:0px 0px 2px #333; border:none; border-radius:4px; outline:none; }
 .swal-overlay.swal-overlay--show-modal { z-index:99999;}
 .swal-modal { z-index:99999;}
 .thumb .imgcard .actionbtn button.btndownload { transform:translate(-50%,-50%); left:50%; top:50%;}
