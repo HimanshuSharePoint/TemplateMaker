@@ -572,6 +572,8 @@ html[dir='ltr'] .compositeLink_a0b619f0.compositeLinkIsSelected_a0b619f0 a:after
     animation-delay: 0.6s;
 }
 h1.doclibttl { font-size:1.5rem; display:inline; font-weight:normal;}
+.quick-panel .quick-panel-close i { color:#000;}
+.spfxttl2 { border-bottom: #e3e3e3 solid 1px; padding-bottom: 10px; }
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
