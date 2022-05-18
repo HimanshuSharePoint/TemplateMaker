@@ -163,6 +163,7 @@ border: 1px solid #a6a6a6;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+    width:100%;
 }
 .dropdownfilter .dropbtn {
   font-size: 14px;  
@@ -486,8 +487,9 @@ background-color:#fff;
     padding:5px 9px;
     font-weight:600;
     border-radius:0px;
-    margin-left:15px;
+    margin-left:0px;
     box-shadow:0px 0px 3px #33333361;
+    width:100%;
 }
 .btnbase:hover, .btnbase.active { background-color:#165f75;
     border-color:#165f75;
