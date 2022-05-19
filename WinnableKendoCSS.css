@@ -498,7 +498,7 @@ color:#fff;}
 .docliblock { background:#ececec; padding:2%;
  }
 
-.thumb { width:100%; max-width:185px; height:250px; display:inline-block; margin:5px 10px; vertical-align:top;   position:relative;}
+.thumb { width:100%; max-width:185px; height:250px; display:inline-block; margin:10px 10px; border:1px solid #999; vertical-align:top;   position:relative;}
 
 .thumb .imgcard { box-shadow:0px 0px 3px #33333361;  margin-bottom:0.5rem; position:relative; height:180px; top:0px;}
 .thumb  .imgcard:hover {  }
