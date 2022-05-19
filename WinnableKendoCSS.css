@@ -791,6 +791,8 @@ h1.doclibttl { font-size:1.5rem; display:inline; font-weight:normal;}
     float: none;
     text-align: center;}
 	#divthumbnail { text-align: center;}
+	.divSearchResponse { width:100%;}
+	.divSearchResponse input { width:100%;} 
 }
 
  
