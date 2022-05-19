@@ -810,7 +810,7 @@ h1.doclibttl { font-size:1.5rem; display:inline; font-weight:normal;}
 
 @media (min-width: 1200px){
 .container, .container-lg, .container-md, .container-sm, .container-xl {
-    max-width: 960px;
+    max-width: 960px!important;
 	}}
  
 
