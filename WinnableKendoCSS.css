@@ -768,7 +768,7 @@ h1.doclibttl { font-size:1.5rem; display:inline; font-weight:normal;}
 .spfxttl2 { border-bottom: #e3e3e3 solid 1px; padding-bottom: 10px; }
 .docliblock { position: relative;}
 .quick-panel-overlayspfx { position:absolute; display: flex; justify-content: center; align-items: center;}
-#KendoGridResponseLibrary>table, #KendoGridTempResponseLibrary>table, #KendoGridDocumentLibrary>table { table-layout: fixed; }
+#KendoGridResponseLibrary table, #KendoGridTempResponseLibrary table, #KendoGridDocumentLibrary table { table-layout: fixed; }
 	
 @media (max-width: 575.98px) { 
 .quick-panel
