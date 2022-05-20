@@ -247,6 +247,8 @@
 
 <script type="text/javascript">
     let TextboxforTemplate;
+    let TEMPLATEMODULEFLAG = false;
+    let TEMPRESPONSEFLAG = false;
 
     Office.onReady((info) => {
         if (info.host === Office.HostType.Word) {
@@ -254,8 +256,8 @@
             if (!Office.context.requirements.isSetSupported('wordApi', '1.3')) {
                 console.log("Sorry,The tutorial add-in uses Word.js APIs that are not available in your version of Office.");
             }
-
-
+            
+            saveTemplateLibrary();
             document.getElementById("insert-paragraph").onclick = insertParagraph;
             document.getElementById("clear-Placeholder").onclick = clearPlaceholder;
             document.getElementById('btnAddtoDocument').onclick = addPlaceHolderintoword;
@@ -323,9 +325,18 @@
                 
                 GetPlaceholderValue();
                 GenerateFormfromPlaceholders();
+                
+                if(TEMPLATEMODULEFLAG){
+                    var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
+                    tabStrip.remove("li:last");
+                }
+                if(TEMPRESPONSEFLAG){
+                    var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
+                    tabStrip.remove("li:first");
+                }
             }
         }
-        saveTemplateLibrary();
+        
     });
 
     function saveTemplateLibrary() {
@@ -334,6 +345,19 @@
             var fileUrl = asyncResult.value.url;
             /* If Template Else REsponse */
             console.log(fileUrl);
+            if (fileUrl.indexOf('TemplateModule') > -1) {
+                    TEMPLATEMODULEFLAG= true;
+            } else {
+                TEMPLATEMODULEFLAG = false;
+            }
+            if (fileUrl.indexOf('TempResponselibrary') > -1) {
+                    TEMPRESPONSEFLAG= true;
+            } else {
+                TEMPRESPONSEFLAG = false;
+            }
+            
+            
+         
         });
     }
     
