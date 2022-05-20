@@ -257,7 +257,7 @@
                 console.log("Sorry,The tutorial add-in uses Word.js APIs that are not available in your version of Office.");
             }
             
-            saveTemplateLibrary();
+           
             document.getElementById("insert-paragraph").onclick = insertParagraph;
             document.getElementById("clear-Placeholder").onclick = clearPlaceholder;
             document.getElementById('btnAddtoDocument').onclick = addPlaceHolderintoword;
@@ -325,17 +325,10 @@
                 
                 GetPlaceholderValue();
                 GenerateFormfromPlaceholders();
-                
-                if(TEMPLATEMODULEFLAG){
-                    var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
-                    tabStrip.remove("li:last");
-                }
-                if(TEMPRESPONSEFLAG){
-                    var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
-                    tabStrip.remove("li:first");
-                }
+               
             }
         }
+         saveTemplateLibrary();
         
     });
 
@@ -356,7 +349,14 @@
                 TEMPRESPONSEFLAG = false;
             }
             
-            
+             if(TEMPLATEMODULEFLAG){
+                    var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
+                    tabStrip.remove("li:last");
+                }
+                if(TEMPRESPONSEFLAG){
+                    var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
+                    tabStrip.remove("li:first");
+                }
          
         });
     }
