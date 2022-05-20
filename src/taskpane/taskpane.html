@@ -149,7 +149,6 @@
             margin-bottom: 6px;
             display: block;
         }
-
         .panelform .k-input, .panelform .k-dropdown {
             margin-bottom: 15px;
         }
@@ -350,12 +349,10 @@
             }
             
              if(TEMPLATEMODULEFLAG){
-                    var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
-                    tabStrip.remove("li:last");
+                    $("#k-tabstrip-item k-item k-last").addClass("dnone");
                 }
                 if(TEMPRESPONSEFLAG){
-                    var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
-                    tabStrip.remove("li:first");
+                    $("#k-tabstrip-item k-item k-first").addClass("dnone");
                 }
          
         });
