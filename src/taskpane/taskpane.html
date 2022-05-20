@@ -353,6 +353,8 @@
                 }
                 if(TEMPRESPONSEFLAG){
                     $("#tabstrip-tab-1").addClass("dnone");
+                     var tabStripResponse = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
+                    tabStripResponse.select(1); 
                 }
          
         });
