@@ -352,14 +352,14 @@
 
         if (TEMPLATEMODULEFLAG) {
 
-            $("#tabstrip-tab-2").hide();
-            $("#divContainer_CreateResponse").hide();
+            $("#tabstrip-tab-2").addClass("dnone");
+            $("#divContainer_CreateResponse").addClass("dnone");
 
         }
         if (TEMPRESPONSEFLAG) {
 
-            $("#tabstrip-tab-1").hide;
-            $("#divContainer_CreateTemplate").hide();
+            $("#tabstrip-tab-1").addClass("dnone");
+            $("#divContainer_CreateTemplate").addClass("dnone");
             $("#tabstrip").kendoTabStrip().data("kendoTabStrip").select(1);
         }
     });
