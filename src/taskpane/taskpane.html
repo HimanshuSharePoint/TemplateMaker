@@ -331,40 +331,39 @@
         
     });
 
+   
     function saveTemplateLibrary() {
 
-        Office.context.document.getFilePropertiesAsync(function (asyncResult) {
-            var fileUrl = asyncResult.value.url;
-            var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
-            /* If Template Else REsponse */
-            console.log(fileUrl);
-            if (fileUrl.indexOf('TemplateModule') > -1) {
-                    TEMPLATEMODULEFLAG= true;
-            } else {
-                TEMPLATEMODULEFLAG = false;
-            }
-            if (fileUrl.indexOf('TempResponselibrary') > -1) {
-                    TEMPRESPONSEFLAG= true;
-            } else {
-                TEMPRESPONSEFLAG = false;
-            }
-            
-             if(TEMPLATEMODULEFLAG){
-                     
-                    var ResponseTab = tabStrip.select(1);
-                    tabStrip.remove(ResponseTab);
-                    tabStrip.select(0);
-                 
-                }
-                if(TEMPRESPONSEFLAG){
-                     
-                    var TemplateTab = tabStrip.select(0);
-                    tabStrip.remove(TemplateTab);
-                    tabStrip.select(0);
-                }
-         
-        });
-    }
+    Office.context.document.getFilePropertiesAsync(function(asyncResult) {
+        var fileUrl = asyncResult.value.url;
+        var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
+        /* If Template Else REsponse */
+        console.log(fileUrl);
+        if (fileUrl.indexOf('TemplateModule') > -1) {
+            TEMPLATEMODULEFLAG = true;
+        } else {
+            TEMPLATEMODULEFLAG = false;
+        }
+        if (fileUrl.indexOf('TempResponselibrary') > -1) {
+            TEMPRESPONSEFLAG = true;
+        } else {
+            TEMPRESPONSEFLAG = false;
+        }
+
+        if (TEMPLATEMODULEFLAG) {
+
+            $("#tabstrip-tab-2").hide();
+            $("#divContainer_CreateResponse").hide();
+
+        }
+        if (TEMPRESPONSEFLAG) {
+
+            $("#tabstrip-tab-1").hide;
+            $("#divContainer_CreateTemplate").hide();
+            $("#tabstrip").kendoTabStrip().data("kendoTabStrip").select(1);
+        }
+    });
+}
     
     function clearPlaceholder() {
         Word.run(function (context) {
