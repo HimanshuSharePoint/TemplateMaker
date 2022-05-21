@@ -335,6 +335,7 @@
 
         Office.context.document.getFilePropertiesAsync(function (asyncResult) {
             var fileUrl = asyncResult.value.url;
+            var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
             /* If Template Else REsponse */
             console.log(fileUrl);
             if (fileUrl.indexOf('TemplateModule') > -1) {
@@ -349,12 +350,17 @@
             }
             
              if(TEMPLATEMODULEFLAG){
-                    $("#tabstrip-tab-2").addClass("dnone");
+                     
+                    var ResponseTab = tabStrip.select(1);
+                    tabStrip.remove(ResponseTab);
+                    tabStrip.select(0);
+                 
                 }
                 if(TEMPRESPONSEFLAG){
-                    $("#tabstrip-tab-1").addClass("dnone");
-                     var tabStripResponse = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
-                    tabStripResponse.select(1); 
+                     
+                    var TemplateTab = tabStrip.select(0);
+                    tabStrip.remove(TemplateTab);
+                    tabStrip.select(0);
                 }
          
         });
