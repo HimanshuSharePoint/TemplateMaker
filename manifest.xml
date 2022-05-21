@@ -45,8 +45,8 @@
 
 					  <!-- Control. It can be of type "Button" or "Menu". -->
 					
-					  <Control xsi:type="Button" id="Contoso.Menu">
-						  <Label resid="Contoso.Menu.Label" />
+					  <Control xsi:type="Button" id="Contoso.Button">
+						  <Label resid="Contoso.Button.Label" />
 
 						  <Supertip>
 							  <Title resid="Contoso.Button.Label" />
@@ -57,7 +57,10 @@
 							  <bt:Image size="32" resid="Contoso.tpicon_32x32" />
 							  <bt:Image size="80" resid="Contoso.tpicon_80x80" />
 						  </Icon>
-						  
+						  <Action xsi:type="ShowTaskpane">
+                                    <TaskpaneId>ButtonId1</TaskpaneId>
+                                    <SourceLocation resid="Taskpane.Url" />
+                            </Action>
 					  </Control>
 				  </Group>
 			  </OfficeTab>
@@ -83,7 +86,7 @@
 			  <bt:String id="Contoso.WriteValueButton.Label" DefaultValue="Create Template" />
 			  <bt:String id="Contoso.Item1.Label" DefaultValue="Create Template" />
 			  <bt:String id="Contoso.Item2.Label" DefaultValue="Create RFP Response" />
-			  <bt:String id="Contoso.Menu.Label" DefaultValue="Winnable" />
+			  <bt:String id="Contoso.Button.Label" DefaultValue="Winnable" />
 			  <bt:String id="Contoso.Group1Label" DefaultValue="Winnable" />
 			  <bt:String id="Contoso.GetStarted.Title" DefaultValue="Hi there, I am Winnable Ginee!" />
 		  </bt:ShortStrings>
@@ -92,11 +95,11 @@
 			  <bt:String id="Contoso.TaskpaneButton.Tooltip" DefaultValue="Choose to show a task pane" />
 			  <bt:String id="Contoso.Item1.Tooltip" DefaultValue="Choose to show a task pane" />
 			  <bt:String id="Contoso.Item2.Tooltip" DefaultValue="Choose to show a task pane" />
-			  <bt:String id="Contoso.Menu.Tooltip" DefaultValue="Show the dropdown menu" />
+			  <bt:String id="Contoso.Button.Tooltip" DefaultValue="Show the dropdown menu" />
 
 			  <bt:String id="Contoso.WriteValueButton.Tooltip" DefaultValue="Choose to write value to document" />
 			  <bt:String id="Contoso.GetStarted.Description" DefaultValue="Your best buddy for creating RFP responses faster and more intelligently. Find me here and see what I can do!" />
 		  </bt:LongStrings>
 	  </Resources>
   </VersionOverrides>
-</OfficeApp>
+</OfficeApp>v
