@@ -507,7 +507,7 @@ color:#fff;}
 .thumb .imgcard .actionbtn button { position:absolute; border-radius:2px; transform:translate(-50%,-50%); left:50%; top:40%; background:#165f75; color:#fff; border:none; width:65%; padding:5px 10px; font-size:12px;}
 .thumb .imgcard .actionbtn button:hover { background:#2989a6;  cursor:pointer;}
 .thumb .imgcard .actionbtn button+button { position:absolute; transform:translate(-50%,-50%); left:50%; top:60%;}
-.thumb  .imgcard img { position:absolute; width:80%; height:80%; left:50%; top:50%; transform:translate(-50%,-50%); z-index:1; }
+.thumb  .imgcard img { position:absolute; width:80%; height:180px; left:50%; top:40%; transform:translate(-50%,-50%); z-index:1; }
 .k-tabstrip-items-wrapper .k-item { color:#000;}
 .k-tabstrip-items .k-item.k-state-active, .k-tabstrip-items .k-item.k-state-selected { background:#ccc; color:#000;}
 .k-tabstrip-items .k-item { margin:0px 10px;}
