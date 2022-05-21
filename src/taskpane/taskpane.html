@@ -360,7 +360,9 @@
             var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
             $("#tabstrip-tab-1").addClass("dnone");
             $("#divContainer_CreateTemplate").addClass("dnone");
-            tabStrip.select(0);
+            var lastItem = $('#tabstrip .k-item:last');
+            lastItem.addClass("k-state-active");
+            
         }
     });
 }
