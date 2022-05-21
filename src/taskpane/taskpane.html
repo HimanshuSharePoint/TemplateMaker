@@ -357,10 +357,10 @@
 
         }
         if (TEMPRESPONSEFLAG) {
-
+            var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
             $("#tabstrip-tab-1").addClass("dnone");
             $("#divContainer_CreateTemplate").addClass("dnone");
-            $("#tabstrip").kendoTabStrip().data("kendoTabStrip").select(1);
+            tabStrip.select(0);
         }
     });
 }
