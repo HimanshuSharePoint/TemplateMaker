@@ -189,8 +189,8 @@
             </ul>
             <div id="divContainer_CreateTemplate">
                 <ul class="panelbar">
-                    <li>
-                        <b>Add placeholders in document</b> 
+                    <li class="k-state-active">
+                        <b class="k-link k-state-selected">Add placeholders in document</b> 
                         <h3 class="panelform" style="padding: 10px; border-bottom:1px solid #e3e3e3;">
                             Placeholder Pattern : <label class="ms-label" id="label">### PLACEHOLDER NAME/DATATYPE ###</label>
                         </h3>
@@ -212,8 +212,8 @@
             </div>
             <div id="divContainer_CreateResponse">
                 <ul class="panelbar">
-                    <li>
-                        <b>Placeholder list in the document</b>
+                    <li class="k-state-active">
+                        <b class="k-link k-state-selected">Placeholder list in the document</b>
                         <div class="panelform searchform" style="padding:10px">
                             
                             <div class="demo-section ">
@@ -349,20 +349,22 @@
         } else {
             TEMPRESPONSEFLAG = false;
         }
-        
-            var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
-            var createTemplateTab = tabStrip.tabGroup.find(':contains("Create Template")');
-            var createResponseTab = tabStrip.tabGroup.find(':contains("Create Response")');
-
 
         if (TEMPLATEMODULEFLAG) {
-            tabStrip.select(createTemplateTab);
-            tabStrip.remove(createResponseTab);
+
+            $("#tabstrip-tab-2").addClass("dnone");
+            $("#divContainer_CreateResponse").addClass("dnone");
 
         }
         if (TEMPRESPONSEFLAG) {
-            tabStrip.select(createResponseTab);
-            tabStrip.remove(createTemplateTab);
+            var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
+            $("#tabstrip-tab-1").addClass("dnone");
+            $("#tabstrip-tab-1").removeClass("k-state-active");
+            $("#divContainer_CreateTemplate").addClass("dnone");
+            var ResponseTabStript = tabStrip.tabGroup.find(':contains("Response")');
+            tabStrip.select(ResponseTabStript);
+            
+            
         }
     });
 }
@@ -581,4 +583,3 @@
     }
     
 </script>
-
