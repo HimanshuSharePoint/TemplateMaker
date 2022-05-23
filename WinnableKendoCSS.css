@@ -808,7 +808,7 @@ h1.doclibttl { font-size:1.5rem; display:inline; font-weight:normal;}
  
 @media (min-width: 1200px) {   }
 
-.k-grid.k-grid-display-block { max-width:85%;}
+/*.k-grid.k-grid-display-block { max-width:85%;}*/
 .CanvasZone { padding: 0px!important; }
 .CanvasSection { padding:0px!important; }
 .ControlZone { margin: 0px!important; padding:0px!important; }
