@@ -554,7 +554,7 @@
             return context.sync().then(function () {
 
                 console.log('Found count: ' + searchResults.items.length);
-
+                var ISPLACEHOLDEREXIST =false;
                 // Queue a set of commands to change the font for each found item.
                 for (var i = 0; i < searchResults.items.length; i++) {
 
@@ -563,7 +563,16 @@
                     searchResults.items[i].font.bold = true;
                     console.log(searchResults.items[i].text);
                     debugger;
-                    $("#tablePlaceholder").append("<tr><td>" + searchResults.items[i].text + "</td></tr>");
+                    // check if Placeholder already exist
+                    $("#tablePlaceholder tr td").each(function(){
+                        var celltext = $(this).html();
+                        if(celltext == searchResults.items[i].text){
+                            ISPLACEHOLDEREXIST = true;
+                        }
+                    });
+                    if(!ISPLACEHOLDEREXIST){
+                       $("#tablePlaceholder").append("<tr><td>" + searchResults.items[i].text + "</td></tr>");
+                    }
 
                 }
 
