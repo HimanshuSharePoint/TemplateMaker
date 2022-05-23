@@ -571,12 +571,11 @@
                     console.log(searchResults.items[i].text);
                     debugger;
                     // check if Placeholder already exist
+                    ISPLACEHOLDEREXIST = false;
                     $("#tablePlaceholder tr td").each(function(){
                         var celltext = $(this).html();
                         if(celltext == searchResults.items[i].text){
                             ISPLACEHOLDEREXIST = true;
-                        }else{
-                            ISPLACEHOLDEREXIST = false;
                         }
                     });
                     if(!ISPLACEHOLDEREXIST){
