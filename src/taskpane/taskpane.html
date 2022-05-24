@@ -390,7 +390,7 @@
             document.getElementById("txtInput").value = '';
             var Templatedropdownlist = $("#TemplateDataTypeSelect").data("kendoDropDownList");
             Templatedropdownlist.select(0);
-            docBody.insertText("###" + Valueoftext + " /" + ValueofDatatType + "###", Word.InsertLocation.end);
+            docBody.insertText(" ###" + Valueoftext + " /" + ValueofDatatType + "### ", Word.InsertLocation.end);
 
             return context.sync();
         })
@@ -403,7 +403,7 @@
     }
     function addPlaceHolderintoword() {
         Word.run(function (context) {
-            var searchResultsPlaceHolder = context.document.body.search('###*/*###', { matchWildcards: true });
+            var searchResultsPlaceHolder = context.document.body.search(' ###*/*### ', { matchWildcards: true });
             context.load(searchResultsPlaceHolder, 'font');
             context.load(searchResultsPlaceHolder, 'text');
             context.load(searchResultsPlaceHolder);
