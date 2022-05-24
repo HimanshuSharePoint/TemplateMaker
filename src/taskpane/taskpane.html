@@ -271,7 +271,9 @@
             }).data("kendoDropDownList");
             $("#insert-paragraph").kendoButton();
             $("#txtInput").kendoTextBox({
-                placeholder: "Placeholder Name"
+                placeholder: "Placeholder Name",
+                encoded:false
+
             });
             $("#txtInputdocumentname").kendoTextBox({
                 placeholder: "Please enter document name"
@@ -436,14 +438,7 @@
                         var controlMultiEditor = $('#DynamicControl').find("textarea[id*=" + trimPlaceholderMultiEditor + "]");
                         console.log("First Date Placeholder" + $(controlMultiEditor).attr('id'));
                         var MultiEditorID = $(controlMultiEditor).attr('id');
-                        txtwithoutHTML = $('#' + MultiEditorID).val().replace(/"/g, "'");								
-					    var val = txtwithoutHTML.replace(/(<([^>]+)>)/ig,"");
-						var finalCode = getText(val);
-						var finalCodeMain = getText(finalCode);
-                        console.log(finalCodeMain);								
-						var finalText = finalCodeMain.replace( /(<([^>]+)>)/ig, '');
-						var removenbsp = finalText.replace(/&nbsp;/gi,' ');
-                        searchResultsPlaceHolder.items[i].insertHtml(removenbsp, Word.InsertLocation.replace);
+                        searchResultsPlaceHolder.items[i].insertHtml($('#' + MultiEditorID).val(), Word.InsertLocation.replace);
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Currency")) {
                         var CurrrencyText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -515,7 +510,9 @@
                         var trimPlaceholderMultiLine = KendoEditorValue.split(' ').join('');
                         $("#DynamicControl").append("<div><label id=lbl" + randomNumberMulti + ">" + KendoEditorValue + "</label></div>");
                         $("#DynamicControl").append("<textarea id=MultLine_" + trimPlaceholderMultiLine + "_" + randomNumberMulti + " rows=10 cols=40 style=height:150px></textarea><br/>");
-                        $('#DynamicControl').children('#MultLine_' + trimPlaceholderMultiLine + "_" + randomNumberMulti).kendoEditor();
+                        $('#DynamicControl').children('#MultLine_' + trimPlaceholderMultiLine + "_" + randomNumberMulti).kendoEditor({
+                            encoded:false
+                        });
                     }
                     else if (searchResults.items[i].text.includes("Date")) {
                         var randomNumberDate = Math.floor((Math.random() * 99999999999) + 1);
