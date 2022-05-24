@@ -436,7 +436,13 @@
                         var controlMultiEditor = $('#DynamicControl').find("textarea[id*=" + trimPlaceholderMultiEditor + "]");
                         console.log("First Date Placeholder" + $(controlMultiEditor).attr('id'));
                         var MultiEditorID = $(controlMultiEditor).attr('id');
-                        searchResultsPlaceHolder.items[i].insertHtml($('#' + MultiEditorID).val(), Word.InsertLocation.replace);
+                        txtwithoutHTML = $('#' + MultiEditorID).val().replace(/"/g, "'");								
+					    var val = txtwithoutHTML.replace(/(<([^>]+)>)/ig,"");
+						var finalCode = getText(val);
+						var finalCodeMain = getText(finalCode);								
+						var finalText = finalCodeMain.replace( /(<([^>]+)>)/ig, '');
+						var removenbsp = finalText.replace(/&nbsp;/gi,' ');
+                        searchResultsPlaceHolder.items[i].insertHtml(removenbsp, Word.InsertLocation.replace);
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Currency")) {
                         var CurrrencyText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -467,6 +473,11 @@
                 }
 
             });
+    }
+    function getText(html) {
+            var tmp = document.createElement('div');
+            tmp.innerHTML = html;
+            return tmp.textContent || tmp.innerText;
     }
     function GenerateFormfromPlaceholders() {
         Word.run(function (context) {
