@@ -412,8 +412,8 @@
                 for (var i = 0; i < searchResultsPlaceHolder.items.length; i++) {
                     if (searchResultsPlaceHolder.items[i].text.includes("Single Line of Text")) {
                         var singleLineofText = searchResultsPlaceHolder.items[i].text.split("/");
-                        var ValueofSingleLineofTextFirst = singleLineofText[0].substring(3);
-                        var ValueofSingleLineofTextSecond = singleLineofText[1].slice(0, -3);
+                        var ValueofSingleLineofTextFirst = singleLineofText[0].substring(4);
+                        var ValueofSingleLineofTextSecond = singleLineofText[1].slice(0, -4);
                         var trimPlaceholder = ValueofSingleLineofTextFirst.split(' ').join('');
                         var control = $('#DynamicControl').find("input[id*=" + trimPlaceholder + "]");
                         console.log("First Client Placeholder" + $(control).attr('id'));
@@ -422,8 +422,8 @@
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Date")) {
                         var DateText = searchResultsPlaceHolder.items[i].text.split("/");
-                        var ValueofDateTextFirst = DateText[0].substring(3);
-                        var ValueofDateTextSecond = DateText[1].slice(0, -3);
+                        var ValueofDateTextFirst = DateText[0].substring(4);
+                        var ValueofDateTextSecond = DateText[1].slice(0, -4);
                         var trimPlaceholderDate = ValueofDateTextFirst.split(' ').join('');
                         var controlDate = $('#DynamicControl').find("input[id*=" + trimPlaceholderDate + "]");
                         console.log("First Date Placeholder" + $(controlDate).attr('id'));
@@ -432,8 +432,8 @@
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Multi Line of text")) {
                         var MutliLineText = searchResultsPlaceHolder.items[i].text.split("/");
-                        var ValueofMutliLineTextFirst = MutliLineText[0].substring(3);
-                        var ValueofMutliLineTextSecond = MutliLineText[1].slice(0, -3);
+                        var ValueofMutliLineTextFirst = MutliLineText[0].substring(4);
+                        var ValueofMutliLineTextSecond = MutliLineText[1].slice(0, -4);
                         var trimPlaceholderMultiEditor = ValueofMutliLineTextFirst.split(' ').join('');
                         var controlMultiEditor = $('#DynamicControl').find("textarea[id*=" + trimPlaceholderMultiEditor + "]");
                         console.log("First Date Placeholder" + $(controlMultiEditor).attr('id'));
@@ -496,7 +496,7 @@
                         
                         var randomNumber = Math.floor((Math.random() * 99999999999) + 1);
                         var singleLineofText = searchResults.items[i].text.split("/");
-                        var ValueofSingleLineofText = singleLineofText[0].substring(3)
+                        var ValueofSingleLineofText = singleLineofText[0].substring(4)
                         var trimPlaceholder = ValueofSingleLineofText.split(' ').join('');
                         $("#DynamicControl").append("<input type=text id=textBox_" + trimPlaceholder + "_" + randomNumber + "><br/>");
                         $('#DynamicControl').children('#textBox_' + trimPlaceholder + "_" + randomNumber).kendoTextBox({
@@ -506,7 +506,7 @@
                     else if (searchResults.items[i].text.includes("Multi Line of text")) {
                         var randomNumberMulti = Math.floor((Math.random() * 99999999999) + 1);
                         var KendoMultiLineofText = searchResults.items[i].text.split("/");
-                        var KendoEditorValue = KendoMultiLineofText[0].substring(3);
+                        var KendoEditorValue = KendoMultiLineofText[0].substring(4);
                         var trimPlaceholderMultiLine = KendoEditorValue.split(' ').join('');
                         $("#DynamicControl").append("<div><label id=lbl" + randomNumberMulti + ">" + KendoEditorValue + "</label></div>");
                         $("#DynamicControl").append("<textarea id=MultLine_" + trimPlaceholderMultiLine + "_" + randomNumberMulti + " rows=10 cols=40 style=height:150px></textarea><br/>");
@@ -517,7 +517,7 @@
                     else if (searchResults.items[i].text.includes("Date")) {
                         var randomNumberDate = Math.floor((Math.random() * 99999999999) + 1);
                         var KendoDate = searchResults.items[i].text.split("/");
-                        var KendoDateValue = KendoDate[0].substring(3);
+                        var KendoDateValue = KendoDate[0].substring(4);
                         var trimPlaceholderDate = KendoDateValue.split(' ').join('');
                         $("#DynamicControl").append("<div><label id=lbl" + randomNumberDate + ">" + KendoDateValue + "</label></div>");
                         $("#DynamicControl").append("<input type=text id=Date_" + trimPlaceholderDate + "_" + randomNumberDate + ">");
@@ -529,7 +529,7 @@
                     else if (searchResults.items[i].text.includes("Currency")) {
                         var randomNumberCurrency = Math.floor((Math.random() * 99999999999) + 1);
                         var kendoCurrency = searchResults.items[i].text.split("/");
-                        var kendoCurrencyValue = kendoCurrency[0].substring(3);
+                        var kendoCurrencyValue = kendoCurrency[0].substring(4);
                         var trimPlaceholderCurrency = kendoCurrencyValue.split(' ').join('');
                         $("#DynamicControl").append("<input type=number id=currency_" + trimPlaceholderCurrency + "_" + randomNumberCurrency + "><input id=currencydropdown_" + trimPlaceholderCurrency + "_" + randomNumberCurrency + ">");
                         $('#DynamicControl').children('#currency_' + trimPlaceholderCurrency + "_" + randomNumberCurrency).kendoTextBox({
