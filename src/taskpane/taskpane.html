@@ -439,7 +439,8 @@
                         txtwithoutHTML = $('#' + MultiEditorID).val().replace(/"/g, "'");								
 					    var val = txtwithoutHTML.replace(/(<([^>]+)>)/ig,"");
 						var finalCode = getText(val);
-						var finalCodeMain = getText(finalCode);								
+						var finalCodeMain = getText(finalCode);
+                        console.log(finalCodeMain);								
 						var finalText = finalCodeMain.replace( /(<([^>]+)>)/ig, '');
 						var removenbsp = finalText.replace(/&nbsp;/gi,' ');
                         searchResultsPlaceHolder.items[i].insertHtml(removenbsp, Word.InsertLocation.replace);
@@ -477,7 +478,7 @@
     function getText(html) {
             var tmp = document.createElement('div');
             tmp.innerHTML = html;
-            return tmp.textContent || tmp.innerText;
+            return tmp.textContent || tmp.innerHTML;
     }
     function GenerateFormfromPlaceholders() {
         Word.run(function (context) {
