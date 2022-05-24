@@ -390,7 +390,7 @@
             document.getElementById("txtInput").value = '';
             var Templatedropdownlist = $("#TemplateDataTypeSelect").data("kendoDropDownList");
             Templatedropdownlist.select(0);
-            docBody.insertText("{###" + Valueoftext + "/" + ValueofDatatType + "###}", Word.InsertLocation.end);
+            docBody.insertText("<###" + Valueoftext + "/" + ValueofDatatType + "###>", Word.InsertLocation.end);
 
             return context.sync();
         })
@@ -403,7 +403,7 @@
     }
     function addPlaceHolderintoword() {
         Word.run(function (context) {
-            var searchResultsPlaceHolder = context.document.body.search('{###*/*###}', { matchWildcards: true });
+            var searchResultsPlaceHolder = context.document.body.search('<###*/*###>', { matchWildcards: true });
             context.load(searchResultsPlaceHolder, 'font');
             context.load(searchResultsPlaceHolder, 'text');
             context.load(searchResultsPlaceHolder);
@@ -477,7 +477,7 @@
     }
     function GenerateFormfromPlaceholders() {
         Word.run(function (context) {
-            var searchResults = context.document.body.search('{###*/*###}', { matchWildcards: true });
+            var searchResults = context.document.body.search('<###*/*###>', { matchWildcards: true });
             var PlaceHolderArrays='';
             context.load(searchResults, 'font');
             context.load(searchResults, 'text');
@@ -559,7 +559,7 @@
             // Queue a command to search the document with a wildcard
             // #.
 
-            var searchResults = context.document.body.search('{###*/*###}', { matchWildcards: true });
+            var searchResults = context.document.body.search('<###*/*###>', { matchWildcards: true });
 
             // Queue a command to load the search results and get the font property values.
             context.load(searchResults, 'font');
