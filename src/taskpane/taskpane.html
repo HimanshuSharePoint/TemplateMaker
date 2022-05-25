@@ -420,7 +420,7 @@
                         console.log("SLT Client Placeholder Value" + searchResultsPlaceHolder.items[i].text);
                         var textboxID = $(control).attr('id');
                         searchResultsPlaceHolder.items[i].insertText($('#' + textboxID).val(), Word.InsertLocation.replace);
-                        await context.sync();
+                        
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Date")) {
                         var DateText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -432,7 +432,6 @@
                         console.log("Date Client Placeholder Value" + searchResultsPlaceHolder.items[i].text);
                         var DateTextboxID = $(controlDate).attr('id');
                         searchResultsPlaceHolder.items[i].insertText($('#' + DateTextboxID).val(), Word.InsertLocation.replace);
-                        await context.sync();
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Multi Line of text")) {
                         var MutliLineText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -444,7 +443,6 @@
                         console.log("MLT Client Placeholder Value" + searchResultsPlaceHolder.items[i].text);
                         var MultiEditorID = $(controlMultiEditor).attr('id');
                         searchResultsPlaceHolder.items[i].insertHtml($('#' + MultiEditorID).val(), Word.InsertLocation.replace);
-                        await context.sync();
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Currency")) {
                         var CurrrencyText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -463,7 +461,6 @@
                         var currencyTextboxValue = $('#' + CurrencyTextboxID).val();
                         var finalValue = dropdownValue + currencyTextboxValue;
                         searchResultsPlaceHolder.items[i].insertText(finalValue, Word.InsertLocation.replace);
-                        await context.sync();
                     }
 
                 }
