@@ -417,6 +417,7 @@
                         var trimPlaceholder = ValueofSingleLineofTextFirst.split(' ').join('');
                         var control = $('#DynamicControl').find("input[id*=" + trimPlaceholder + "]");
                         console.log("First Client Placeholder" + $(control).attr('id'));
+                        console.log("SLT Client Placeholder Value" + earchResultsPlaceHolder.items[i].text);
                         var textboxID = $(control).attr('id');
                         searchResultsPlaceHolder.items[i].insertText($('#' + textboxID).val(), Word.InsertLocation.replace);
                     }
@@ -427,6 +428,7 @@
                         var trimPlaceholderDate = ValueofDateTextFirst.split(' ').join('');
                         var controlDate = $('#DynamicControl').find("input[id*=" + trimPlaceholderDate + "]");
                         console.log("First Date Placeholder" + $(controlDate).attr('id'));
+                        console.log("Date Client Placeholder Value" + earchResultsPlaceHolder.items[i].text);
                         var DateTextboxID = $(controlDate).attr('id');
                         searchResultsPlaceHolder.items[i].insertText($('#' + DateTextboxID).val(), Word.InsertLocation.replace);
                     }
@@ -437,6 +439,7 @@
                         var trimPlaceholderMultiEditor = ValueofMutliLineTextFirst.split(' ').join('');
                         var controlMultiEditor = $('#DynamicControl').find("textarea[id*=" + trimPlaceholderMultiEditor + "]");
                         console.log("First Date Placeholder" + $(controlMultiEditor).attr('id'));
+                        console.log("MLT Client Placeholder Value" + earchResultsPlaceHolder.items[i].text);
                         var MultiEditorID = $(controlMultiEditor).attr('id');
                         searchResultsPlaceHolder.items[i].insertHtml($('#' + MultiEditorID).val(), Word.InsertLocation.replace);
                     }
@@ -449,6 +452,7 @@
 
                         console.log("First Date Placeholder" + $(controlCurrencyTextbox[0]).attr('id'));
                         console.log("First Date Placeholder" + $(controlCurrencyTextbox[1]).attr('id'));
+                        console.log("Currency Value" + earchResultsPlaceHolder.items[i].text);
 
                         var CurrencyTextboxID = $(controlCurrencyTextbox[0]).attr('id');
                         var CurrencyDropdownID = $(controlCurrencyTextbox[1]).attr('id');
