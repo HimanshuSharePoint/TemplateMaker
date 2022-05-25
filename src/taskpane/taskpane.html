@@ -418,7 +418,7 @@
                         var control = $('#DynamicControl').find("input[id*=" + trimPlaceholder + "]");
                         console.log("First Client Placeholder" + $(control).attr('id'));
                         var textboxID = $(control).attr('id');
-                        searchResultsPlaceHolder.items[i].insertText($('#' + textboxID).val(), Word.InsertLocation.replace);
+                        searchResultsPlaceHolder.items[i].insertText($('#' + textboxID).val(), "Replace");
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Date")) {
                         var DateText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -428,7 +428,7 @@
                         var controlDate = $('#DynamicControl').find("input[id*=" + trimPlaceholderDate + "]");
                         console.log("First Date Placeholder" + $(controlDate).attr('id'));
                         var DateTextboxID = $(controlDate).attr('id');
-                        searchResultsPlaceHolder.items[i].insertText($('#' + DateTextboxID).val(), Word.InsertLocation.replace);
+                        searchResultsPlaceHolder.items[i].insertText($('#' + DateTextboxID).val(), "Replace");
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Multi Line of text")) {
                         var MutliLineText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -438,7 +438,7 @@
                         var controlMultiEditor = $('#DynamicControl').find("textarea[id*=" + trimPlaceholderMultiEditor + "]");
                         console.log("First Date Placeholder" + $(controlMultiEditor).attr('id'));
                         var MultiEditorID = $(controlMultiEditor).attr('id');
-                        searchResultsPlaceHolder.items[i].insertHtml($('#' + MultiEditorID).val(), Word.InsertLocation.replace);
+                        searchResultsPlaceHolder.items[i].insertHtml($('#' + MultiEditorID).val(), "Replace");
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Currency")) {
                         var CurrrencyText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -455,7 +455,7 @@
                         var dropdownValue = $('#' + CurrencyDropdownID).val();
                         var currencyTextboxValue = $('#' + CurrencyTextboxID).val();
                         var finalValue = dropdownValue + currencyTextboxValue;
-                        searchResultsPlaceHolder.items[i].insertText(finalValue, Word.InsertLocation.replace);
+                        searchResultsPlaceHolder.items[i].insertText(finalValue, "Replace");
                     }
 
                 }
