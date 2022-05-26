@@ -402,13 +402,15 @@
             });
     }
     function addPlaceHolderintoword() {
-        Word.run(function (context) {
+        Word.run(async (context)=> {
             var searchResultsPlaceHolder = context.document.body.search('###*/*###', { matchWildcards: true });
             context.load(searchResultsPlaceHolder, 'font');
             context.load(searchResultsPlaceHolder, 'text');
             context.load(searchResultsPlaceHolder);
+            var options = Word.SearchOptions.newObject(context);
+            options.matchCase = false
             return context.sync().then(function () {
-                debugger;
+                var results = 'Found count: ' + searchResultsPlaceHolder.items.length + '; we highlighted the results.';
                 for (var i = 0; i < searchResultsPlaceHolder.items.length; i++) {
                     if (searchResultsPlaceHolder.items[i].text.includes("Single Line of Text")) {
                         var singleLineofText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -463,7 +465,9 @@
                     }
 
                 }
-                await context.sync();
+                context.sync().then(function () {
+                    console.log(results);
+                });
             });
         })
             .catch(function (error) {
