@@ -419,8 +419,7 @@
                         console.log("First Client Placeholder" + $(control).attr('id'));
                         console.log("SLT Client Placeholder Value" + searchResultsPlaceHolder.items[i].text);
                         var textboxID = $(control).attr('id');
-                        searchResultsPlaceHolder.items[i].insertHtml($('#' + textboxID).val(), Word.InsertLocation.replace);
-                        
+                        searchResultsPlaceHolder.items[i].insertText($('#' + textboxID).val(), Word.InsertLocation.replace);
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Date")) {
                         var DateText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -431,7 +430,7 @@
                         console.log("First Date Placeholder" + $(controlDate).attr('id'));
                         console.log("Date Client Placeholder Value" + searchResultsPlaceHolder.items[i].text);
                         var DateTextboxID = $(controlDate).attr('id');
-                        searchResultsPlaceHolder.items[i].insertHtml($('#' + DateTextboxID).val(), Word.InsertLocation.replace);
+                        searchResultsPlaceHolder.items[i].insertText($('#' + DateTextboxID).val(), Word.InsertLocation.replace);
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Multi Line of text")) {
                         var MutliLineText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -460,11 +459,11 @@
                         var dropdownValue = $('#' + CurrencyDropdownID).val();
                         var currencyTextboxValue = $('#' + CurrencyTextboxID).val();
                         var finalValue = dropdownValue + currencyTextboxValue;
-                        searchResultsPlaceHolder.items[i].insertHtml(finalValue, Word.InsertLocation.replace);
+                        searchResultsPlaceHolder.items[i].insertText(finalValue, Word.InsertLocation.replace);
                     }
 
                 }
-                return context.sync();
+                await context.sync();
             });
         })
             .catch(function (error) {
