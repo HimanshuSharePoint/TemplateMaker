@@ -3,33 +3,37 @@
  * See LICENSE in the project root for license information.
  */
 
- html,
- body {
-     width: 100%;
-     height: 100%;
-     margin: 0;
-     padding: 0;
- }
- 
- ul {
-     margin: 0;
-     padding: 0;
- }
- 
- .ms-welcome__header {
-    padding: 10px; 
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.ms-welcome__header {
+    padding: 10px;
     /*padding-top: 100px;*/
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
     align-items: start;
-  background:#1a4d8b;
-  color:#fff;
- }
-.ms-welcome__header h1 { margin:0px; font-size:1rem;}
+    background: #1a4d8b;
+    color: #fff;
+}
 
- .ms-welcome__main {
+    .ms-welcome__header h1 {
+        margin: 0px;
+        font-size: 1rem;
+    }
+
+.ms-welcome__main {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
@@ -41,48 +45,55 @@
     -webkit-flex: 1 0 0;
     flex: 1 0 0;
     padding: 0;
- }
- 
- .ms-welcome__main > h2 {
-     width: 100%;
-     text-align: center;
- }
- 
- .ms-welcome__features {
-     list-style-type: none;
-     margin-top: 20px;
- }
- 
- .ms-welcome__features.ms-List .ms-ListItem {
-     padding-bottom: 20px;
-     display: -webkit-flex;
-     display: flex;
- }
- 
- .ms-welcome__features.ms-List .ms-ListItem > .ms-Icon {
-     margin-right: 10px;
- }
- 
- .ms-welcome__action.ms-Button--hero {
-     margin-top: 30px;
- }
- 
+}
+
+    .ms-welcome__main > h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+.ms-welcome__features {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+    .ms-welcome__features.ms-List .ms-ListItem {
+        padding-bottom: 20px;
+        display: -webkit-flex;
+        display: flex;
+    }
+
+        .ms-welcome__features.ms-List .ms-ListItem > .ms-Icon {
+            margin-right: 10px;
+        }
+
+.ms-welcome__action.ms-Button--hero {
+    margin-top: 30px;
+}
+
 .ms-Button.ms-Button--hero .ms-Button-label {
-  color: #0078d7;
+    color: #0078d7;
 }
 
 .ms-Button.ms-Button--hero:hover .ms-Button-label,
-.ms-Button.ms-Button--hero:focus .ms-Button-label{
-  color: #005a9e;
-  cursor: pointer;
+.ms-Button.ms-Button--hero:focus .ms-Button-label {
+    color: #005a9e;
+    cursor: pointer;
 }
 
 b {
     font-weight: bold;
 }
 
-.ms-label { font-size: 14px; margin-bottom: 5px; font-weight: 600;}
-.k-input-inner { font-size: 14px;}
+.ms-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.k-input-inner {
+    font-size: 14px;
+}
 
 .k-button-solid-secondary, .k-button-solid-secondary:hover {
     border-color: #c2d9f5;
@@ -90,14 +101,170 @@ b {
     background-color: #c2d9f5;
     background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.02));
 }
-.k-button-solid-primary, .k-button-solid-primary:hover  {
+
+.k-button-solid-primary, .k-button-solid-primary:hover {
     border-color: #5874ff;
     color: #fff;
     background-color: #5874ff;
     background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.02));
     margin-right: 15px;
 }
+
 .k-list-item.k-selected, .k-selected.k-list-optionlabel {
     color: #fff;
     background-color: #5874ff;
 }
+b {
+    font-weight: bold;
+}
+
+.ms-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.k-input-inner {
+    font-size: 14px;
+}
+
+.k-button-solid-secondary, .k-button-solid-secondary:hover {
+    border-color: #c3d8de;
+    color: #000;
+    background-color: #c3d8de;
+}
+
+.k-button-solid-primary, .k-button-solid-primary:hover {
+    border-color: #5874ff;
+    color: #fff;
+    background-color: #5874ff;
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.02));
+    margin-right: 15px;
+}
+
+.k-list-item.k-selected, .k-selected.k-list-optionlabel {
+    color: #fff;
+    background-color: #5874ff;
+}
+
+.k-panelbar {
+    width: 100%;
+}
+
+    .k-panelbar > .k-item > .k-link.k-state-selected, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected {
+        color: #fff;
+        background-color: #377dcf;
+    }
+
+    .k-panelbar > .k-item > .k-link, .k-panelbar > .k-panelbar-header > .k-link {
+        padding: 6px 16px;
+    }
+
+        .k-panelbar > .k-item > .k-link.k-state-selected.k-state-hover, .k-panelbar > .k-item > .k-link.k-state-selected:hover, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected.k-state-hover, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected:hover {
+            background-color: #377dcf;
+        }
+
+    .k-panelbar > .k-item > .k-link, .k-panelbar > .k-panelbar-header > .k-link {
+        color: #377dcf;
+        background-color: #fff;
+    }
+
+.dnone {
+    display: none !important
+}
+
+.panelform label {
+    margin-bottom: 6px;
+    display: block;
+}
+
+.panelform .k-input, .panelform .k-dropdown {
+    margin-bottom: 15px;
+}
+/* Create Reposnse CSS -START*/
+.k-button-solid-primary, .k-button-solid-primary:hover {
+    border-color: #165f75;
+    color: #fff;
+    background-color: #165f75;
+    margin-right: 15px;
+}
+
+.dnone {
+    display: none !important;
+}
+
+.k-panelbar {
+    width: 100%;
+}
+
+    .k-panelbar > .k-item > .k-link.k-state-selected, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected {
+        color: #fff;
+        background-color: #165f75;
+    }
+
+    .k-panelbar > .k-item > .k-link, .k-panelbar > .k-panelbar-header > .k-link {
+        padding: 6px 16px;
+    }
+
+        .k-panelbar > .k-item > .k-link.k-state-selected.k-state-hover, .k-panelbar > .k-item > .k-link.k-state-selected:hover, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected.k-state-hover, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected:hover {
+            background-color: #377dcf;
+        }
+
+    .k-panelbar > .k-item > .k-link, .k-panelbar > .k-panelbar-header > .k-link {
+        color: #377dcf;
+        background-color: #fff;
+    }
+
+.k-editor .k-content {
+    height: 200px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    background: #c5daf3;
+    padding: 5px;
+}
+
+td {
+    padding: 5px;
+}
+
+.panelform label {
+    margin-bottom: 6px;
+    display: block;
+}
+
+.searchform span.k-input {
+    width: 87%;
+}
+
+.searchform button.btnsrc {
+    margin-right: 0px;
+    position: relative;
+    top: -8px;
+}
+
+.k-button-solid-primary, .k-button-solid-primary:hover {
+    margin-right: 0px;
+}
+
+.k-tabstrip {
+    width: 100%;
+}
+
+.k-tabstrip-items-wrapper .k-item, .k-tabstrip-items-wrapper .k-item.k-state-hover, .k-tabstrip-items-wrapper .k-item:hover {
+    color: #165f75;
+}
+
+.k-panelbar > .k-item > .k-link.k-state-selected.k-state-hover, .k-panelbar > .k-item > .k-link.k-state-selected:hover, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected.k-state-hover, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected:hover {
+    background-color: #184552;
+}
+#h1_CreateResponse, #h1_CreateTemplate{
+    padding:10px 5px 5px 5px;
+}
+/* Create Reposnse CSS -END*/
