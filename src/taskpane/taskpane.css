@@ -114,6 +114,10 @@ b {
     color: #fff;
     background-color: #165f75;
 }
+.k-list-item.k-selected.k-hover, .k-list-item.k-selected:hover {
+    color: #ffffff;
+    background-color: #165f75;
+}
 b {
     font-weight: bold;
 }
