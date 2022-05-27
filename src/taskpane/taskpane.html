@@ -22,8 +22,6 @@
     <link href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.material.min.css" rel="stylesheet" type='text/css'  />
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <link href="taskpane.css" rel="stylesheet" type="text/css" />
-
-   
 </head>
 
 <body class="ms-font-m ms-welcome ms-Fabric">
@@ -32,16 +30,12 @@
         <h1>Winnable Add-In</h1>
     </header>-->
     <div class="container">
-        <div class="row">
-            <div class="col-md-12"> 
-              <div class="d-flex justify-content-center" id="spinner_Main">
-                <div class="spinner-border" role="status">
+        <div class="d-flex justify-content-center" id="spinner_Main">
+            <div class="spinner-border" role="status">
                 <span class="sr-only">Loading...</span>
-                </div>
-              </div>
             </div>
-            <div class="col-md-12">
-                <div id="divContainer_CreateTemplate" class="d-none" >
+        </div>
+        <div id="divContainer_CreateTemplate" class="row d-none" >
             <h6 id="h1_CreateTemplate">Edit template document by adding placeholders</h6>
             <ul class="panelbar">
                 <li class="k-state-active">
@@ -62,23 +56,20 @@
                 </li>
             </ul>
         </div>
-            </div>
-            
-            <div class="col-md-12">
-                 <div id="divContainer_CreateResponse" class="d-none">
-                      <h6 id="h1_CreateResponse">Create proposal response by adding values to placeholders</h6>
-                       <ul class="panelbar">
-                         <li class="k-state-active">
-                           <b class="k-link k-state-selected">Placeholder list found in the document</b>
-                           <div class="panelform searchform" style="padding:10px">
+        <div id="divContainer_CreateResponse" class="row d-none">
+            <h6 id="h1_CreateResponse">Create proposal response by adding values to placeholders</h6>
+            <ul class="panelbar">
+                <li class="k-state-active">
+                    <b class="k-link k-state-selected">Placeholder list found in the document</b>
+                    <div class="panelform searchform" style="padding:10px">
 
-                           <div class="demo-section ">
+                        <div class="demo-section ">
                             <table id="tablePlaceholder">
                                 
                             </table>
 
-                           </div>
-                           </div>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <b class="k-link">Replace placeholders by values</b>
@@ -94,11 +85,6 @@
             </ul>
         </div>
     </div>
-            </div>
-        </div>
-       
-        
-        
    
 </body>
 |
@@ -167,7 +153,7 @@ function hideSpinner(controlID) {
         renderPageControls();
         renderTargetPageView();
     }
-    
+
     function loadComponent_CreateTemplate() {
         console.log("Inside CreateTemplate Component");
         showControl("#divContainer_CreateTemplate");
@@ -332,7 +318,7 @@ function hideSpinner(controlID) {
             document.getElementById("txtInput").value = '';
             var Templatedropdownlist = $("#TemplateDataTypeSelect").data("kendoDropDownList");
             Templatedropdownlist.select(0);
-            docBody.insertText("###" + Valueoftext + "/" + ValueofDatatType + "###", Word.InsertLocation.end);
+            docBody.insertHtml("<strong>###" + Valueoftext + "/" + ValueofDatatType + "###</strong>", Word.InsertLocation.end);
 
             return context.sync();
         })
@@ -402,7 +388,7 @@ function hideSpinner(controlID) {
                         var CurrencyDropdownID = $(controlCurrencyTextbox[1]).attr('id');
                         var dropdownValue = $('#' + CurrencyDropdownID).val();
                         var currencyTextboxValue = $('#' + CurrencyTextboxID).val();
-                        var finalValue = dropdownValue + currencyTextboxValue;
+                        var finalValue = dropdownValue + " " +currencyTextboxValue;
                         searchResultsPlaceHolder.items[i].insertText(finalValue, Word.InsertLocation.replace);
                     }
 
@@ -524,8 +510,8 @@ function hideSpinner(controlID) {
                 // Queue a set of commands to change the font for each found item.
                 for (var i = 0; i < searchResults.items.length; i++) {
 
-                    searchResults.items[i].font.color = 'purple';
-                    searchResults.items[i].font.highlightColor = 'pink';
+                    searchResults.items[i].font.color = 'black';
+                    searchResults.items[i].font.highlightColor = 'yellow';
                     searchResults.items[i].font.bold = true;
                     console.log(searchResults.items[i].text);
                     debugger;
