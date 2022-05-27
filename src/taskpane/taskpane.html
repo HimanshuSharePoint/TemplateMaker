@@ -299,7 +299,11 @@ function hideSpinner(controlID) {
         });
     }
 
-   
+    function initializePage() {
+        renderPageControls();
+        renderTargetPageView();
+    }
+    
     function loadComponent_CreateTemplate() {
         console.log("Inside CreateTemplate Component");
         showControl("#divContainer_CreateTemplate");
