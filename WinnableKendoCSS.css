@@ -824,5 +824,31 @@ div[data-automation-id="CanvasLayout"] > div.row { display:block!important;}
 .k-block, .k-draghandle, .k-grid-header, .k-grouping-header, .k-header, .k-pager-wrap, .k-treemap-tile {
     background-color: #166175;
 }
+#divTemplateLibrary_Wrapper, #divResponseLibrary_Wrapper {
+            background-color: #fff;
+        }
 
+        .divTemplateLibrary_ToolbarWrapper, .divResponseLibrary_ToolbarWrapper {
+            padding: 1%;
+            border-bottom: 1px solid #e3e3e3;
+        }
+        #divResponseLibrary_ContentWrapper{
+            padding-bottom:15px;
+        }
+        #divTemplateLib_CardView_Wrapper {
+            padding-bottom:15px;
+        }
+        #pagerTemplateLib_CardView, #pagerResponseLib_CardView {
+            margin-top: 15px;
+            border-left: none;
+            border-bottom: none;
+            border-right: none;
+            background-color: #fff;
+        }
+        .k-pager-numbers {
+            margin-bottom: 0px;
+        }
+        .k-pager-wrap{
+            background-color:#fff;
+        }
 
