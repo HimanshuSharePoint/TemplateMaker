@@ -1,0 +1,1270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Template Library</title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href='https://kendo.cdn.telerik.com/2019.3.1023/styles/kendo.common.min.css' rel='stylesheet' type='text/css'>
+    <!--<link href='https://kendo.cdn.telerik.com/2020.1.406/styles/kendo.default-v2.min.css' rel='stylesheet' type='text/css'>-->
+    <link href='https://kendo.cdn.telerik.com/2020.1.406/styles/kendo.material.min.css' rel='stylesheet' type='text/css'>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css' rel='stylesheet'
+          type='text/css'>
+    <link href='https://himanshusharepoint.github.io/TemplateMaker/WinnableKendoCSS.css' rel='stylesheet'
+          type='text/css'>
+
+    <style type="text/css">
+        #divTemplateLibrary_Wrapper, #divResponseLibrary_Wrapper {
+            background-color: #fff;
+        }
+
+        .divTemplateLibrary_ToolbarWrapper, .divResponseLibrary_ToolbarWrapper {
+            padding: 1%;
+            border-bottom: 1px solid #e3e3e3;
+        }
+        #divResponseLibrary_ContentWrapper{
+            padding-bottom:15px;
+        }
+        #divTemplateLib_CardView_Wrapper {
+            padding-bottom:15px;
+        }
+        #pagerTemplateLib_CardView, #pagerResponseLib_CardView {
+            margin-top: 15px;
+            border-left: none;
+            border-bottom: none;
+            border-right: none;
+            background-color: #fff;
+        }
+        .k-pager-numbers {
+            margin-bottom: 0px;
+        }
+        .k-pager-wrap{
+            background-color:#fff;
+        }
+    </style>
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.2.510/js/kendo.all.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="docliblock ContainerWrapper">
+        <div class="container">
+
+            <div class="d-flex justify-content-center spinner-loader-wrapper" id="spinner-PageMain">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+
+
+            <div id="divPage_Wrapper">
+                <div class="row divTopNavigationToolbar">
+                    <div class="col-lg-3 col-md-4 mb10">
+                        <div class="dropdown">
+                            <button class="dropbtn">
+                                New Template
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="#" id="btnCreateFreshTemplate">
+                                    <i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp; Create fresh
+                                    template
+                                </a>
+                                <a href="#" id="btnUploadExistingTemplate">
+                                    <i class="fa fa-upload"></i>&nbsp;&nbsp;&nbsp;Upload existing
+                                    template
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mb10">
+                        <div>
+                            <button class="btnbase active" id="btnUseanExistingTemplate"> Use an existing Template</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mb10">
+                        <div>
+                            <button class="btnbase" id="btnResponsesByTemplate">Responses By Template </button>
+                        </div>
+                    </div>
+                     
+                </div>
+                <br class="clearfix" />
+                <div class="divContent_Wrapper">
+                    <div id="divTemplateLibrary_Wrapper">
+                        <div id="divTemplateLibrary_ToolbarWrapper" class="divTemplateLibrary_ToolbarWrapper">
+                            <div class="row">
+                            <!--Toolbar HERE-->
+                            <div class="col-md-6 col-xs-12">
+                                <h1 id="TemplateH1" class="doclibttl">Your template library</h1>
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <div id="divIconGrid">
+                                    <i title="Filter" class="fa fa-filter" id="btnFilter_TemplateLib"></i>
+                                    <i title="Card View" class="fa fa-th-large" id="btnCardView_TemplateLib"></i>
+                                    <i title="Grid View" class="fa fa-bars" id="btnGridView_TemplateLib"></i>
+                                    <br class="clearfix" />
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div id="divTemplateLibrary_ContentWrapper" class="col">
+                            <div id="divTemplateLib_GridView_Wrapper" class="d-none">
+                                <div class="d-flex justify-content-center spinner-loader-wrapper" id="spinner-TemplateLib-GridView">
+                                    <div class="spinner-border" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
+                                <div id='KendoGridDocumentLibrary' class="d-none"></div>
+                            </div>
+                            <div id="divTemplateLib_CardView_Wrapper">
+                                <div class="d-flex justify-content-center spinner-loader-wrapper" id="spinner-TemplateLib-CardView">
+                                    <div class="spinner-border" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
+                                <div id="divTemplateLibrary_CardViewContainer">
+                                    <div class="divSearchResponse k-input-md k-searchbox k-grid-search">
+                                        <span class="k-input-icon k-icon k-i-search"></span>
+                                        <input id="txtSearch" placeholder="Search by Keywords" />
+                                    </div>
+                                    <script id="templateTemplateLibCard" type="text/x-kendo-template">
+                                            <div class="thumb">
+                                                <div class="imgcard">
+                                                    <img src="https://collaberainc.sharepoint.com/_api/v2.1/drives/b!wy5PjTIL7EGYhzSMvyihwN-Hf0Vc1KVJh3TQzQbYL1kmGw4shNCBT6jcdiRaKgwO/items/0165CC7FGYAEUHUW4TZFAZJNXNT6IIOKIE/thumbnails/0/c144x96/content?prefer=noredirect%2Cclosestavailablesize'/">
+                                                    <div class="actionbtn">
+                                                        <div class="dnone" id="divWebURL">#= webUrl #</div>
+                                                        <div id="divfileName" class="dnone">#= name #</div>
+                                                        <button class="btneditTemplateCard">Edit Template</button>
+                                                        <button class="btncreateResponseCard">Create Response</button>
+                                                    </div>
+                                                </div>
+                                                <div class="imgttl">
+                                                    <div>#= name #</div>
+                                                    <div class="lastmodifiedLast">Modified on #= lastModifiedDateTime # <span>by Chintan</span></div>
+                                                </div>
+                                            </div>
+                                    </script>
+                                    <div id="divthumbnail"></div>
+                                    <div id="pagerTemplateLib_CardView"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="divResponseLibrary_Wrapper" class="d-none">
+                        <div id="divResponseLibrary_ToolbarWrapper" class="row divResponseLibrary_ToolbarWrapper">
+                            <!--Toolbar HERE-->
+                            <div class="col">
+                                <h1 id="h1_responseLibTitle" class="doclibttl">Responses by template</h1>
+                            </div>
+                            <div class="col">
+                               
+                                <div id="divIconGrid">
+                                    <i title="Filter" class="fa fa-filter" id="btnFilter_ResponseLib"></i>
+                                    <i title="Card View" class="fa fa-th-large" id="btnCardView_ResponseLib"></i>
+                                    <i title="Grid View" class="fa fa-bars" id="btnGridView_ResponseLib"></i>
+                                    <br class="clearfix" />
+                                </div>
+                                <div class="drpResponse">
+                                    <select id="drpresponsetype">
+                                        <option value="Draft" selected>Draft Responses</option>
+                                        <option value="Final" >Final Responses</option>
+                                    </select>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <div id="divResponseLibrary_ContentWrapper" class="col">
+                            <div id="divResponseLibrary_GridContainer" class="d-none">
+                                <div class="d-flex justify-content-center spinner-loader-wrapper" id="spinner-ResponseLib-GridView">
+                                    <div class="spinner-border" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
+                                <div id='KendoGridTempResponseLibrary' class="d-none"> </div>
+                                <div id='KendoGridResponseLibrary' class="d-none"> </div>
+                            </div>
+                            <div id="KendoCardView" class="divResponseLibrary_CardViewWrapper">
+                                <div class="d-flex justify-content-center spinner-loader-wrapper" id="spinner-ResponseLib-CardView">
+                                    <div class="spinner-border" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
+                                <div id="divResponseLibrary_CardViewContainer">
+                                    <div class="divSearchResponse k-input-md k-searchbox k-grid-search">
+                                        <span class="k-input-icon k-icon k-i-search"></span>
+                                        <input id="txtSearch" placeholder="Search by Keywords" />
+                                    </div>
+                                    <script id="templateResponseLibCard_Draft" type="text/x-kendo-template">
+                                        <div class="thumb">
+                                            <div class="imgcard">
+                                                <img src="https://collaberainc.sharepoint.com/_api/v2.1/drives/b!wy5PjTIL7EGYhzSMvyihwN-Hf0Vc1KVJh3TQzQbYL1kmGw4shNCBT6jcdiRaKgwO/items/0165CC7FGYAEUHUW4TZFAZJNXNT6IIOKIE/thumbnails/0/c144x96/content?prefer=noredirect%2Cclosestavailablesize'/">
+                                                <div class="actionbtn">
+                                                    <div class="dnone" id="divWebURL">#= webUrl #</div>
+                                                    <div id="divfileName" class="dnone">#= name #</div>
+                                                    <button class="btnEditResponse">Edit Template</button>
+                                                    <button class="btncreateResponseCard">Create Response</button>
+                                                </div>
+                                            </div>
+                                            <div class="imgttl">
+                                                <div>#= name #</div>
+                                                <div class="lastmodifiedLast">Modified on #= lastModifiedDateTime # by Chintan</div>
+                                            </div>
+                                        </div>
+                                    </script>
+                                    <script id="templateResponseLibCard_Final" type="text/x-kendo-template">
+                                        <div class="thumb">
+                                            <div class="imgcard">
+                                                <img src="https://collaberainc.sharepoint.com/_api/v2.1/drives/b!wy5PjTIL7EGYhzSMvyihwN-Hf0Vc1KVJh3TQzQbYL1kmGw4shNCBT6jcdiRaKgwO/items/0165CC7FGYAEUHUW4TZFAZJNXNT6IIOKIE/thumbnails/0/c144x96/content?prefer=noredirect%2Cclosestavailablesize'/">
+                                                <div class="actionbtn">
+                                                    <div class="dnone" id="divWebURL">#= webUrl #</div>
+                                                    <div id="divfileName" class="dnone">#= name #</div>
+                                                    <button class="btneditTemplateCard">Edit Template</button>
+                                                    <button class="btncreateResponseCard">Create Response</button>
+                                                </div>
+                                            </div>
+                                            <div class="imgttl">
+                                                <div>#= name #</div>
+                                                <div class="lastmodifiedLast">Modified on #= lastModifiedDateTime # by Chintan</div>
+                                            </div>
+                                        </div>
+                                    </script>
+                                    <div id="divTempResponseLibraryThumbnail"></div>
+                                    <div id="pagerResponseLib_CardView"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-12">
+                        <div class="${styles.documentLibraryWebpart}">
+                            <div style="padding:1%; background:#fff; border-bottom:1px solid #e3e3e3;">
+                                <h1 id="TemplateH1" class="doclibttl">Your template library</h1>
+                                <h1 id="responseH1" class="dnone doclibttl" style="display:inline; margin-right:10%;">Templates for you
+                                </h1>
+
+                                <div id="divIconGrid">
+                                    <i title="Filter" class="fa fa-filter" id="IDFilter"></i>
+                                    <i title="Card View" class="fa fa-th-large" id="btnCardView"></i>
+                                    <i title="Grid View" class="fa fa-bars" id="btnGridView"></i>
+                                </div>
+                                <div class="drpResponse">
+                                    <select id="drpresponsetype" class=" ">
+                                        <option value="Draft">Draft Response</option>
+                                        <option value="Final" selected>Final Response</option>
+                                    </select>
+                                </div>
+                                <br style="clear:both;" />
+                                <div id='KendoGridResponseLibrary' class="dnone"> </div>
+                                <div id='KendoGridTempResponseLibrary' class="dnone"> </div>
+                                <div id='KendoGridDocumentLibrary' class="dnone"></div>
+                            </div>
+
+                            <div id="KendoResponseLibrary" class=" " style="background:#fff; padding:1rem;">
+                                <div class="responseTemplatediv">
+                                    <div class="divSearchResponse k-input-md k-searchbox k-grid-search">
+                                        <span class="k-input-icon k-icon k-i-search"></span>
+                                        <input id="txtSearch" placeholder="Search by Keywords" />
+                                    </div>
+                                </div>
+                                <div id="divResponseLibraryThumbnail"></div>
+                                <div id="divTempResponseLibraryThumbnail" class="dnone"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div id="KendoCardView" style="background:#fff; padding:1rem;">
+                            <h1 class="dnone">Your template library</h1>
+
+                            <div class="tempcardview-overlayspfx dnone">
+                                <div class="tempcardview-loaderspfx"></div>
+                            </div>
+                            <div id="divthumbnail">
+                                <div class="thumb" id="divThumbnailSmall"><div class="imgcard"><img src="https://collaberainc.sharepoint.com/_api/v2.1/drives/b!wy5PjTIL7EGYhzSMvyihwN-Hf0Vc1KVJh3TQzQbYL1kmGw4shNCBT6jcdiRaKgwO/items/0165CC7FGYAEUHUW4TZFAZJNXNT6IIOKIE/thumbnails/0/c144x96/content?prefer=noredirect%2Cclosestavailablesize'/"><div class="actionbtn"><div class="dnone" id="divWebURL">https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B7A2801D8-935B-41C9-94B6-ED9F90872904%7D&amp;file=Data%20Classification.docx&amp;action=default&amp;mobileredirect=true</div><div id="divfileName" class="dnone">Data Classification.docx</div><button class="btneditTemplateCard">Edit Template</button><button class="btncreateResponseCard">Create Response</button></div></div><div class="imgttl"><div class="lastmodifiedLast">  Modified :  4/25/2022</div>Data Classification.docx</div></div>
+                                <div class="thumb" id="divThumbnailSmall"><div class="imgcard"><img src="https://collaberainc.sharepoint.com/_api/v2.1/drives/b!wy5PjTIL7EGYhzSMvyihwN-Hf0Vc1KVJh3TQzQbYL1kmGw4shNCBT6jcdiRaKgwO/items/0165CC7FGYAEUHUW4TZFAZJNXNT6IIOKIE/thumbnails/0/c144x96/content?prefer=noredirect%2Cclosestavailablesize'/"><div class="actionbtn"><div class="dnone" id="divWebURL">https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B7A2801D8-935B-41C9-94B6-ED9F90872904%7D&amp;file=Data%20Classification.docx&amp;action=default&amp;mobileredirect=true</div><div id="divfileName" class="dnone">Data Classification.docx</div><button class="btneditTemplateCard">Edit Template</button><button class="btncreateResponseCard">Create Response</button></div></div><div class="imgttl"><div class="lastmodifiedLast">  Modified :  4/25/2022</div>Data Classification.docx</div></div>
+                                <div class="thumb" id="divThumbnailSmall"><div class="imgcard"><img src="https://collaberainc.sharepoint.com/_api/v2.1/drives/b!wy5PjTIL7EGYhzSMvyihwN-Hf0Vc1KVJh3TQzQbYL1kmGw4shNCBT6jcdiRaKgwO/items/0165CC7FGYAEUHUW4TZFAZJNXNT6IIOKIE/thumbnails/0/c144x96/content?prefer=noredirect%2Cclosestavailablesize'/"><div class="actionbtn"><div class="dnone" id="divWebURL">https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B7A2801D8-935B-41C9-94B6-ED9F90872904%7D&amp;file=Data%20Classification.docx&amp;action=default&amp;mobileredirect=true</div><div id="divfileName" class="dnone">Data Classification.docx</div><button class="btneditTemplateCard">Edit Template</button><button class="btncreateResponseCard">Create Response</button></div></div><div class="imgttl"><div class="lastmodifiedLast">  Modified :  4/25/2022</div>Data Classification.docx</div></div>
+                                <div class="thumb" id="divThumbnailSmall"><div class="imgcard"><img src="https://collaberainc.sharepoint.com/_api/v2.1/drives/b!wy5PjTIL7EGYhzSMvyihwN-Hf0Vc1KVJh3TQzQbYL1kmGw4shNCBT6jcdiRaKgwO/items/0165CC7FGYAEUHUW4TZFAZJNXNT6IIOKIE/thumbnails/0/c144x96/content?prefer=noredirect%2Cclosestavailablesize'/"><div class="actionbtn"><div class="dnone" id="divWebURL">https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B7A2801D8-935B-41C9-94B6-ED9F90872904%7D&amp;file=Data%20Classification.docx&amp;action=default&amp;mobileredirect=true</div><div id="divfileName" class="dnone">Data Classification.docx</div><button class="btneditTemplateCard">Edit Template</button><button class="btncreateResponseCard">Create Response</button></div></div><div class="imgttl"><div class="lastmodifiedLast">  Modified :  4/25/2022</div>Data Classification.docx</div></div>
+                                <div class="thumb" id="divThumbnailSmall"><div class="imgcard"><img src="https://collaberainc.sharepoint.com/_api/v2.1/drives/b!wy5PjTIL7EGYhzSMvyihwN-Hf0Vc1KVJh3TQzQbYL1kmGw4shNCBT6jcdiRaKgwO/items/0165CC7FGYAEUHUW4TZFAZJNXNT6IIOKIE/thumbnails/0/c144x96/content?prefer=noredirect%2Cclosestavailablesize'/"><div class="actionbtn"><div class="dnone" id="divWebURL">https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B7A2801D8-935B-41C9-94B6-ED9F90872904%7D&amp;file=Data%20Classification.docx&amp;action=default&amp;mobileredirect=true</div><div id="divfileName" class="dnone">Data Classification.docx</div><button class="btneditTemplateCard">Edit Template</button><button class="btncreateResponseCard">Create Response</button></div></div><div class="imgttl"><div class="lastmodifiedLast">  Modified :  4/25/2022</div>Data Classification.docx</div></div>
+                                <div class="thumb" id="divThumbnailSmall"><div class="imgcard"><img src="https://collaberainc.sharepoint.com/_api/v2.1/drives/b!wy5PjTIL7EGYhzSMvyihwN-Hf0Vc1KVJh3TQzQbYL1kmGw4shNCBT6jcdiRaKgwO/items/0165CC7FGYAEUHUW4TZFAZJNXNT6IIOKIE/thumbnails/0/c144x96/content?prefer=noredirect%2Cclosestavailablesize'/"><div class="actionbtn"><div class="dnone" id="divWebURL">https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B7A2801D8-935B-41C9-94B6-ED9F90872904%7D&amp;file=Data%20Classification.docx&amp;action=default&amp;mobileredirect=true</div><div id="divfileName" class="dnone">Data Classification.docx</div><button class="btneditTemplateCard">Edit Template</button><button class="btncreateResponseCard">Create Response</button></div></div><div class="imgttl"><div class="lastmodifiedLast">  Modified :  4/25/2022</div>Data Classification.docx</div></div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+
+
+            <div class="quick-panel">
+                <!-- <a class="quick-panel-filter" id="ClearFilter"><i class="fa fa-eraser"></i></a> -->
+                <div class="d-flex justify-content-center spinner-loader-wrapper">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                <a class="quick-panel-close" id="CloseID"><i class="fa fa-close"></i></a>
+                <h2 class="spfxttl2">Filters</h2>
+                <div class="SelectSPFX">
+                    <label for="cars">Scope:</label>
+                    <input id="ScopeKendoDropdown" />
+                </div>
+                <div class="SelectSPFX">
+                    <label for="cars">Industry:</label>
+                    <input id="IndustryKendoDropdown" />
+                </div>
+                <div class="SelectSPFX">
+                    <label for="cars">Start Date:</label>
+                    <input id="startDatePicker" class="d-none"/>
+                    <input id="txtMonth" /> 
+                    <select id="ddMonth" class="d-none">
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+                <div class="SelectSPFX">
+                    <label for="cars">End Date:</label>
+                    <input id="endDatePicker" class="d-none" />
+                    <input id="txtYear" />
+                    <select id="ddYear" class="d-none">
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                    </select>
+                </div>
+                <div class="btnblock">
+                    <button class="k-button k-button-md k-rounded-md k-button-solid k-form-submit" id="btnFilterApply">
+                        Apply
+                    </button>
+                    <button class="k-button k-button-md k-rounded-md k-button-solid k-form-submit" id="btnClearFilter">
+                        Clear
+                    </button>
+                </div>
+            </div>
+            <div id="kendoWindow_JobApplication1"></div>
+
+            <div id="kendoWindow_files" class="dnone">
+                <div class="uploadInfo">To Upload the multiple files in the system, please click on "choose files control and then click on "Upload" button.</div>
+                <label class="file">
+                    <input id="getFile" multiple="multiple" type="file" />
+                </label>
+                <input id="addFileButton" type="button" class="btnupload" value="Upload" />
+                <div id="TableUpdatedExisting"></div>
+            </div>
+            <div id="KendoWindow_UpdateMetaData" class="dnone">
+                <div class="k-form k-form-meta">
+                    <div class="k-form-field">
+                        <input id="txtInputdocumentname" />
+                    </div>
+                    <div class="k-form-field">
+                        <input id="TemplateDataTypeSelectScope" />
+                    </div>
+                    <div class="k-form-field">
+                        <input id="TemplateDataTypeSelectIndustry" />
+                    </div>
+                    <div>
+                        <button type="button" class="k-button k-button-md k-rounded-md k-button-solid k-form-submit"
+                                id="btnsavetoTemplateLibrary">
+                            Save Template
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="kendoWindow_UpdateResponseMetaData" class="dnone">
+                <div class="k-form k-form-meta">
+                    <div class="k-form-field">
+                        <input id="txtInputdocumentNameResponse" />
+                    </div>
+                    <div class="k-form-field">
+                        <input id="TemplateDataTyspesSelectIndustryResponse" />
+                    </div>
+                    <div class="k-form-field">
+                        <input id="txtClientName" />
+                    </div>
+                    <div>
+                        <button type="button" class="k-button k-button-md k-rounded-md k-button-solid k-form-submit"
+                                id="btnsavetoResponseLibrary">
+                            Generate Response
+                        </button>
+                        <button type="button" class="k-button k-button-md k-rounded-md k-button-solid k-form-submit"
+                                id="btndrafttoResponseLibrary">
+                            Save as Draft
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="kendoWindow_CreateTemplate"></div>
+            <div id="KendoWindow_CreateResponse"></div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <script>
+
+        
+        //PUT THIS CODE IN Winnable_CommonHelper.js
+
+        function hideSpinner(controlID) {
+            $(controlID).addClass("d-none");
+            $(controlID).removeClass("d-flex");
+        }
+        function showSpinner(controlID) {
+            $(controlID).removeClass("d-none");
+            $(controlID).addClass("d-flex");
+        }
+
+        function showControl(controlID) {
+            $(controlID).removeClass("d-none");
+        }
+        function hideControl(controlID) {
+            $(controlID).addClass("d-none");
+        }
+        function selectControl(controlID) {
+            $(controlID).addClass("active");
+        }
+        function deselectControl(controlID) {
+            $(controlID).removeClass("active");
+        }
+        function triggerControl_Click(controlID) {
+            $(controlID).trigger('click');
+        }
+
+
+        //PUT THIS CODE IN TemplateLibrary_Main.js
+        //define Enum collection or key value pair of userActionsconfigSettings object
+
+        var templateLib_GridView_Selected = false;
+        var templateLib_CardView_Selected = false;
+        var responseLib_GridView_Selected = false;
+        var responseLib_CardView_Selected = false;
+        var responseLib_Draft_Selected = true;
+        var responseLib_Final_Selected = false;
+
+        $(document).ready(function () {
+            initializePage();
+            /*call then function to hide page loader spinner */
+            hideSpinner("#spinner-PageMain");
+        });
+
+        function initializePage() {
+            renderPageControls();
+            //Show default data of template library
+            triggerControl_Click("#btnUseanExistingTemplate");
+        }
+
+        function renderPageControls() {
+            $("#btnCreateFreshTemplate").click(function () {
+                var kendoWindow_CreateTemplate = $("#kendoWindow_CreateTemplate");
+                var btnCreateFreshTemplate = $("#btnCreateFreshTemplate");
+                kendoWindow_CreateTemplate.kendoWindow({
+                    width: "100%",
+                    actions: ["Maximize", "Close"],
+                    title: "About Josef Hoffmann",
+                    close: function () {
+                        // enable button to stop further clicks btnCreateFreshTemplate.fadeIn();
+                    }
+                });
+                kendoWindow_CreateTemplate.data("kendoWindow").open();
+                // disable button to stop further clicks btnCreateFreshTemplate.fadeOut();
+            });
+            $("#btnUploadExistingTemplate").click(function () {
+                var kendoWindow_UploadFiles = $("#kendoWindow_files");
+                var btnCreateFreshTemplate = $("#btnCreateFreshTemplate");
+                kendoWindow_UploadFiles.kendoWindow({
+                    width: "100%",
+                    actions: ["Maximize", "Close"],
+                    title: "About Josef Hoffmann",
+                    close: function () {
+                        // enable button to stop further clicks btnCreateFreshTemplate.fadeIn();
+                    }
+                });
+                kendoWindow_UploadFiles.data("kendoWindow").open();
+                // disable button to stop further clicks btnCreateFreshTemplate.fadeOut();
+            });
+
+            $("#btnUseanExistingTemplate").click(function () {
+
+                hideControl("#divResponseLibrary_Wrapper");
+                showControl("#divTemplateLibrary_Wrapper");
+                selectControl("#btnUseanExistingTemplate");
+                deselectControl("#btnResponsesByTemplate");
+
+                triggerControl_Click("#btnCardView_TemplateLib");
+            });
+
+            $("#btnResponsesByTemplate").click(function () {
+
+                hideControl("#divTemplateLibrary_Wrapper");
+                showControl("#divResponseLibrary_Wrapper");
+                selectControl("#btnResponsesByTemplate");
+                deselectControl("#btnUseanExistingTemplate");
+
+                triggerControl_Click("#btnCardView_ResponseLib");
+            });
+
+            $("#drpresponsetype").change(function () {
+                var responseTypeSelection = $("#drpresponsetype").val();
+
+                if (responseTypeSelection == "Draft") {
+                    $("#h1_responseLibTitle").text("Start where you left off");
+
+                    responseLib_Draft_Selected = true;
+                    responseLib_Final_Selected = false;
+                    
+
+                    if (responseLib_CardView_Selected) {
+                        cardView_ResopnsetLib_Bind("Draft");
+                    }
+                    else if (responseLib_GridView_Selected) {
+                        showSpinner("#spinner-ResponseLib-GridView");
+                        hideControl("#KendoGridResponseLibrary");
+                        kendoGrid_DraftResponseLib_Bind();
+                    }
+                }
+                else if (responseTypeSelection == "Final") {
+                    $("#h1_responseLibTitle").text("Responses by template");
+
+                    responseLib_Final_Selected = true;
+                    responseLib_Draft_Selected = false;
+                    
+                    if (responseLib_CardView_Selected)
+                        cardView_ResopnsetLib_Bind("Final");
+                    else if (responseLib_GridView_Selected) {
+                        showSpinner("#spinner-ResponseLib-GridView");
+                        hideControl("#KendoGridTempResponseLibrary");
+                        kendoGrid_FinalResponseLib_Bind();
+                    }
+                }
+            });
+            
+
+            $("#btnCardView_TemplateLib").click(function () {
+                
+                templateLib_CardView_Selected = true;
+                templateLib_GridView_Selected = false;
+
+                hideControl("#divTemplateLib_GridView_Wrapper");
+                showControl("#divTemplateLib_CardView_Wrapper");
+                selectControl("#btnCardView_TemplateLib");
+                deselectControl("#btnGridView_TemplateLib");
+                
+                cardView_TemplateLib_Bind();
+            });
+
+            $("#btnGridView_TemplateLib").click(function () {
+                templateLib_GridView_Selected = true;
+                templateLib_CardView_Selected = false;
+
+                hideControl("#divTemplateLib_CardView_Wrapper");
+                showControl("#divTemplateLib_GridView_Wrapper");
+                selectControl("#btnGridView_TemplateLib");
+                deselectControl("#btnCardView_TemplateLib");
+                
+                kendoGrid_TemplateLib_Bind();
+            });
+            $("#btnFilter_TemplateLib").click(function () {
+                $(".quick-panel").removeClass("dnone");
+                $(".quick-panel").addClass("quick-panel-on");
+
+                var month = $("#txtMonth").kendoDropDownList({
+                    dataTextField: "text",
+                    dataValueField: "value",
+                    value: "05",
+                    dataSource: [
+                        { text: "January", value: "01" },
+                        { text: "February", value: "02" },
+                        { text: "March", value: "03" },
+                        { text: "April", value: "04" },
+                        { text: "May", value: "05" },
+                        { text: "June", value: "06" },
+                        { text: "July", value: "07" },
+                        { text: "August", value: "08" },
+                        { text: "September", value: "09" },
+                        { text: "October", value: "10" },
+                        { text: "November", value: "11" },
+                        { text: "December", value: "12" }
+                    ]
+                }).data("kendoDropDownList");
+
+                var year = $("#txtYear").kendoDropDownList({
+                    dataTextField: "text",
+                    dataValueField: "value",
+                    value: "05",
+                    dataSource: [
+                        { text: "2020", value: "2020" },
+                        { text: "2021", value: "2021" },
+                        { text: "2022", value: "2022" },
+                        { text: "2023", value: "2023" },
+                        { text: "2024", value: "2024" },
+                        { text: "2025", value: "2025" }
+                    ]
+                }).data("kendoDropDownList");
+
+            });
+            
+
+            $("#btnCardView_ResponseLib").click(function () {
+                responseLib_CardView_Selected = true;
+                responseLib_GridView_Selected = false;
+
+                hideControl("#divResponseLibrary_GridContainer");
+                showControl(".divResponseLibrary_CardViewWrapper");
+                selectControl("#btnCardView_ResponseLib");
+                deselectControl("#btnGridView_ResponseLib");
+
+                if (responseLib_Draft_Selected) 
+                    cardView_ResopnsetLib_Bind("Draft");
+                else if (responseLib_Final_Selected) 
+                    cardView_ResopnsetLib_Bind("Final");
+                
+            });
+
+            $("#btnGridView_ResponseLib").click(function () {
+
+                responseLib_GridView_Selected = true;
+                responseLib_CardView_Selected = false;
+
+                hideControl(".divResponseLibrary_CardViewWrapper");
+                showControl("#divResponseLibrary_GridContainer");
+                selectControl("#btnGridView_ResponseLib");
+                deselectControl("#btnCardView_ResponseLib");
+
+                if (responseLib_Draft_Selected) 
+                    kendoGrid_DraftResponseLib_Bind();
+                else if (responseLib_Final_Selected)
+                    kendoGrid_FinalResponseLib_Bind();
+                
+            });
+
+            $("#btnFilter_ResponseLib").click(function () {
+                $(".quick-panel").removeClass("dnone");
+                $(".quick-panel").addClass("quick-panel-on");
+            });
+
+            $("#CloseID").click(function () {
+                $(".quick-panel").removeClass("quick-panel-on");
+                $(".quick-panel-overlay").addClass("dnone");
+            });
+        }
+
+
+        function cardView_TemplateLib_Bind() {
+            
+            //Fetch data from database & create datasource object
+            //dataSource = loadData();
+            var dataSource = [
+                {
+                    "ID": "0165CC7FGYAEUHUW4TZFAZJNXNT6IIOKIE",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B7A2801D8-935B-41C9-94B6-ED9F90872904%7D&file=Data%20Classification.docx&action=default&mobileredirect=true",
+                    "name": "Data Classification.docx",
+                    "lastModifiedDateTime": "2022-04-25T17:09:31Z",
+                    "itemId": "84"
+                },
+                {
+                    "ID": "0165CC7FFAF2ARXWLFOVHL7NR3XJ44BG5I",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B1B812EA0-65D9-4E75-BFB6-3BBA79C09BA8%7D&file=Export.xlsx&action=default&mobileredirect=true",
+                    "name": "Export.xlsx",
+                    "lastModifiedDateTime": "2022-02-26T16:38:37Z",
+                    "itemId": "35"
+                },
+                {
+                    "ID": "0165CC7FFJ2C3RT2FOYBHYQ6NESVH2ZS77",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B19B7D0A9-AEE8-4FC0-8879-A4954FACCBFF%7D&file=F03%20Masterlist%20of%20Records.xlsx&action=default&mobileredirect=true",
+                    "name": "F03 Masterlist of Records.xlsx",
+                    "lastModifiedDateTime": "2022-03-01T19:45:32Z",
+                    "itemId": "40"
+                },
+                {
+                    "ID": "0165CC7FEG3ZHFAKUPNFBZLRMKHS7H3TS6",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B504EDE86-8F2A-4369-95C5-8A3CBE7DCE5E%7D&file=First%20Template%2023%20May%2022.docx&action=default&mobileredirect=true",
+                    "name": "First Template 23 May 22.docx",
+                    "lastModifiedDateTime": "2022-05-23T07:45:38Z",
+                    "itemId": "91",
+                    "Industry": "Service",
+                    "scope": "Cloud Proposal"
+                },
+                {
+                    "ID": "0165CC7FHQH24FDBDLZVHLWED466CZ52ED",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B51B83EF0-6B84-4ECD-BB10-7CF7859EE883%7D&file=FMCG%20Work.xlsx&action=default&mobileredirect=true",
+                    "name": "FMCG Work.xlsx",
+                    "lastModifiedDateTime": "2022-05-18T15:19:14Z",
+                    "itemId": "69",
+                    "Industry": "Telecommunication",
+                    "scope": "Web Proposal"
+                },
+                {
+                    "ID": "0165CC7FEGCL2EWTGHVVG24MEIVCGMYLQG",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B4BF41286-C74C-4DAD-AE30-88A88CCC2E06%7D&file=Information%20Architecture%201007-converted-converted.docx&action=default&mobileredirect=true",
+                    "name": "Information Architecture 1007-converted-converted.docx",
+                    "lastModifiedDateTime": "2022-05-18T15:53:25Z",
+                    "itemId": "89"
+                },
+                {
+                    "ID": "0165CC7FGFGNXV6CHZMBBIYGS67CIE6AYZ",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B5F6F33C5-F908-4260-8C1A-5EF8904F0319%7D&file=Intranet%20Digital%20Marketing%20Proposal.docx&action=default&mobileredirect=true",
+                    "name": "Intranet Digital Marketing Proposal.docx",
+                    "lastModifiedDateTime": "2022-05-18T15:19:20Z",
+                    "itemId": "78",
+                    "Industry": "FMCG",
+                    "scope": "Web Proposal"
+                },
+                {
+                    "ID": "0165CC7FCIVWBNBLQ6CVF3M2CBTH5J5L46",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7BD082AD48-1EAE-4B15-B668-4199FA9EAF9E%7D&file=IT%20Proposal%20for%20Digital%20Workspace.docx&action=default&mobileredirect=true",
+                    "name": "IT Proposal for Digital Workspace.docx",
+                    "lastModifiedDateTime": "2022-05-18T15:10:57Z",
+                    "itemId": "66"
+                },
+                {
+                    "ID": "0165CC7FF5T6IAHMSRSJB24TQNGNUDUBUB",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B03909FBD-51B2-4392-AE4E-0D33683A0681%7D&file=IT%20servicedesk%20Accessibility%20Proposal.docx&action=default&mobileredirect=true",
+                    "name": "IT servicedesk Accessibility Proposal.docx",
+                    "lastModifiedDateTime": "2022-05-18T15:19:26Z",
+                    "itemId": "26",
+                    "Industry": "FMCG",
+                    "scope": "Web Proposal"
+                },
+                {
+                    "ID": "0165CC7FFXUO3SSHDIURCJY22IIJGUSLOL",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B29B7A3B7-681C-44A4-9C6B-48424D492DCB%7D&file=IT%20Services%20Desk%20Proposal.docx&action=default&mobileredirect=true",
+                    "name": "IT Services Desk Proposal.docx",
+                    "lastModifiedDateTime": "2022-05-18T15:19:32Z",
+                    "itemId": "28",
+                    "Industry": "Service",
+                    "scope": "Web Proposal"
+                },
+                {
+                    "ID": "0165CC7FHQH24FDBDLZVHLWED466CZ52ED",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B51B83EF0-6B84-4ECD-BB10-7CF7859EE883%7D&file=FMCG%20Work.xlsx&action=default&mobileredirect=true",
+                    "name": "FMCG Work.xlsx",
+                    "lastModifiedDateTime": "2022-05-18T15:19:14Z",
+                    "itemId": "69",
+                    "Industry": "Telecommunication",
+                    "scope": "Web Proposal"
+                },
+                {
+                    "ID": "0165CC7FEGCL2EWTGHVVG24MEIVCGMYLQG",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B4BF41286-C74C-4DAD-AE30-88A88CCC2E06%7D&file=Information%20Architecture%201007-converted-converted.docx&action=default&mobileredirect=true",
+                    "name": "Information Architecture 1007-converted-converted.docx",
+                    "lastModifiedDateTime": "2022-05-18T15:53:25Z",
+                    "itemId": "89"
+                },
+                {
+                    "ID": "0165CC7FGFGNXV6CHZMBBIYGS67CIE6AYZ",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B5F6F33C5-F908-4260-8C1A-5EF8904F0319%7D&file=Intranet%20Digital%20Marketing%20Proposal.docx&action=default&mobileredirect=true",
+                    "name": "Intranet Digital Marketing Proposal.docx",
+                    "lastModifiedDateTime": "2022-05-18T15:19:20Z",
+                    "itemId": "78",
+                    "Industry": "FMCG",
+                    "scope": "Web Proposal"
+                },
+                {
+                    "ID": "0165CC7FCIVWBNBLQ6CVF3M2CBTH5J5L46",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7BD082AD48-1EAE-4B15-B668-4199FA9EAF9E%7D&file=IT%20Proposal%20for%20Digital%20Workspace.docx&action=default&mobileredirect=true",
+                    "name": "IT Proposal for Digital Workspace.docx",
+                    "lastModifiedDateTime": "2022-05-18T15:10:57Z",
+                    "itemId": "66"
+                },
+                {
+                    "ID": "0165CC7FF5T6IAHMSRSJB24TQNGNUDUBUB",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B03909FBD-51B2-4392-AE4E-0D33683A0681%7D&file=IT%20servicedesk%20Accessibility%20Proposal.docx&action=default&mobileredirect=true",
+                    "name": "IT servicedesk Accessibility Proposal.docx",
+                    "lastModifiedDateTime": "2022-05-18T15:19:26Z",
+                    "itemId": "26",
+                    "Industry": "FMCG",
+                    "scope": "Web Proposal"
+                },
+                {
+                    "ID": "0165CC7FFXUO3SSHDIURCJY22IIJGUSLOL",
+                    "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B29B7A3B7-681C-44A4-9C6B-48424D492DCB%7D&file=IT%20Services%20Desk%20Proposal.docx&action=default&mobileredirect=true",
+                    "name": "IT Services Desk Proposal.docx",
+                    "lastModifiedDateTime": "2022-05-18T15:19:32Z",
+                    "itemId": "28",
+                    "Industry": "Service",
+                    "scope": "Web Proposal"
+                }
+            ];
+
+            //Validate if datasource is not null but length <= 0 | NO RECORDS FOUND
+            if (dataSource != null && dataSource.length <= 0) {
+                //Show no records found template
+            }
+            else if (dataSource != null && dataSource.length > 0) {
+                // Bind control & show control
+            }
+
+            var template = kendo.template($("#templateTemplateLibCard").html());
+
+            var kendoDataSource = new kendo.data.DataSource({
+                data: dataSource,
+                schema: {
+                    model: {
+                        id: "kendodataSourceFinal",
+                        fields: {
+                            ID: {
+                                editable: false,
+                                nullable: false
+                            },
+                            webUrl: {
+                                editable: false,
+                                nullable: false
+                            },
+                            name: {
+                                editable: false,
+                                nullable: false
+                            },
+                            lastModifiedDateTime: {
+                                editable: false,
+                                nullable: false
+                            },
+                            itemId: {
+                                editable: false,
+                                nullable: false
+                            },
+                            Industry: {
+                                editable: false,
+                                nullable: false
+                            }
+                        }
+                    }
+                },
+                pageSize: 10,
+                change: function () {
+                    $("#divthumbnail").html(kendo.render(template, this.view()));
+                }
+            });
+
+            //Bind datasource to pagenControl
+            $("#pagerTemplateLib_CardView").kendoPager({
+                dataSource: kendoDataSource
+            });
+
+            //Read datasource & bind HTML
+            kendoDataSource.read();
+            $("#divthumbnail").html(kendo.render(template, kendoDataSource.view()));
+            hideSpinner("#spinner-TemplateLib-CardView");
+        }
+        function cardView_ResopnsetLib_Bind(ResponseSourceType) {
+            //Load Datasouece
+            var dataSource = null;
+            var template;
+
+            if (ResponseSourceType == "Draft") {
+                //dataSource = loadData_DraftResponseLib();
+                dataSource = [
+                    {
+                        "ID": "0165CC7FGYAEUHUW4TZFAZJNXNT6IIOKIE",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B7A2801D8-935B-41C9-94B6-ED9F90872904%7D&file=Data%20Classification.docx&action=default&mobileredirect=true",
+                        "name": "Data Classification.docx",
+                        "lastModifiedDateTime": "2022-04-25T17:09:31Z",
+                        "itemId": "84"
+                    },
+                    {
+                        "ID": "0165CC7FFAF2ARXWLFOVHL7NR3XJ44BG5I",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B1B812EA0-65D9-4E75-BFB6-3BBA79C09BA8%7D&file=Export.xlsx&action=default&mobileredirect=true",
+                        "name": "Export.xlsx",
+                        "lastModifiedDateTime": "2022-02-26T16:38:37Z",
+                        "itemId": "35"
+                    },
+                    {
+                        "ID": "0165CC7FFJ2C3RT2FOYBHYQ6NESVH2ZS77",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B19B7D0A9-AEE8-4FC0-8879-A4954FACCBFF%7D&file=F03%20Masterlist%20of%20Records.xlsx&action=default&mobileredirect=true",
+                        "name": "F03 Masterlist of Records.xlsx",
+                        "lastModifiedDateTime": "2022-03-01T19:45:32Z",
+                        "itemId": "40"
+                    },
+                    {
+                        "ID": "0165CC7FEG3ZHFAKUPNFBZLRMKHS7H3TS6",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B504EDE86-8F2A-4369-95C5-8A3CBE7DCE5E%7D&file=First%20Template%2023%20May%2022.docx&action=default&mobileredirect=true",
+                        "name": "First Template 23 May 22.docx",
+                        "lastModifiedDateTime": "2022-05-23T07:45:38Z",
+                        "itemId": "91",
+                        "Industry": "Service",
+                        "scope": "Cloud Proposal"
+                    },
+                    {
+                        "ID": "0165CC7FHQH24FDBDLZVHLWED466CZ52ED",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B51B83EF0-6B84-4ECD-BB10-7CF7859EE883%7D&file=FMCG%20Work.xlsx&action=default&mobileredirect=true",
+                        "name": "FMCG Work.xlsx",
+                        "lastModifiedDateTime": "2022-05-18T15:19:14Z",
+                        "itemId": "69",
+                        "Industry": "Telecommunication",
+                        "scope": "Web Proposal"
+                    },
+                    {
+                        "ID": "0165CC7FEGCL2EWTGHVVG24MEIVCGMYLQG",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B4BF41286-C74C-4DAD-AE30-88A88CCC2E06%7D&file=Information%20Architecture%201007-converted-converted.docx&action=default&mobileredirect=true",
+                        "name": "Information Architecture 1007-converted-converted.docx",
+                        "lastModifiedDateTime": "2022-05-18T15:53:25Z",
+                        "itemId": "89"
+                    },
+                    {
+                        "ID": "0165CC7FGFGNXV6CHZMBBIYGS67CIE6AYZ",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B5F6F33C5-F908-4260-8C1A-5EF8904F0319%7D&file=Intranet%20Digital%20Marketing%20Proposal.docx&action=default&mobileredirect=true",
+                        "name": "Intranet Digital Marketing Proposal.docx",
+                        "lastModifiedDateTime": "2022-05-18T15:19:20Z",
+                        "itemId": "78",
+                        "Industry": "FMCG",
+                        "scope": "Web Proposal"
+                    },
+                    {
+                        "ID": "0165CC7FCIVWBNBLQ6CVF3M2CBTH5J5L46",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7BD082AD48-1EAE-4B15-B668-4199FA9EAF9E%7D&file=IT%20Proposal%20for%20Digital%20Workspace.docx&action=default&mobileredirect=true",
+                        "name": "IT Proposal for Digital Workspace.docx",
+                        "lastModifiedDateTime": "2022-05-18T15:10:57Z",
+                        "itemId": "66"
+                    },
+                    {
+                        "ID": "0165CC7FF5T6IAHMSRSJB24TQNGNUDUBUB",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B03909FBD-51B2-4392-AE4E-0D33683A0681%7D&file=IT%20servicedesk%20Accessibility%20Proposal.docx&action=default&mobileredirect=true",
+                        "name": "IT servicedesk Accessibility Proposal.docx",
+                        "lastModifiedDateTime": "2022-05-18T15:19:26Z",
+                        "itemId": "26",
+                        "Industry": "FMCG",
+                        "scope": "Web Proposal"
+                    },
+                    {
+                        "ID": "0165CC7FFXUO3SSHDIURCJY22IIJGUSLOL",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B29B7A3B7-681C-44A4-9C6B-48424D492DCB%7D&file=IT%20Services%20Desk%20Proposal.docx&action=default&mobileredirect=true",
+                        "name": "IT Services Desk Proposal.docx",
+                        "lastModifiedDateTime": "2022-05-18T15:19:32Z",
+                        "itemId": "28",
+                        "Industry": "Service",
+                        "scope": "Web Proposal"
+                    }
+                ];
+
+                template = kendo.template($("#templateResponseLibCard_Draft").html());
+            }
+            else if (ResponseSourceType == "Final") {
+
+                //dataSource = loadData_FinalResponseLib();
+                dataSource = [
+                    {
+                        "ID": "0165CC7FGYAEUHUW4TZFAZJNXNT6IIOKIE",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B7A2801D8-935B-41C9-94B6-ED9F90872904%7D&file=Data%20Classification.docx&action=default&mobileredirect=true",
+                        "name": "Data Classification.docx",
+                        "lastModifiedDateTime": "2022-04-25T17:09:31Z",
+                        "itemId": "84"
+                    },
+                    {
+                        "ID": "0165CC7FFAF2ARXWLFOVHL7NR3XJ44BG5I",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B1B812EA0-65D9-4E75-BFB6-3BBA79C09BA8%7D&file=Export.xlsx&action=default&mobileredirect=true",
+                        "name": "Export.xlsx",
+                        "lastModifiedDateTime": "2022-02-26T16:38:37Z",
+                        "itemId": "35"
+                    },
+                    {
+                        "ID": "0165CC7FFJ2C3RT2FOYBHYQ6NESVH2ZS77",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B19B7D0A9-AEE8-4FC0-8879-A4954FACCBFF%7D&file=F03%20Masterlist%20of%20Records.xlsx&action=default&mobileredirect=true",
+                        "name": "F03 Masterlist of Records.xlsx",
+                        "lastModifiedDateTime": "2022-03-01T19:45:32Z",
+                        "itemId": "40"
+                    },
+                    {
+                        "ID": "0165CC7FEG3ZHFAKUPNFBZLRMKHS7H3TS6",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B504EDE86-8F2A-4369-95C5-8A3CBE7DCE5E%7D&file=First%20Template%2023%20May%2022.docx&action=default&mobileredirect=true",
+                        "name": "First Template 23 May 22.docx",
+                        "lastModifiedDateTime": "2022-05-23T07:45:38Z",
+                        "itemId": "91",
+                        "Industry": "Service",
+                        "scope": "Cloud Proposal"
+                    },
+                    {
+                        "ID": "0165CC7FHQH24FDBDLZVHLWED466CZ52ED",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B51B83EF0-6B84-4ECD-BB10-7CF7859EE883%7D&file=FMCG%20Work.xlsx&action=default&mobileredirect=true",
+                        "name": "FMCG Work.xlsx",
+                        "lastModifiedDateTime": "2022-05-18T15:19:14Z",
+                        "itemId": "69",
+                        "Industry": "Telecommunication",
+                        "scope": "Web Proposal"
+                    },
+                    {
+                        "ID": "0165CC7FEGCL2EWTGHVVG24MEIVCGMYLQG",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B4BF41286-C74C-4DAD-AE30-88A88CCC2E06%7D&file=Information%20Architecture%201007-converted-converted.docx&action=default&mobileredirect=true",
+                        "name": "Information Architecture 1007-converted-converted.docx",
+                        "lastModifiedDateTime": "2022-05-18T15:53:25Z",
+                        "itemId": "89"
+                    },
+                    {
+                        "ID": "0165CC7FGFGNXV6CHZMBBIYGS67CIE6AYZ",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B5F6F33C5-F908-4260-8C1A-5EF8904F0319%7D&file=Intranet%20Digital%20Marketing%20Proposal.docx&action=default&mobileredirect=true",
+                        "name": "Intranet Digital Marketing Proposal.docx",
+                        "lastModifiedDateTime": "2022-05-18T15:19:20Z",
+                        "itemId": "78",
+                        "Industry": "FMCG",
+                        "scope": "Web Proposal"
+                    },
+                    {
+                        "ID": "0165CC7FCIVWBNBLQ6CVF3M2CBTH5J5L46",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7BD082AD48-1EAE-4B15-B668-4199FA9EAF9E%7D&file=IT%20Proposal%20for%20Digital%20Workspace.docx&action=default&mobileredirect=true",
+                        "name": "IT Proposal for Digital Workspace.docx",
+                        "lastModifiedDateTime": "2022-05-18T15:10:57Z",
+                        "itemId": "66"
+                    },
+                    {
+                        "ID": "0165CC7FF5T6IAHMSRSJB24TQNGNUDUBUB",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B03909FBD-51B2-4392-AE4E-0D33683A0681%7D&file=IT%20servicedesk%20Accessibility%20Proposal.docx&action=default&mobileredirect=true",
+                        "name": "IT servicedesk Accessibility Proposal.docx",
+                        "lastModifiedDateTime": "2022-05-18T15:19:26Z",
+                        "itemId": "26",
+                        "Industry": "FMCG",
+                        "scope": "Web Proposal"
+                    },
+                    {
+                        "ID": "0165CC7FFXUO3SSHDIURCJY22IIJGUSLOL",
+                        "webUrl": "https://collaberainc.sharepoint.com/sites/SPINTestSpace/_layouts/15/Doc.aspx?sourcedoc=%7B29B7A3B7-681C-44A4-9C6B-48424D492DCB%7D&file=IT%20Services%20Desk%20Proposal.docx&action=default&mobileredirect=true",
+                        "name": "IT Services Desk Proposal.docx",
+                        "lastModifiedDateTime": "2022-05-18T15:19:32Z",
+                        "itemId": "28",
+                        "Industry": "Service",
+                        "scope": "Web Proposal"
+                    }
+                ];
+                template = kendo.template($("#templateResponseLibCard_Final").html());
+            }
+
+            //Check null logic length logic etc. No records found etc.
+
+            //Load datasource to Kendo DataSource & Bind Control
+            var kendoDataSource = new kendo.data.DataSource({
+                data: dataSource,
+                schema: {
+                    model: {
+                        id: "kendodataSourceFinal",
+                        fields: {
+                            ID: {
+                                editable: false,
+                                nullable: false
+                            },
+                            webUrl: {
+                                editable: false,
+                                nullable: false
+                            },
+                            name: {
+                                editable: false,
+                                nullable: false
+                            },
+                            lastModifiedDateTime: {
+                                editable: false,
+                                nullable: false
+                            },
+                            itemId: {
+                                editable: false,
+                                nullable: false
+                            },
+                            Industry: {
+                                editable: false,
+                                nullable: false
+                            }
+                        }
+                    }
+                },
+                pageSize: 5,
+                change: function () {
+                    $("#divTempResponseLibraryThumbnail").html(kendo.render(template, this.view()));
+                }
+            });
+
+            //Bind datasource to pagenControl
+            $("#pagerResponseLib_CardView").kendoPager({
+                dataSource: kendoDataSource
+            });
+
+            //Read datasource & bind control
+            kendoDataSource.read();
+            $("#divTempResponseLibraryThumbnail").html(kendo.render(template, kendoDataSource.view()));
+        }
+        function kendoGrid_TemplateLib_Bind() {
+
+            /* Load Data From Database & Bind DataSource Here*/
+
+            /* Bind Grid To Data Source */
+            $("#KendoGridDocumentLibrary").kendoGrid({
+                dataSource: {
+                    type: "odata",
+                    transport: {
+                        read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Customers"
+                    },
+                    pageSize: 20
+                },
+                height: 550,
+                groupable: true,
+                sortable: true,
+                pageable: {
+                    refresh: true,
+                    pageSizes: true,
+                    buttonCount: 5
+                },
+                columns: [{
+                    template: "<div class='customer-photo'" +
+                        "style='background-image: url(../content/web/Customers/#:data.CustomerID#.jpg);'></div>" +
+                        "<div class='customer-name'>#: ContactName #</div>",
+                    field: "ContactName",
+                    title: "Contact Name",
+                    width: 240
+                }, {
+                    field: "ContactTitle",
+                    title: "Contact Title"
+                }, {
+                    field: "CompanyName",
+                    title: "Company Name"
+                }, {
+                    field: "Country",
+                    width: 150
+                }],
+                dataBound: function (e) {
+                    /* Fired when the widget is bound to data from its data source. Use this to show control & hide spinner */
+                    hideSpinner("#spinner-TemplateLib-GridView");
+                    showControl("#KendoGridDocumentLibrary");
+                }
+            });
+
+        }
+        function kendoGrid_DraftResponseLib_Bind() {
+
+            var grid = $("#KendoGridTempResponseLibrary").data("kendoGrid");
+            if (grid != null) grid.destroy();
+
+            /* Load Data From Database & Bind DataSource Here*/
+
+            $("#KendoGridTempResponseLibrary").kendoGrid({
+                dataSource: {
+                    type: "odata",
+                    transport: {
+                        read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Customers"
+                    },
+                    pageSize: 20
+                },
+                height: 550,
+                groupable: true,
+                sortable: true,
+                pageable: {
+                    refresh: true,
+                    pageSizes: true,
+                    buttonCount: 5
+                },
+                columns: [{
+                    template: "<div class='customer-photo'" +
+                        "style='background-image: url(../content/web/Customers/#:data.CustomerID#.jpg);'></div>" +
+                        "<div class='customer-name'>#: ContactName #</div>",
+                    field: "ContactName",
+                    title: "Contact Name",
+                    width: 240
+                }, {
+                    field: "ContactTitle",
+                    title: "Contact Title"
+                }, {
+                    field: "CompanyName",
+                    title: "Company Name"
+                }, {
+                    field: "Country",
+                    width: 150
+                }],
+                dataBound: function (e) {
+                    /* Fired when the widget is bound to data from its data source. Use this to show control & hide spinner */
+                    hideSpinner("#spinner-ResponseLib-GridView");
+                    showControl("#KendoGridTempResponseLibrary");
+                }
+            });
+
+        }
+        function kendoGrid_FinalResponseLib_Bind() {
+
+            var grid = $("#KendoGridResponseLibrary").data("kendoGrid");
+            if (grid != null) grid.destroy();
+
+            $("#KendoGridResponseLibrary").kendoGrid({
+                dataSource: {
+                    type: "odata",
+                    transport: {
+                        read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Orders"
+                    },
+                    schema: {
+                        model: {
+                            fields: {
+                                OrderID: { type: "number" },
+                                Freight: { type: "number" },
+                                ShipName: { type: "string" },
+                                OrderDate: { type: "date" },
+                                ShipCity: { type: "string" }
+                            }
+                        }
+                    },
+                    pageSize: 20
+                },
+                height: 550,
+                groupable: true,
+                sortable: true,
+                pageable: {
+                    refresh: true,
+                    pageSizes: true,
+                    buttonCount: 5
+                },
+                columns: [{
+                    field: "OrderID",
+                    filterable: false
+                },
+                    "Freight",
+                {
+                    field: "OrderDate",
+                    title: "Order Date",
+                    format: "{0:MM/dd/yyyy}"
+                }, {
+                    field: "ShipName",
+                    title: "Ship Name"
+                }, {
+                    field: "ShipCity",
+                    title: "Ship City"
+                }
+                ],
+                dataBound: function (e) {
+                    /* Fired when the widget is bound to data from its data source. Use this to show control & hide spinner */
+                    hideSpinner("#spinner-ResponseLib-GridView");
+                    showControl("#KendoGridResponseLibrary");
+                }
+            });
+        }
+
+
+        //PUT THIS CODE in TemplateLibrary_DAL.js
+        //Put this function in DAL | Load data through API
+        function loadData_DraftResponseLib() {
+            
+        }
+        //Put this function in DAL | Load data through API
+        function loadData_FinalResponseLib() {
+            
+        }
+
+    </script>
+
+</body>
+
+</html>
