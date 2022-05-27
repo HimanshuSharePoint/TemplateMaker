@@ -11,6 +11,7 @@
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
     <script src="https://kendo.cdn.telerik.com/2022.1.119/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2022.1.119/js/kendo.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css" />
@@ -18,7 +19,8 @@
 
     <!-- Template styles -->
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.common.min.css" />
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.default-main.min.css" />
+    <link href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.material.min.css" rel="stylesheet" type='text/css'  />
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <link href="taskpane.css" rel="stylesheet" type="text/css" />
 
     <style>
@@ -177,158 +179,230 @@
         <img width="90" height="90" src="../../assets/logo-filled.png" alt="Contoso" title="Contoso" /> 
         <h1>Winnable Add-In</h1>
     </header>-->
-    <section id="sideload-msg" class="ms-welcome__main">
-        <h2 class="ms-font-xl">Please wait...</h2>
-    </section>
-
-    <main id="app-body" class="ms-welcome__main" style="display: none;">
-        <div id="tabstrip">
-            <ul>
-                <li>Create Template</li>
-                <li>Create Response</li>
-            </ul>
-            <div id="divContainer_CreateTemplate">
-                <ul class="panelbar">
-                    <li class="k-state-active">
-                        <b class="k-link k-state-selected">Add placeholders in document</b> 
-                        <h3 class="panelform" style="padding: 10px; border-bottom:1px solid #e3e3e3;">
-                            Placeholder Pattern : <label class="ms-label" id="label">### PLACEHOLDER NAME/DATATYPE ###</label>
-                        </h3>
-
-                        <div class="panelform" style="padding: 10px;">
-                            <label class="ms-label dnone" id="label">Placeholder Name</label>
-                            <input id="txtInput"><br />
-                            <label class="ms-label dnone" id="labelDataTypes">Placeholder Datatype</label>
-                            <input id="TemplateDataTypeSelect" />
-                            <br />
-                            <div class="demo-section ">
-                                <button id="insert-paragraph" class="k-button  k-rounded-md k-button-solid k-button-solid-primary">Add to document</button>
-                                <button class="k-button k-button-solid k-button-solid-secondary k-rounded-md" id="clear-Placeholder">Clear</button>
-                            </div>
-
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div id="divContainer_CreateResponse">
-                <ul class="panelbar">
-                    <li class="k-state-active">
-                        <b class="k-link k-state-selected">Placeholder list in the document</b>
-                        <div class="panelform searchform" style="padding:10px">
-                            
-                            <div class="demo-section ">
-                                <table id="tablePlaceholder">
-                                    <th>
-                                        Placeholders dected:
-                                    </th>
-                                </table>
-                                
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <b class="k-link">Replace placeholder with values</b>
-                        <div class="panelform" style="padding: 10px;">
-                            <div id="DynamicControl"></div>
-                            <br />
-                            <div class="demo-section ">
-                                <button id="btnAddtoDocument" class="k-button k-button-solid k-button-solid-primary">Save to document</button>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+    <div class="container">
+        <div class="d-flex justify-content-center" id="spinner_Main">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
         </div>
-    </main>
+        <div id="divContainer_CreateTemplate" class="row d-none" >
+            <h6 id="h1_CreateTemplate">Edit template document by adding placeholders</h6>
+            <ul class="panelbar">
+                <li class="k-state-active">
+                    <b class="k-link k-state-selected">Add placeholders in document</b>
+
+                    <div class="panelform" style="padding: 10px;">
+                        <label class="ms-label dnone" id="label">Placeholder Name</label>
+                        <input id="txtInput"><br />
+                        <label class="ms-label dnone" id="labelDataTypes">Placeholder Datatype</label>
+                        <input id="TemplateDataTypeSelect" />
+                        <br />
+                        <div class="demo-section ">
+                            <button id="insert-paragraph" class="k-button  k-rounded-md k-button-solid k-button-solid-primary">Add to document</button>
+                            <button class="k-button k-button-solid k-button-solid-secondary k-rounded-md" id="clear-Placeholder">Clear</button>
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="divContainer_CreateResponse" class="row d-none">
+            <h6 id="h1_CreateResponse">Create proposal response by adding values to placeholders</h6>
+            <ul class="panelbar">
+                <li class="k-state-active">
+                    <b class="k-link k-state-selected">Placeholder list found in the document</b>
+                    <div class="panelform searchform" style="padding:10px">
+
+                        <div class="demo-section ">
+                            <table id="tablePlaceholder">
+                                
+                            </table>
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <b class="k-link">Replace placeholders by values</b>
+                    <div class="panelform" style="padding: 10px;">
+                        <div id="DynamicControl"></div>
+
+                        <br />
+                        <div class="demo-section ">
+                            <button id="btnAddtoDocument" class="k-button k-button-solid k-button-solid-primary">Save to document</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+   
 </body>
 |
 </html>
 
 <script type="text/javascript">
+
+//PUT THIS CODE IN Winnable_AddIn_CommonHelper.js
+function hideSpinner(controlID) {
+        $(controlID).addClass("d-none");
+        $(controlID).removeClass("d-flex");
+    }
+    function showSpinner(controlID) {
+        $(controlID).removeClass("d-none");
+        $(controlID).addClass("d-flex");
+    }
+
+    function showControl(controlID) {
+        $(controlID).removeClass("d-none");
+    }
+    function hideControl(controlID) {
+        $(controlID).addClass("d-none");
+    }
+    function selectControl(controlID) {
+        $(controlID).addClass("active");
+    }
+    function deselectControl(controlID) {
+        $(controlID).removeClass("active");
+    }
+    function triggerControl_Click(controlID) {
+        $(controlID).trigger('click');
+    }
+
+    //PUT THIS CODE IN Winnable_AddIn_Main.js
+    //define Enum collection or key value pair of userActionsconfigSettings object
     let TextboxforTemplate;
-    let TEMPLATEMODULEFLAG = false;
-    let TEMPRESPONSEFLAG = false;
+    let is_UserAction_EditTemplate = false;
+    let is_UserAction_EditResponse = false;
+    let is_UIDEV_MODE_ON = false;
+    let is_ADDIN_MODE_ON = true;
 
-    Office.onReady((info) => {
-        if (info.host === Office.HostType.Word) {
-            // Determine if the user's version of office supports all the Office.js APIs that are used in the tutorial
-            if (!Office.context.requirements.isSetSupported('wordApi', '1.3')) {
-                console.log("Sorry,The tutorial add-in uses Word.js APIs that are not available in your version of Office.");
+   
+    if (is_UIDEV_MODE_ON) {
+        $(document).ready(function () {
+            initializePage();
+            /*call then function to hide page loader spinner */
+        });
+    }
+
+    if (is_ADDIN_MODE_ON) {
+        Office.onReady((info) => {
+            if (info.host === Office.HostType.Word) {
+                // Determine if the user's version of office supports all the Office.js APIs that are used in the tutorial
+                if (!Office.context.requirements.isSetSupported('wordApi', '1.3')) {
+                    console.log("Sorry,The tutorial add-in uses Word.js APIs that are not available in your version of Office.");
+                    //Display User Message in MainBody & Show MainBody
+                }
+                else {
+                    initializePage();
+                }
             }
-            
-           
-            document.getElementById("insert-paragraph").onclick = insertParagraph;
-            document.getElementById("clear-Placeholder").onclick = clearPlaceholder;
-            document.getElementById('btnAddtoDocument').onclick = addPlaceHolderintoword;
+        });
+    }
 
-            document.getElementById("sideload-msg").style.display = "none";
-            document.getElementById("app-body").style.display = "flex";
+   
+    function loadComponent_CreateTemplate() {
+        console.log("Inside CreateTemplate Component");
+        showControl("#divContainer_CreateTemplate");
+        hideSpinner("#spinner_Main");
+    }
 
-            // Adding Kendo Framework
-            var products = $("#TemplateDataTypeSelect").kendoDropDownList({
-                optionLabel: "Select DataType",
-                dataSource: ["Single Line of Text", "Multi Line of text", "Date", "Currency"]
-            }).data("kendoDropDownList");
-            $("#insert-paragraph").kendoButton();
-            $("#txtInput").kendoTextBox({
-                placeholder: "Placeholder Name",
-                encoded:false
-
-            });
-            $("#txtInputdocumentname").kendoTextBox({
-                placeholder: "Please enter document name"
-            });
+    function loadComponent_CreateResponse() {
+        showControl("#divContainer_CreateResponse");
+        
+        if (is_ADDIN_MODE_ON) {
+            GetPlaceholderValue();
+            GenerateFormfromPlaceholders();
+        }
+        hideSpinner("#spinner_Main");
+        //var ResponseTabStript = tabStrip.tabGroup.find(':contains("Response")');
+        //tabStrip.select(ResponseTabStript);
+    }
 
 
-            $(".panelbar").kendoPanelBar({
-                expandMode: "single"
-            });
-
-            $("#insert-paragraph").kendoButton();
-            $("#txtInput").kendoTextBox({
-                placeholder: "Enter Placeholder Pattern"
-            });
-            $("#txtClientName").kendoTextBox({
-                placeholder: "Enter Client Name"
-            });
-            $("#txtsector").kendoTextBox({
-                placeholder: "Enter Sector Name"
-            });
-            $("#txtprice").kendoTextBox({
-                placeholder: "Enter Price"
-            });
-            $("#txtInputdocumentname").kendoTextBox({
-                placeholder: "Enter Document Name"
-            });
-            $("#txtStartDate").kendoDatePicker();
-            $("#txtEndDate").kendoDatePicker();           
-            
-            var Industry = $("#TemplateDataTypeSelectIndustry").kendoDropDownList({
-                optionLabel: "Select Industry",
-                dataSource: ["Telecommunication", "Service", "FMCG"]
-            }).data("kendoDropDownList")
-            $("#panelbar").kendoPanelBar({
-                expandMode: "single"
-            });
-            $("#tabstrip").kendoTabStrip({
-                       select: loadPlaceholdersAndGenerateForm,
-                        animation:  {
-                            open: {
-                                effects: "fadeIn"
-                            }
-                        }
-            });
-            function loadPlaceholdersAndGenerateForm(e){
-                
-                GetPlaceholderValue();
-                GenerateFormfromPlaceholders();
-               
+    function renderTargetPageView() {
+        if (is_UIDEV_MODE_ON) {
+            is_UserAction_EditTemplate = true;
+            is_UserAction_EditResponse = true;
+            loadComponent_CreateTemplate();
+            loadComponent_CreateResponse();
+        }
+        if (is_ADDIN_MODE_ON) {
+            if (Office.context.document != null) {
+                Office.context.document.getFilePropertiesAsync(function (asyncResult) {
+                    var fileUrl = asyncResult.value.url;
+                    console.log(fileUrl);
+                    /* Find User Action weather it is Create/Edit Template Or Create/Edit Response */
+                    if (fileUrl.indexOf('TemplateModule') > -1) {
+                        is_UserAction_EditTemplate = true;
+                    } else {
+                        is_UserAction_EditTemplate = false;
+                    }
+                    if (fileUrl.indexOf('TempResponselibrary') > -1) {
+                        is_UserAction_EditResponse = true;
+                    } else {
+                        is_UserAction_EditResponse = false;
+                    }
+                    if (is_UserAction_EditTemplate) {
+                        loadComponent_CreateTemplate();
+                    }
+                    if (is_UserAction_EditResponse) {
+                        loadComponent_CreateResponse();
+                    }
+                });
             }
         }
-         saveTemplateLibrary();
-        
-    });
+    }
 
+    function renderPageControls() {
+        document.getElementById("insert-paragraph").onclick = insertParagraph;
+        document.getElementById("clear-Placeholder").onclick = clearPlaceholder;
+        document.getElementById('btnAddtoDocument').onclick = addPlaceHolderintoword;
+
+
+        // Adding Kendo Framework
+        var products = $("#TemplateDataTypeSelect").kendoDropDownList({
+            optionLabel: "Select DataType",
+            dataSource: ["Single Line of Text", "Multi Line of text", "Date", "Currency"]
+        }).data("kendoDropDownList");
+        $("#insert-paragraph").kendoButton();
+
+        $("#txtInputdocumentname").kendoTextBox({
+            placeholder: "Please enter document name"
+        });
+
+
+        $(".panelbar").kendoPanelBar({
+            expandMode: "single"
+        });
+
+        $("#insert-paragraph").kendoButton();
+        $("#txtInput").kendoTextBox({
+            placeholder: "Enter Placeholder Name",
+            encoded: false
+        });
+        $("#txtClientName").kendoTextBox({
+            placeholder: "Enter Client Name"
+        });
+        $("#txtsector").kendoTextBox({
+            placeholder: "Enter Sector Name"
+        });
+        $("#txtprice").kendoTextBox({
+            placeholder: "Enter Price"
+        });
+        $("#txtInputdocumentname").kendoTextBox({
+            placeholder: "Enter Document Name"
+        });
+        $("#txtStartDate").kendoDatePicker();
+        $("#txtEndDate").kendoDatePicker();
+
+        var Industry = $("#TemplateDataTypeSelectIndustry").kendoDropDownList({
+            optionLabel: "Select Industry",
+            dataSource: ["Telecommunication", "Service", "FMCG"]
+        }).data("kendoDropDownList")
+        $("#panelbar").kendoPanelBar({
+            expandMode: "single"
+        });
+    }
    
     function saveTemplateLibrary() {
 
