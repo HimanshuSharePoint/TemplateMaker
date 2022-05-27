@@ -32,12 +32,16 @@
         <h1>Winnable Add-In</h1>
     </header>-->
     <div class="container">
-        <div class="d-flex justify-content-center" id="spinner_Main">
-            <div class="spinner-border" role="status">
+        <div class="row">
+            <div class="col-md-12"> 
+              <div class="d-flex justify-content-center" id="spinner_Main">
+                <div class="spinner-border" role="status">
                 <span class="sr-only">Loading...</span>
+                </div>
+              </div>
             </div>
-        </div>
-        <div id="divContainer_CreateTemplate" class="row d-none" >
+            <div class="col-md-12">
+                <div id="divContainer_CreateTemplate" class="d-none" >
             <h6 id="h1_CreateTemplate">Edit template document by adding placeholders</h6>
             <ul class="panelbar">
                 <li class="k-state-active">
@@ -58,20 +62,23 @@
                 </li>
             </ul>
         </div>
-        <div id="divContainer_CreateResponse" class="row d-none">
-            <h6 id="h1_CreateResponse">Create proposal response by adding values to placeholders</h6>
-            <ul class="panelbar">
-                <li class="k-state-active">
-                    <b class="k-link k-state-selected">Placeholder list found in the document</b>
-                    <div class="panelform searchform" style="padding:10px">
+            </div>
+            
+            <div class="col-md-12">
+                 <div id="divContainer_CreateResponse" class="d-none">
+                      <h6 id="h1_CreateResponse">Create proposal response by adding values to placeholders</h6>
+                       <ul class="panelbar">
+                         <li class="k-state-active">
+                           <b class="k-link k-state-selected">Placeholder list found in the document</b>
+                           <div class="panelform searchform" style="padding:10px">
 
-                        <div class="demo-section ">
+                           <div class="demo-section ">
                             <table id="tablePlaceholder">
                                 
                             </table>
 
-                        </div>
-                    </div>
+                           </div>
+                           </div>
                 </li>
                 <li>
                     <b class="k-link">Replace placeholders by values</b>
@@ -87,6 +94,11 @@
             </ul>
         </div>
     </div>
+            </div>
+        </div>
+       
+        
+        
    
 </body>
 |
