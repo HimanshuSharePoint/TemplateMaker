@@ -822,7 +822,7 @@ div[data-automation-id="CanvasLayout"] > div.row { display:block!important;}
     color: #166175;
 }
 .k-block, .k-draghandle, .k-grid-header, .k-grouping-header, .k-header, .k-pager-wrap, .k-treemap-tile {
-    background-color: #166175;
+    /*background-color: #166175;*/
 }
 #divTemplateLibrary_Wrapper, #divResponseLibrary_Wrapper {
             background-color: #fff;
