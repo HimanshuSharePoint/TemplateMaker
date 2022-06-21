@@ -853,4 +853,14 @@ div[data-automation-id="CanvasLayout"] > div.row { display:block!important;}
         }
 .k-form .k-form-field, .k-form-buttons { margin-top:1em;}
 .k-state-focused input { outline:none;}
+i > span {     background: #165f75;
+    /* padding: 5px; */
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    font-size: 11px;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px; color:#fff; }
 
