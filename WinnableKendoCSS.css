@@ -851,5 +851,5 @@ div[data-automation-id="CanvasLayout"] > div.row { display:block!important;}
         .k-pager-wrap{
             background-color:#fff;
         }
-.k-form .k-form-field { margin-top:1em;}
+.k-form .k-form-field, .k-form-buttons { margin-top:1em;}
 
