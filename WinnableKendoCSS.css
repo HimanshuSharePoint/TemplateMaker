@@ -863,4 +863,5 @@ i > span {     background: #165f75;
     height: 15px;
     text-align: center;
     line-height: 15px; color:#fff; }
+.k-form-field > span { width:20rem;}
 
