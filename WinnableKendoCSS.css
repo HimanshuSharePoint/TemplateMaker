@@ -458,7 +458,7 @@ border: 1px solid #a6a6a6;
     margin-top:1.5rem;
     }
 .k-form.k-form-meta { width:80%; margin:0 auto;}
-.k-form-meta span { width:20rem;} 
+.k-form-meta > span { width:20rem;} 
 .k-form-meta button.k-button { border-color: #165f75;
     color: #fff;
     background-color: #165f75;
