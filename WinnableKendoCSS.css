@@ -852,4 +852,5 @@ div[data-automation-id="CanvasLayout"] > div.row { display:block!important;}
             background-color:#fff;
         }
 .k-form .k-form-field, .k-form-buttons { margin-top:1em;}
+.k-state-focused input { outline:none;}
 
