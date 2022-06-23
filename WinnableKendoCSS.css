@@ -821,9 +821,19 @@ div[data-automation-id="CanvasLayout"] > div.row { display:block!important;}
 .k-link, .k-nav-current.k-state-hover .k-link {
     color: #166175;
 }
+
  .k-grouping-header  {
-    background-color: #8c8f8f;
+    color: #000;
+    background-color: #f0f0f0;
 }
+.k-toolbar {
+	background-color: #fff;
+}
+.k-textbox {
+    
+    width: 35%;
+}
+
 #divTemplateLibrary_Wrapper, #divResponseLibrary_Wrapper {
             background-color: #fff;
         }
@@ -837,6 +847,8 @@ div[data-automation-id="CanvasLayout"] > div.row { display:block!important;}
         }
         #divTemplateLib_CardView_Wrapper {
             padding-bottom:15px;
+	    padding-top:15px;
+		
         }
         #pagerTemplateLib_CardView, #pagerResponseLib_CardView {
             margin-top: 15px;
