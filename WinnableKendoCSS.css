@@ -821,11 +821,11 @@ div[data-automation-id="CanvasLayout"] > div.row { display:block!important;}
 .k-link, .k-nav-current.k-state-hover .k-link {
     color: #166175;
 }
-
- .k-grouping-header  {
-    color: #000;
+.k-grid .k-grouping-header {
+    color: #000 !important;
     background-color: #f0f0f0;
 }
+ 
 .k-toolbar {
 	background-color: #fff;
 }
