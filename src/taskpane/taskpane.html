@@ -36,17 +36,26 @@
             </div>
         </div>
         <div id="divContainer_CreateTemplate" class="row d-none" >
-            <h6 id="h1_CreateTemplate">Edit template document by adding placeholders</h6>
+            <h6 id="h1_CreateTemplate">Edit template document</h6>
             <ul class="panelbar">
+                <li>
+                    <b class="k-link>Update document metadata</b>
+                    <div class="panelform" style="padding: 10px;">
+                        <input id="txtDocumentName"><br />
+                        <input id="ddlScope" /><br />
+                        <input id="ddlIndustry" /> <br />
+                        <div class="demo-section ">
+                            <button id="btnUpdateMetadata" class="k-button  k-rounded-md k-button-solid k-button-solid-primary">Update -></button>
+                        </div>
+                    </div>
+                </li>
                 <li class="k-state-active">
                     <b class="k-link k-state-selected">Add placeholders in document</b>
-
                     <div class="panelform" style="padding: 10px;">
                         <label class="ms-label dnone" id="label">Placeholder Name</label>
                         <input id="txtInput"><br />
                         <label class="ms-label dnone" id="labelDataTypes">Placeholder Datatype</label>
-                        <input id="TemplateDataTypeSelect" />
-                        <br />
+                        <input id="TemplateDataTypeSelect" /><br />
                         <div class="demo-section ">
                             <button id="insert-paragraph" class="k-button  k-rounded-md k-button-solid k-button-solid-primary">Add to document</button>
                             <button class="k-button k-button-solid k-button-solid-secondary k-rounded-md" id="clear-Placeholder">Clear</button>
@@ -55,6 +64,7 @@
                     </div>
                 </li>
             </ul>
+            <h6 class="UserInfoMessage">Document is auto saved, so once you're done editing, close the popup to go to template library.</h6>
         </div>
         <div id="divContainer_CreateResponse" class="row d-none">
             <h6 id="h1_CreateResponse">Create proposal response by adding values to placeholders</h6>
@@ -87,7 +97,6 @@
     </div>
    
 </body>
-|
 </html>
 
 <script type="text/javascript">
