@@ -85,7 +85,7 @@ font-size: 14px;
 }
 .k-window-titlebar .k-window-actions {
   position: absolute;
-  top: 15px;
+  top: 10px;
   right: 15px;
 }
 .k-pager-numbers .k-state-selected {
