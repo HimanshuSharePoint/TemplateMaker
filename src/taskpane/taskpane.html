@@ -252,7 +252,7 @@ function hideSpinner(controlID) {
 
 
         $(".panelbar").kendoPanelBar({
-            expandMode: "multiple"
+            expandMode: "single"
         });
 
         
@@ -279,8 +279,9 @@ function hideSpinner(controlID) {
             optionLabel: "Select Industry",
             dataSource: ["Telecommunication", "Service", "FMCG"]
         }).data("kendoDropDownList")
+        
         $("#panelbar").kendoPanelBar({
-            expandMode: "multiple"
+            expandMode: "single"
         });
     }
    
