@@ -19,14 +19,14 @@
 
     <!-- Template styles -->
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.common.min.css" />
-    <link href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.material.min.css" rel="stylesheet" type='text/css'  />
+    <link href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.material.min.css" rel="stylesheet" type='text/css' />
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <link href="taskpane.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="ms-font-m ms-welcome ms-Fabric">
-     <!--<header class="ms-welcome__header ms-bgColor-neutralLighter">
-        <img width="90" height="90" src="../../assets/logo-filled.png" alt="Contoso" title="Contoso" /> 
+    <!--<header class="ms-welcome__header ms-bgColor-neutralLighter">
+        <img width="90" height="90" src="../../assets/logo-filled.png" alt="Contoso" title="Contoso" />
         <h1>Winnable Add-In</h1>
     </header>-->
     <div class="container">
@@ -35,10 +35,10 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <div id="divContainer_CreateTemplate" class="row d-none" >
+        <div id="divContainer_CreateTemplate" class="row d-none">
             <h4 id="h1_CreateTemplate">Edit template document</h4>
             <h6 class="UserInfoMessage">Document will be auto saved, so once you're done with editing, close the popup to go to template library.</h6>
-            
+
             <ul class="panelbar">
                 <li class="k-state-active">
                     <b class="k-link k-state-selected">Update document metadata</b>
@@ -69,7 +69,7 @@
         <div id="divContainer_CreateResponse" class="row d-none">
             <h4 id="h1_CreateResponse">Create proposal response</h4>
             <h6 class="UserInfoMessage">Document will be auto saved, so once you're done with editing, close the popup to go to response library.</h6>
-            
+
             <ul class="panelbar">
                 <li class="k-state-active">
                     <b class="k-link k-state-selected">Placeholder list found in the document</b>
@@ -77,7 +77,6 @@
 
                         <div class="demo-section ">
                             <table id="tablePlaceholder">
-                                
                             </table>
 
                         </div>
@@ -97,14 +96,14 @@
             </ul>
         </div>
     </div>
-   
+
 </body>
 </html>
 
 <script type="text/javascript">
 
-//PUT THIS CODE IN Winnable_AddIn_CommonHelper.js
-function hideSpinner(controlID) {
+    //PUT THIS CODE IN Winnable_AddIn_CommonHelper.js
+    function hideSpinner(controlID) {
         $(controlID).addClass("d-none");
         $(controlID).removeClass("d-flex");
     }
@@ -137,7 +136,7 @@ function hideSpinner(controlID) {
     let is_UIDEV_MODE_ON = false;
     let is_ADDIN_MODE_ON = true;
 
-   
+
     if (is_UIDEV_MODE_ON) {
         $(document).ready(function () {
             initializePage();
@@ -173,7 +172,7 @@ function hideSpinner(controlID) {
 
     function loadComponent_CreateResponse() {
         showControl("#divContainer_CreateResponse");
-        
+
         if (is_ADDIN_MODE_ON) {
             GetPlaceholderValue();
             GenerateFormfromPlaceholders();
@@ -228,25 +227,25 @@ function hideSpinner(controlID) {
         $("#txtDocumentName").kendoTextBox({
             placeholder: "Enter Document Name"
         });
-        
+
         var ddlScope = $("#ddlScope").kendoDropDownList({
             optionLabel: "Select Scope",
             dataSource: ["Web Proposal", "Cloud Proposal", "Analytics Proposal", "Platform Engineering Proposal"]
         }).data("kendoDropDownList");
-        
+
         var ddlIndustry = $("#ddlIndustry").kendoDropDownList({
             optionLabel: "Select Industry",
             dataSource: ["Information Technology", "Real Estate", "Educational Service"]
         }).data("kendoDropDownList");
-        
+
         $("#btnUpdateTemplateMetadata").kendoButton();
 
-        
+
         var products = $("#TemplateDataTypeSelect").kendoDropDownList({
             optionLabel: "Select DataType",
             dataSource: ["Single Line of Text", "Multi Line of text", "Date", "Currency"]
         }).data("kendoDropDownList");
-        
+
         $("#insert-paragraph").kendoButton();
 
         $("#txtInputdocumentname").kendoTextBox({
@@ -258,7 +257,7 @@ function hideSpinner(controlID) {
             expandMode: "single"
         });
 
-        
+
         $("#txtInput").kendoTextBox({
             placeholder: "Enter Placeholder Name",
             encoded: false
@@ -282,49 +281,49 @@ function hideSpinner(controlID) {
             optionLabel: "Select Industry",
             dataSource: ["Telecommunication", "Service", "FMCG"]
         }).data("kendoDropDownList")
-        
+
         $("#panelbar").kendoPanelBar({
             expandMode: "single"
         });
     }
-   
+
     function saveTemplateLibrary() {
 
-    Office.context.document.getFilePropertiesAsync(function(asyncResult) {
-        var fileUrl = asyncResult.value.url;
-        var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
-        /* If Template Else REsponse */
-        console.log(fileUrl);
-        if (fileUrl.indexOf('TemplateModule') > -1) {
-            TEMPLATEMODULEFLAG = true;
-        } else {
-            TEMPLATEMODULEFLAG = false;
-        }
-        if (fileUrl.indexOf('TempResponselibrary') > -1) {
-            TEMPRESPONSEFLAG = true;
-        } else {
-            TEMPRESPONSEFLAG = false;
-        }
-
-        if (TEMPLATEMODULEFLAG) {
-
-            $("#tabstrip-tab-2").addClass("dnone");
-            $("#divContainer_CreateResponse").addClass("dnone");
-
-        }
-        if (TEMPRESPONSEFLAG) {
+        Office.context.document.getFilePropertiesAsync(function (asyncResult) {
+            var fileUrl = asyncResult.value.url;
             var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
-            $("#tabstrip-tab-1").addClass("dnone");
-            $("#tabstrip-tab-1").removeClass("k-state-active");
-            $("#divContainer_CreateTemplate").addClass("dnone");
-            var ResponseTabStript = tabStrip.tabGroup.find(':contains("Response")');
-            tabStrip.select(ResponseTabStript);
-            
-            
-        }
-    });
-}
-    
+            /* If Template Else REsponse */
+            console.log(fileUrl);
+            if (fileUrl.indexOf('TemplateModule') > -1) {
+                TEMPLATEMODULEFLAG = true;
+            } else {
+                TEMPLATEMODULEFLAG = false;
+            }
+            if (fileUrl.indexOf('TempResponselibrary') > -1) {
+                TEMPRESPONSEFLAG = true;
+            } else {
+                TEMPRESPONSEFLAG = false;
+            }
+
+            if (TEMPLATEMODULEFLAG) {
+
+                $("#tabstrip-tab-2").addClass("dnone");
+                $("#divContainer_CreateResponse").addClass("dnone");
+
+            }
+            if (TEMPRESPONSEFLAG) {
+                var tabStrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
+                $("#tabstrip-tab-1").addClass("dnone");
+                $("#tabstrip-tab-1").removeClass("k-state-active");
+                $("#divContainer_CreateTemplate").addClass("dnone");
+                var ResponseTabStript = tabStrip.tabGroup.find(':contains("Response")');
+                tabStrip.select(ResponseTabStript);
+
+
+            }
+        });
+    }
+
     function clearPlaceholder() {
         Word.run(function (context) {
 
@@ -360,7 +359,7 @@ function hideSpinner(controlID) {
             });
     }
     function addPlaceHolderintoword() {
-        Word.run(async (context)=> {
+        Word.run(async (context) => {
             var searchResultsPlaceHolder = context.document.body.search('###*/*###', { matchWildcards: true });
             context.load(searchResultsPlaceHolder, 'font');
             context.load(searchResultsPlaceHolder, 'text');
@@ -379,7 +378,9 @@ function hideSpinner(controlID) {
                         console.log("First Client Placeholder" + $(control).attr('id'));
                         console.log("SLT Client Placeholder Value" + searchResultsPlaceHolder.items[i].text);
                         var textboxID = $(control).attr('id');
-                        searchResultsPlaceHolder.items[i].insertText($('#' + textboxID).val(), Word.InsertLocation.replace);
+                        if ($('#' + textboxID).val() == "") {
+                            searchResultsPlaceHolder.items[i].insertText($('#' + textboxID).val(), Word.InsertLocation.replace);
+                        }
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Date")) {
                         var DateText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -390,7 +391,9 @@ function hideSpinner(controlID) {
                         console.log("First Date Placeholder" + $(controlDate).attr('id'));
                         console.log("Date Client Placeholder Value" + searchResultsPlaceHolder.items[i].text);
                         var DateTextboxID = $(controlDate).attr('id');
-                        searchResultsPlaceHolder.items[i].insertText($('#' + DateTextboxID).val(), Word.InsertLocation.replace);
+                        if ($('#' + DateTextboxID).val() != "") {
+                            searchResultsPlaceHolder.items[i].insertText($('#' + DateTextboxID).val(), Word.InsertLocation.replace);
+                        }
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Multi Line of text")) {
                         var MutliLineText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -401,7 +404,9 @@ function hideSpinner(controlID) {
                         console.log("First Date Placeholder" + $(controlMultiEditor).attr('id'));
                         console.log("MLT Client Placeholder Value" + searchResultsPlaceHolder.items[i].text);
                         var MultiEditorID = $(controlMultiEditor).attr('id');
-                        searchResultsPlaceHolder.items[i].insertHtml($('#' + MultiEditorID).val(), Word.InsertLocation.replace);
+                        if ($('#' + MultiEditorID).val() != "") {
+                            searchResultsPlaceHolder.items[i].insertHtml($('#' + MultiEditorID).val(), Word.InsertLocation.replace);
+                        }
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Currency")) {
                         var CurrrencyText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -418,10 +423,12 @@ function hideSpinner(controlID) {
                         var CurrencyDropdownID = $(controlCurrencyTextbox[1]).attr('id');
                         var dropdownValue = $('#' + CurrencyDropdownID).val();
                         var currencyTextboxValue = $('#' + CurrencyTextboxID).val();
-                        var finalValue = dropdownValue + " " +currencyTextboxValue;
-                        searchResultsPlaceHolder.items[i].insertText(finalValue, Word.InsertLocation.replace);
+                        if (currencyTextboxValue != "") {
+                            var finalValue = dropdownValue + " " + currencyTextboxValue;
+                            searchResultsPlaceHolder.items[i].insertText(finalValue, Word.InsertLocation.replace);
+                        }
                     }
-
+                    GenerateFormfromPlaceholders();
                 }
                 context.sync().then(function () {
                     console.log(results);
@@ -437,14 +444,14 @@ function hideSpinner(controlID) {
             });
     }
     function getText(html) {
-            var tmp = document.createElement('div');
-            tmp.innerHTML = html;
-            return tmp.textContent || tmp.innerHTML;
+        var tmp = document.createElement('div');
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerHTML;
     }
     function GenerateFormfromPlaceholders() {
         Word.run(function (context) {
             var searchResults = context.document.body.search('###*/*###', { matchWildcards: true });
-            var PlaceHolderArrays='';
+            var PlaceHolderArrays = '';
             context.load(searchResults, 'font');
             context.load(searchResults, 'text');
             return context.sync().then(function () {
@@ -452,62 +459,62 @@ function hideSpinner(controlID) {
                 for (var i = 0; i < searchResults.items.length; i++) {
                     if (PlaceHolderArrays.indexOf(searchResults.items[i].text) > -1) {
                         ISPLACEHOLDEREXIST = true;
-                        
-                    }else{
-                        PlaceHolderArrays = PlaceHolderArrays +','+ searchResults.items[i].text;
+
+                    } else {
+                        PlaceHolderArrays = PlaceHolderArrays + ',' + searchResults.items[i].text;
                         ISPLACEHOLDEREXIST = false;
-                    }               
-                    if(!ISPLACEHOLDEREXIST){
-                    if (searchResults.items[i].text.includes("Single Line of Text")) {
-                        
-                        var randomNumber = Math.floor((Math.random() * 99999999999) + 1);
-                        var singleLineofText = searchResults.items[i].text.split("/");
-                        var ValueofSingleLineofText = singleLineofText[0].substring(3)
-                        var trimPlaceholder = ValueofSingleLineofText.split(' ').join('');
-                        $("#DynamicControl").append("<input type=text id=textBox_" + trimPlaceholder + "_" + randomNumber + "><br/>");
-                        $('#DynamicControl').children('#textBox_' + trimPlaceholder + "_" + randomNumber).kendoTextBox({
-                            placeholder: ValueofSingleLineofText
-                        });
                     }
-                    else if (searchResults.items[i].text.includes("Multi Line of text")) {
-                        var randomNumberMulti = Math.floor((Math.random() * 99999999999) + 1);
-                        var KendoMultiLineofText = searchResults.items[i].text.split("/");
-                        var KendoEditorValue = KendoMultiLineofText[0].substring(3);
-                        var trimPlaceholderMultiLine = KendoEditorValue.split(' ').join('');
-                        $("#DynamicControl").append("<div><label id=lbl" + randomNumberMulti + ">" + KendoEditorValue + "</label></div>");
-                        $("#DynamicControl").append("<textarea id=MultLine_" + trimPlaceholderMultiLine + "_" + randomNumberMulti + " rows=10 cols=40 style=height:150px></textarea><br/>");
-                        $('#DynamicControl').children('#MultLine_' + trimPlaceholderMultiLine + "_" + randomNumberMulti).kendoEditor({
-                            encoded:false
-                        });
-                    }
-                    else if (searchResults.items[i].text.includes("Date")) {
-                        var randomNumberDate = Math.floor((Math.random() * 99999999999) + 1);
-                        var KendoDate = searchResults.items[i].text.split("/");
-                        var KendoDateValue = KendoDate[0].substring(3);
-                        var trimPlaceholderDate = KendoDateValue.split(' ').join('');
-                        $("#DynamicControl").append("<div><label id=lbl" + randomNumberDate + ">" + KendoDateValue + "</label></div>");
-                        $("#DynamicControl").append("<input type=text id=Date_" + trimPlaceholderDate + "_" + randomNumberDate + ">");
-                        var todayDate = new Date();
-                        $('#DynamicControl').children('#Date_' + trimPlaceholderDate + "_" + randomNumberDate).kendoDatePicker({
-                            value: todayDate
-                        });
-                    }
-                    else if (searchResults.items[i].text.includes("Currency")) {
-                        var randomNumberCurrency = Math.floor((Math.random() * 99999999999) + 1);
-                        var kendoCurrency = searchResults.items[i].text.split("/");
-                        var kendoCurrencyValue = kendoCurrency[0].substring(3);
-                        var trimPlaceholderCurrency = kendoCurrencyValue.split(' ').join('');
-                        $("#DynamicControl").append("<input type=number id=currency_" + trimPlaceholderCurrency + "_" + randomNumberCurrency + "><input id=currencydropdown_" + trimPlaceholderCurrency + "_" + randomNumberCurrency + ">");
-                        $('#DynamicControl').children('#currency_' + trimPlaceholderCurrency + "_" + randomNumberCurrency).kendoTextBox({
-                            placeholder: kendoCurrencyValue
-                        });
-                        $("#DynamicControl").children('#currencydropdown_' + trimPlaceholderCurrency + "_" + randomNumberCurrency).kendoDropDownList({
-                            optionLabel: "Select Currency...",
-                            dataSource: ["INR", "USD", "CNY", "EUR", "GBP"]
-                        }).data("kendoDropDownList");
+                    if (!ISPLACEHOLDEREXIST) {
+                        if (searchResults.items[i].text.includes("Single Line of Text")) {
+
+                            var randomNumber = Math.floor((Math.random() * 99999999999) + 1);
+                            var singleLineofText = searchResults.items[i].text.split("/");
+                            var ValueofSingleLineofText = singleLineofText[0].substring(3)
+                            var trimPlaceholder = ValueofSingleLineofText.split(' ').join('');
+                            $("#DynamicControl").append("<input type=text id=textBox_" + trimPlaceholder + "_" + randomNumber + "><br/>");
+                            $('#DynamicControl').children('#textBox_' + trimPlaceholder + "_" + randomNumber).kendoTextBox({
+                                placeholder: ValueofSingleLineofText
+                            });
+                        }
+                        else if (searchResults.items[i].text.includes("Multi Line of text")) {
+                            var randomNumberMulti = Math.floor((Math.random() * 99999999999) + 1);
+                            var KendoMultiLineofText = searchResults.items[i].text.split("/");
+                            var KendoEditorValue = KendoMultiLineofText[0].substring(3);
+                            var trimPlaceholderMultiLine = KendoEditorValue.split(' ').join('');
+                            $("#DynamicControl").append("<div><label id=lbl" + randomNumberMulti + ">" + KendoEditorValue + "</label></div>");
+                            $("#DynamicControl").append("<textarea id=MultLine_" + trimPlaceholderMultiLine + "_" + randomNumberMulti + " rows=10 cols=40 style=height:150px></textarea><br/>");
+                            $('#DynamicControl').children('#MultLine_' + trimPlaceholderMultiLine + "_" + randomNumberMulti).kendoEditor({
+                                encoded: false
+                            });
+                        }
+                        else if (searchResults.items[i].text.includes("Date")) {
+                            var randomNumberDate = Math.floor((Math.random() * 99999999999) + 1);
+                            var KendoDate = searchResults.items[i].text.split("/");
+                            var KendoDateValue = KendoDate[0].substring(3);
+                            var trimPlaceholderDate = KendoDateValue.split(' ').join('');
+                            $("#DynamicControl").append("<div><label id=lbl" + randomNumberDate + ">" + KendoDateValue + "</label></div>");
+                            $("#DynamicControl").append("<input type=text id=Date_" + trimPlaceholderDate + "_" + randomNumberDate + ">");
+                            var todayDate = new Date();
+                            $('#DynamicControl').children('#Date_' + trimPlaceholderDate + "_" + randomNumberDate).kendoDatePicker({
+                                value: todayDate
+                            });
+                        }
+                        else if (searchResults.items[i].text.includes("Currency")) {
+                            var randomNumberCurrency = Math.floor((Math.random() * 99999999999) + 1);
+                            var kendoCurrency = searchResults.items[i].text.split("/");
+                            var kendoCurrencyValue = kendoCurrency[0].substring(3);
+                            var trimPlaceholderCurrency = kendoCurrencyValue.split(' ').join('');
+                            $("#DynamicControl").append("<input type=number id=currency_" + trimPlaceholderCurrency + "_" + randomNumberCurrency + "><input id=currencydropdown_" + trimPlaceholderCurrency + "_" + randomNumberCurrency + ">");
+                            $('#DynamicControl').children('#currency_' + trimPlaceholderCurrency + "_" + randomNumberCurrency).kendoTextBox({
+                                placeholder: kendoCurrencyValue
+                            });
+                            $("#DynamicControl").children('#currencydropdown_' + trimPlaceholderCurrency + "_" + randomNumberCurrency).kendoDropDownList({
+                                optionLabel: "Select Currency...",
+                                dataSource: ["INR", "USD", "CNY", "EUR", "GBP"]
+                            }).data("kendoDropDownList");
+                        }
                     }
                 }
-            }
                 return context.sync();
             });
         })
@@ -536,7 +543,7 @@ function hideSpinner(controlID) {
             return context.sync().then(function () {
 
                 console.log('Found count: ' + searchResults.items.length);
-                var ISPLACEHOLDEREXIST =false;
+                var ISPLACEHOLDEREXIST = false;
                 // Queue a set of commands to change the font for each found item.
                 for (var i = 0; i < searchResults.items.length; i++) {
 
@@ -547,14 +554,14 @@ function hideSpinner(controlID) {
                     debugger;
                     // check if Placeholder already exist
                     ISPLACEHOLDEREXIST = false;
-                    $("#tablePlaceholder tr td").each(function(){
+                    $("#tablePlaceholder tr td").each(function () {
                         var celltext = $(this).html();
-                        if(celltext == searchResults.items[i].text){
+                        if (celltext == searchResults.items[i].text) {
                             ISPLACEHOLDEREXIST = true;
                         }
                     });
-                    if(!ISPLACEHOLDEREXIST){
-                       $("#tablePlaceholder").append("<tr><td>" + searchResults.items[i].text + "</td></tr>");
+                    if (!ISPLACEHOLDEREXIST) {
+                        $("#tablePlaceholder").append("<tr><td>" + searchResults.items[i].text + "</td></tr>");
                     }
 
                 }
@@ -573,5 +580,5 @@ function hideSpinner(controlID) {
 
             });
     }
-    
+
 </script>
