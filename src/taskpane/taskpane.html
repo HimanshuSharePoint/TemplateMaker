@@ -392,7 +392,7 @@
                         console.log("Date Client Placeholder Value" + searchResultsPlaceHolder.items[i].text);
                         var DateTextboxID = $(controlDate).attr('id');
                         searchResultsPlaceHolder.items[i].insertText($('#' + DateTextboxID).val(), Word.InsertLocation.replace);
-                        
+
                     }
                     else if (searchResultsPlaceHolder.items[i].text.includes("Multi Line of text")) {
                         var MutliLineText = searchResultsPlaceHolder.items[i].text.split("/");
@@ -422,12 +422,14 @@
                         var CurrencyDropdownID = $(controlCurrencyTextbox[1]).attr('id');
                         var dropdownValue = $('#' + CurrencyDropdownID).val();
                         var currencyTextboxValue = $('#' + CurrencyTextboxID).val();
-                        if (currencyTextboxValue != "") {
+                        if (currencyTextboxValue != "" && dropdownValue != "") {
                             var finalValue = dropdownValue + " " + currencyTextboxValue;
                             searchResultsPlaceHolder.items[i].insertText(finalValue, Word.InsertLocation.replace);
                         }
                     }
                 }
+                $("#DynamicControl").empty();
+                GenerateFormfromPlaceholders();
                 context.sync().then(function () {
                     console.log(results);
                 });
@@ -454,63 +456,69 @@
             context.load(searchResults, 'text');
             return context.sync().then(function () {
                 console.log('Found count: ' + searchResults.items.length);
-                for (var i = 0; i < searchResults.items.length; i++) {
-                    if (PlaceHolderArrays.indexOf(searchResults.items[i].text) > -1) {
-                        ISPLACEHOLDEREXIST = true;
+                if (searchResults) {
+                    if (searchResults.items.length > 0) {
+                        for (var i = 0; i < searchResults.items.length; i++) {
+                            if (PlaceHolderArrays.indexOf(searchResults.items[i].text) > -1) {
+                                ISPLACEHOLDEREXIST = true;
 
+                            } else {
+                                PlaceHolderArrays = PlaceHolderArrays + ',' + searchResults.items[i].text;
+                                ISPLACEHOLDEREXIST = false;
+                            }
+                            if (!ISPLACEHOLDEREXIST) {
+                                if (searchResults.items[i].text.includes("Single Line of Text")) {
+
+                                    var randomNumber = Math.floor((Math.random() * 99999999999) + 1);
+                                    var singleLineofText = searchResults.items[i].text.split("/");
+                                    var ValueofSingleLineofText = singleLineofText[0].substring(3)
+                                    var trimPlaceholder = ValueofSingleLineofText.split(' ').join('');
+                                    $("#DynamicControl").append("<input type=text id=textBox_" + trimPlaceholder + "_" + randomNumber + "><br/>");
+                                    $('#DynamicControl').children('#textBox_' + trimPlaceholder + "_" + randomNumber).kendoTextBox({
+                                        placeholder: ValueofSingleLineofText
+                                    });
+                                }
+                                else if (searchResults.items[i].text.includes("Multi Line of text")) {
+                                    var randomNumberMulti = Math.floor((Math.random() * 99999999999) + 1);
+                                    var KendoMultiLineofText = searchResults.items[i].text.split("/");
+                                    var KendoEditorValue = KendoMultiLineofText[0].substring(3);
+                                    var trimPlaceholderMultiLine = KendoEditorValue.split(' ').join('');
+                                    $("#DynamicControl").append("<div><label id=lbl" + randomNumberMulti + ">" + KendoEditorValue + "</label></div>");
+                                    $("#DynamicControl").append("<textarea id=MultLine_" + trimPlaceholderMultiLine + "_" + randomNumberMulti + " rows=10 cols=40 style=height:150px></textarea><br/>");
+                                    $('#DynamicControl').children('#MultLine_' + trimPlaceholderMultiLine + "_" + randomNumberMulti).kendoEditor({
+                                        encoded: false
+                                    });
+                                }
+                                else if (searchResults.items[i].text.includes("Date")) {
+                                    var randomNumberDate = Math.floor((Math.random() * 99999999999) + 1);
+                                    var KendoDate = searchResults.items[i].text.split("/");
+                                    var KendoDateValue = KendoDate[0].substring(3);
+                                    var trimPlaceholderDate = KendoDateValue.split(' ').join('');
+                                    $("#DynamicControl").append("<div><label id=lbl" + randomNumberDate + ">" + KendoDateValue + "</label></div>");
+                                    $("#DynamicControl").append("<input type=text id=Date_" + trimPlaceholderDate + "_" + randomNumberDate + ">");
+                                    var todayDate = new Date();
+                                    $('#DynamicControl').children('#Date_' + trimPlaceholderDate + "_" + randomNumberDate).kendoDatePicker({
+                                        value: todayDate
+                                    });
+                                }
+                                else if (searchResults.items[i].text.includes("Currency")) {
+                                    var randomNumberCurrency = Math.floor((Math.random() * 99999999999) + 1);
+                                    var kendoCurrency = searchResults.items[i].text.split("/");
+                                    var kendoCurrencyValue = kendoCurrency[0].substring(3);
+                                    var trimPlaceholderCurrency = kendoCurrencyValue.split(' ').join('');
+                                    $("#DynamicControl").append("<input type=number id=currency_" + trimPlaceholderCurrency + "_" + randomNumberCurrency + "><input id=currencydropdown_" + trimPlaceholderCurrency + "_" + randomNumberCurrency + ">");
+                                    $('#DynamicControl').children('#currency_' + trimPlaceholderCurrency + "_" + randomNumberCurrency).kendoTextBox({
+                                        placeholder: kendoCurrencyValue
+                                    });
+                                    $("#DynamicControl").children('#currencydropdown_' + trimPlaceholderCurrency + "_" + randomNumberCurrency).kendoDropDownList({
+                                        optionLabel: "Select Currency...",
+                                        dataSource: ["INR", "USD", "CNY", "EUR", "GBP"]
+                                    }).data("kendoDropDownList");
+                                }
+                            }
+                        }
                     } else {
-                        PlaceHolderArrays = PlaceHolderArrays + ',' + searchResults.items[i].text;
-                        ISPLACEHOLDEREXIST = false;
-                    }
-                    if (!ISPLACEHOLDEREXIST) {
-                        if (searchResults.items[i].text.includes("Single Line of Text")) {
-
-                            var randomNumber = Math.floor((Math.random() * 99999999999) + 1);
-                            var singleLineofText = searchResults.items[i].text.split("/");
-                            var ValueofSingleLineofText = singleLineofText[0].substring(3)
-                            var trimPlaceholder = ValueofSingleLineofText.split(' ').join('');
-                            $("#DynamicControl").append("<input type=text id=textBox_" + trimPlaceholder + "_" + randomNumber + "><br/>");
-                            $('#DynamicControl').children('#textBox_' + trimPlaceholder + "_" + randomNumber).kendoTextBox({
-                                placeholder: ValueofSingleLineofText
-                            });
-                        }
-                        else if (searchResults.items[i].text.includes("Multi Line of text")) {
-                            var randomNumberMulti = Math.floor((Math.random() * 99999999999) + 1);
-                            var KendoMultiLineofText = searchResults.items[i].text.split("/");
-                            var KendoEditorValue = KendoMultiLineofText[0].substring(3);
-                            var trimPlaceholderMultiLine = KendoEditorValue.split(' ').join('');
-                            $("#DynamicControl").append("<div><label id=lbl" + randomNumberMulti + ">" + KendoEditorValue + "</label></div>");
-                            $("#DynamicControl").append("<textarea id=MultLine_" + trimPlaceholderMultiLine + "_" + randomNumberMulti + " rows=10 cols=40 style=height:150px></textarea><br/>");
-                            $('#DynamicControl').children('#MultLine_' + trimPlaceholderMultiLine + "_" + randomNumberMulti).kendoEditor({
-                                encoded: false
-                            });
-                        }
-                        else if (searchResults.items[i].text.includes("Date")) {
-                            var randomNumberDate = Math.floor((Math.random() * 99999999999) + 1);
-                            var KendoDate = searchResults.items[i].text.split("/");
-                            var KendoDateValue = KendoDate[0].substring(3);
-                            var trimPlaceholderDate = KendoDateValue.split(' ').join('');
-                            $("#DynamicControl").append("<div><label id=lbl" + randomNumberDate + ">" + KendoDateValue + "</label></div>");
-                            $("#DynamicControl").append("<input type=text id=Date_" + trimPlaceholderDate + "_" + randomNumberDate + ">");
-                            var todayDate = new Date();
-                            $('#DynamicControl').children('#Date_' + trimPlaceholderDate + "_" + randomNumberDate).kendoDatePicker({
-                                value: todayDate
-                            });
-                        }
-                        else if (searchResults.items[i].text.includes("Currency")) {
-                            var randomNumberCurrency = Math.floor((Math.random() * 99999999999) + 1);
-                            var kendoCurrency = searchResults.items[i].text.split("/");
-                            var kendoCurrencyValue = kendoCurrency[0].substring(3);
-                            var trimPlaceholderCurrency = kendoCurrencyValue.split(' ').join('');
-                            $("#DynamicControl").append("<input type=number id=currency_" + trimPlaceholderCurrency + "_" + randomNumberCurrency + "><input id=currencydropdown_" + trimPlaceholderCurrency + "_" + randomNumberCurrency + ">");
-                            $('#DynamicControl').children('#currency_' + trimPlaceholderCurrency + "_" + randomNumberCurrency).kendoTextBox({
-                                placeholder: kendoCurrencyValue
-                            });
-                            $("#DynamicControl").children('#currencydropdown_' + trimPlaceholderCurrency + "_" + randomNumberCurrency).kendoDropDownList({
-                                optionLabel: "Select Currency...",
-                                dataSource: ["INR", "USD", "CNY", "EUR", "GBP"]
-                            }).data("kendoDropDownList");
-                        }
+                        $("#DynamicControl").append("<h6>No Placeholder Found in existing document !!!</h6>");
                     }
                 }
                 return context.sync();
