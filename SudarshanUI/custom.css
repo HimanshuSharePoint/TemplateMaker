@@ -217,5 +217,5 @@ span.svg-icon.svg-icon-2 {
 .counterup { padding: 10px; display: block;}
 .number div { margin-bottom: 0px; width: 40%; margin-right: 15px; padding:5%; font-size: 2.5rem; font-weight: 500; background-color: #bacfd6; color: #165f75;}
 .number p { text-align: left;}sp-appBar
-#sp-appBar, #spSiteHeader, #spCommandBar, .spAppAndPropertyPanelContainer .sp-appBar { display:none!important;}
+#sp-appBar, #spSiteHeader, #spCommandBar, .spAppAndPropertyPanelContainer .sp-appBar, .sp-placeholder-bottom { display:none!important;}
 
