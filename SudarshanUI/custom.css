@@ -224,7 +224,7 @@ span.svg-icon.svg-icon-2 {
 .aside .aside-menu { height:85vh;  }
 body[data-kt-aside-minimize="on"] .p_c_beed2cf1 { left:75px!important; width:95%!important;}
 
-@include media-breakpoint-up(sm) { 
+@media (max-width: 768px) { 
 
     .p_c_beed2cf1 { left:15px; width:93%; }
 }
