@@ -222,11 +222,11 @@ span.svg-icon.svg-icon-2 {
  #spLeftNav, .Files-leftNav, #sp-appBar  { display:none!important;}
 .p_c_beed2cf1, .Files-main { position:absolute; top:62px; left:265px; height:85vh; overflow:auto; width:82.5%; transition:all 0.5s;}
 .aside .aside-menu { height:85vh;  }
-body[data-kt-aside-minimize="on"] .p_c_beed2cf1 { left:75px!important; width:95%!important;}
+body[data-kt-aside-minimize="on"] .p_c_beed2cf1, body[data-kt-aside-minimize="on"] .Files-main { left:75px!important; width:95%!important;}
 .spinner-border { position:absolute; top:50%; left:50%;}
 
 @media (max-width: 768px) { 
 
-    .p_c_beed2cf1 { left:15px!important; width:93%!important; }
+    .p_c_beed2cf1, .Files-main { left:15px!important; width:93%!important; }
 }
 
