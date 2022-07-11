@@ -224,7 +224,7 @@ span.svg-icon.svg-icon-2 {
 .aside .aside-menu { height:85vh;  }
 body[data-kt-aside-minimize="on"] .p_c_beed2cf1, body[data-kt-aside-minimize="on"] .Files-main { left:75px!important; width:95%!important;}
 .spinner-border { position:absolute; top:50%; left:50%;}
-
+.webPartContainer{display:none;}
 @media (max-width: 768px) { 
 
     .p_c_beed2cf1, .Files-main { left:15px!important; width:93%!important; }
