@@ -220,5 +220,5 @@ span.svg-icon.svg-icon-2 {
 #sp-appBar, #spSiteHeader, #spCommandBar, .spAppAndPropertyPanelContainer .sp-appBar, .sp-placeholder-bottom, #spLeftNav { display:none!important;}
 .p_c_beed2cf1 { position:absolute; top:62px; left:265px; height:85vh; overflow:auto; width:82.5%; transition:all 0.5s;}
 .aside .aside-menu { height:85vh;}
-body[data-kt-aside-minimize="on"] .p_c_beed2cf1 { left:75px!important; z-index:1;}
+body[data-kt-aside-minimize="on"] .p_c_beed2cf1 { left:75px!important; z-index:1; width:95%!important;}
 
