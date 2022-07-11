@@ -29,6 +29,8 @@ span.svg-icon.svg-icon-2 {
 }
 .aside.aside-dark {
     background-color: #165f75;
+    z-index:1;
+    overflow:hidden;
 }
 .aside-dark .menu .menu-item.hover:not(.here)>.menu-link:not(.disabled):not(.active):not(.here) .menu-icon, .aside-dark .menu .menu-item.hover:not(.here)>.menu-link:not(.disabled):not(.active):not(.here) .menu-icon .svg-icon, .aside-dark .menu .menu-item.hover:not(.here)>.menu-link:not(.disabled):not(.active):not(.here) .menu-icon i, .aside-dark .menu .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here) .menu-icon, .aside-dark .menu .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here) .menu-icon .svg-icon, .aside-dark .menu .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here) .menu-icon i {
     color: #ffffff;
@@ -219,6 +221,6 @@ span.svg-icon.svg-icon-2 {
 .number p { text-align: left;}sp-appBar
 #sp-appBar, #spSiteHeader, #spCommandBar, .spAppAndPropertyPanelContainer .sp-appBar, .sp-placeholder-bottom, #spLeftNav { display:none!important;}
 .p_c_beed2cf1 { position:absolute; top:62px; left:265px; height:85vh; overflow:auto; width:82.5%; transition:all 0.5s;}
-.aside .aside-menu { height:85vh;  z-index:1; }
+.aside .aside-menu { height:85vh;  }
 body[data-kt-aside-minimize="on"] .p_c_beed2cf1 { left:75px!important; width:95%!important;}
 
