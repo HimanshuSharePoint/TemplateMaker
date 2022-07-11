@@ -218,7 +218,7 @@ span.svg-icon.svg-icon-2 {
 .number div { margin-bottom: 0px; width: 40%; margin-right: 15px; padding:5%; font-size: 2.5rem; font-weight: 500; background-color: #bacfd6; color: #165f75;}
 .number p { text-align: left;}sp-appBar
 #sp-appBar, #spSiteHeader, #spCommandBar, .spAppAndPropertyPanelContainer .sp-appBar, .sp-placeholder-bottom, #spLeftNav { display:none!important;}
-.p_c_beed2cf1 { position:absolute; top:62px; left:265px; height:85vh; overflow:auto; width:82.5%;}
+.p_c_beed2cf1 { position:absolute; top:62px; left:265px; height:85vh; overflow:auto; width:82.5%; transition:all 0.5s;}
 .aside .aside-menu { height:85vh;}
-body[data-kt-aside-minimize="on"] .p_c_beed2cf1 { left:72px!important;}
+body[data-kt-aside-minimize="on"] .p_c_beed2cf1 { left:75px!important;}
 
