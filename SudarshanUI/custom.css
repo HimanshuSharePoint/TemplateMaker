@@ -226,6 +226,6 @@ body[data-kt-aside-minimize="on"] .p_c_beed2cf1 { left:75px!important; width:95%
 
 @media (max-width: 768px) { 
 
-    .p_c_beed2cf1 { left:15px; width:93%; }
+    .p_c_beed2cf1 { left:15px!important; width:93%!important; }
 }
 
