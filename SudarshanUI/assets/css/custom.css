@@ -232,3 +232,5 @@ body[data-kt-aside-minimize="on"] .p_c_beed2cf1, body[data-kt-aside-minimize="on
 .k-widget, .k-widget * { box-sizing:border-box!important;}
 .k-tabstrip-items .k-item, .k-tabstrip-items .k-state-active { background-color:transparent!important;}
 #dashboard-page { display:none!important;}
+.k-tabstrip-items .k-item .k-link {color:#000!important;}
+.k-tabstrip-items .k-state-active .k-link, .k-tabstrip-items:hover .k-link { border-bottom:2px solid #165f75!important; color:#165f75!important;}
