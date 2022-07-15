@@ -243,3 +243,7 @@ body[data-kt-aside-minimize="on"] .p_c_beed2cf1, body[data-kt-aside-minimize="on
 .container-fluid {
 padding: 0px 5px !important;
 }
+
+.content{
+padding: 0px !important;
+}
