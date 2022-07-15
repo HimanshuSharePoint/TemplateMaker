@@ -229,5 +229,5 @@ body[data-kt-aside-minimize="on"] .p_c_beed2cf1, body[data-kt-aside-minimize="on
 
     .p_c_beed2cf1, .Files-main { left:15px!important; width:93%!important; }
 }
-.k-widget { box-sizing:border-box!important;}
+.k-widget, .k-widget * { box-sizing:border-box!important;}
 
