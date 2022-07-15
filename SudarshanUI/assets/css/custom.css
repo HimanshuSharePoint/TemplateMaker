@@ -231,3 +231,4 @@ body[data-kt-aside-minimize="on"] .p_c_beed2cf1, body[data-kt-aside-minimize="on
 
 .k-widget, .k-widget * { box-sizing:border-box!important;}
 .k-tabstrip-items .k-item, .k-tabstrip-items .k-state-active { background-color:transparent!important;}
+#dashboard-page { display:none!important;}
