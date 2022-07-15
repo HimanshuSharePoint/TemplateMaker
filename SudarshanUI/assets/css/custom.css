@@ -235,3 +235,11 @@ body[data-kt-aside-minimize="on"] .p_c_beed2cf1, body[data-kt-aside-minimize="on
 .k-tabstrip-items .k-item .k-link {color:#000!important;}
 .k-tabstrip-items .k-state-active .k-link, .k-tabstrip-items .k-link:hover { border-bottom:2px solid #165f75!important; color:#165f75!important;}
 .k-tabstrip-items .k-item.k-state-hover { border:none!important;}
+
+.CanvasZone { padding: 0px!important; }
+.CanvasSection { padding:0px!important; }
+.ControlZone { margin: 0px!important; padding:0px!important; }
+
+.container-fluid {
+padding: 0px 5px !important;
+}
