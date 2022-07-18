@@ -248,3 +248,4 @@ padding: 0px 5px !important;
 padding: 0px !important;
 }
 .k-widget { border-width:0px!important;}
+.k-tabstrip-items .k-loading.k-complete { border:none!important;}
