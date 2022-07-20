@@ -29,6 +29,7 @@ span.svg-icon.svg-icon-2 {
 }
 .aside.aside-dark {
     background-color: #165f75;
+	border-right:1px solid #ececec;
 }
 .aside-dark .menu .menu-item.hover:not(.here)>.menu-link:not(.disabled):not(.active):not(.here) .menu-icon, .aside-dark .menu .menu-item.hover:not(.here)>.menu-link:not(.disabled):not(.active):not(.here) .menu-icon .svg-icon, .aside-dark .menu .menu-item.hover:not(.here)>.menu-link:not(.disabled):not(.active):not(.here) .menu-icon i, .aside-dark .menu .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here) .menu-icon, .aside-dark .menu .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here) .menu-icon .svg-icon, .aside-dark .menu .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here) .menu-icon i {
     color: #ffffff;
@@ -1189,5 +1190,7 @@ i > span {     background: #165f75;
   display: block;
 }
 /* winnable ends */
+
+[data-kt-aside-minimize=on] .aside.aside-hoverable:hover:not(.animating) { z-index:9; }
  
 
