@@ -1192,5 +1192,6 @@ i > span {     background: #165f75;
 /* winnable ends */
 
 [data-kt-aside-minimize=on] .aside.aside-hoverable:hover:not(.animating) { z-index:9; }
+.a_c_50a7110f:not(.b_c_50a7110f) .k_c_50a7110f { max-width: 100%!important; }
  
 
