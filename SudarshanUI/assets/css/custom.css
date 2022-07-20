@@ -165,7 +165,7 @@ span.svg-icon.svg-icon-2 {
         .poll-results li:after {
             content: "";
             display: block;
-            clear: both;
+            clear: both; 
             height: 3px;
             line-height: 0;
         }
