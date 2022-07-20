@@ -1129,7 +1129,7 @@ i > span {     background: #165f75;
     /* padding: 5px; */
     border-radius: 50%;
     position: absolute;
-    top: 0;
+    top: 10px;
     font-size: 11px;
     width: 15px;
     height: 15px;
