@@ -254,3 +254,4 @@ padding: 0px !important;
 }
 .k_c_50a7110f, .toolbar { background:#ececec!important;}
 .header { background:#fff!important;}
+div[data-automation-id="pageHeader"] { display:none!important;}
