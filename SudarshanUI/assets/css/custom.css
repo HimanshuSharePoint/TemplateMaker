@@ -1075,8 +1075,7 @@ h1.doclibttl { font-size:1.5rem; display:inline; font-weight:normal; line-height
 .CanvasSection { padding:0px!important; }
 .ControlZone { margin: 0px!important; padding:0px!important; }
 .docliblock { padding:2% 0!important; }
- .mainContent { padding-left: 0px;
-	 margin-left:240px; }
+
 div[data-automation-id="CanvasLayout"] > div.row { display:block!important;}
 .k-link, .k-nav-current.k-state-hover .k-link {
     color: #166175;
