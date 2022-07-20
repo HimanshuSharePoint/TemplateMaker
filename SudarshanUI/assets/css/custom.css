@@ -249,3 +249,8 @@ padding: 0px !important;
 }
 .k-widget { border-width:0px!important;}
 .k-tabstrip-items .k-loading.k-complete { border:none!important;}
+.k-form .k-form-field {
+    margin-top: 1em;
+}
+.k_c_50a7110f, .toolbar { background:#ececec!important;}
+.header { background:#fff!important;}
