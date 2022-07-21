@@ -1188,5 +1188,6 @@ i > span {     background: #165f75;
 .k-form-field { margin-top:1rem!important;}
 .k-pager-nav { display:none!important;}
 .k-pager-numbers .k-state-selected { background-color:#165f75!important; border-radius:0px!important;}
+p { line-height:normal!important; padding:0px!important;}
  
 
