@@ -244,6 +244,9 @@ body[data-kt-aside-minimize="on"] .p_c_beed2cf1, body[data-kt-aside-minimize="on
 #kt_content_container {
    padding: 15px 30px 15px 5px !important;
 }
+#kt_toolbar_container {
+   padding-left:5px;	
+}
 
 .content{
 padding: 0px !important;
