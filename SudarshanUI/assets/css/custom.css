@@ -1081,11 +1081,7 @@ div[data-automation-id="CanvasLayout"] > div.row { display:block!important;}
 .k-toolbar {
 	background-color: #fff;
 }
-.k-textbox {
-    
-    width: 35%;
-}
-
+ 
 #divTemplateLibrary_Wrapper, #divResponseLibrary_Wrapper {
             background-color: #fff;
         }
