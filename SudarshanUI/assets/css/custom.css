@@ -779,7 +779,7 @@ html[dir='ltr'] .compositeLink_a0b619f0.compositeLinkIsSelected_a0b619f0 a:after
     border-left: 2px solid #ffffff;
 }
 .compositeLink_a0b619f0:hover a { background: #faf9f8; color: #000; }
-.divSearchResponse { display:inline-block; width:92%; padding-left:10px; position:relative; vertical-align:top; margin-top:10px; margin-bottom:10px;}
+.divSearchResponse { display:inline-block; width:92%; padding-left:10px; position:relative; vertical-align:top;  margin-bottom:10px;}
 .k-i-search { position:absolute; top:25px;}
 .divSearchResponse input { width:95%; height:25px; padding-left:30px;}
 .drpResponse { width:auto; display:inline-block; margin-top:5px; text-align:right; float:right; margin-right:10px;}
@@ -1099,7 +1099,7 @@ div[data-automation-id="CanvasLayout"] > div.row { display:block!important;}
         }
         #divTemplateLib_CardView_Wrapper {
             padding-bottom:15px;
-	    padding-top:15px;
+	    padding-top:0;
 		
         }
         #pagerTemplateLib_CardView, #pagerResponseLib_CardView {
@@ -1187,6 +1187,6 @@ i > span {     background: #165f75;
 .toolbar { padding:1rem 0; background:#fff!important; border-top:1px solid #ececec!important; margin-top:3px!important;}
 .k-form-field { margin-top:1rem!important;}
 .k-pager-nav { display:none!important;}
-.k-pager-numbers .k-state-selected { background-color:#165f75!important;}
+.k-pager-numbers .k-state-selected { background-color:#165f75!important; border-radius:0px!important;}
  
 
