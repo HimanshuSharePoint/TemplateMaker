@@ -1187,5 +1187,6 @@ i > span {     background: #165f75;
 .toolbar { padding:1rem 0; background:#fff!important; border-top:1px solid #ececec!important; margin-top:3px!important;}
 .k-form-field { margin-top:1rem!important;}
 .k-pager-nav { display:none!important;}
+.k-pager-numbers .k-state-selected { background-color:#165f75!important;}
  
 
