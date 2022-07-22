@@ -1196,4 +1196,8 @@ p { line-height:normal!important; padding:0px!important; margin:0px!important;}
     right: 2rem;
 	bottom:6rem;
     z-index: 105; }
+#divthumbnail .col-xl-3 {
+    max-width: 222px;
+}
+#divthumbnail .col-xl-3 .thumb { max-width:183px;}
 
