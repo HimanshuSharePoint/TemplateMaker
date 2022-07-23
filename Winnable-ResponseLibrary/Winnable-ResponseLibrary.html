@@ -1,0 +1,133 @@
+﻿<head>
+    <base href="">
+    <title>Response Library</title>
+    <meta charset="utf-8" />
+    <meta name="description" content=" " />
+    <meta name="keywords" content=" " />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link href='https://kendo.cdn.telerik.com/2019.3.1023/styles/kendo.common.min.css' rel='stylesheet' type='text/css'>
+    <link href='https://kendo.cdn.telerik.com/2020.1.406/styles/kendo.material.min.css' rel='stylesheet' type='text/css'>
+
+    <link href="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/css/SharePointNative_Custom.css" rel="stylesheet" type="text/css" />
+    <!--end::Global Stylesheets Bundle-->
+    <style>
+        #spCommandBar, #CommentsWrapper {
+            display: none;
+        }
+    </style>
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+      class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed"
+      style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+    <!--begin::Main-->
+    <!--begin::Root-->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="page d-flex flex-row flex-column-fluid">
+            <!--begin::Aside-->
+            <!--end::Aside-->
+            <!--begin::Wrapper-->
+            <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+                <!--begin::Header-->
+                <!--end::Header-->
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Toolbar-->
+                    <div class="toolbar" id="kt_toolbar">
+                        <!--begin::Container-->
+                        <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+                            <!--begin::Page title-->
+                            <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
+                                 data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
+                                 class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+                                <!--begin::Title-->
+                                <h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">
+                                    Response Library
+                                    <!--begin::Separator-->
+                                    <span class="h-20px border-1 border-gray-200 border-start ms-3 mx-2 me-1"></span>
+                                    <!--end::Separator-->
+                                    <!--begin::Description-->
+                                    <span class="text-muted fs-7 fw-bold mt-2">&nbsp;&nbsp;Home > Response Library</span>
+                                    <!--end::Description-->
+                                </h1>
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Page title-->
+                            <!--begin::Actions-->
+                            <div class="d-flex align-items-center gap-2 gap-lg-3">
+                                <div class="me-0">
+                                    <a id="btnAddSnippet" class="btn btn-sm btn-primary"> Add New Snippet</a>
+                                </div>
+                            </div>
+                            <!--end::Actions-->
+                        </div>
+                        <!--end::Container-->
+                    </div>
+                    <!--end::Toolbar-->
+                    <!--begin::Container-->
+                    <div id="kt_content_container" class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div id="divSnippetLib_GridView_Wrapper" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Recommended for you</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-center spinner-loader-wrapper" id="spinner-ResponseLib-GridView">
+                                            <div class="spinner-border" role="status">
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                        </div>
+                                        <div id="divSnippetLib_GridView_Container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--begin::Modals-->
+                        <!--begin::Modal - New Snippet-->
+                        <div id="KendoWindow_CreateSnippet">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="k-form-field">
+                                        <input id="ddlSnippetCategory" type="text" />
+                                    </div>
+                                    <div class="k-form-field">
+                                        <input id="txtSnippetTitle" type="text" />
+                                    </div>
+                                    <div class="k-form-field">
+                                        <textarea id="txtSnippetDescription"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <button id="btnSaveSnippet" class="btn btn-sm btn-primary">Save Snippet</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Modal - New Snippet-->
+                        <!--end::Modals-->
+                        <!--end::Container-->
+                    </div>
+                    <!--end::Content-->
+
+                </div>
+                <!--end::Wrapper-->
+            </div>
+            <!--end::Page-->
+        </div>
+        <!--end::Root-->
+    </div>
+
+    <!--end::Root-->
+</body>
