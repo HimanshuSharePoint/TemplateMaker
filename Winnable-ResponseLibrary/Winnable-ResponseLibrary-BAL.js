@@ -8,7 +8,7 @@ var Winnable_ResponseLibrary_BAL = {
 
 function renderPageControls() {
 	alert("I am from Render Page Controls");
-	kendoGrid_SnippetLib_Bind();
+	
 	hideSpinner("#spinner-ResponseLib-GridView");
 	showControl("#divSnippetLib_GridView_Container");
 
