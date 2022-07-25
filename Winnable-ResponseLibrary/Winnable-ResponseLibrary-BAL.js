@@ -99,57 +99,46 @@ public bindWinnableResponseLibrary(): Promise<ISPListWinnableResponseLibraryValu
     
 function kendoGrid_SnippetLib_Bind() {
 
-	var grid = $("#divSnippetLib_GridView_Container").data("kendoGrid");
-	if (grid != null) grid.destroy();
+    var grid = $("#divSnippetLib_GridView_Container").data("kendoGrid");
+    if (grid != null) grid.destroy();
 
-	$("#divSnippetLib_GridView_Container").kendoGrid({
-		dataSource: {
-			type: "odata",
-			transport: {
-				read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Orders"
-			},
-			schema: {
-				model: {
-					fields: {
-						OrderID: { type: "number" },
-						Freight: { type: "number" },
-						ShipName: { type: "string" },
-						OrderDate: { type: "date" },
-						ShipCity: { type: "string" }
-					}
-				}
-			},
-			pageSize: 20
-		},
-		height: 550,
-		groupable: true,
-		sortable: true,
-		pageable: {
-			refresh: true,
-			pageSizes: true,
-			buttonCount: 5
-		},
-		columns: [{
-			field: "OrderID",
-			filterable: false
-		},
-		{
-			field: "OrderDate",
-			title: "Order Date",
-			format: "{0:MM/dd/yyyy}"
-		}, {
-			field: "ShipName",
-			title: "Ship Name"
-		}, {
-			field: "ShipCity",
-			title: "Ship City"
-		}
-		],
-		dataBound: function (e) {
-			/* Fired when the widget is bound to data from its data source. Use this to show control & hide spinner */
+    $("#divSnippetLib_GridView_Container").kendoGrid({
+        dataSource: {
+            data: dataSourceResponseLibrary.data(),
+            pageSize: 10
+        },
+        toolbar: ["search"],
+        scrollable: true,
+        resizable: true,
+        sortable: true,
+        reorderable: true,
+        noRecords: true,
+        columnMenu: false,
+        groupable: true,
+        pageable: {
+            refresh: true,
+            pageSizes: true,
+            buttonCount: 5,
+        },
+        filterable: true,
+        columns: [
+        {
+            field: "SnippetCategory",
+            title: "Snippet Category",
+            
+        }, {
+            field: "SnippetTitle",
+            title: "Snippet Title",
+        }, {
+            field: "SnippetDescription",
+            title: "Snippet Description",
+        }
+        ],
+        dataBound: function (e) {
+            /* Fired when the widget is bound to data from its data source. Use this to show control & hide spinner */
 
-		}
-	});
+        }
+    });
 }
 
 function hideSpinner(controlID) {
