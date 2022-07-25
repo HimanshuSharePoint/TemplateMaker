@@ -55,7 +55,7 @@ function showSpinner(controlID) {
 function showControl(controlID) {
 	$(controlID).removeClass("d-none");
 }
-function kendoGrid_SnippetLib_Bind() {
+function bindResponseLibrary() {
 
     var grid = $("#divSnippetLib_GridView_Container").data("kendoGrid");
     if (grid != null) grid.destroy();
