@@ -38,6 +38,9 @@ function renderPageControls() {
 		kendoWindow_CreateSnippet.data("kendoWindow").center().open();
 		// disable button to stop further clicks btnCreateFreshTemplate.fadeOut();
 	});
+	instantClassName.bindIndustryList().then((response) => {
+        instantClassName.renderIndustryDropdownTemplateMetadata(response.value);
+        });
 }
 
 public bindWinnableResponseLibrary(): Promise<ISPListWinnableResponseLibraryValue> {
