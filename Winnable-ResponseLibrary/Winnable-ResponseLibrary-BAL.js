@@ -40,6 +40,63 @@ function renderPageControls() {
 	});
 }
 
+public bindWinnableResponseLibrary(): Promise<ISPListWinnableResponseLibraryValue> {
+
+        try {
+            return contextFinal.spHttpClient
+                .get(
+                    contextFinal.pageContext.web.absoluteUrl +
+                    "/_api/web/lists/GetByTitle('" + WinnableResponseLibrary + "')/items?$orderby=Modified desc",
+                    SPHttpClient.configurations.v1
+                )
+                .then((Response: SPHttpClientResponse) => {
+
+                    return Response.json();
+                });
+        } catch (ex) {
+            console.log("Error while Bind WinnableResponseLibrary" + ex.message);
+        }
+    }
+
+    public renderWinnableResponseLibraryDataSource(items: ISPListWinnableResponseLibrary[]): void {
+        try {
+            dataSourceResponseLibrary = new kendo.data.DataSource({
+                data: [],
+                schema: {
+                    model: {
+                        id: "externalResponseLibrary",
+                        fields: {
+                            SnippetCategory: {
+                                editable: false,
+                                nullable: false
+                            },
+                            SnippetTitle: {
+                                editable: false,
+                                nullable: false
+                            },
+                            SnippetDescription: {
+                                editable: false,
+                                nullable: false
+                            }
+                        }
+                    }
+                }
+
+            });
+
+            items.forEach((item: ISPListWinnableResponseLibrary) => {
+                dataSourceResponseLibrary.add({
+                    SnippetCategory: item.SnippetCategory,
+                    SnippetTitle: item.SnippetTitle,
+                    SnippetDescription: item.SnippetDescription,
+
+                });
+            });
+        } catch (ex) {
+            console.log("Error while renderWinnableResponseLibraryDataSource" + ex.message);
+        }
+    }
+    
 function kendoGrid_SnippetLib_Bind() {
 
 	var grid = $("#divSnippetLib_GridView_Container").data("kendoGrid");
