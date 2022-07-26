@@ -783,3 +783,64 @@ function createChart_StatusByStakeholder() {
     
 }
 
+   function createChart_ProposalByStage() {
+    try {
+        $("#chart_ProposalByStage").kendoChart({
+            title: {
+                text: "Proposal by stage"
+            },
+            legend: {
+                position: "bottom"
+            },
+            seriesDefaults: {
+                labels: {
+                    template: "#= category # - #= kendo.format('{0:P}', percentage)#",
+                    position: "outsideEnd",
+                    visible: false,
+                    background: "transparent"
+                }
+            },
+            series: [{
+                type: "donut",
+                data: [{
+                    category: "Won",
+                    value: 35
+                }, {
+                    category: "Lost",
+                    value: 25
+                }, {
+                    category: "Decline",
+                    value: 20
+                }, {
+                    category: "Result awaited",
+                    value: 10
+                }, {
+                    category: "Others",
+                    value: 10
+                }]
+            }],
+            tooltip: {
+                visible: true,
+                template: "#= category # - #= kendo.format('{0:P}', percentage) #"
+            }
+        });
+    } catch(ex) {
+        console.log("Error while createChart_ProposalByStage" + ex.message);
+    }
+}
+function onCloseKendo() {
+    try {
+        $("#kendoCreateAppWindow").fadeIn();
+    } catch(ex) {
+        console.log("error while onCloseKendo" + ex.message);
+    }
+}
+
+    function onCloseKendoFade() {
+    try {
+        $("#divDetailView").fadeIn()
+    } catch(ex) {
+        console.log("Error while onCloseKendoFade" + ex.message);
+    }
+}
+
