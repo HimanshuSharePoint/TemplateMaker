@@ -4,7 +4,7 @@ var Winnable_Dashboard_BAL = {
     }
 };
 
-function renderPageControls(): void {
+function renderPageControls(){
     try {
         console.log("Deugging");
         hideControl("#proposalContainer");
