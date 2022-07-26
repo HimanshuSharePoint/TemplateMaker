@@ -1,13 +1,13 @@
 // JavaScript source code
 var Winnable_ResponseLibrary_BAL = {
     initializePage: function () {
-        alert("I am from initializePage Method");
+        
 	    renderPageControls();
     }
 };
 
 function renderPageControls() {
-	alert("I am from Render Page Controls");
+	
 	
 	hideSpinner("#spinner-ResponseLib-GridView");
 	showControl("#divSnippetLib_GridView_Container");
