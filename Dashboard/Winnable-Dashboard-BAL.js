@@ -1,4 +1,4 @@
-var Winnable_ResponseLibrary_BAL = {
+var Winnable_Dashboard_BAL = {
     initializePage: function () {
 	    renderPageControls();
     }
