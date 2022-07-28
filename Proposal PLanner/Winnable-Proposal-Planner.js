@@ -5,3 +5,6 @@ var Winnable_PlannerProposal_BAL = {
 	    renderPageControls();
     }
 };
+function renderPageControls (){
+	console.log("test');
+}
