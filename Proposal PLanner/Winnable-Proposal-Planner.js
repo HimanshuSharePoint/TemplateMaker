@@ -1,4 +1,3 @@
-// JavaScript source code
 var Winnable_PlannerProposal_BAL = {
     initializePage: function () {
 	    alert("This is from External Planner Proposal");
@@ -6,5 +5,5 @@ var Winnable_PlannerProposal_BAL = {
     }
 };
 function renderPageControls(){
-	console.log("test');
+	console.log("test");
 }
