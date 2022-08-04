@@ -351,5 +351,191 @@
         <!--end::Post-->
     </div>
     </div> 
+    
+    <div class="k-widget k-window k-display-inline-flex" tabindex="0" id="create_proposal" >
+	<div class="k-window-titlebar k-hstack"><span class="k-window-title" id="proposal_title">Create  Proposal</span>
+		<div class="k-window-actions k-hstack"><a role="button" href="#"
+				class="k-button k-button-icon k-window-action k-flat" aria-label="Close"><span
+					class="k-icon k-i-close"></span></a></div>
+	</div>
+	<div class="modal-content k-window-content" id="kendoCreateProposal" data-role="window" role="dialog"
+		aria-labelledby="kendoCreateAppWindow_wnd_title" style="visibility: visible; display: flex;">
+		<!--begin::Modal body-->
+		<div class="modal-body py-lg-10 px-lg-10">
+			<!--begin::Stepper-->
+			<form action="" class="form mb-15 fv-plugins-bootstrap5 fv-plugins-framework" method="post"
+				id="kt_contact_form">
+
+				<!--begin::Input group-->
+				<div class="row mb-5">
+					<!--begin::Col-->
+					<div class="col-md-6 fv-row fv-plugins-icon-container">
+						<!--begin::Label-->
+						<label class="fs-5 fw-bold mb-2">ProjectID</label>
+						<!--end::Label-->
+						<!--begin::Input-->
+						<span class="k-widget k-textbox form-control form-control-solid" style=""><input type="text"
+								id="txtContractOwner" class="form-control form-control-solid k-input"
+								data-role="textbox" aria-disabled="false" placeholder="Please Enter Project ID"
+								autocomplete="off" style="width: 100%;"></span>
+						<!--end::Input-->
+						<div class="fv-plugins-message-container invalid-feedback"></div>
+					</div>
+					<div class="col-md-6 fv-row fv-plugins-icon-container">
+						<!--begin::Label-->
+						<label class="fs-5 fw-bold mb-2">TaskName</label>
+						<!--end::Label-->
+						<!--begin::Input-->
+						<span class="k-widget k-textbox form-control form-control-solid" style=""><input type="text"
+								id="txtOpportunityType" class="form-control form-control-solid k-input"
+								data-role="textbox" aria-disabled="false" placeholder="Please Enter Task Name"
+								autocomplete="off" style="width: 100%;"></span>
+						<!--end::Input-->
+						<div class="fv-plugins-message-container invalid-feedback"></div>
+					</div>
+
+					<!--end::Col-->
+					<!--begin::Col-->
+					<div class="col-md-12 fv-row fv-plugins-icon-container">
+						<!--end::Label-->
+						<label class="fs-5 fw-bold mb-2">TaskDescription</label>
+						<!--end::Label-->
+						<!--end::Input-->
+						<span class="k-widget k-textbox form-control form-control-solid" style=""><textarea class="form-control form-control-solid k-input" ></textarea></span>
+						<!--end::Input-->
+						<div class="fv-plugins-message-container invalid-feedback"></div>
+					</div>
+					<!--end::Col-->
+					<div class="col-md-6 fv-row fv-plugins-icon-container">
+						<!--begin::Label-->
+						<label class="fs-5 fw-bold mb-2">Task Start Date</label>
+						<!--end::Label-->
+						<!--begin::Input-->
+						<span class="k-widget k-textbox form-control form-control-solid" style=""><input type="text"
+								id="txtphone" class="form-control form-control-solid k-input" placeholder="Enter Start Date"
+								name="name" data-role="textbox" aria-disabled="false" autocomplete="off"
+								style="width: 100%;"></span>
+						<!--end::Input-->
+						<div class="fv-plugins-message-container invalid-feedback"></div>
+					</div>
+
+					<!--end::Col-->
+					<!--begin::Col-->
+					<div class="col-md-6 fv-row fv-plugins-icon-container">
+						<!--end::Label-->
+						<label class="fs-5 fw-bold mb-2">Task Due Date</label>
+						<!--end::Label-->
+						<!--end::Input-->
+						<span class="k-widget k-textbox form-control form-control-solid" style=""><input type="text"
+								id="txtOpportunityName" class="form-control form-control-solid k-input"
+								placeholder="Enter Due date" name="email" data-role="textbox"
+								aria-disabled="false" autocomplete="off" style="width: 100%;"></span>
+						<!--end::Input-->
+						<div class="fv-plugins-message-container invalid-feedback"></div>
+					</div>
+					<!--end::Col-->
+					<div class="col-md-6 fv-row fv-plugins-icon-container">
+						<!--begin::Label-->
+						<label class="fs-5 fw-bold mb-2">Actual Start Date</label>
+						<!--end::Label-->
+						<!--begin::Input-->
+						<span class="k-widget k-textbox form-control form-control-solid" style=""><input type="text"
+								id="txtScopeofWork" class="form-control form-control-solid k-input"
+								placeholder="Enter Actual start date" name="name" data-role="textbox" aria-disabled="false"
+								autocomplete="off" style="width: 100%;"></span>
+						<!--end::Input-->
+						<div class="fv-plugins-message-container invalid-feedback"></div>
+					</div>
+
+					<!--end::Col-->
+					<!--begin::Col-->
+					<div class="col-md-6 fv-row fv-plugins-icon-container">
+						<!--end::Label-->
+						<label class="fs-5 fw-bold mb-2">Actual End Date</label>
+						<!--end::Label-->
+						<!--end::Input-->
+						<span class="k-widget k-textbox form-control form-control-solid" style=""><input type="text"
+								id="txtCountry" class="form-control form-control-solid k-input"
+								placeholder="Enter Actual end Date" name="email" data-role="textbox" aria-disabled="false"
+								autocomplete="off" style="width: 100%;"></span>
+						<!--end::Input-->
+						<div class="fv-plugins-message-container invalid-feedback"></div>
+					</div>
+					<div class="col-md-6 fv-row fv-plugins-icon-container">
+						<!--begin::Label-->
+						<label class="fs-5 fw-bold mb-2">Task Assigned To</label>
+						<!--end::Label-->
+						<!--begin::Input-->
+						<span class="k-widget k-datepicker form-control form-control-solid" style="">
+							<select class="form-control form-control-solid  ">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+							</select>
+							 </span>
+						<!--end::Input-->
+						<div class="fv-plugins-message-container invalid-feedback"></div>
+					</div>
+
+					<!--end::Col-->
+					<!--begin::Col-->
+					<div class="col-md-6 fv-row fv-plugins-icon-container">
+						<!--end::Label-->
+						<label class="fs-5 fw-bold mb-2">TaskStatus</label>
+						<!--end::Label-->
+						<!--end::Input-->
+						<span class="k-widget k-textbox form-control form-control-solid" style=""><input type="text"
+								id="txtEmail" class="form-control form-control-solid k-input" placeholder="Enter Email"
+								name="email" data-role="textbox" aria-disabled="false" autocomplete="off"
+								style="width: 100%;"></span>
+						<!--end::Input-->
+						<div class="fv-plugins-message-container invalid-feedback"></div>
+					</div>
+					<div class="col-md-6 fv-row fv-plugins-icon-container">
+						<!--begin::Label-->
+						<label class="fs-5 fw-bold mb-2">Stage</label>
+						<!--end::Label-->
+						<!--begin::Input-->
+						<span class="k-widget k-textbox form-control form-control-solid" style=""><input type="text"
+								id="txtStage" class="form-control form-control-solid k-input" placeholder="Enter Stage"
+								name="name" data-role="textbox" aria-disabled="false" autocomplete="off"
+								style="width: 100%;"></span>
+						<!--end::Input-->
+						<div class="fv-plugins-message-container invalid-feedback"></div>
+					</div>
+
+					<!--end::Col-->
+				</div>
+				<!--end::Input group-->
+				<!--begin::Input group-->
+				<!--end::Input group-->
+				<!--begin::Submit-->
+				<button type="submit" class="btn btn-sm btn-primary" id="kt_contact_submit_button">
+					<!--begin::Indicator-->
+					<span class="indicator-label">Submit</span>
+					<span class="indicator-progress">
+						Please wait...
+						<span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+					</span>
+					<!--end::Indicator-->
+				</button>
+				<button type="submit" class="btn btn-sm btn-secondary id="kt_contact_submit_button">
+					<!--begin::Indicator-->
+					<span class="indicator-label">Clear</span>
+					<span class="indicator-progress">
+						Please wait...
+						<span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+					</span>
+					<!--end::Indicator-->
+				</button>
+				<!--end::Submit-->
+				<div></div>
+			</form>
+			<!--end::Stepper-->
+		</div>
+		<!--end::Modal body-->
+	</div>
+	 
+</div>
 </body>
 </html>
