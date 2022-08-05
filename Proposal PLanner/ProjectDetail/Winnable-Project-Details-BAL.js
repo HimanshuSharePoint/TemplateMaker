@@ -46,11 +46,6 @@ KTSwapper.createInstances();
 KTToggle.init();
 KTToggle.createInstances();
 
-// Boostrap & 3rd-party components initialization
-KTApp.init();
-
-// Boostrap & 3rd-party components dynamic creation
-KTApp.createInstances();
 
 	
 }
