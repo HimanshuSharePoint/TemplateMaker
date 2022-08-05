@@ -382,13 +382,13 @@
                         <!--begin::Col-->
                         <div class="col-md-6 fv-row fv-plugins-icon-container">
                             <!--begin::Label-->
-                            <label class="fs-5 fw-bold mb-2">Project ID</label>
+                            <label class="fs-5 fw-bold mb-2">Project Name</label>
                             <!--end::Label-->
                             <!--begin::Input-->
                             <span class="k-widget k-textbox form-control form-control-solid" style="">
                                 <input type="text"
-                                       id="txtContractOwner" class="form-control form-control-solid k-input"
-                                       data-role="textbox" aria-disabled="false" placeholder="Please Enter Project ID"
+                                       id="txtProjectName" class="form-control form-control-solid k-input"
+                                       data-role="textbox" aria-disabled="false" placeholder="Please Enter Project Name"
                                        autocomplete="off" style="width: 100%;">
                             </span>
                             <!--end::Input-->
@@ -401,7 +401,7 @@
                             <!--begin::Input-->
                             <span class="k-widget k-textbox form-control form-control-solid" style="">
                                 <input type="text"
-                                       id="txtOpportunityType" class="form-control form-control-solid k-input"
+                                       id="txtTaskName" class="form-control form-control-solid k-input"
                                        data-role="textbox" aria-disabled="false" placeholder="Please Enter Task Name"
                                        autocomplete="off" style="width: 100%;">
                             </span>
@@ -416,7 +416,7 @@
                             <label class="fs-5 fw-bold mb-2">Task Description</label>
                             <!--end::Label-->
                             <!--end::Input-->
-                            <span class="k-widget k-textbox form-control form-control-solid" style=""><textarea class="form-control form-control-solid k-input"></textarea></span>
+                            <span class="k-widget k-textbox form-control form-control-solid" style=""><textarea class="form-control form-control-solid k-input" id="txtTaskDescription"></textarea></span>
                             <!--end::Input-->
                             <div class="fv-plugins-message-container invalid-feedback"></div>
                         </div>
@@ -428,7 +428,7 @@
                             <!--begin::Input-->
                             <span class="k-widget k-textbox form-control form-control-solid" style="">
                                 <input type="text"
-                                       id="txtphone" class="form-control form-control-solid k-input" placeholder="Enter Start Date"
+                                       id="txtStartDate" class="form-control form-control-solid k-input" placeholder="Enter Start Date"
                                        name="name" data-role="textbox" aria-disabled="false" autocomplete="off"
                                        style="width: 100%;">
                             </span>
@@ -445,7 +445,7 @@
                             <!--end::Input-->
                             <span class="k-widget k-textbox form-control form-control-solid" style="">
                                 <input type="text"
-                                       id="txtOpportunityName" class="form-control form-control-solid k-input"
+                                       id="txtDueDate" class="form-control form-control-solid k-input"
                                        placeholder="Enter Due date" name="email" data-role="textbox"
                                        aria-disabled="false" autocomplete="off" style="width: 100%;">
                             </span>
@@ -460,7 +460,7 @@
                             <!--begin::Input-->
                             <span class="k-widget k-textbox form-control form-control-solid" style="">
                                 <input type="text"
-                                       id="txtScopeofWork" class="form-control form-control-solid k-input"
+                                       id="txtActualStartDate" class="form-control form-control-solid k-input"
                                        placeholder="Enter Actual start date" name="name" data-role="textbox" aria-disabled="false"
                                        autocomplete="off" style="width: 100%;">
                             </span>
@@ -477,7 +477,7 @@
                             <!--end::Input-->
                             <span class="k-widget k-textbox form-control form-control-solid" style="">
                                 <input type="text"
-                                       id="txtCountry" class="form-control form-control-solid k-input"
+                                       id="txtActualEndDate" class="form-control form-control-solid k-input"
                                        placeholder="Enter Actual end Date" name="email" data-role="textbox" aria-disabled="false"
                                        autocomplete="off" style="width: 100%;">
                             </span>
@@ -490,11 +490,7 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <span class="k-widget k-datepicker form-control form-control-solid" style="">
-                                <select class="form-control form-control-solid  ">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
+                                <input type="text" id="txtTaskAssignedTo"/>
                             </span>
                             <!--end::Input-->
                             <div class="fv-plugins-message-container invalid-feedback"></div>
@@ -509,7 +505,7 @@
                             <!--end::Input-->
                             <span class="k-widget k-textbox form-control form-control-solid" style="">
                                 <input type="text"
-                                       id="txtEmail" class="form-control form-control-solid k-input" placeholder="Enter Email"
+                                       id="txtTaskStatus" class="form-control form-control-solid k-input" placeholder="Enter Email"
                                        name="email" data-role="textbox" aria-disabled="false" autocomplete="off"
                                        style="width: 100%;">
                             </span>
