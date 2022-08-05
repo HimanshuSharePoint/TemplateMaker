@@ -11,14 +11,8 @@ function renderPageControls() {
 	
 }
 function initializeMetronicScriptBundle()
-{ 
-	KTApp.init();// Boostrap & 3rd-party components dynamic creation
-KTApp.createInstances();// Layout partials initialization(if applicable)
-KTAppSidebar.init();
-KTAppSearch.init();
-
+{
 KTMenu.createInstances();
-KTDrawer.createInstances();
 KTScroll.createInstances();
 KTScrolltop.createInstances();
 KTSticky.createInstances();
