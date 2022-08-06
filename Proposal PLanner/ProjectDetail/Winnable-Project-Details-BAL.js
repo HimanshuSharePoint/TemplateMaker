@@ -7,9 +7,6 @@ var Winnable_ProjectDetails_BAL = {
 		renderPageControls();
 	}
 };
-function renderPageControls() {
-	console.log("test");
-	
-}
+
 
 
