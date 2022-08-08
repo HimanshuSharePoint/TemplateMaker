@@ -16,6 +16,13 @@
 	<!--begin::Vendor Stylesheets(used by this page)-->
 	<!--<link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />-->
 	<link href="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css">
+	<link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify@4.15.3/dist/tagify.css" rel="stylesheet" type="text/css">
+	<link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.css" rel="stylesheet" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/vis-timeline/7.7.0/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css">
+	<link href="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/plugins/custom/vis-timeline/vis-timeline.bundle.css" rel="stylesheet" type="text/css">
+
+
+
 	<!--end::Vendor Stylesheets-->
 	<!--begin::Global Stylesheets Bundle(used by all pages)-->
 	<!--<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />-->
@@ -161,7 +168,7 @@
 									<th class="min-w-150px">Assigned To</th>
 									<th class="min-w-150px">Start Date</th>
 									<th class="min-w-150px">Due Date</th>
-									<th class="min-w-150px">Progress</th>
+
 									<th class="min-w-150px">Status</th>
 									<th class="min-w-100px">Nav to Doc</th>
 									<th class="min-w-70px">Timeline</th>
@@ -170,6 +177,7 @@
 							<!--end::Table head-->
 							<!--begin::Table body-->
 							<tbody>
+
 								<tr>
 									<td>
 										<!--begin::Menu-->
@@ -245,42 +253,19 @@
 										<!--end::Menu Dropdown-->
 										<!--end::Menu-->
 									</td>
-									<!--<td>
-									<div class="d-flex justify-content-end flex-shrink-0">
-										<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">-->
-									<!--begin::Svg Icon | path: icons/duotune/general/gen036.svg-->
-									<!--<span class="svg-icon toggle-on svg-icon-2 me-0">
-										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-											<rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-										</svg>
-									</span>-->
-									<!--end::Svg Icon-->
-									<!--begin::Svg Icon | path: icons/duotune/general/gen035.svg-->
-									<!--<span class="svg-icon toggle-off svg-icon-2 me-0">
-										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-											<rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
-											<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-										</svg>
-									</span>-->
-									<!--end::Svg Icon-->
-									<!--</a>
-										</div>
-									</td>-->
 									<td>1</td>
 									<td>
 										<!--<a href="#" class="text-dark fw-bold text-hover-primary d-block fs-6">Intertico</a>-->
-										<span class="text-dark fw-semibold text-muted d-block fs-7">Bid/Proposal Management</span>
+										<span class="text-dark fw-semibold d-block fs-6">Bid/Proposal Management</span>
 									</td>
 									<td>
 										<!--begin::Members-->
 										<div class="symbol-group symbol-hover fs-8">
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Melody Macy">
-												<img alt="Pic" src="assets/media/avatars/300-2.jpg" />
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/media/avatars/300-2.jpg" />
 											</div>
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="John Mixin">
-												<img alt="Pic" src="assets/media/avatars/300-14.jpg" />
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/media/avatars/300-14.jpg" />
 											</div>
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Susan Redwood">
 												<span class="symbol-label bg-primary text-inverse-primary fw-bold">S</span>
@@ -332,16 +317,6 @@
 										</div>
 										<!--end::Menu Dropdown-->
 										<!--end::Menu-->
-									</td>
-									<td class="text-end">
-										<div class="d-flex flex-column w-100 me-2">
-											<div class="d-flex flex-stack mb-2">
-												<span class="text-muted me-2 fs-7 fw-bold">50%</span>
-											</div>
-											<div class="progress h-6px w-100">
-												<div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-											</div>
-										</div>
 									</td>
 									<td>
 										<span class="badge badge-light-success fs-7 fw-bold">Completed</span>
@@ -462,16 +437,16 @@
 									<td>1.1</td>
 									<td>
 										<!--<a href="#" class="text-dark fw-bold text-hover-primary d-block fs-6">Intertico</a>-->
-										<span class="text-dark fw-semibold text-muted d-block fs-7">Kick off call</span>
+										<span class="text-dark fw-semibold d-block fs-6">Kick off call</span>
 									</td>
 									<td>
 										<!--begin::Members-->
 										<div class="symbol-group symbol-hover fs-8">
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Melody Macy">
-												<img alt="Pic" src="assets/media/avatars/300-2.jpg" />
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/media/avatars/300-2.jpg" />
 											</div>
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="John Mixin">
-												<img alt="Pic" src="assets/media/avatars/300-14.jpg" />
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/media/avatars/300-14.jpg" />
 											</div>
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Susan Redwood">
 												<span class="symbol-label bg-primary text-inverse-primary fw-bold">S</span>
@@ -482,16 +457,6 @@
 									<td>Mar 10, 2022</td>
 									<td>
 										May 05, 2022
-									</td>
-									<td class="text-end">
-										<div class="d-flex flex-column w-100 me-2">
-											<div class="d-flex flex-stack mb-2">
-												<span class="text-muted me-2 fs-7 fw-bold">50%</span>
-											</div>
-											<div class="progress h-6px w-100">
-												<div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-											</div>
-										</div>
 									</td>
 									<td>
 										<span class="badge badge-light-success fs-7 fw-bold">Completed</span>
@@ -612,16 +577,16 @@
 									<td>1.2</td>
 									<td>
 										<!--<a href="#" class="text-dark fw-bold text-hover-primary d-block fs-6">Intertico</a>-->
-										<span class="text-dark fw-semibold text-muted d-block fs-7">Kick off call and Bid Strategy Pack</span>
+										<span class="text-dark fw-semibold d-block fs-6">Kick off call and Bid Strategy Pack</span>
 									</td>
 									<td>
 										<!--begin::Members-->
 										<div class="symbol-group symbol-hover fs-8">
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Melody Macy">
-												<img alt="Pic" src="assets/media/avatars/300-2.jpg" />
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/media/avatars/300-2.jpg" />
 											</div>
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="John Mixin">
-												<img alt="Pic" src="assets/media/avatars/300-14.jpg" />
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/media/avatars/300-14.jpg" />
 											</div>
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Susan Redwood">
 												<span class="symbol-label bg-primary text-inverse-primary fw-bold">S</span>
@@ -632,17 +597,6 @@
 									<td>Mar 10, 2022</td>
 									<td>
 										May 05, 2022
-									</td>
-
-									<td class="text-end">
-										<div class="d-flex flex-column w-100 me-2">
-											<div class="d-flex flex-stack mb-2">
-												<span class="text-muted me-2 fs-7 fw-bold">50%</span>
-											</div>
-											<div class="progress h-6px w-100">
-												<div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-											</div>
-										</div>
 									</td>
 									<td>
 										<span class="badge badge-light-info fs-7 fw-bold">Completed</span>
@@ -763,16 +717,16 @@
 									<td>2</td>
 									<td>
 										<!--<a href="#" class="text-dark fw-bold text-hover-primary d-block fs-6">Intertico</a>-->
-										<span class="text-dark fw-semibold text-muted d-block fs-7">Content Development</span>
+										<span class="text-dark fw-semibold d-block fs-6">Content Development</span>
 									</td>
 									<td>
 										<!--begin::Members-->
 										<div class="symbol-group symbol-hover fs-8">
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Melody Macy">
-												<img alt="Pic" src="assets/media/avatars/300-2.jpg" />
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/media/avatars/300-2.jpg" />
 											</div>
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="John Mixin">
-												<img alt="Pic" src="assets/media/avatars/300-14.jpg" />
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/media/avatars/300-14.jpg" />
 											</div>
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Susan Redwood">
 												<span class="symbol-label bg-primary text-inverse-primary fw-bold">S</span>
@@ -825,16 +779,7 @@
 										<!--end::Menu Dropdown-->
 										<!--end::Menu-->
 									</td>
-									<td class="text-end">
-										<div class="d-flex flex-column w-100 me-2">
-											<div class="d-flex flex-stack mb-2">
-												<span class="text-muted me-2 fs-7 fw-bold">50%</span>
-											</div>
-											<div class="progress h-6px w-100">
-												<div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-											</div>
-										</div>
-									</td>
+
 									<td>
 										<span class="badge badge-light-success fs-7 fw-bold">Completed</span>
 									</td>
@@ -954,16 +899,16 @@
 									<td>3</td>
 									<td>
 										<!--<a href="#" class="text-dark fw-bold text-hover-primary d-block fs-6">Intertico</a>-->
-										<span class="text-dark fw-semibold text-muted d-block fs-7">Volume 2:Technical </span>
+										<span class="text-dark fw-semibold d-block fs-6">Volume 2:Technical </span>
 									</td>
 									<td>
 										<!--begin::Members-->
 										<div class="symbol-group symbol-hover fs-8">
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Melody Macy">
-												<img alt="Pic" src="assets/media/avatars/300-2.jpg" />
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/media/avatars/300-1.jpg" />
 											</div>
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="John Mixin">
-												<img alt="Pic" src="assets/media/avatars/300-14.jpg" />
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/media/avatars/300-14.jpg" />
 											</div>
 											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Susan Redwood">
 												<span class="symbol-label bg-primary text-inverse-primary fw-bold">S</span>
@@ -1016,16 +961,550 @@
 										<!--end::Menu Dropdown-->
 										<!--end::Menu-->
 									</td>
-									<td class="text-end">
-										<div class="d-flex flex-column w-100 me-2">
-											<div class="d-flex flex-stack mb-2">
-												<span class="text-muted me-2 fs-7 fw-bold">50%</span>
+
+									<td>
+										<span class="badge badge-light-success fs-7 fw-bold">Completed</span>
+									</td>
+									<td>
+										<a href="../../demo1/dist/apps/projects/project.html" class="text-primary opacity-75-hover fs-6 fw-semibold">
+											<!--begin::Svg Icon | path: icons/duotune/coding/cod007.svg-->
+											<span class="svg-icon svg-icon-5 m-0">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path opacity="0.3" d="M18.4 5.59998C18.7766 5.9772 18.9881 6.48846 18.9881 7.02148C18.9881 7.55451 18.7766 8.06577 18.4 8.44299L14.843 12C14.466 12.377 13.9547 12.5887 13.4215 12.5887C12.8883 12.5887 12.377 12.377 12 12C11.623 11.623 11.4112 11.1117 11.4112 10.5785C11.4112 10.0453 11.623 9.53399 12 9.15698L15.553 5.604C15.9302 5.22741 16.4415 5.01587 16.9745 5.01587C17.5075 5.01587 18.0188 5.22741 18.396 5.604L18.4 5.59998ZM20.528 3.47205C20.0614 3.00535 19.5074 2.63503 18.8977 2.38245C18.288 2.12987 17.6344 1.99988 16.9745 1.99988C16.3145 1.99988 15.661 2.12987 15.0513 2.38245C14.4416 2.63503 13.8876 3.00535 13.421 3.47205L9.86801 7.02502C9.40136 7.49168 9.03118 8.04568 8.77863 8.6554C8.52608 9.26511 8.39609 9.91855 8.39609 10.5785C8.39609 11.2384 8.52608 11.8919 8.77863 12.5016C9.03118 13.1113 9.40136 13.6653 9.86801 14.132C10.3347 14.5986 10.8886 14.9688 11.4984 15.2213C12.1081 15.4739 12.7616 15.6039 13.4215 15.6039C14.0815 15.6039 14.7349 15.4739 15.3446 15.2213C15.9543 14.9688 16.5084 14.5986 16.975 14.132L20.528 10.579C20.9947 10.1124 21.3649 9.55844 21.6175 8.94873C21.8701 8.33902 22.0001 7.68547 22.0001 7.02551C22.0001 6.36555 21.8701 5.71201 21.6175 5.10229C21.3649 4.49258 20.9947 3.93867 20.528 3.47205Z" fill="currentColor" />
+													<path d="M14.132 9.86804C13.6421 9.37931 13.0561 8.99749 12.411 8.74695L12 9.15698C11.6234 9.53421 11.4119 10.0455 11.4119 10.5785C11.4119 11.1115 11.6234 11.6228 12 12C12.3766 12.3772 12.5881 12.8885 12.5881 13.4215C12.5881 13.9545 12.3766 14.4658 12 14.843L8.44699 18.396C8.06999 18.773 7.55868 18.9849 7.02551 18.9849C6.49235 18.9849 5.98101 18.773 5.604 18.396C5.227 18.019 5.0152 17.5077 5.0152 16.9745C5.0152 16.4413 5.227 15.93 5.604 15.553L8.74701 12.411C8.28705 11.233 8.28705 9.92498 8.74701 8.74695C8.10159 8.99737 7.5152 9.37919 7.02499 9.86804L3.47198 13.421C2.52954 14.3635 2.00009 15.6417 2.00009 16.9745C2.00009 18.3073 2.52957 19.5855 3.47202 20.528C4.41446 21.4704 5.69269 21.9999 7.02551 21.9999C8.35833 21.9999 9.63656 21.4704 10.579 20.528L14.132 16.975C14.5987 16.5084 14.9689 15.9544 15.2215 15.3447C15.4741 14.735 15.6041 14.0815 15.6041 13.4215C15.6041 12.7615 15.4741 12.108 15.2215 11.4983C14.9689 10.8886 14.5987 10.3347 14.132 9.86804Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr095.svg-->
+											<span class="svg-icon svg-icon-4 svg-icon-gray-800 ms-1">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path opacity="0.3" d="M4.7 17.3V7.7C4.7 6.59543 5.59543 5.7 6.7 5.7H9.8C10.2694 5.7 10.65 5.31944 10.65 4.85C10.65 4.38056 10.2694 4 9.8 4H5C3.89543 4 3 4.89543 3 6V19C3 20.1046 3.89543 21 5 21H18C19.1046 21 20 20.1046 20 19V14.2C20 13.7306 19.6194 13.35 19.15 13.35C18.6806 13.35 18.3 13.7306 18.3 14.2V17.3C18.3 18.4046 17.4046 19.3 16.3 19.3H6.7C5.59543 19.3 4.7 18.4046 4.7 17.3Z" fill="currentColor" />
+													<rect x="21.9497" y="3.46448" width="13" height="2" rx="1" transform="rotate(135 21.9497 3.46448)" fill="currentColor" />
+													<path d="M19.8284 4.97161L19.8284 9.93937C19.8284 10.5252 20.3033 11 20.8891 11C21.4749 11 21.9497 10.5252 21.9497 9.93937L21.9497 3.05029C21.9497 2.498 21.502 2.05028 20.9497 2.05028L14.0607 2.05027C13.4749 2.05027 13 2.52514 13 3.11094C13 3.69673 13.4749 4.17161 14.0607 4.17161L19.0284 4.17161C19.4702 4.17161 19.8284 4.52978 19.8284 4.97161Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+										</a>
+									</td>
+									<td>
+										<a id="kt_ganttchart_toggle" href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+											<!--begin::Svg Icon | path: icons/duotune/general/gen032.svg-->
+											<span class="svg-icon svg-icon-1">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<rect x="8" y="9" width="3" height="10" rx="1.5" fill="currentColor" />
+													<rect opacity="0.5" x="13" y="5" width="3" height="14" rx="1.5" fill="currentColor" />
+													<rect x="18" y="11" width="3" height="8" rx="1.5" fill="currentColor" />
+													<rect x="3" y="13" width="3" height="6" rx="1.5" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+										</a>
+									</td>
+
+								</tr>
+								<tr>
+									<td>
+										<!--begin::Menu-->
+										<button class="btn btn-icon btn-color-gray-400 btn-active-color-primary " data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">
+											<!--begin::Svg Icon | path: icons/duotune/general/gen023.svg-->
+											<span class="svg-icon svg-icon-1 svg-icon-gray-300 me-n1">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="4" fill="currentColor" />
+													<rect x="11" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
+													<rect x="15" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
+													<rect x="7" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+										</button>
+										<!--begin::Menu Dropdown-->
+										<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<div class="menu-content fs-6 text-dark fw-bold px-3 py-4">Quick Actions</div>
 											</div>
-											<div class="progress h-6px w-100">
-												<div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+											<!--end::Menu item-->
+											<!--begin::Menu separator-->
+											<div class="separator mb-3 opacity-75"></div>
+											<!--end::Menu separator-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_task">Edit Task</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3">Remove Task</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_task">Add Child Task</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu separator-->
+											<div class="separator mb-3 opacity-75"></div>
+											<!--end::Menu separator-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3">View Timeline</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3">View Gantt Chart</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu separator-->
+											<div class="separator mb-3 opacity-75"></div>
+											<!--end::Menu separator-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3">Set Alert</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3">Send Reminder</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3">Save to Calendar</a>
+											</div>
+											<!--end::Menu item-->
+										</div>
+										<!--end::Menu Dropdown-->
+										<!--end::Menu-->
+									</td>
+
+									<td>4</td>
+									<td>
+										<!--<a href="#" class="text-dark fw-bold text-hover-primary d-block fs-6">Intertico</a>-->
+										<span class="text-dark fw-semibold d-block fs-6">Volume III:Management </span>
+									</td>
+									<td>
+										<!--begin::Members-->
+										<div class="symbol-group symbol-hover fs-8">
+											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Melody Macy">
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/300-1.jpg" />
 											</div>
 										</div>
+										<!--end::Members-->
 									</td>
+									<td>Mar 10, 2022</td>
+									<td>
+										May 05, 2022
+									</td>
+
+									<td>
+										<span class="badge badge-light-success fs-7 fw-bold">Completed</span>
+									</td>
+									<td>
+										<a href="../../demo1/dist/apps/projects/project.html" class="text-primary opacity-75-hover fs-6 fw-semibold">
+											<!--begin::Svg Icon | path: icons/duotune/coding/cod007.svg-->
+											<span class="svg-icon svg-icon-5 m-0">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path opacity="0.3" d="M18.4 5.59998C18.7766 5.9772 18.9881 6.48846 18.9881 7.02148C18.9881 7.55451 18.7766 8.06577 18.4 8.44299L14.843 12C14.466 12.377 13.9547 12.5887 13.4215 12.5887C12.8883 12.5887 12.377 12.377 12 12C11.623 11.623 11.4112 11.1117 11.4112 10.5785C11.4112 10.0453 11.623 9.53399 12 9.15698L15.553 5.604C15.9302 5.22741 16.4415 5.01587 16.9745 5.01587C17.5075 5.01587 18.0188 5.22741 18.396 5.604L18.4 5.59998ZM20.528 3.47205C20.0614 3.00535 19.5074 2.63503 18.8977 2.38245C18.288 2.12987 17.6344 1.99988 16.9745 1.99988C16.3145 1.99988 15.661 2.12987 15.0513 2.38245C14.4416 2.63503 13.8876 3.00535 13.421 3.47205L9.86801 7.02502C9.40136 7.49168 9.03118 8.04568 8.77863 8.6554C8.52608 9.26511 8.39609 9.91855 8.39609 10.5785C8.39609 11.2384 8.52608 11.8919 8.77863 12.5016C9.03118 13.1113 9.40136 13.6653 9.86801 14.132C10.3347 14.5986 10.8886 14.9688 11.4984 15.2213C12.1081 15.4739 12.7616 15.6039 13.4215 15.6039C14.0815 15.6039 14.7349 15.4739 15.3446 15.2213C15.9543 14.9688 16.5084 14.5986 16.975 14.132L20.528 10.579C20.9947 10.1124 21.3649 9.55844 21.6175 8.94873C21.8701 8.33902 22.0001 7.68547 22.0001 7.02551C22.0001 6.36555 21.8701 5.71201 21.6175 5.10229C21.3649 4.49258 20.9947 3.93867 20.528 3.47205Z" fill="currentColor" />
+													<path d="M14.132 9.86804C13.6421 9.37931 13.0561 8.99749 12.411 8.74695L12 9.15698C11.6234 9.53421 11.4119 10.0455 11.4119 10.5785C11.4119 11.1115 11.6234 11.6228 12 12C12.3766 12.3772 12.5881 12.8885 12.5881 13.4215C12.5881 13.9545 12.3766 14.4658 12 14.843L8.44699 18.396C8.06999 18.773 7.55868 18.9849 7.02551 18.9849C6.49235 18.9849 5.98101 18.773 5.604 18.396C5.227 18.019 5.0152 17.5077 5.0152 16.9745C5.0152 16.4413 5.227 15.93 5.604 15.553L8.74701 12.411C8.28705 11.233 8.28705 9.92498 8.74701 8.74695C8.10159 8.99737 7.5152 9.37919 7.02499 9.86804L3.47198 13.421C2.52954 14.3635 2.00009 15.6417 2.00009 16.9745C2.00009 18.3073 2.52957 19.5855 3.47202 20.528C4.41446 21.4704 5.69269 21.9999 7.02551 21.9999C8.35833 21.9999 9.63656 21.4704 10.579 20.528L14.132 16.975C14.5987 16.5084 14.9689 15.9544 15.2215 15.3447C15.4741 14.735 15.6041 14.0815 15.6041 13.4215C15.6041 12.7615 15.4741 12.108 15.2215 11.4983C14.9689 10.8886 14.5987 10.3347 14.132 9.86804Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr095.svg-->
+											<span class="svg-icon svg-icon-4 svg-icon-gray-800 ms-1">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path opacity="0.3" d="M4.7 17.3V7.7C4.7 6.59543 5.59543 5.7 6.7 5.7H9.8C10.2694 5.7 10.65 5.31944 10.65 4.85C10.65 4.38056 10.2694 4 9.8 4H5C3.89543 4 3 4.89543 3 6V19C3 20.1046 3.89543 21 5 21H18C19.1046 21 20 20.1046 20 19V14.2C20 13.7306 19.6194 13.35 19.15 13.35C18.6806 13.35 18.3 13.7306 18.3 14.2V17.3C18.3 18.4046 17.4046 19.3 16.3 19.3H6.7C5.59543 19.3 4.7 18.4046 4.7 17.3Z" fill="currentColor" />
+													<rect x="21.9497" y="3.46448" width="13" height="2" rx="1" transform="rotate(135 21.9497 3.46448)" fill="currentColor" />
+													<path d="M19.8284 4.97161L19.8284 9.93937C19.8284 10.5252 20.3033 11 20.8891 11C21.4749 11 21.9497 10.5252 21.9497 9.93937L21.9497 3.05029C21.9497 2.498 21.502 2.05028 20.9497 2.05028L14.0607 2.05027C13.4749 2.05027 13 2.52514 13 3.11094C13 3.69673 13.4749 4.17161 14.0607 4.17161L19.0284 4.17161C19.4702 4.17161 19.8284 4.52978 19.8284 4.97161Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+										</a>
+									</td>
+									<td>
+										<a id="kt_ganttchart_toggle" href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+											<!--begin::Svg Icon | path: icons/duotune/general/gen032.svg-->
+											<span class="svg-icon svg-icon-1">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<rect x="8" y="9" width="3" height="10" rx="1.5" fill="currentColor" />
+													<rect opacity="0.5" x="13" y="5" width="3" height="14" rx="1.5" fill="currentColor" />
+													<rect x="18" y="11" width="3" height="8" rx="1.5" fill="currentColor" />
+													<rect x="3" y="13" width="3" height="6" rx="1.5" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+										</a>
+									</td>
+
+								</tr>
+								<tr>
+									<td>
+										<!--begin::Menu-->
+										<button class="btn btn-icon btn-color-gray-400 btn-active-color-primary " data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">
+											<!--begin::Svg Icon | path: icons/duotune/general/gen023.svg-->
+											<span class="svg-icon svg-icon-1 svg-icon-gray-300 me-n1">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="4" fill="currentColor" />
+													<rect x="11" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
+													<rect x="15" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
+													<rect x="7" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+										</button>
+										<!--begin::Menu Dropdown-->
+										<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<div class="menu-content fs-6 text-dark fw-bold px-3 py-4">Quick Actions</div>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu separator-->
+											<div class="separator mb-3 opacity-75"></div>
+											<!--end::Menu separator-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_task">Edit Task</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3">Remove Task</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_task">Add Child Task</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu separator-->
+											<div class="separator mb-3 opacity-75"></div>
+											<!--end::Menu separator-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3">View Timeline</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3">View Gantt Chart</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu separator-->
+											<div class="separator mb-3 opacity-75"></div>
+											<!--end::Menu separator-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3">Set Alert</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3">Send Reminder</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3">Save to Calendar</a>
+											</div>
+											<!--end::Menu item-->
+										</div>
+										<!--end::Menu Dropdown-->
+										<!--end::Menu-->
+									</td>
+
+									<td>5</td>
+									<td>
+										<!--<a href="#" class="text-dark fw-bold text-hover-primary d-block fs-6">Intertico</a>-->
+										<span class="text-dark fw-semibold d-block fs-6">Volume IV:Past Performances</span>
+									</td>
+									<td>
+										<!--begin::Members-->
+										<div class="symbol-group symbol-hover fs-8">
+											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Sneha Pie">
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/300-1.jpg" />
+												Sneha Pie
+											</div>
+										</div>
+										<!--end::Members-->
+									</td>
+									<td>Mar 10, 2022</td>
+									<td>
+										May 05, 2022
+									</td>
+
+									<td>
+										<span class="badge badge-light-success fs-7 fw-bold">Completed</span>
+									</td>
+									<td>
+										<a href="../../demo1/dist/apps/projects/project.html" class="text-primary opacity-75-hover fs-6 fw-semibold">
+											<!--begin::Svg Icon | path: icons/duotune/coding/cod007.svg-->
+											<span class="svg-icon svg-icon-5 m-0">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path opacity="0.3" d="M18.4 5.59998C18.7766 5.9772 18.9881 6.48846 18.9881 7.02148C18.9881 7.55451 18.7766 8.06577 18.4 8.44299L14.843 12C14.466 12.377 13.9547 12.5887 13.4215 12.5887C12.8883 12.5887 12.377 12.377 12 12C11.623 11.623 11.4112 11.1117 11.4112 10.5785C11.4112 10.0453 11.623 9.53399 12 9.15698L15.553 5.604C15.9302 5.22741 16.4415 5.01587 16.9745 5.01587C17.5075 5.01587 18.0188 5.22741 18.396 5.604L18.4 5.59998ZM20.528 3.47205C20.0614 3.00535 19.5074 2.63503 18.8977 2.38245C18.288 2.12987 17.6344 1.99988 16.9745 1.99988C16.3145 1.99988 15.661 2.12987 15.0513 2.38245C14.4416 2.63503 13.8876 3.00535 13.421 3.47205L9.86801 7.02502C9.40136 7.49168 9.03118 8.04568 8.77863 8.6554C8.52608 9.26511 8.39609 9.91855 8.39609 10.5785C8.39609 11.2384 8.52608 11.8919 8.77863 12.5016C9.03118 13.1113 9.40136 13.6653 9.86801 14.132C10.3347 14.5986 10.8886 14.9688 11.4984 15.2213C12.1081 15.4739 12.7616 15.6039 13.4215 15.6039C14.0815 15.6039 14.7349 15.4739 15.3446 15.2213C15.9543 14.9688 16.5084 14.5986 16.975 14.132L20.528 10.579C20.9947 10.1124 21.3649 9.55844 21.6175 8.94873C21.8701 8.33902 22.0001 7.68547 22.0001 7.02551C22.0001 6.36555 21.8701 5.71201 21.6175 5.10229C21.3649 4.49258 20.9947 3.93867 20.528 3.47205Z" fill="currentColor" />
+													<path d="M14.132 9.86804C13.6421 9.37931 13.0561 8.99749 12.411 8.74695L12 9.15698C11.6234 9.53421 11.4119 10.0455 11.4119 10.5785C11.4119 11.1115 11.6234 11.6228 12 12C12.3766 12.3772 12.5881 12.8885 12.5881 13.4215C12.5881 13.9545 12.3766 14.4658 12 14.843L8.44699 18.396C8.06999 18.773 7.55868 18.9849 7.02551 18.9849C6.49235 18.9849 5.98101 18.773 5.604 18.396C5.227 18.019 5.0152 17.5077 5.0152 16.9745C5.0152 16.4413 5.227 15.93 5.604 15.553L8.74701 12.411C8.28705 11.233 8.28705 9.92498 8.74701 8.74695C8.10159 8.99737 7.5152 9.37919 7.02499 9.86804L3.47198 13.421C2.52954 14.3635 2.00009 15.6417 2.00009 16.9745C2.00009 18.3073 2.52957 19.5855 3.47202 20.528C4.41446 21.4704 5.69269 21.9999 7.02551 21.9999C8.35833 21.9999 9.63656 21.4704 10.579 20.528L14.132 16.975C14.5987 16.5084 14.9689 15.9544 15.2215 15.3447C15.4741 14.735 15.6041 14.0815 15.6041 13.4215C15.6041 12.7615 15.4741 12.108 15.2215 11.4983C14.9689 10.8886 14.5987 10.3347 14.132 9.86804Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr095.svg-->
+											<span class="svg-icon svg-icon-4 svg-icon-gray-800 ms-1">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path opacity="0.3" d="M4.7 17.3V7.7C4.7 6.59543 5.59543 5.7 6.7 5.7H9.8C10.2694 5.7 10.65 5.31944 10.65 4.85C10.65 4.38056 10.2694 4 9.8 4H5C3.89543 4 3 4.89543 3 6V19C3 20.1046 3.89543 21 5 21H18C19.1046 21 20 20.1046 20 19V14.2C20 13.7306 19.6194 13.35 19.15 13.35C18.6806 13.35 18.3 13.7306 18.3 14.2V17.3C18.3 18.4046 17.4046 19.3 16.3 19.3H6.7C5.59543 19.3 4.7 18.4046 4.7 17.3Z" fill="currentColor" />
+													<rect x="21.9497" y="3.46448" width="13" height="2" rx="1" transform="rotate(135 21.9497 3.46448)" fill="currentColor" />
+													<path d="M19.8284 4.97161L19.8284 9.93937C19.8284 10.5252 20.3033 11 20.8891 11C21.4749 11 21.9497 10.5252 21.9497 9.93937L21.9497 3.05029C21.9497 2.498 21.502 2.05028 20.9497 2.05028L14.0607 2.05027C13.4749 2.05027 13 2.52514 13 3.11094C13 3.69673 13.4749 4.17161 14.0607 4.17161L19.0284 4.17161C19.4702 4.17161 19.8284 4.52978 19.8284 4.97161Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+										</a>
+									</td>
+									<td>
+										<a id="kt_ganttchart_toggle" href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+											<!--begin::Svg Icon | path: icons/duotune/general/gen032.svg-->
+											<span class="svg-icon svg-icon-1">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<rect x="8" y="9" width="3" height="10" rx="1.5" fill="currentColor" />
+													<rect opacity="0.5" x="13" y="5" width="3" height="14" rx="1.5" fill="currentColor" />
+													<rect x="18" y="11" width="3" height="8" rx="1.5" fill="currentColor" />
+													<rect x="3" y="13" width="3" height="6" rx="1.5" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+										</a>
+									</td>
+
+								</tr>
+								<tr>
+									<td>
+										<!--begin::Menu-->
+										<button class="btn btn-icon btn-color-gray-400 btn-active-color-primary " data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">
+											<!--begin::Svg Icon | path: icons/duotune/general/gen023.svg-->
+											<span class="svg-icon svg-icon-1 svg-icon-gray-300 me-n1">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="4" fill="currentColor" />
+													<rect x="11" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
+													<rect x="15" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
+													<rect x="7" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+										</button>
+										<!--begin::Menu Dropdown-->
+										<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<div class="menu-content fs-6 text-dark fw-bold px-3 py-4">Quick Actions</div>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu separator-->
+											<div class="separator mb-3 opacity-75"></div>
+											<!--end::Menu separator-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_task">Edit Task</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3">Remove Task</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_task">Add Child Task</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu separator-->
+											<div class="separator mb-3 opacity-75"></div>
+											<!--end::Menu separator-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3">View Timeline</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3">View Gantt Chart</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu separator-->
+											<div class="separator mb-3 opacity-75"></div>
+											<!--end::Menu separator-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3">Set Alert</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3">Send Reminder</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3">Save to Calendar</a>
+											</div>
+											<!--end::Menu item-->
+										</div>
+										<!--end::Menu Dropdown-->
+										<!--end::Menu-->
+									</td>
+
+									<td>6</td>
+									<td>
+										<!--<a href="#" class="text-dark fw-bold text-hover-primary d-block fs-6">Intertico</a>-->
+										<span class="text-dark fw-semibold d-block fs-6">Table of Contents</span>
+									</td>
+									<td>
+										<!--begin::Members-->
+										<div class="symbol-group symbol-hover fs-8">
+											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Melody Macy">
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/300-1.jpg" />
+												Melody Macy
+											</div>
+										</div>
+										<!--end::Members-->
+									</td>
+									<td>Mar 10, 2022</td>
+									<td>
+										May 05, 2022
+									</td>
+
+									<td>
+										<span class="badge badge-light-success fs-7 fw-bold">Completed</span>
+									</td>
+									<td>
+										<a href="../../demo1/dist/apps/projects/project.html" class="text-primary opacity-75-hover fs-6 fw-semibold">
+											<!--begin::Svg Icon | path: icons/duotune/coding/cod007.svg-->
+											<span class="svg-icon svg-icon-5 m-0">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path opacity="0.3" d="M18.4 5.59998C18.7766 5.9772 18.9881 6.48846 18.9881 7.02148C18.9881 7.55451 18.7766 8.06577 18.4 8.44299L14.843 12C14.466 12.377 13.9547 12.5887 13.4215 12.5887C12.8883 12.5887 12.377 12.377 12 12C11.623 11.623 11.4112 11.1117 11.4112 10.5785C11.4112 10.0453 11.623 9.53399 12 9.15698L15.553 5.604C15.9302 5.22741 16.4415 5.01587 16.9745 5.01587C17.5075 5.01587 18.0188 5.22741 18.396 5.604L18.4 5.59998ZM20.528 3.47205C20.0614 3.00535 19.5074 2.63503 18.8977 2.38245C18.288 2.12987 17.6344 1.99988 16.9745 1.99988C16.3145 1.99988 15.661 2.12987 15.0513 2.38245C14.4416 2.63503 13.8876 3.00535 13.421 3.47205L9.86801 7.02502C9.40136 7.49168 9.03118 8.04568 8.77863 8.6554C8.52608 9.26511 8.39609 9.91855 8.39609 10.5785C8.39609 11.2384 8.52608 11.8919 8.77863 12.5016C9.03118 13.1113 9.40136 13.6653 9.86801 14.132C10.3347 14.5986 10.8886 14.9688 11.4984 15.2213C12.1081 15.4739 12.7616 15.6039 13.4215 15.6039C14.0815 15.6039 14.7349 15.4739 15.3446 15.2213C15.9543 14.9688 16.5084 14.5986 16.975 14.132L20.528 10.579C20.9947 10.1124 21.3649 9.55844 21.6175 8.94873C21.8701 8.33902 22.0001 7.68547 22.0001 7.02551C22.0001 6.36555 21.8701 5.71201 21.6175 5.10229C21.3649 4.49258 20.9947 3.93867 20.528 3.47205Z" fill="currentColor" />
+													<path d="M14.132 9.86804C13.6421 9.37931 13.0561 8.99749 12.411 8.74695L12 9.15698C11.6234 9.53421 11.4119 10.0455 11.4119 10.5785C11.4119 11.1115 11.6234 11.6228 12 12C12.3766 12.3772 12.5881 12.8885 12.5881 13.4215C12.5881 13.9545 12.3766 14.4658 12 14.843L8.44699 18.396C8.06999 18.773 7.55868 18.9849 7.02551 18.9849C6.49235 18.9849 5.98101 18.773 5.604 18.396C5.227 18.019 5.0152 17.5077 5.0152 16.9745C5.0152 16.4413 5.227 15.93 5.604 15.553L8.74701 12.411C8.28705 11.233 8.28705 9.92498 8.74701 8.74695C8.10159 8.99737 7.5152 9.37919 7.02499 9.86804L3.47198 13.421C2.52954 14.3635 2.00009 15.6417 2.00009 16.9745C2.00009 18.3073 2.52957 19.5855 3.47202 20.528C4.41446 21.4704 5.69269 21.9999 7.02551 21.9999C8.35833 21.9999 9.63656 21.4704 10.579 20.528L14.132 16.975C14.5987 16.5084 14.9689 15.9544 15.2215 15.3447C15.4741 14.735 15.6041 14.0815 15.6041 13.4215C15.6041 12.7615 15.4741 12.108 15.2215 11.4983C14.9689 10.8886 14.5987 10.3347 14.132 9.86804Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+											<!--begin::Svg Icon | path: icons/duotune/arrows/arr095.svg-->
+											<span class="svg-icon svg-icon-4 svg-icon-gray-800 ms-1">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path opacity="0.3" d="M4.7 17.3V7.7C4.7 6.59543 5.59543 5.7 6.7 5.7H9.8C10.2694 5.7 10.65 5.31944 10.65 4.85C10.65 4.38056 10.2694 4 9.8 4H5C3.89543 4 3 4.89543 3 6V19C3 20.1046 3.89543 21 5 21H18C19.1046 21 20 20.1046 20 19V14.2C20 13.7306 19.6194 13.35 19.15 13.35C18.6806 13.35 18.3 13.7306 18.3 14.2V17.3C18.3 18.4046 17.4046 19.3 16.3 19.3H6.7C5.59543 19.3 4.7 18.4046 4.7 17.3Z" fill="currentColor" />
+													<rect x="21.9497" y="3.46448" width="13" height="2" rx="1" transform="rotate(135 21.9497 3.46448)" fill="currentColor" />
+													<path d="M19.8284 4.97161L19.8284 9.93937C19.8284 10.5252 20.3033 11 20.8891 11C21.4749 11 21.9497 10.5252 21.9497 9.93937L21.9497 3.05029C21.9497 2.498 21.502 2.05028 20.9497 2.05028L14.0607 2.05027C13.4749 2.05027 13 2.52514 13 3.11094C13 3.69673 13.4749 4.17161 14.0607 4.17161L19.0284 4.17161C19.4702 4.17161 19.8284 4.52978 19.8284 4.97161Z" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+										</a>
+									</td>
+									<td>
+										<a id="kt_ganttchart_toggle" href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+											<!--begin::Svg Icon | path: icons/duotune/general/gen032.svg-->
+											<span class="svg-icon svg-icon-1">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<rect x="8" y="9" width="3" height="10" rx="1.5" fill="currentColor" />
+													<rect opacity="0.5" x="13" y="5" width="3" height="14" rx="1.5" fill="currentColor" />
+													<rect x="18" y="11" width="3" height="8" rx="1.5" fill="currentColor" />
+													<rect x="3" y="13" width="3" height="6" rx="1.5" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+										</a>
+									</td>
+
+								</tr>
+								<tr>
+									<td>
+										<!--begin::Menu-->
+										<button class="btn btn-icon btn-color-gray-400 btn-active-color-primary " data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">
+											<!--begin::Svg Icon | path: icons/duotune/general/gen023.svg-->
+											<span class="svg-icon svg-icon-1 svg-icon-gray-300 me-n1">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="4" fill="currentColor" />
+													<rect x="11" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
+													<rect x="15" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
+													<rect x="7" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+										</button>
+										<!--begin::Menu Dropdown-->
+										<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<div class="menu-content fs-6 text-dark fw-bold px-3 py-4">Quick Actions</div>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu separator-->
+											<div class="separator mb-3 opacity-75"></div>
+											<!--end::Menu separator-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_task">Edit Task</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3">Remove Task</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_task">Add Child Task</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu separator-->
+											<div class="separator mb-3 opacity-75"></div>
+											<!--end::Menu separator-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3">View Timeline</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3">View Gantt Chart</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu separator-->
+											<div class="separator mb-3 opacity-75"></div>
+											<!--end::Menu separator-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3">Set Alert</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3">
+												<a href="#" class="menu-link px-3">Send Reminder</a>
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item px-3 mb-3">
+												<a href="#" class="menu-link px-3">Save to Calendar</a>
+											</div>
+											<!--end::Menu item-->
+										</div>
+										<!--end::Menu Dropdown-->
+										<!--end::Menu-->
+									</td>
+
+									<td>7</td>
+									<td>
+										<!--<a href="#" class="text-dark fw-bold text-hover-primary d-block fs-6">Intertico</a>-->
+										<span class="text-dark fw-semibold d-block fs-6">Volume V: Price</span>
+									</td>
+									<td>
+										<!--begin::Members-->
+										<div class="symbol-group symbol-hover fs-8">
+											<div class="symbol symbol-25px symbol-circle" data-bs-toggle="tooltip" title="Preeti Shah">
+												<img alt="Pic" src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/300-1.jpg" />
+												Preeti Shah
+											</div>
+										</div>
+										<!--end::Members-->
+									</td>
+									<td>Mar 10, 2022</td>
+									<td>
+										May 05, 2022
+									</td>
+
 									<td>
 										<span class="badge badge-light-success fs-7 fw-bold">Completed</span>
 									</td>
@@ -1626,12 +2105,26 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"></script>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.full.min.js"></script>
+	<script src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/src/js/vendors/plugins/select2.init.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@4.15.3/dist/tagify.polyfills.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@4.15.3/dist/tagify.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.js"></script>
+	<script src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/src/js/vendors/plugins/flatpickr.init.js"></script>
+
+
 	<script src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/plugins/global/plugins.bundle.js"></script>
 	<script src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/js/scripts.bundle.js"></script>
 	<!--end::Global Javascript Bundle-->
 	<!--begin::Vendors Javascript(used by this page)-->
 	<script src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vis-timeline/7.7.0/vis-timeline-graph2d.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 	<script src="https://himanshusharepoint.github.io/TemplateMaker/SudarshanUI/assets/plugins/custom/vis-timeline/vis-timeline.bundle.js"></script>
+
 
 	<!--end::Vendors Javascript-->
 	<!--begin::Custom Javascript(used by this page)-->
