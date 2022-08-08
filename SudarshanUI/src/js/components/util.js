@@ -128,6 +128,7 @@ window.KTUtilElementDataStoreID = 0;
 window.KTUtilDelegatedEventHandlers = {};
 
 var KTUtil = function() {
+	alert("Inside KTUtil Declaration Function");
     var resizeHandlers = [];
 
     /**
