@@ -1180,7 +1180,7 @@ i > span {     background: #165f75;
 
 [data-kt-aside-minimize=on] .aside.aside-hoverable:hover:not(.animating) { z-index:9; }
 .a_c_50a7110f:not(.b_c_50a7110f) .k_c_50a7110f { max-width: 100%!important;   }
-.toolbar { padding:1rem 0; background:#fff!important; border-top:1px solid #ececec!important; margin-top:3px!important;}
+.toolbar { padding:1rem 0; border-bottom: 1px solid #c5c2c2; border-top:1px solid #ececec!important; margin-top:3px!important;}
 .k-form-field { margin-top:1rem!important;}
 .k-pager-nav { display:none!important;}
 .k-pager-numbers .k-state-selected { background-color:#165f75!important; border-radius:0px!important;}
