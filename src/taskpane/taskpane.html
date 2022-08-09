@@ -342,12 +342,13 @@
     function insertParagraph() {
         Word.run(function (context) {
             var docBody = context.document.body;
+            const range = context.document.getSelection();
             var Valueoftext = document.getElementById("txtInput").value;
             var ValueofDatatType = document.getElementById("TemplateDataTypeSelect").value;
             document.getElementById("txtInput").value = '';
             var Templatedropdownlist = $("#TemplateDataTypeSelect").data("kendoDropDownList");
             Templatedropdownlist.select(0);
-            docBody.insertHtml("<strong>###" + Valueoftext + "/" + ValueofDatatType + "###</strong>", Word.InsertLocation.end);
+            range.insertHtml("<strong>###" + Valueoftext + "/" + ValueofDatatType + "###</strong>", Word.InsertLocation.end);
 
             return context.sync();
         })
