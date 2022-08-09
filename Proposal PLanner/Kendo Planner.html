@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!--begin::Head-->
+
+<head>
+    <base href="">
+    <title>Template Library</title>
+    <meta charset="utf-8" />
+    <meta name="description" content=" " />
+    <meta name="keywords" content=" " />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link href='https://kendo.cdn.telerik.com/2019.3.1023/styles/kendo.common.min.css' rel='stylesheet' type='text/css'>
+   
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.2.802/styles/kendo.bootstrap-urban.min.css" />
+
+    <!--end::Global Stylesheets Bundle-->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.2.510/js/kendo.all.min.js"></script>
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body>
+   
+    <div id="example">
+        <div id="grid"></div>
+
+        <script>
+
+            $(document).ready(function () {
+                var dataSource = new kendo.data.DataSource({
+                    type: "jsonp",
+                    transport: {
+                        read: {
+                            url:"https://demos.telerik.com/kendo-ui/service/detailproducts",
+                            dataType: "jsonp"
+                        },
+                        update: {
+                            url: "https://demos.telerik.com/kendo-ui/service/detailproducts/Update",
+                            dataType: "jsonp"
+                        },
+                        destroy: {
+                            url: "https://demos.telerik.com/kendo-ui/service/detailproducts/Destroy",
+                            dataType: "jsonp"
+                        },
+                        create: {
+                            url: "https://demos.telerik.com/kendo-ui/service/detailproducts/Create",
+                            dataType: "jsonp"
+                        },
+                    },
+                    pageSize: 20,
+
+                    autoSync: true,
+                    schema: {
+                        model: {
+                            id: "ProductID",
+                            fields: {
+                                ProductID: { editable: false, nullable: true },
+                                ProductName: {
+                                    validation: {
+                                        required: true,
+                                        productnamevalidation: function (input) {
+                                            if (input.is("[name='ProductName']") && input.val() != "") {
+                                                input.attr("data-productnamevalidation-msg", "Product Name should start with capital letter");
+                                                return /^[A-Z]/.test(input.val());
+                                            }
+                                            return true;
+                                        }
+                                    }
+                                },
+                                Category: { defaultValue: { CategoryID: 1, CategoryName: "Beverages" } },
+                                UnitPrice: { type: "number", validation: { required: true, min: 1 } }
+                            }
+                        }
+                    }
+                });
+
+                console.log(dataSource);
+
+                $("#grid").kendoGrid({
+                    dataSource: dataSource,
+                    pageable: true,
+                    height: 550,
+                    toolbar: ["create"],
+                    columns: [
+                        { field: "ProductName", title: "Product Name" },
+                        { field: "Category", title: "Category", width: "180px", editor: categoryDropDownEditor, template: "#=Category.CategoryName#" },
+                        { field: "UnitPrice", title: "Unit Price", format: "{0:c}", width: "130px" },
+                        {
+                            field: "Discontinued",
+                            title: "In Stock",
+                            template: "<span id='badge_#=ProductID#' class='badgeTemplate'></span>",
+                            width: 130,
+                            editable: false
+                        },
+                        { command: "destroy", title: " ", width: "150px" }],
+                    editable: true
+                });
+            });
+
+            function categoryDropDownEditor(container, options) {
+                $('<input required name="' + options.field + '"/>')
+                    .appendTo(container)
+                    .kendoDropDownList({
+                        autoBind: false,
+                        dataTextField: "CategoryName",
+                        dataValueField: "CategoryID",
+                        dataSource: {
+                            type: "odata",
+                            transport: {
+                                read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Categories"
+                            }
+                        }
+                    });
+            }
+
+        </script>
+    </div>
+
+
+    
+    <script>
+
+
+        //PUT THIS CODE IN TemplateLibrary_Main.js
+        //define Enum collection or key value pair of userActionsconfigSettings object
+
+        var templateLib_GridView_Selected = false;
+        var templateLib_CardView_Selected = false;
+        var responseLib_GridView_Selected = false;
+        var responseLib_CardView_Selected = false;
+        var responseLib_Draft_Selected = true;
+        var responseLib_Final_Selected = false;
+
+        //$(document).ready(function () {
+            
+        //});
+
+    </script>
+</body> 
+</html>
