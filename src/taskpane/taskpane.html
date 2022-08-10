@@ -37,12 +37,12 @@
             </div>
         </div>
         <div id="divContainer_CreateTemplate" class="  d-none">
-            <div class="demo-section ">
-                <button id="btnAddtoDocument" class="k-button k-button-solid k-button-solid-primary">Save to document</button>
-            </div>
+           
             <h4 id="h1_CreateTemplate">Edit template document</h4>
             <h6 class="UserInfoMessage">Document will be auto saved, so once you're done with editing, close the popup to go to template library.</h6>
-
+ <div class="demo-section savedocbtn ">
+                <button id="btnAddtoDocument" class="k-button k-button-solid k-button-solid-primary">Save to document</button>
+            </div>
             <ul class="panelbar">
                 <li class="k-state-active">
                     <b class="k-link k-state-selected">Update document metadata</b>
@@ -597,8 +597,10 @@
     .panelbar {
         width: 100%;
     }
+    
+    .savedocbtn { padding:15px 0px; text-align:right; } 
     .container { position: relative;}
-    #btnAddtoDocument { position: absolute; right: 15px;}
+     
     /* #btnAddtoDocument { position: fixed; top:5px; right:7%;} */
 </style>
 <script>
