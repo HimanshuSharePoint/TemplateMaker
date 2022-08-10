@@ -30,12 +30,16 @@
         <h1>Winnable Add-In</h1>
     </header>-->
     <div class="container">
+       
         <div class="d-flex justify-content-center" id="spinner_Main">
             <div class="spinner-border" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <div id="divContainer_CreateTemplate" class="row d-none">
+        <div id="divContainer_CreateTemplate" class="  d-none">
+            <div class="demo-section ">
+                <button id="btnAddtoDocument" class="k-button k-button-solid k-button-solid-primary">Save to document</button>
+            </div>
             <h4 id="h1_CreateTemplate">Edit template document</h4>
             <h6 class="UserInfoMessage">Document will be auto saved, so once you're done with editing, close the popup to go to template library.</h6>
 
@@ -66,7 +70,7 @@
                 </li>
             </ul>
         </div>
-        <div id="divContainer_CreateResponse" class="row d-none">
+        <div id="divContainer_CreateResponse" class="  d-none">
             <h4 id="h1_CreateResponse">Create proposal response</h4>
             <h6 class="UserInfoMessage">Document will be auto saved, so once you're done with editing, close the popup to go to response library.</h6>
 
@@ -87,10 +91,7 @@
                     <div class="panelform" style="padding: 10px;">
                         <div id="DynamicControl"></div>
 
-                        <br />
-                        <div class="demo-section ">
-                            <button id="btnAddtoDocument" class="k-button k-button-solid k-button-solid-primary">Save to document</button>
-                        </div>
+                       
                     </div>
                 </li>
             </ul>
@@ -590,4 +591,20 @@
             });
     }
 
+</script>
+
+<style>
+    .panelbar {
+        width: 100%;
+    }
+    .container { position: relative;}
+    #btnAddtoDocument { position: absolute; right: 15px;}
+    /* #btnAddtoDocument { position: fixed; top:5px; right:7%;} */
+</style>
+<script>
+    $(document).ready(function() {
+        $(".panelbar").kendoPanelBar({
+            expandMode: "single"
+        });
+    });
 </script>
