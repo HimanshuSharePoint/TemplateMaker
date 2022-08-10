@@ -430,6 +430,8 @@
                     }
                 }
                 $("#DynamicControl").empty();
+                $("#tablePlaceholder").empty();
+                GetPlaceholderValue();
                 GenerateFormfromPlaceholders();
                 context.sync().then(function () {
                     console.log(results);
