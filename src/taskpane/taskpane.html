@@ -601,6 +601,11 @@
     
     .savedocbtn { padding:15px 0px; text-align:right; } 
     .container { position: relative;}
+    
+    .newClass {position: fixed;
+    z-index: 9999;
+    top: 2%;
+    right: 5%;}
      
     /* #btnAddtoDocument { position: fixed; top:5px; right:7%;} */
 </style>
@@ -610,4 +615,12 @@
             expandMode: "single"
         });
     });
+    
+    $(window).scroll(function(){
+    if ($(this).scrollTop() > 50) {
+       $('#btnAddtoDocument').addClass('newClass');
+    } else {
+       $('#btnAddtoDocument').removeClass('newClass');
+    }
+});
 </script>
