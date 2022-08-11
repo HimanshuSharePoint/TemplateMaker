@@ -236,6 +236,7 @@ th {
 
 td {
     padding: 5px;
+    word-break:break-word;
 }
 
 .panelform label {
