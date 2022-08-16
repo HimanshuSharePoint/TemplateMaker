@@ -6,7 +6,6 @@ var Winnable_PlannerProposal_BAL = {
 
 function renderPageControls() {
    console.log("This is Test");
-   KTLayoutToolbar.init();
 };
 
 
